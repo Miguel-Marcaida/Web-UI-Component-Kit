@@ -1,0 +1,85 @@
+/* ==================================== */
+/* 1. ESTILOS BASE Y VARIABLES DEL COMPONENTE NAV-01 */
+/* ==================================== */
+
+/* Contenedor principal del componente */
+.nav-01 {
+  /* Usamos el color de fondo oscuro de nuestra variable global */
+  background-color: var(--color-bg-dark);
+  padding: 1.5rem 2rem;
+  color: white; /* Color del texto base */
+  border-radius: 0.5rem;
+}
+
+/* Enlaces del logo (lado izquierdo) */
+.nav-01__logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem; /* Tamaño de letra grande para el logo */
+  font-weight: bold;
+  /* En Mobile First, el logo va solo arriba */
+  display: block;
+  text-align: center;
+  margin-bottom: 1.5rem; /* Espacio debajo del logo en móvil */
+}
+
+/* Lista de enlaces de navegación */
+.nav-01__links {
+  list-style: none; /* Eliminar los puntos de la lista */
+  /* En Mobile First, la lista se apila verticalmente (comportamiento por defecto) */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Espacio vertical entre elementos */
+}
+
+/* Elementos de la lista */
+.nav-01__links li {
+  text-align: center; /* Centrar los elementos en móvil */
+}
+
+/* Estilo de los enlaces */
+.nav-01__links a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  display: block; /* Para que el área clicable sea grande */
+  transition: background-color 0.3s;
+  border-radius: 0.3rem;
+}
+
+/* Efecto al pasar el ratón */
+.nav-01__links a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Ligera transparencia blanca */
+}
+
+/* ==================================== */
+/* 2. MEDIA QUERY (Diseño de Escritorio) */
+/* ==================================== */
+
+/* Aplica estos estilos SÓLO cuando la pantalla sea más grande que 768px (Tablet/Desktop) */
+@media (min-width: 768px) {
+  /* Contenedor principal: Cambiamos a disposición horizontal */
+  .nav-01 {
+    display: flex;
+    justify-content: space-between; /* El logo a la izquierda, los enlaces a la derecha */
+    align-items: center;
+    padding: 1rem 3rem; /* Menos padding vertical */
+  }
+
+  /* Logo: Quitamos el centrado y el margen inferior */
+  .nav-01__logo a {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  /* Lista de enlaces: Volvemos a la disposición horizontal */
+  .nav-01__links {
+    flex-direction: row;
+    gap: 2rem; /* Más espacio horizontal entre elementos */
+  }
+
+  /* Enlaces: Quitamos el display block (innecesario en horizontal) y el padding horizontal */
+  .nav-01__links a {
+    padding: 0.5rem 1rem;
+  }
+}
