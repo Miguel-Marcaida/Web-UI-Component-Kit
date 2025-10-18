@@ -1,9 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Web UI Component Kit - Catálogo Principal</title>
+    <link rel="stylesheet" href="CSS/main.css" />
   </head>
-  <body></body>
+  <body>
+    <header id="main-header">
+      <nav>
+        <a href="#components">Componentes</a>
+        <a href="#layouts">Layouts</a>
+        <a
+          href="https://github.com/Miguel-Marcaida/Web-UI-Component-Kit.git"
+          target="_blank"
+          >Github</a
+        >
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-section">
+        <h2>Biblioteca de Patrones de Diseño Front-end Puros.</h2>
+        <p>
+          Explora y copia cientos de módulos UI construidos con HTML, CSS y
+          JavaScript modernos, enfocados en la Responsividad y Accesibilidad.
+        </p>
+      </section>
+
+      <section id="components" class="category-grid">
+        <h3>🧩 Componentes Modulares</h3>
+        <div class="grid-container">
+          <a
+            href="src/components/01-navigation/index.html"
+            class="category-card"
+          >
+            <h4>01. Navegación</h4>
+            <p>Menús, barras superiores, sidebars y breadcrumbs.</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="layouts" class="category-grid">
+        <h3>🏗️ Ejemplos de Layouts</h3>
+        <div class="grid-container">
+          <a href="src/layouts/landing-page/index.html" class="category-card">
+            <h4>Landing Page Simple</h4>
+            <p>Estructura completa para campañas de marketing.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="JS/main.js"></script>
+  </body>
 </html>

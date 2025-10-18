@@ -1,0 +1,133 @@
+/* ==================================== */
+/* 1. CSS RESET / Normalización Base */
+/* ==================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Modelo de caja moderno: padding y border están dentro del ancho */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Define la base para la unidad rem (16px * 0.625 = 10px) - Fácil de escalar */
+  font-size: 62.5%;
+  scroll-behavior: smooth; /* Desplazamiento suave para los enlaces internos */
+}
+
+body {
+  /* Fuente y tamaño base */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem; /* Equivalente a 16px */
+  line-height: 1.5;
+  background-color: var(--color-bg-base); /* Usa la variable */
+  color: var(--color-text-base);
+}
+
+/* ==================================== */
+/* 2. VARIABLES GLOBALES (Escalabilidad) */
+/* ==================================== */
+:root {
+  /* Colores primarios */
+  --color-primary: #007bff; /* Azul de marca */
+  --color-secondary: #6c757d; /* Gris secundario */
+
+  /* Colores del tema (Fácil de cambiar a Dark/Light Mode) */
+  --color-bg-base: #f8f9fa; /* Fondo muy claro */
+  --color-bg-dark: #212529; /* Fondo oscuro (para headers/footers) */
+  --color-text-base: #343a40; /* Texto oscuro */
+  --color-link: var(--color-primary);
+  --color-border: #dee2e6;
+}
+
+/* ==================================== */
+/* 3. LAYOUT GLOBAL DEL CATÁLOGO */
+/* ==================================== */
+
+/* Header/Nav principal */
+#main-header {
+  background-color: var(--color-bg-dark);
+  color: white;
+  padding: 2rem 5%; /* Espacio interno */
+  display: flex; /* Usamos Flexbox para alinear */
+  justify-content: space-between;
+  align-items: center;
+}
+
+#main-header h1 {
+  font-size: 2.4rem;
+}
+
+#main-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+#main-header nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Contenido Principal */
+#main-content {
+  padding: 4rem 5%;
+  max-width: 120rem; /* Limita el ancho para que no se extienda demasiado en pantallas grandes */
+  margin: 0 auto;
+}
+
+/* Sección Hero (Bienvenida) */
+.hero-section {
+  text-align: center;
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 4rem;
+}
+
+.hero-section h2 {
+  font-size: 3.6rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Grilla de Categorías */
+.grid-container {
+  display: grid;
+  /* Define la grilla responsiva. En móvil será una sola columna */
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem; /* Espacio entre las tarjetas */
+  margin-top: 2rem;
+}
+
+.category-card {
+  display: block; /* Para que el enlace ocupe toda la tarjeta */
+  text-decoration: none;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  color: var(--color-text-base);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px); /* Pequeño efecto 3D al pasar el ratón */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+}
+
+.category-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+/* Footer principal */
+#main-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--color-bg-dark);
+  color: var(--color-border);
+  font-size: 1.4rem;
+  margin-top: 4rem;
+}
