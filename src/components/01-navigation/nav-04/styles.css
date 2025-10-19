@@ -1,0 +1,146 @@
+/* ======================================= */
+/* NAV-04: MENÚ CON DROPDOWN (MOBILE FIRST) */
+/* ======================================= */
+
+.nav-04 {
+  background-color: var(
+    --color-bg-dark
+  ); /* Fondo oscuro para el nav principal */
+  color: white;
+  padding: 0;
+}
+
+.nav-04__list {
+  display: flex;
+  flex-direction: column; /* MOBILE: Menú apilado verticalmente */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-04__list > li {
+  /* Separador visual para los ítems del menú en móvil */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-04__list > li a,
+.dropdown-toggle {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nav-04__list > li a:hover,
+.dropdown-toggle:hover {
+  background-color: var(--color-bg-hover);
+}
+
+/* 1. Estilos del Dropdown */
+
+.dropdown-item {
+  position: relative;
+}
+
+.dropdown-toggle {
+  /* Mantiene el padding y el estilo de botón/enlace */
+  display: flex; /* Para alinear el texto y el icono/flecha */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-menu {
+  /* MOBILE: Por defecto, está oculto y tiene ancho completo */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(
+    --color-bg-light
+  ); /* Fondo más claro para distinguirlo */
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  /* Estado inicial: oculto */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Estado ACTIVO del Dropdown */
+.dropdown-item.is-open .dropdown-menu {
+  display: block;
+  opacity: 1;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 32px; /* Más padding para indentar el submenú */
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.dropdown-menu li a:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.dropdown-separator {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 4px 0;
+}
+
+/* ======================================= */
+/* 3. Media Query (Desktop: Horizontal)    */
+/* ======================================= */
+@media (min-width: 768px) {
+  .nav-04__list {
+    flex-direction: row; /* DESKTOP: Menú horizontal */
+    justify-content: flex-start;
+  }
+
+  .nav-04__list > li {
+    border-bottom: none; /* Elimina la línea divisoria vertical */
+    /* Añadimos separación vertical entre items */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-04__list > li:last-child {
+    border-right: none;
+  }
+
+  .nav-04__list > li a,
+  .dropdown-toggle {
+    padding: 1rem 1.2rem; /* Ajuste de padding horizontal en escritorio */
+  }
+
+  /* Dropdown en Desktop */
+  .dropdown-item {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    /* DESKTOP: Se posiciona absolutamente */
+    position: absolute;
+    top: 100%; /* Justo debajo del toggle */
+    left: 0;
+    min-width: 200px;
+    z-index: 1000;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background-color: var(--color-bg-dark);
+    /* En desktop, usamos JS para controlar la visibilidad (display: none por defecto) */
+  }
+
+  /* Ocultamos por defecto el contenido desplegable en desktop, ya que el JS lo maneja */
+  /* Usamos el atributo aria-expanded para ser más accesibles */
+  .dropdown-item .dropdown-menu {
+    display: none;
+  }
+}

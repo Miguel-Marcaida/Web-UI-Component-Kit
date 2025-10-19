@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Nav 03: Menú de Pestañas (Tabs)",
       path: "/src/components/01-navigation/nav-03/index.html",
     },
+    {
+      name: "Nav 04: Menú con Dropdown (Desplegable)",
+      path: "/src/components/01-navigation/nav-04/index.html",
+    },
   ];
 
   const docsContainer = document.querySelector(".docs-container");
