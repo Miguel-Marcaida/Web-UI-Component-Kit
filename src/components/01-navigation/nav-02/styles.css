@@ -7,8 +7,8 @@
 .nav-02 {
   /* Contenedor principal para facilitar el posicionamiento */
   width: 100%;
-  background-color: var(--color-primary); /* Azul oscuro */
-  color: white;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-inverse); /* Usamos la variable para texto blanco */
 }
 
 /* 1.1 Encabezado (Logo y Botón) */
@@ -21,7 +21,7 @@
 }
 
 .nav-02__logo {
-  color: white;
+  color: var(--color-text-inverse);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
@@ -44,7 +44,8 @@
   display: block;
   width: 25px;
   height: 3px;
-  background-color: white;
+  /* El icono debe ser blanco */
+  background-color: var(--color-text-inverse);
   transition: all 0.3s ease-in-out;
   border-radius: 2px;
 }
@@ -76,19 +77,21 @@
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-  background-color: #3e537e; /* Un color ligeramente diferente para el menú */
+  background-color: var(--color-bg-dark);
 }
 
 .nav-02__links li a {
   display: block;
   padding: 1rem 1.5rem;
-  color: white;
+  color: var(--color-text-inverse);
   text-decoration: none;
+  /* Usamos el borde ligero */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-02__links li a:hover {
-  background-color: #2c3a57;
+  /* CORREGIDO: Usamos el mismo color de hover oscuro que en Nav 01 y Nav 04 */
+  background-color: #2c3e50;
 }
 
 /* 1.4 Clase de Estado: MENÚ ABIERTO (Toggle por JavaScript) */

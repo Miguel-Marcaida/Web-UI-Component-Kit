@@ -28,16 +28,39 @@ body {
 /* 2. VARIABLES GLOBALES (Escalabilidad) */
 /* ==================================== */
 :root {
-  /* Colores primarios */
-  --color-primary: #007bff; /* Azul de marca */
-  --color-secondary: #6c757d; /* Gris secundario */
+  /* ================================================= */
+  /* 1. Colores Primarios y de Marca */
+  /* ================================================= */
+  --color-primary: #007bff; /* Azul: Botones principales, enlaces, acentos. */
+  --color-secondary: #6c757d; /* Gris: Botones secundarios, texto sutil. */
+  --color-success: #28a745;
+  --color-danger: #dc3545;
 
-  /* Colores del tema (Fácil de cambiar a Dark/Light Mode) */
-  --color-bg-base: #f8f9fa; /* Fondo muy claro */
-  --color-bg-dark: #212529; /* Fondo oscuro (para headers/footers) */
-  --color-text-base: #343a40; /* Texto oscuro */
-  --color-link: var(--color-primary);
-  --color-border: #dee2e6;
+  /* ================================================= */
+  /* 2. Colores del Tema (Fácil de cambiar) */
+  /* Estos colores definen el modo CLARO/OSCURO */
+  /* ================================================= */
+
+  /* Fondos */
+  --color-bg-base: #f8f9fa; /* Fondo principal del body (muy claro) */
+  --color-bg-dark: #1f2937; /* Fondos oscuros: Headers, Navs principales (Única declaración) */
+  --color-bg-light: #f3f4f6; /* Fondos secundarios: Dropdowns, Menús colapsados. */
+  --color-bg-hover: #e9ecef; /* Fondo al pasar el mouse (hover) */
+
+  /* Texto */
+  --color-text-base: #343a40; /* Color de texto principal para fondos claros */
+  --color-text-inverse: #ffffff; /* Color de texto para fondos oscuros (Blanco puro) */
+
+  /* Otros */
+  --color-link: var(--color-primary); /* Enlaces usan el color primario */
+  --color-border: #dee2e6; /* Bordes y separadores ligeros */
+
+  /* ================================================= */
+  /* 3. Tipografía y Spacing (Unidades Base) */
+  /* ================================================= */
+  --base-font-size: 16px;
+  --spacing-unit: 8px; /* Unidad base para margin/padding */
+  --radius-base: 4px; /* Radio de borde base */
 }
 
 /* ==================================== */
@@ -47,7 +70,9 @@ body {
 /* Header/Nav principal */
 #main-header {
   background-color: var(--color-bg-dark);
-  color: white;
+  color: var(
+    --color-text-inverse
+  ); /* Corregido: Usamos el color inverso para texto en fondo oscuro */
   padding: 2rem 5%; /* Espacio interno */
   display: flex; /* Usamos Flexbox para alinear */
   justify-content: space-between;
@@ -59,7 +84,9 @@ body {
 }
 
 #main-header nav a {
-  color: white;
+  color: var(
+    --color-text-inverse
+  ); /* Corregido: Usamos el color inverso para enlaces en fondo oscuro */
   text-decoration: none;
   margin-left: 2rem;
   font-weight: 600;
@@ -154,8 +181,10 @@ body {
 
 .docs-container {
   display: flex;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
-  /* Usamos variables para que la altura sea dinámica si las definimos */
+  /* Hemos eliminado la dependencia de variables de altura no definidas */
+  min-height: calc(
+    100vh - 10rem
+  ); /* Altura aproximada: Viewport - header/footer */
 }
 
 /* Estilos para la Barra Lateral (Sidebar) */
@@ -170,7 +199,8 @@ body {
   padding: 0 20px;
   margin-top: 0;
   margin-bottom: 10px;
-  color: var(--color-text-dark);
+  /* CORREGIDO: Usamos una variable definida para el texto */
+  color: var(--color-text-base);
   font-size: 1.1rem;
 }
 
@@ -191,7 +221,8 @@ body {
   display: block;
   padding: 10px 20px;
   text-decoration: none;
-  color: var(--color-text);
+  /* CORREGIDO: Usamos una variable definida para el texto */
+  color: var(--color-text-base);
   border-left: 3px solid transparent;
   transition: background-color 0.2s, border-left-color 0.2s;
 }
