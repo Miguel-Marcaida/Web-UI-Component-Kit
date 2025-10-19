@@ -1,0 +1,108 @@
+/* ======================================= */
+/* INPUT-01: CAMPOS DE TEXTO ESTÁNDAR      */
+/* ======================================= */
+
+/* Grilla para la demostración */
+.input-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.input-group {
+  /* Contenedor de cada campo de formulario */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+/* 1. Etiqueta (Label) */
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem; /* Un poco más pequeña que el texto base */
+  font-weight: 600;
+  color: var(--color-text-base);
+}
+
+/* 2. Campo de Entrada (Input) */
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--color-text-base);
+  background-color: var(--color-bg-base); /* Fondo base claro */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Estado de Foco (Focus) */
+.input-group input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Sombra suave azul */
+  outline: none; /* Eliminar el contorno por defecto del navegador */
+}
+
+/* Estado Deshabilitado (Disabled) */
+.input-group input[disabled] {
+  background-color: var(
+    --color-bg-hover
+  ); /* Un color gris claro para indicar inactividad */
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* 3. Mensaje de Ayuda/Hint */
+.input-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--color-secondary); /* Gris sutil */
+}
+
+/* ======================================= */
+/* VARIACIONES DE ESTADO */
+/* ======================================= */
+
+/* Estado de Error (Clase is-invalid en input-group) */
+.input-group.is-invalid input {
+  border-color: var(--color-danger);
+}
+
+.input-group.is-invalid input:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25); /* Sombra suave roja */
+}
+
+.input-group.is-invalid .input-hint {
+  color: var(--color-danger);
+}
+
+/* ======================================= */
+/* VARIACIONES DE LAYOUT */
+/* ======================================= */
+
+/* Input con Icono */
+.input-icon-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px; /* Espacio a la izquierda */
+  color: var(--color-secondary);
+  pointer-events: none; /* Asegura que el icono no interfiera con el clic del input */
+  font-size: 1.6rem;
+}
+
+/* Ajuste del padding del Input con Icono para que el texto no se superponga */
+.input-group--with-icon .input-icon-wrapper input {
+  padding-left: 45px; /* Usamos !important de forma temporal para asegurar que la veamos */
+  box-sizing: border-box; /* Aseguramos el modelo de caja */
+}
