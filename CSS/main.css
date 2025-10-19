@@ -233,3 +233,46 @@ body {
   border-left-color: var(--color-primary);
   font-weight: bold;
 }
+
+/* ======================================= */
+/* 4. MEDIA QUERY: ARQUITECTURA DE DOCUMENTACIÓN (MOBILE) */
+/* ======================================= */
+
+@media (max-width: 767px) {
+  /* 1. LAYOUT PRINCIPAL: Apilamiento y Ajuste */
+  .docs-container {
+    /* Fuerza el apilamiento de Sidebar y Content en móvil */
+    flex-direction: column;
+    min-height: auto; /* Permite que la altura sea natural */
+  }
+
+  /* 2. SIDEBAR (Barra Lateral) */
+  .docs-sidebar {
+    /* Ocultamos el sidebar en móvil por defecto, simulando que se accede por un botón */
+    display: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* 3. HEADER y FOOTER */
+  /* Ajustes menores para móvil */
+  #main-header {
+    padding: 1.5rem 2rem;
+  }
+
+  #main-header nav a {
+    margin-left: 1rem;
+    font-size: 1.4rem;
+  }
+
+  /* 4. CONTENIDO (Content) */
+  .docs-content {
+    padding: 2rem 1.5rem; /* Ajuste de padding para pantallas pequeñas */
+  }
+
+  /* 5. VISTA PREVIA */
+  .preview-area {
+    overflow-x: auto; /* Si la vista previa es muy ancha (ej. Nav 05), que se pueda hacer scroll */
+  }
+}

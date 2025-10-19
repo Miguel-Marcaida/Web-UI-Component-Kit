@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Nav 04: Menú con Dropdown (Desplegable)",
       path: "/src/components/01-navigation/nav-04/index.html",
     },
+    {
+      name: "Nav-05: un Menú Píldora (Pill Menu)",
+      path: "/src/components/01-navigation/nav-05/index.html",
+    },
   ];
 
   const docsContainer = document.querySelector(".docs-container");

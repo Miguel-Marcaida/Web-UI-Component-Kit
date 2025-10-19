@@ -1,0 +1,79 @@
+/* ======================================= */
+/* NAV-05: MENÚ PÍLDORA (MOBILE FIRST)     */
+/* ======================================= */
+
+.nav-05 {
+  /* El contenedor principal debe permitir el desplazamiento horizontal */
+  width: 100%;
+  overflow-x: auto; /* Permite el scroll si la lista excede el ancho */
+  -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS */
+  padding-bottom: 5px; /* Pequeño padding para asegurar que se vea la barra de scroll */
+}
+
+.nav-05__list {
+  /* Flexbox para alinear los ítems horizontalmente */
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  /* Clave: No permitimos que los ítems se envuelvan */
+  flex-wrap: nowrap;
+
+  /* El borde redondeado exterior */
+  border: 1px solid var(--color-border);
+  border-radius: 50px; /* Un valor grande para el efecto píldora */
+
+  /* Asegura que el contenido se mantenga en una sola fila y cause el overflow */
+  width: max-content;
+  min-width: 100%; /* Asegura que al menos ocupe el ancho completo si hay pocos ítems */
+}
+
+.nav-05__list li {
+  /* Elimina el margen por defecto */
+  margin: 0;
+}
+
+.nav-05__list a {
+  display: block;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem; /* Padding interno */
+  color: var(--color-text-base);
+  white-space: nowrap; /* Evita que el texto de los enlaces se rompa */
+  transition: all 0.2s ease-in-out;
+}
+
+/* 1. Estilos del Hover */
+.nav-05__list a:hover {
+  background-color: var(--color-bg-hover);
+}
+
+/* 2. Estilo del Elemento Activo */
+.nav-05__list a.is-active,
+.nav-05__list a[aria-current="page"] {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse); /* Texto blanco sobre color primario */
+  font-weight: 600;
+}
+
+/* Borde Interior: Separa los elementos de la lista */
+.nav-05__list li:not(:last-child) {
+  border-right: 1px solid var(--color-border);
+}
+
+/* Estilo para los elementos activos que tocan un borde (para eliminar el borde interior) */
+/* El elemento activo no debe tener borde a su derecha, ya que el color de fondo lo hace innecesario. */
+.nav-05__list li:has(a.is-active):not(:last-child) {
+  border-right-color: transparent;
+}
+
+/* Asegurar bordes redondeados solo en los extremos de la lista */
+.nav-05__list li:first-child a {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.nav-05__list li:last-child a {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
