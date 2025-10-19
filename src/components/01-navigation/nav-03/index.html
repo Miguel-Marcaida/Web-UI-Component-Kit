@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav 03: Menú de Pestañas (Tabs)</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+      <nav>
+        <a href="/src/components/01-navigation/index.html"
+          >Volver a Navegación</a
+        >
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <h2>Nav 03: Menú de Pestañas (Tabs Interactivo)</h2>
+      <p class="description">
+        Un menú de pestañas horizontal que permite alternar entre diferentes
+        paneles de contenido sin recargar la página. Usa el patrón **ARIA Tabs**
+        para accesibilidad.
+      </p>
+
+      <section class="preview-area">
+        <h3 style="margin-bottom: 1rem">Vista Previa</h3>
+
+        <div class="tabs-container">
+          <div
+            class="tab-list"
+            role="tablist"
+            aria-label="Navegación de secciones de perfil"
+          >
+            <button
+              id="tab-info"
+              class="tab-list__item is-active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-info"
+              tabindex="0"
+            >
+              Información
+            </button>
+
+            <button
+              id="tab-ajustes"
+              class="tab-list__item"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-ajustes"
+              tabindex="-1"
+            >
+              Ajustes
+            </button>
+
+            <button
+              id="tab-actividad"
+              class="tab-list__item"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-actividad"
+              tabindex="-1"
+            >
+              Actividad
+            </button>
+          </div>
+
+          <div class="tab-panels">
+            <div
+              id="panel-info"
+              class="tab-panels__item is-active"
+              role="tabpanel"
+              aria-labelledby="tab-info"
+              tabindex="0"
+            >
+              <p>Contenido 1: Detalles de perfil y datos personales.</p>
+            </div>
+
+            <div
+              id="panel-ajustes"
+              class="tab-panels__item"
+              role="tabpanel"
+              aria-labelledby="tab-ajustes"
+              tabindex="0"
+              hidden
+            >
+              <p>Contenido 2: Opciones de privacidad y notificaciones.</p>
+            </div>
+
+            <div
+              id="panel-actividad"
+              class="tab-panels__item"
+              role="tabpanel"
+              aria-labelledby="tab-actividad"
+              tabindex="0"
+              hidden
+            >
+              <p>Contenido 3: Historial de acciones y actividad reciente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="code-snippets">
+        <h3>Código Fuente</h3>
+        <h4>HTML</h4>
+        <pre><code class="language-html html-snippet">...</code></pre>
+        <h4>CSS</h4>
+        <pre><code class="language-css css-snippet">...</code></pre>
+        <h4>JavaScript</h4>
+        <pre><code class="language-javascript js-snippet">...</code></pre>
+      </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

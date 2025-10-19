@@ -1,0 +1,38 @@
+<div class="tabs-container">
+    
+    <div class="tab-list" role="tablist" aria-label="Navegación de secciones de perfil">
+        
+        <button id="tab-info" class="tab-list__item is-active" role="tab" 
+                aria-selected="true" aria-controls="panel-info" tabindex="0">
+            Información
+        </button>
+        
+        <button id="tab-ajustes" class="tab-list__item" role="tab" 
+                aria-selected="false" aria-controls="panel-ajustes" tabindex="-1">
+            Ajustes
+        </button>
+        
+        <button id="tab-actividad" class="tab-list__item" role="tab" 
+                aria-selected="false" aria-controls="panel-actividad" tabindex="-1">
+            Actividad
+        </button>
+    </div>
+
+    <div class="tab-panels">
+        
+        <div id="panel-info" class="tab-panels__item is-active" role="tabpanel" 
+             aria-labelledby="tab-info" tabindex="0">
+            <p>Contenido 1: Detalles de perfil y datos personales.</p>
+        </div>
+        
+        <div id="panel-ajustes" class="tab-panels__item" role="tabpanel" 
+             aria-labelledby="tab-ajustes" tabindex="0" hidden>
+            <p>Contenido 2: Opciones de privacidad y notificaciones.</p>
+        </div>
+        
+        <div id="panel-actividad" class="tab-panels__item" role="tabpanel" 
+             aria-labelledby="tab-actividad" tabindex="0" hidden>
+            <p>Contenido 3: Historial de acciones y actividad reciente.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+/* ======================================= */
+/* NAV-03: MENÚ DE PESTAÑAS (TABS)         */
+/* ======================================= */
+
+.tabs-container {
+  max-width: 800px;
+  margin: 20px 0;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden; /* Importante para bordes */
+}
+
+/* 1. Lista de Pestañas (Mobile First: Vertical/Full Width) */
+.tab-list {
+  display: flex;
+  /* En móvil, permitimos que se envuelvan si hay muchas pestañas */
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--color-border);
+  background-color: var(--color-bg-light); /* Fondo claro para la navegación */
+}
+
+.tab-list__item {
+  /* Estilo del botón de pestaña */
+  flex-grow: 1; /* Permite que llenen el ancho si solo hay una fila */
+  padding: 1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-text);
+  transition: color 0.2s, background-color 0.2s;
+
+  /* En Mobile, usamos border-right para separarlas si están en fila */
+  border-right: 1px solid var(--color-border);
+}
+
+.tab-list__item:last-child {
+  border-right: none;
+}
+
+/* 1.1 Estado Activo de la Pestaña */
+.tab-list__item.is-active {
+  background-color: white; /* Fondo blanco */
+  color: var(--color-primary); /* Texto de color primario */
+  font-weight: bold;
+  /* Línea indicadora azul en la parte inferior para destacar */
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: -2px; /* Superpone el borde del contenedor */
+}
+
+.tab-list__item:hover:not(.is-active) {
+  background-color: var(--color-bg-hover);
+}
+
+/* 2. Paneles de Contenido */
+.tab-panels {
+  padding: 1.5rem;
+  background-color: white;
+}
+
+.tab-panels__item {
+  padding: 0;
+  line-height: 1.6;
+}
+
+.tab-panels__item[hidden] {
+  display: none;
+}
+
+/* ======================================= */
+/* 3. Media Query (Desktop: Horizontal Flex) */
+/* ======================================= */
+@media (min-width: 600px) {
+  .tab-list {
+    /* Fuerza a que las pestañas estén en una sola fila en escritorio */
+    flex-wrap: nowrap;
+  }
+
+  .tab-list__item {
+    /* Elimina el flex-grow para que el ancho dependa del contenido */
+    flex-grow: 0;
+    padding: 1rem 1.5rem; /* Más padding horizontal */
+  }
+}
