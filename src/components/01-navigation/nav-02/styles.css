@@ -1,0 +1,141 @@
+/* ======================================= */
+/* NAV-02: MENÚ HAMBURGUESA (MOBILE FIRST) */
+/* ======================================= */
+
+/* 1. Estilos Base (Mobile First: Pantallas < 768px) */
+
+.nav-02 {
+  /* Contenedor principal para facilitar el posicionamiento */
+  width: 100%;
+  background-color: var(--color-primary); /* Azul oscuro */
+  color: white;
+}
+
+/* 1.1 Encabezado (Logo y Botón) */
+.nav-02__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: 60px; /* Altura fija para el header */
+}
+
+.nav-02__logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 1.2 Botón Hamburguesa (Toggle) */
+.nav-02__toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 10; /* Asegura que esté sobre el menú */
+}
+
+/* El icono de hamburguesa (el span dentro del botón) */
+.nav-02__icon,
+.nav-02__icon::before,
+.nav-02__icon::after {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.nav-02__icon::before,
+.nav-02__icon::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+}
+
+.nav-02__icon::before {
+  top: 0;
+}
+
+.nav-02__icon::after {
+  bottom: 0;
+}
+
+/* 1.3 Estado Colapsado del Menú (Por defecto en Mobile) */
+
+.nav-02__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  /* El truco del menú colapsable: Opacidad y altura */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  background-color: #3e537e; /* Un color ligeramente diferente para el menú */
+}
+
+.nav-02__links li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-02__links li a:hover {
+  background-color: #2c3a57;
+}
+
+/* 1.4 Clase de Estado: MENÚ ABIERTO (Toggle por JavaScript) */
+.nav-02__links.is-active {
+  /* Altura suficiente para mostrar el contenido (un valor grande) */
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* ======================================= */
+/* 2. Media Query (Desktop First: Pantallas >= 768px) */
+/* ======================================= */
+@media (min-width: 768px) {
+  /* 2.1 Ocultar el Botón Toggle en Desktop */
+  .nav-02__toggle {
+    display: none;
+  }
+
+  /* 2.2 Reorganizar el Contenedor Principal (Nav) */
+  .nav-02 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 70px; /* Altura más grande para desktop */
+  }
+
+  /* 2.3 Reorganizar el Header (Solo si fuera necesario) */
+  .nav-02__header {
+    padding: 0; /* Eliminar padding innecesario */
+  }
+
+  /* 2.4 Mostrar y Formatear los Enlaces en Desktop */
+  .nav-02__links {
+    /* Restablecer las propiedades colapsables */
+    max-height: none;
+    opacity: 1;
+
+    /* Flexbox para alinear horizontalmente */
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+  }
+
+  /* Estilos de los enlaces de escritorio */
+  .nav-02__links li a {
+    padding: 0.5rem 1rem;
+    border-top: none;
+  }
+}

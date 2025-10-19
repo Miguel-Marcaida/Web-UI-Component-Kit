@@ -1,0 +1,19 @@
+ <nav class="nav-02" aria-label="Menú principal de la aplicación">
+    <div class="nav-02__header">
+        <a href="#" class="nav-02__logo">APP LOGO</a>
+        
+        <button class="nav-02__toggle" id="navToggle" 
+                aria-expanded="false" 
+                aria-controls="navLinks">
+            <span class="nav-02__icon" aria-hidden="true"></span>
+            <span class="sr-only">Menú</span>
+        </button>
+    </div>
+
+    <ul class="nav-02__links" id="navLinks">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Catálogo</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Mi Cuenta</a></li>
+    </ul>
+</nav>

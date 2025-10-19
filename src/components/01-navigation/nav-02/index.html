@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nav 01: Barra Simple (Flex)</title>
+    <title>Nav 02: Menú Hamburguesa Interactivo</title>
+
     <link rel="stylesheet" href="/CSS/main.css" />
     <link rel="stylesheet" href="/CSS/prism.css" />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -23,25 +25,37 @@
     </header>
 
     <main id="main-content">
-      <h2>Nav 01: Barra Simple (Flexbox)</h2>
+      <h2>Nav 02: Menú Hamburguesa Interactivo (Mobile First)</h2>
       <p class="description">
-        Una barra de navegación básica, ideal para escritorio, construida con
-        Flexbox. Totalmente responsiva, cambia a menú de columna única en
-        móviles.
+        Una barra de navegación que se transforma en un menú lateral colapsable
+        para dispositivos móviles, utilizando **CSS** para el diseño y
+        **JavaScript** para la interacción y el cumplimiento de accesibilidad
+        (A11Y).
       </p>
 
       <section class="preview-area">
         <h3 style="margin-bottom: 1rem">Vista Previa</h3>
 
-        <nav class="nav-01">
-          <div class="nav-01__logo">
-            <a href="#">LOGO</a>
+        <nav class="nav-02" aria-label="Menú principal de la aplicación">
+          <div class="nav-02__header">
+            <a href="#" class="nav-02__logo">APP LOGO</a>
+
+            <button
+              class="nav-02__toggle"
+              id="navToggle"
+              aria-expanded="false"
+              aria-controls="navLinks"
+            >
+              <span class="nav-02__icon" aria-hidden="true"></span>
+              <span class="sr-only">Menú</span>
+            </button>
           </div>
-          <ul class="nav-01__links">
+
+          <ul class="nav-02__links" id="navLinks">
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Catálogo</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Mi Cuenta</a></li>
           </ul>
         </nav>
       </section>
@@ -49,7 +63,7 @@
       <section class="code-snippets">
         <h3>Código Fuente</h3>
         <h4>HTML</h4>
-        <pre><code class="language-markup html-snippet">...</code></pre>
+        <pre><code class="language-html html-snippet">...</code></pre>
         <h4>CSS</h4>
         <pre><code class="language-css css-snippet">...</code></pre>
         <h4>JavaScript</h4>
