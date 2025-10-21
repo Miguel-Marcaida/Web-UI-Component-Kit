@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alerta 01: Base (Contextuales)</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/04-alerts/index.html">Volver a Alertas</a>
+      </nav>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Alerta 01: Base (Contextuales)</h2>
+        <p class="description">
+          Alertas simples con estilos que indican el contexto del mensaje
+          (éxito, información, advertencia, error).
+        </p>
+
+        <section
+          class="preview-area"
+          style="padding: 2rem; background-color: var(--color-bg-base)"
+        >
+          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+
+          <div class="alert-container">
+            <div class="alert alert--success" role="alert">
+              <i class="fas fa-check-circle"></i>
+              <p>
+                ¡Operación exitosa! Los cambios se han guardado correctamente.
+              </p>
+            </div>
+
+            <div class="alert alert--info" role="alert">
+              <i class="fas fa-info-circle"></i>
+              <p>
+                Información: Recuerda completar tu perfil antes de la fecha
+                límite.
+              </p>
+            </div>
+
+            <div class="alert alert--warning" role="alert">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p>
+                Advertencia: Tu sesión está a punto de caducar. Por favor,
+                recarga la página.
+              </p>
+            </div>
+
+            <div class="alert alert--danger" role="alert">
+              <i class="fas fa-times-circle"></i>
+              <p>
+                Error: No se pudo conectar con el servidor. Inténtalo de nuevo
+                más tarde.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+  </body>
+</html>

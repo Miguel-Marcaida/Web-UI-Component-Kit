@@ -1,0 +1,57 @@
+/*
+ * ===========================================
+ * 04-ALERTS: ALERT-02-DISMISSIBLE (CON CIERRE)
+ * ===========================================
+ */
+
+/* 1. Importar estilos base
+ * Los estilos de color y tipografía base se importan del componente anterior
+ */
+@import url("../alert-01-base/styles.css");
+
+/* 2. ESTILO PARA ALERTAS CON CIERRE
+ * - Cambia el layout a 'relative' para posicionar el botón.
+ * - Agrega padding a la derecha para dejar espacio al botón 'X'.
+ */
+.alert--dismissible {
+  position: relative;
+  /* Ajuste de padding a la derecha para que el texto no choque con el botón */
+  padding-right: 3.5rem;
+}
+
+/* 3. ESTILO DEL BOTÓN DE CIERRE
+ * - Posiciona el botón en la esquina superior derecha.
+ * - Quita el fondo y el borde del botón.
+ */
+.alert-close-btn {
+  /* Posicionamiento */
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  right: 1.25rem; /* Margen desde la derecha */
+  transform: translateY(-50%); /* Ajuste fino de centrado */
+
+  /* Diseño */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1; /* Asegura que el icono no tenga espacio extra */
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Color del icono de cierre
+ * Hereda el color del texto contextual (ej: verde oscuro en éxito)
+ */
+.alert-close-btn i {
+  font-size: 1.25rem;
+  color: inherit;
+  margin: 0; /* Quita el margen que tiene la regla del icono principal */
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.alert-close-btn:hover,
+.alert-close-btn:focus {
+  opacity: 1;
+  outline: none; /* Mejorar el foco si es necesario */
+}

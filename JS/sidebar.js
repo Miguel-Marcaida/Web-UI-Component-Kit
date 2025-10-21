@@ -74,6 +74,20 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+
+    "04-alerts": {
+      title: "Módulo 04: Alertas",
+      components: [
+        {
+          name: "01. Alertas Base",
+          path: "/src/components/04-alerts/alert-01-base/index.html",
+        },
+        {
+          name: "02. Alertas con Cierre",
+          path: "/src/components/04-alerts/alert-02-dismissible/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");

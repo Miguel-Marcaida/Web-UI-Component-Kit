@@ -1,0 +1,23 @@
+<div class="alert-container">
+    
+    <div class="alert alert--success" role="alert">
+        <i class="fas fa-check-circle"></i>
+        <p>¡Operación exitosa! Los cambios se han guardado correctamente.</p>
+    </div>
+
+    <div class="alert alert--info" role="alert">
+        <i class="fas fa-info-circle"></i>
+        <p>Información: Recuerda completar tu perfil antes de la fecha límite.</p>
+    </div>
+
+    <div class="alert alert--warning" role="alert">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Advertencia: Tu sesión está a punto de caducar. Por favor, recarga la página.</p>
+    </div>
+
+    <div class="alert alert--danger" role="alert">
+        <i class="fas fa-times-circle"></i>
+        <p>Error: No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.</p>
+    </div>
+    
+</div>
