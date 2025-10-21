@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="/CSS/main.css" />
     <link rel="stylesheet" href="/CSS/prism.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -17,6 +22,15 @@
           >Web UI Kit</a
         >
       </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
       <nav>
         <a href="/src/components/01-navigation/index.html"
           >Volver a Navegación</a
@@ -27,13 +41,6 @@
     <div class="docs-container">
       <main class="docs-content">
         <h2>Nav 02: Menú Hamburguesa Interactivo (Mobile First)</h2>
-        <p class="description">
-          Una barra de navegación que se transforma en un menú lateral
-          colapsable para dispositivos móviles, utilizando **CSS** para el
-          diseño y **JavaScript** para la interacción y el cumplimiento de
-          accesibilidad (A11Y).
-        </p>
-
         <section class="preview-area">
           <h3 style="margin-bottom: 1rem">Vista Previa</h3>
 
@@ -64,7 +71,7 @@
         <section class="code-snippets">
           <h3>Código Fuente</h3>
           <h4>HTML</h4>
-          <pre><code class="language-html html-snippet">...</code></pre>
+          <pre><code class="language-markup html-snippet">...</code></pre>
           <h4>CSS</h4>
           <pre><code class="language-css css-snippet">...</code></pre>
           <h4>JavaScript</h4>
@@ -74,6 +81,7 @@
     </div>
 
     <footer id="main-footer"></footer>
+
     <script src="/JS/prism.js"></script>
     <script src="/JS/main.js"></script>
     <script src="/JS/docs.js"></script>

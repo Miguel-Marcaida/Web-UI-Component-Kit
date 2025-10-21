@@ -1,0 +1,27 @@
+<div class="input-group">
+    <label for="textarea-basic" class="input-label">Comentarios</label>
+    <textarea
+        id="textarea-basic"
+        rows="4"
+        placeholder="Escribe tu mensaje aquí..."
+    ></textarea>
+    <small class="input-hint">Describe tu solicitud en detalle (max. 500 palabras).</small>
+</div>
+
+<div class="input-group is-invalid">
+    <label for="textarea-error" class="input-label">Detalles del Fallo</label>
+    <textarea
+        id="textarea-error"
+        rows="4"
+        placeholder="Describe el problema aquí..."
+        aria-describedby="error-message-2"
+    ></textarea>
+    <small id="error-message-2" class="input-hint">Este campo es obligatorio.</small>
+</div>
+
+<div class="input-group">
+    <label for="textarea-disabled" class="input-label">Notas de Lectura</label>
+    <textarea id="textarea-disabled" rows="4" disabled>
+El cliente no puede editar esta sección.</textarea>
+    <small class="input-hint">El campo está inactivo por defecto.</small>
+</div>

@@ -1,5 +1,0 @@
-<div class="input-group">
-    <label for="textarea-id" class="input-label">Etiqueta del Área</label>
-    <textarea id="textarea-id" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
-    <small class="input-hint">Texto informativo o de validación.</small>
-</div>

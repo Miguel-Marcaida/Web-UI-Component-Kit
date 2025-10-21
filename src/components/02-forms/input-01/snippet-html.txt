@@ -1,5 +1,0 @@
-<div class="input-group">
-    <label for="input-id" class="input-label">Etiqueta del Campo</label>
-    <input type="text" id="input-id" placeholder="Texto de ayuda" value="">
-    <small class="input-hint">Texto informativo o de validación.</small>
-</div>

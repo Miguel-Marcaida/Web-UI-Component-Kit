@@ -1,0 +1,41 @@
+<div class="input-group">
+    <label for="select-basic" class="input-label">Seleccione una Opción</label>
+    <div class="select-wrapper">
+        <select id="select-basic">
+            <option value="" disabled selected>
+                -- Elige una categoría --
+            </option>
+            <option value="1">Opción Uno</option>
+            <option value="2">Opción Dos (Seleccionable)</option>
+            <option value="3">Opción Tres</option>
+        </select>
+    </div>
+    <small class="input-hint">El wrapper le da la apariencia de Input 01.</small>
+</div>
+
+<div class="input-group">
+    <label for="select-disabled" class="input-label">Selección Deshabilitada</label>
+    <div class="select-wrapper">
+        <select id="select-disabled" disabled>
+            <option value="" disabled selected>
+                -- Campo Inactivo --
+            </option>
+            <option value="1">Opción Uno</option>
+        </select>
+    </div>
+    <small class="input-hint">El campo no permite interacción.</small>
+</div>
+
+<div class="input-group is-invalid">
+    <label for="select-error" class="input-label">Selección Requerida</label>
+    <div class="select-wrapper">
+        <select id="select-error" aria-describedby="error-message-3">
+            <option value="" disabled selected>
+                -- Seleccione un tipo --
+            </option>
+            <option value="1">Tipo A</option>
+            <option value="2">Tipo B</option>
+        </select>
+    </div>
+    <small id="error-message-3" class="input-hint">Debe elegir una opción de la lista.</small>
+</div>

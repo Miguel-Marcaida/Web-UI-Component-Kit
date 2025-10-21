@@ -97,6 +97,19 @@ body {
   color: var(--color-primary);
 }
 
+/* Sidebar Toggle Button */
+#sidebar-toggle {
+  display: none; /* Oculto por defecto en desktop */
+  background: none;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: var(--radius-base);
+  order: 3; /* Asegura que el botón esté a la derecha del logo si el nav no existe */
+}
+
 /* Contenido Principal */
 #main-content {
   padding: 4rem 5%;
@@ -241,38 +254,67 @@ body {
 @media (max-width: 767px) {
   /* 1. LAYOUT PRINCIPAL: Apilamiento y Ajuste */
   .docs-container {
-    /* Fuerza el apilamiento de Sidebar y Content en móvil */
     flex-direction: column;
-    min-height: auto; /* Permite que la altura sea natural */
+    min-height: auto;
+  }
+
+  /* Mostrar el Botón Toggle en Móvil */
+  /* Sidebar Toggle Button */
+  #sidebar-toggle {
+    display: none; /* Oculto por defecto en desktop */
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: var(--radius-base);
+    order: 3;
+
+    /* 🔴 CORRECCIÓN PARA EL ICONO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ajuste del Header para el botón (alinear) */
+  #main-header {
+    /* Usamos flex para alinear logo, botón y nav en el header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem; /* Ajustar padding */
   }
 
   /* 2. SIDEBAR (Barra Lateral) */
   .docs-sidebar {
-    /* Ocultamos el sidebar en móvil por defecto, simulando que se accede por un botón */
-    display: none;
-    width: 100%;
+    /* Estado por defecto: Oculto en Móvil */
+    position: absolute; /* Para que flote sobre el contenido */
+    top: 60px; /* Debajo del header (ajusta si el header es más alto) */
+    left: 0;
+    width: 80%; /* Ocupa gran parte del ancho */
+    height: calc(100vh - 60px); /* Ocupa el resto del viewport */
+    z-index: 1000;
+    transform: translateX(-100%); /* Desplazado fuera de la pantalla */
+    transition: transform 0.3s ease-out;
     border-right: none;
-    border-bottom: 1px solid var(--color-border);
+    overflow-y: auto; /* Permite el scroll del menú */
   }
 
-  /* 3. HEADER y FOOTER */
-  /* Ajustes menores para móvil */
-  #main-header {
-    padding: 1.5rem 2rem;
+  /* Clase de Estado: SIDEBAR ABIERTO (Controlado por JS) */
+  .docs-container.is-sidebar-open .docs-sidebar {
+    transform: translateX(0); /* Deslizar hacia la vista */
+    border-right: 1px solid var(--color-border);
   }
 
-  #main-header nav a {
-    margin-left: 1rem;
-    font-size: 1.4rem;
-  }
-
-  /* 4. CONTENIDO (Content) */
+  /* 3. CONTENIDO (Content) */
   .docs-content {
-    padding: 2rem 1.5rem; /* Ajuste de padding para pantallas pequeñas */
+    padding: 2rem 1.5rem;
   }
 
-  /* 5. VISTA PREVIA */
-  .preview-area {
-    overflow-x: auto; /* Si la vista previa es muy ancha (ej. Nav 05), que se pueda hacer scroll */
+  /* 4. El Nav de la cabecera también puede ser ocultado o ajustado */
+  #main-header nav {
+    /* Ajuste para que no interfiera */
+    order: 2;
   }
 }
