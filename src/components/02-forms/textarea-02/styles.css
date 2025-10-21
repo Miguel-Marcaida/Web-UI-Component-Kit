@@ -1,0 +1,86 @@
+/* ======================================= */
+/* INPUT-02: TEXTAREA (ÁREA DE TEXTO)      */
+/* ======================================= */
+
+/* Reutilizamos la grilla de Input-01 para la demostración */
+.input-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Reutilizamos la estructura base de Input-01 */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+/* Etiqueta (Label) - Reutilizada de main.css si es necesario, o definida aquí para el componente */
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text-base);
+}
+
+/* 1. Área de Texto (Textarea) */
+.input-group textarea {
+  width: 100%;
+  /* Mismo padding y fuente que los inputs para consistencia */
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: inherit; /* Muy importante para que use la fuente base */
+  color: var(--color-text-base);
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  /* CONTROL DE REDIMENSIONAMIENTO */
+  /* permitimos el resize verticalmente, pero no horizontalmente (para evitar problemas de layout) */
+  resize: vertical;
+  min-height: 100px; /* Altura mínima para asegurar visibilidad */
+}
+
+/* Estado de Foco (Focus) */
+.input-group textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Estado Deshabilitado (Disabled) */
+.input-group textarea[disabled] {
+  background-color: var(--color-bg-hover);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Mensaje de Ayuda/Hint - Reutilizada de main.css o Input-01 */
+.input-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+}
+
+/* ======================================= */
+/* VARIACIONES DE ESTADO */
+/* ======================================= */
+
+/* Estado de Error (Clase is-invalid) */
+.input-group.is-invalid textarea {
+  border-color: var(--color-danger);
+}
+
+.input-group.is-invalid textarea:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+.input-group.is-invalid .input-hint {
+  color: var(--color-danger);
+}
