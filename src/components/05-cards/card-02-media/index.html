@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarjeta 02: Con Media</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/05-cards/index.html">Volver a Tarjetas</a>
+      </nav>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Tarjeta 02: Tarjeta con Media</h2>
+        <p class="description">
+          Una tarjeta que integra un elemento multimedia (imagen o video) en la
+          parte superior, ideal para listados de productos, artículos de blog o
+          perfiles de usuario.
+        </p>
+
+        <section
+          class="preview-area"
+          style="padding: 2rem; background-color: var(--color-bg-base)"
+        >
+          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+
+          <div
+            class="card-examples-grid"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 1.5rem;
+            "
+          >
+            <div class="card card--media">
+              <div class="card__media">
+                <img
+                  src="/src/assets/images/placeholder-media.jpg"
+                  alt="Imagen de un paisaje de montaña"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__body">
+                <h4 class="card__title" style="margin-top: 0">
+                  Artículo Destacado
+                </h4>
+                <p>
+                  Esta es una breve descripción del contenido. La imagen es lo
+                  primero que capta la atención del usuario.
+                </p>
+                <a href="#" class="text-link">Leer Más</a>
+              </div>
+            </div>
+
+            <div class="card card--media">
+              <div class="card__media">
+                <img
+                  src="/src/assets/images/placeholder-media-2.jpg"
+                  alt="Imagen de un escritorio ordenado"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__body">
+                <h4 class="card__title" style="margin-top: 0">
+                  Nuevo Producto
+                </h4>
+                <p>
+                  La combinación de imagen y acciones en el pie de página es
+                  perfecta para listados de comercio electrónico.
+                </p>
+              </div>
+              <div class="card__footer">
+                <button class="btn btn--primary btn--sm">Comprar</button>
+                <button class="btn btn--secondary btn--sm">
+                  <i class="fas fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+/*
+ * ===========================================
+ * 05-CARDS: CARD-02-MEDIA (CON IMAGEN)
+ * ===========================================
+ */
+
+/* 1. Importar estilos base
+ * Reutilizamos los estilos del card-01-base para el layout general, header, body y footer.
+ */
+@import url("../card-01-base/styles.css");
+
+/* 2. CONTENEDOR DE MEDIA */
+.card__media {
+  /* Mantiene la media en la parte superior, sin padding. */
+  width: 100%;
+  /* Asegura que el contenido (imagen) llene el contenedor y recorte los bordes */
+  overflow: hidden;
+}
+
+/* 3. ESTILO DE LA IMAGEN DENTRO DE LA MEDIA */
+.card__media img {
+  /* La imagen debe llenar completamente el ancho del contenedor */
+  width: 100%;
+  /* Mantiene la proporción de la imagen y asegura que cubra el área */
+  height: auto;
+  display: block; /* Elimina cualquier espacio adicional debajo de la imagen */
+
+  /* Efecto de transición: mejora la experiencia al hacer hover en la tarjeta */
+  transition: transform 0.3s ease;
+}
+
+/* 4. EFECTO HOVER EN LA TARJETA COMPLETA
+ * Cuando se hace hover en la tarjeta, aplicamos una ligera ampliación a la imagen 
+ * para dar un efecto visual atractivo.
+ */
+.card--media:hover .card__media img {
+  transform: scale(1.05); /* Zoom sutil de 5% */
+}
+
+/* 5. AJUSTE: Si la tarjeta tiene media, no debe tener borde superior en el body
+ * El body no debe tener borde superior si el footer o header están ausentes.
+ * En este caso, la imagen actúa como borde.
+ */
+.card--media .card__body {
+  padding-top: 1.25rem; /* Asegura el padding normal */
+  /* Anula el borde superior que se podría heredar de card-01-base si se usara el header */
+  border-top: none;
+}

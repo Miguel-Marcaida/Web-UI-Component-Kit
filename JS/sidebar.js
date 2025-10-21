@@ -88,6 +88,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "05-cards": {
+      title: "Módulo 05: Tarjetas",
+      components: [
+        {
+          name: "01. Tarjeta Base",
+          path: "/src/components/05-cards/card-01-base/index.html",
+        },
+        {
+          name: "02. Tarjeta con Media",
+          path: "/src/components/05-cards/card-02-media/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");

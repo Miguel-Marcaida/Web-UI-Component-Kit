@@ -1,0 +1,65 @@
+/*
+ * ===========================================
+ * 05-CARDS: CARD-01-BASE (TARJETA BASE)
+ * ===========================================
+ */
+
+/* * 1. CLASE BASE DE TARJETA */
+.card {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  /* Apariencia */
+  background-color: var(--color-bg-card, white); /* Fondo blanco por defecto */
+  border: 1px solid var(--color-border-subtle, #e0e0e0);
+  border-radius: var(--border-radius-md, 0.5rem);
+  overflow: hidden; /* Importante para tarjetas con media */
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.1));
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* * 2. SECCIONES INTERNAS */
+
+/* Header */
+.card__header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border-subtle, #e0e0e0);
+  background-color: var(--color-bg-base, #f9f9f9); /* Ligeramente gris */
+}
+
+/* Título */
+.card__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-dark, #333);
+}
+
+/* Cuerpo */
+.card__body {
+  padding: 1.25rem;
+  flex-grow: 1; /* Asegura que el cuerpo ocupe el espacio restante */
+  color: var(--color-text-base, #555);
+}
+
+/* Pie de página (Footer/Acciones) */
+.card__footer {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--color-border-subtle, #e0e0e0);
+  background-color: var(
+    --color-bg-card,
+    white
+  ); /* Mismo color que el fondo de la tarjeta */
+
+  /* Layout para botones o enlaces de acción */
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
