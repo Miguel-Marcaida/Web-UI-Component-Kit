@@ -1,0 +1,76 @@
+/* ===========================================
+// LAYOUT DE VISTA PREVIA
+// =========================================== */
+.button-group-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+/* ===========================================
+// BUTTON GROUP (btn-group)
+// =========================================== */
+.btn-group {
+  display: flex; /* Contenedor de ancho completo */
+}
+
+.btn-group .btn {
+  /* Base de la unión */
+  border-radius: 0;
+  border-width: 1px;
+  border-style: solid;
+  margin: 0; /* Clave para la unión */
+
+  /* Auto-Suficiencia: Redefine Flex y Espaciado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Fuerza el espaciado interno */
+  gap: 0.5rem;
+
+  /* Distribución uniforme del espacio */
+  flex: 1 1 auto;
+}
+
+/* Corrige la superposición de bordes */
+.btn-group .btn + .btn {
+  margin-left: -1px;
+}
+
+/* Redondez de las esquinas */
+.btn-group .btn:first-child {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.btn-group .btn:last-child {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+/* ===========================================
+// TOGGLE BUTTONS (toggle-group)
+// =========================================== */
+
+/* Estilos de inactivo */
+.toggle-group .btn {
+  border-color: var(--color-secondary-main);
+  color: var(--color-secondary-main);
+  background-color: transparent;
+}
+
+.toggle-group .btn.is-active {
+  background-color: var(--color-secondary-main);
+  color: var(--color-white);
+}
+
+.toggle-group .btn:not(.is-active):hover {
+  background-color: var(--color-secondary-light);
+  color: var(--color-white);
+}

@@ -1,0 +1,9 @@
+<div class="fab-container">
+    <button class="btn fab fab--main btn--primary" aria-label="Añadir nuevo">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <button class="btn fab fab--mini btn--secondary" aria-label="Ajustes">
+        <i class="fas fa-cog"></i>
+    </button>
+</div>

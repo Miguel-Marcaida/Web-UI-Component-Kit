@@ -1,0 +1,137 @@
+/* ===========================================
+// LAYOUT: VISTA PREVIA ESPECÍFICA
+// Se usa en la documentación para espaciar los grupos de botones
+// =========================================== */
+.button-group-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Espacio entre las filas de botones */
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem; /* Espacio entre los botones individuales */
+}
+
+/* ===========================================
+// COMPONENTE: BOTÓN BASE (.btn)
+// =========================================== */
+
+.btn {
+  /* Reseteo y Base */
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+  text-decoration: none; /* Útil si se usa en un <a> */
+
+  /* === CORRECCIÓN para ÍCONOS y Alineación Vertical === */
+  display: flex;
+  align-items: center; /* Alinea ícono y texto verticalmente */
+  justify-content: center; /* Centra el contenido (texto) horizontalmente */
+  gap: 0.5rem; /* Espacio entre el ícono y el texto (Soluciona el problema de aglomeración) */
+  /* ==================================================== */
+
+  /* Estado Deshabilitado */
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* --------------------
+// VARIANTES DE COLOR (SOLID)
+// -------------------- */
+
+.btn--primary {
+  background-color: var(--color-primary-main);
+  color: var(--color-white);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+  }
+}
+
+.btn--secondary {
+  background-color: var(--color-secondary-main);
+  color: var(--color-white);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-secondary-dark);
+  }
+}
+
+.btn--danger {
+  background-color: var(--color-danger-main);
+  color: var(--color-white);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-danger-dark);
+  }
+}
+
+/* --------------------
+// VARIANTES DE ESTILO (OUTLINE)
+// -------------------- */
+
+.btn--outline {
+  background-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  /* Ajuste de padding para compensar el borde (mantenido del paso anterior) */
+  padding: calc(0.75rem - 2px) calc(1.5rem - 2px);
+}
+
+.btn--primary.btn--outline {
+  color: var(--color-primary-main);
+  border-color: var(--color-primary-main);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+  }
+}
+
+.btn--secondary.btn--outline {
+  color: var(--color-secondary-main);
+  border-color: var(--color-secondary-main);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-secondary-light);
+    color: var(--color-white);
+  }
+}
+
+.btn--danger.btn--outline {
+  color: var(--color-danger-main);
+  border-color: var(--color-danger-main);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-danger-light);
+    color: var(--color-white);
+  }
+}
+
+/* --------------------
+// VARIANTES DE TAMAÑO
+// -------------------- */
+
+.btn--sm {
+  padding: 0.5rem 1rem; /* Botón pequeño (Small) */
+  font-size: 0.875rem;
+}
+
+.btn--lg {
+  padding: 1rem 2rem; /* Botón grande (Large) */
+  font-size: 1.125rem;
+}
+
+.btn--full {
+  width: 100%; /* Botón de ancho completo */
+  display: block;
+}

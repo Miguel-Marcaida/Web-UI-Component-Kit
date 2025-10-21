@@ -1,0 +1,18 @@
+<div class="button-group">
+    <button class="btn btn--primary">Botón Primario</button>
+    <button class="btn btn--secondary">Botón Secundario</button>
+    <button class="btn btn--danger">Botón Peligro</button>
+    <button class="btn" disabled>Botón Deshabilitado</button>
+</div>
+
+<div class="button-group">
+    <button class="btn btn--primary btn--outline">Contorno Primario</button>
+    <button class="btn btn--secondary btn--outline">Contorno Secundario</button>
+    <button class="btn btn--danger btn--outline">Contorno Peligro</button>
+</div>
+
+<div class="button-group">
+    <button class="btn btn--primary btn--sm">Pequeño</button>
+    <button class="btn btn--secondary btn--lg">Grande</button>
+    <button class="btn btn--primary btn--full">Ancho Completo</button>
+</div>

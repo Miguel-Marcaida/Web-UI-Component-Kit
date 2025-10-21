@@ -1,0 +1,72 @@
+/* ===========================================
+// LAYOUT DE VISTA PREVIA (Compartido con btn-01-base)
+// =========================================== */
+.button-group-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+/* ===========================================
+// EXTENSIÓN: SOPORTE DE ÍCONOS
+// =========================================== */
+
+/* Estilo para botones con ícono y texto */
+.btn--icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espacio entre el ícono y el texto */
+}
+
+/* --------------------
+// BOTONES CIRCULARES (SOLO ÍCONO)
+// -------------------- */
+
+.btn--icon-only {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Igualar el alto y el ancho para formar un círculo */
+  width: 3rem; /* Tamaño base estándar (igual al padding horizontal) */
+  height: 3rem; /* Igual al padding vertical */
+  padding: 0; /* Elimina el padding de texto */
+  border-radius: 50%; /* Hace el botón circular */
+}
+
+/* Ajuste de tamaño para variantes */
+.btn--icon-only.btn--sm {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.btn--icon-only.btn--lg {
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1.125rem;
+}
+
+/* Ajuste para contorno (outline) */
+.btn--icon-only.btn--outline {
+  /* Compensar el borde de 2px en el tamaño (3rem - 4px) */
+  width: calc(3rem - 4px);
+  height: calc(3rem - 4px);
+}
+
+.btn--icon-only.btn--sm.btn--outline {
+  width: calc(2.5rem - 4px);
+  height: calc(2.5rem - 4px);
+}

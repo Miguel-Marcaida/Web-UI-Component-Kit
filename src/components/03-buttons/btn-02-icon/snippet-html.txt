@@ -1,0 +1,31 @@
+<h4>Icono y Texto</h4>
+<div class="button-group">
+    <button class="btn btn--primary btn--icon">
+        <i class="fas fa-plus"></i>
+        Crear Nuevo
+    </button>
+    <button class="btn btn--secondary btn--icon">
+        <i class="fas fa-arrow-down"></i>
+        Descargar
+    </button>
+    <button class="btn btn--danger btn--icon btn--sm">
+        <i class="fas fa-trash"></i>
+        Eliminar
+    </button>
+</div>
+
+<h4>Icono Circular (Solo Ícono)</h4>
+<div class="button-group">
+    <button class="btn btn--primary btn--icon-only" aria-label="Añadir">
+        <i class="fas fa-plus"></i>
+    </button>
+    <button class="btn btn--secondary btn--icon-only btn--sm" aria-label="Ajustes">
+        <i class="fas fa-cog"></i>
+    </button>
+    <button class="btn btn--danger btn--icon-only btn--outline" aria-label="Cerrar">
+        <i class="fas fa-times"></i>
+    </button>
+    <button class="btn btn--primary btn--icon-only" disabled aria-label="Deshabilitado">
+        <i class="fas fa-lock"></i>
+    </button>
+</div>

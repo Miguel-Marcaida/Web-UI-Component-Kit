@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Botón 01: Botones Base</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/03-buttons/index.html">Volver a Botones</a>
+      </nav>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Botón 01: Botones Base (Base Buttons)</h2>
+        <p class="description">
+          El estilo fundamental para la acción principal (Primary), secundaria
+          (Secondary) y de advertencia (Danger) del sistema.
+        </p>
+
+        <section
+          class="preview-area"
+          style="padding: 3rem 0; background-color: var(--color-bg-base)"
+        >
+          <h3 style="margin-bottom: 2rem">Vista Previa (Tamaño Estándar)</h3>
+
+          <div class="button-group-container">
+            <div class="button-group">
+              <button class="btn btn--primary">Botón Primario</button>
+              <button class="btn btn--secondary">Botón Secundario</button>
+              <button class="btn btn--danger">Botón Peligro</button>
+              <button class="btn" disabled>Botón Deshabilitado</button>
+            </div>
+
+            <div class="button-group">
+              <button class="btn btn--primary btn--outline">
+                Contorno Primario
+              </button>
+              <button class="btn btn--secondary btn--outline">
+                Contorno Secundario
+              </button>
+              <button class="btn btn--danger btn--outline">
+                Contorno Peligro
+              </button>
+            </div>
+
+            <div class="button-group">
+              <button class="btn btn--primary btn--sm">Pequeño</button>
+              <button class="btn btn--secondary btn--lg">Grande</button>
+              <button class="btn btn--primary btn--full">Ancho Completo</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+  </body>
+</html>

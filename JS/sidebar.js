@@ -52,10 +52,27 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    // CÓDIGO A INSERTAR EN SIDEBAR.JS
     "03-buttons": {
-      // Módulo futuro, pero ya definido para JS
       title: "Módulo 03: Botones",
-      components: [], // Lista vacía hasta que los creemos
+      components: [
+        {
+          name: "01. Botón Base",
+          path: "/src/components/03-buttons/btn-01-base/index.html",
+        },
+        {
+          name: "02. Botones de Icono",
+          path: "/src/components/03-buttons/btn-02-icon/index.html",
+        },
+        {
+          name: "03. Grupos y Toggle",
+          path: "/src/components/03-buttons/btn-03-group-toggle/index.html",
+        },
+        {
+          name: "04. Botones Flotantes (FAB)",
+          path: "/src/components/03-buttons/btn-04-fab/index.html",
+        },
+      ],
     },
   };
 
