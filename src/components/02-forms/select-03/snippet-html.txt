@@ -1,0 +1,11 @@
+<div class="input-group">
+    <label for="select-id" class="input-label">Etiqueta del Select</label>
+    <div class="select-wrapper">
+        <select id="select-id">
+            <option value="" disabled selected>-- Elige una opción --</option>
+            <option value="1">Opción Uno</option>
+            <option value="2">Opción Dos</option>
+        </select>
+    </div>
+    <small class="input-hint">Texto informativo.</small>
+</div>

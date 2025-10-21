@@ -1,0 +1,118 @@
+/* ======================================= */
+/* INPUT-03: SELECT Y DROPDOWN NATIVO      */
+/* ======================================= */
+
+/* Reutilizamos la grilla de Input-01 para la demostración */
+.input-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Reutilizamos la estructura base de Input-01/02 */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text-base);
+}
+
+.input-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+}
+
+/* ======================================= */
+/* ESTILO DEL SELECT */
+/* ======================================= */
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper select {
+  /* MISMO ESTILO BASE QUE LOS INPUTS */
+  width: 100%;
+  padding: 1rem 3.5rem 1rem 1.2rem; /* Aumentamos el padding DERECHO para la flecha */
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--color-text-base);
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  /* TRUCO CLAVE: OCULTAR LA FLECHA NATIVA DEL NAVEGADOR */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* 1. Flecha Personalizada (Pseudo-Elemento) */
+.select-wrapper::after {
+  content: "\25BC"; /* Código Unicode de un triángulo hacia abajo (Flecha) */
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  pointer-events: none; /* Asegura que el clic pase al select */
+  transition: color 0.2s;
+}
+
+/* 2. Estado de Foco (Focus) */
+.select-wrapper select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Girar la flecha al hacer foco para un mejor feedback visual */
+.select-wrapper select:focus + .select-wrapper::after {
+  transform: translateY(-50%) rotate(180deg);
+  color: var(--color-primary);
+}
+
+/* 3. Estado Deshabilitado (Disabled) */
+.select-wrapper select[disabled] {
+  background-color: var(--color-bg-hover);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.select-wrapper select[disabled] + .select-wrapper::after {
+  opacity: 0.5;
+}
+
+/* ======================================= */
+/* VARIACIONES DE ESTADO (Error) */
+/* ======================================= */
+
+.input-group.is-invalid select {
+  border-color: var(--color-danger);
+}
+
+.input-group.is-invalid select:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+.input-group.is-invalid .input-hint {
+  color: var(--color-danger);
+}
+
+.input-group.is-invalid .select-wrapper::after {
+  color: var(--color-danger);
+}
