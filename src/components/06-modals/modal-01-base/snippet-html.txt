@@ -1,0 +1,27 @@
+<div id="ID_DEL_MODAL" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    
+    <div class="modal__backdrop" aria-hidden="true"></div>
+    
+    <div class="modal__content" role="document">
+        
+        <div class="modal__header">
+            <h3 id="modal-title" class="modal__title">Título de la Ventana Modal</h3>
+            <button class="modal__close" aria-label="Cerrar modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="modal__body">
+            <p>Este es el cuerpo del modal. Contiene la información principal o un formulario.</p>
+            <p>Es importante que el modal tenga un enfoque (focus) al abrirse para mejorar la accesibilidad.</p>
+        </div>
+        
+        <div class="modal__footer">
+            <button class="btn btn--secondary modal__close-btn">Cancelar</button>
+            <button class="btn btn--primary">Aceptar</button>
+        </div>
+        
+    </div>
+</div>
+
+<button id="open-ID_DEL_MODAL" class="btn btn--primary">Abrir Modal</button>

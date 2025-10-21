@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal 01: Base</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/06-modals/index.html">Volver a Modales</a>
+      </nav>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Modal 01: Base (Ventana Central)</h2>
+        <p class="description">
+          Ventana emergente que captura la atención del usuario, superponiéndose
+          al contenido principal con un fondo semi-transparente.
+        </p>
+
+        <section
+          class="preview-area"
+          style="padding: 2rem; background-color: var(--color-bg-base)"
+        >
+          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+
+          <button id="open-modal-btn" class="btn btn--primary btn--lg">
+            Abrir Modal de Ejemplo
+          </button>
+
+          <div
+            id="base-modal"
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            style="display: none"
+          >
+            <div class="modal__backdrop" aria-hidden="true"></div>
+            <div class="modal__content" role="document">
+              <div class="modal__header">
+                <h3 id="modal-title" class="modal__title">
+                  Confirmación de Acción
+                </h3>
+                <button class="modal__close" aria-label="Cerrar modal">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal__body">
+                <p>
+                  Esta es la estructura básica de un modal. El fondo oscuro
+                  semitransparente (`modal__backdrop`) cubre toda la pantalla.
+                </p>
+                <p>
+                  Utiliza el botón de cierre (X) o el botón inferior para cerrar
+                  esta ventana.
+                </p>
+
+                <div class="form-group" style="margin-top: 1.5rem">
+                  <label for="modal-input" class="form-label"
+                    >Ejemplo de Input</label
+                  >
+                  <input
+                    type="text"
+                    id="modal-input"
+                    class="form-input"
+                    placeholder="Escribe algo aquí..."
+                  />
+                </div>
+              </div>
+              <div class="modal__footer">
+                <button class="btn btn--secondary modal__close-btn">
+                  Cancelar
+                </button>
+                <button class="btn btn--primary">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+
+          <h4>JavaScript</h4>
+          <pre><code class="language-javascript js-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

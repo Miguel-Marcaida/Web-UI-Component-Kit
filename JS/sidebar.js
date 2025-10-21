@@ -101,6 +101,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "06-modals": {
+      title: "Módulo 06: Modales",
+      components: [
+        {
+          name: "01. Modal Base",
+          path: "/src/components/06-modals/modal-01-base/index.html",
+        },
+        {
+          name: "02. Popover/Tooltip",
+          path: "/src/components/06-modals/modal-02-popover/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");

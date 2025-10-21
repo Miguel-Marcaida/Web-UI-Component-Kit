@@ -1,0 +1,19 @@
+<button 
+    id="btn-mi-popover" 
+    class="btn btn--info btn--sm" 
+    data-popover-target="mi-popover-id"
+    aria-describedby="mi-popover-id"
+>
+    Mostrar Popover
+</button>
+
+<div id="mi-popover-id" class="popover popover--bottom" role="tooltip" style="display:none;">
+    
+    <div class="popover__arrow"></div>
+    
+    <div class="popover__content">
+        <h5 class="popover__title">Información Importante</h5>
+        <p>Este contenido aparece contextual al botón. Es ideal para ayuda breve o configuración.</p>
+        <button class="btn btn--primary btn--xs">Cerrar</button>
+    </div>
+</div>
