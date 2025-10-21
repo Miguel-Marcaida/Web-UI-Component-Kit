@@ -1,0 +1,141 @@
+/* ======================================= */
+/* INPUT-04: CHECKBOX Y RADIO BUTTONS      */
+/* ======================================= */
+
+.input-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los controles */
+  margin-bottom: 1.5rem;
+}
+
+/* Contenedor principal de cada control */
+.custom-control {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 1. Ocultar el Input Nativo */
+.custom-control__input {
+  /* Mueve el input fuera del viewport sin afectar el flujo */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none; /* Asegura que la interacción sea via label */
+}
+
+/* 2. Etiqueta (Label) y Estilo Base */
+.custom-control__label {
+  position: relative;
+  padding-left: 28px; /* Espacio para el control visual (tamaño 20px + margen) */
+  font-size: 1.6rem;
+  color: var(--color-text-base);
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+/* 3. El Control Visual (::before) */
+.custom-control__label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  background-color: var(--color-bg-base);
+  transition: all 0.2s ease-in-out;
+}
+
+/* 4. La Marca de Seleccionado (::after) */
+.custom-control__label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0); /* Empieza oculto */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* ======================================= */
+/* ESTADO CHECKED */
+/* ======================================= */
+
+/* Cuando el input Checkbox está CHECKED */
+.custom-control__input[type="checkbox"]:checked
+  + .custom-control__label::before {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Dibujar el Tilde (Tick) para Checkboxes */
+.custom-control__input[type="checkbox"]:checked
+  + .custom-control__label::after {
+  /* Estilo del tilde (usando rotación y bordes) */
+  width: 6px;
+  height: 12px;
+  border: solid var(--color-text-inverse); /* Tilde blanco */
+  border-width: 0 2px 2px 0;
+  left: 7px;
+  transform: translateY(-60%) rotate(45deg) scale(1); /* Mostrar el tilde */
+}
+
+/* ======================================= */
+/* ESTADO RADIO BUTTONS */
+/* ======================================= */
+
+/* Redondez para Radio Buttons */
+.custom-control__input[type="radio"] + .custom-control__label::before {
+  border-radius: 50%;
+}
+
+/* Cuando el input Radio está CHECKED */
+.custom-control__input[type="radio"]:checked + .custom-control__label::before {
+  background-color: var(--color-bg-base); /* Mantiene el fondo blanco */
+  border-color: var(--color-primary); /* Borde azul */
+}
+
+/* Dibujar el punto central para Radio Buttons */
+.custom-control__input[type="radio"]:checked + .custom-control__label::after {
+  /* Estilo del punto */
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary); /* Punto azul */
+  border-radius: 50%;
+  left: 4px;
+  transform: translateY(-50%) scale(1); /* Mostrar el punto */
+}
+
+/* ======================================= */
+/* ESTADO DESHABILITADO (DISABLED) */
+/* ======================================= */
+
+/* El input está deshabilitado */
+.custom-control__input:disabled + .custom-control__label {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.custom-control__input:disabled + .custom-control__label::before {
+  background-color: var(--color-bg-hover); /* Fondo gris claro */
+  border-color: var(--color-border);
+}
+
+/* ======================================= */
+/* ESTADO FOCO (ACCESIBILIDAD) */
+/* ======================================= */
+
+/* El input está enfocado (via teclado) */
+.custom-control__input:focus + .custom-control__label::before {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  border-color: var(--color-primary);
+}

@@ -1,0 +1,9 @@
+<div class="custom-control">
+    <input type="checkbox" id="check-id" name="nombre" class="custom-control__input">
+    <label for="check-id" class="custom-control__label">Etiqueta del Checkbox</label>
+</div>
+
+<div class="custom-control">
+    <input type="radio" id="radio-id" name="grupo" class="custom-control__input">
+    <label for="radio-id" class="custom-control__label">Etiqueta del Radio Button</label>
+</div>
