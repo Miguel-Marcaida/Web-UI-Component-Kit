@@ -114,6 +114,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "07-indicators": {
+      title: "Módulo 07: Indicadores",
+      components: [
+        {
+          name: "01. Badge (Etiqueta de Estado)",
+          path: "/src/components/07-indicators/indicator-01-badge/index.html",
+        },
+        {
+          name: "02. Barra de Progreso",
+          path: "/src/components/07-indicators/indicator-02-progress-bar/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");

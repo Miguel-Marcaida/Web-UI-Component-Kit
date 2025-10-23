@@ -110,6 +110,33 @@ body {
   order: 3; /* Asegura que el botón esté a la derecha del logo si el nav no existe */
 }
 
+/* ===========================================
+ * MÓDULO 01: BOTONES (Extensión: Tamaños)
+ * =========================================== */
+
+/* -------------------------------------------
+ * TAMAÑOS DE BOTÓN
+ * ------------------------------------------- */
+
+/* BTN BASE (Mediano/Default) */
+.btn {
+  /* Aquí dejamos los estilos base que ya tenemos */
+  padding: 0.5rem 1rem; /* Padding actual del botón base */
+  font-size: var(--font-size-base, 1rem);
+}
+
+/* BTN PEQUEÑO (Small) */
+.btn--sm {
+  padding: 0.3rem 0.75rem; /* Menor padding */
+  font-size: var(--font-size-sm, 0.875rem); /* Texto un poco más pequeño */
+}
+
+/* BTN GRANDE (Large) */
+.btn--lg {
+  padding: 0.75rem 1.5rem; /* Mayor padding para botones grandes */
+  font-size: var(--font-size-lg, 1.125rem); /* Texto un poco más grande */
+}
+
 /* Contenido Principal */
 #main-content {
   padding: 4rem 5%;

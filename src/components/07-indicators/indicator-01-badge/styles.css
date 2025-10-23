@@ -1,0 +1,76 @@
+/*
+ * ===========================================
+ * 07-INDICATORS: INDICATOR-01-BADGE (ETIQUETAS)
+ * ===========================================
+ */
+
+/* 1. CLASE BASE DE BADGE */
+.badge {
+  /* Diseño Base */
+  display: inline-block;
+  padding: 0.45em 0.8em; /* Incrementado para hacerlo más visible */
+  font-size: 0.85rem;
+  /* padding: 0.35em 0.65em;
+  font-size: 0.75rem; Pequeño y discreto */
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: var(--border-radius-sm, 0.25rem);
+
+  /* Evita que el texto interno se seleccione si se usa en un botón */
+  user-select: none;
+}
+
+/* 2. VARIANTE PILL (Totalmente redondeado) */
+.badge--pill {
+  border-radius: 50rem; /* Valor grande para asegurar la forma de píldora */
+}
+
+/* 3. ESTILOS CONTEXTUALES (Colores autosuficientes) */
+/* Definimos colores de ejemplo aquí. Idealmente, estos usarían variables globales. */
+
+/* PRIMARIO (Azul) */
+.badge--primary {
+  color: white;
+  background-color: var(--color-primary-base, #007bff);
+}
+
+/* SECUNDARIO (Gris) */
+.badge--secondary {
+  color: var(--color-text-dark, #333);
+  background-color: var(--color-secondary-base, #6c757d22);
+  border: 1px solid var(--color-secondary-base, #6c757d66);
+}
+
+/* ÉXITO (Verde) */
+.badge--success {
+  color: white;
+  background-color: var(--color-success-base, #28a745);
+}
+
+/* INFORMACIÓN (Azul Claro) */
+.badge--info {
+  color: white;
+  background-color: var(--color-info-base, #17a2b8);
+}
+
+/* ADVERTENCIA (Amarillo/Naranja) */
+.badge--warning {
+  color: var(--color-text-dark, #333);
+  background-color: var(--color-warning-base, #ffc107);
+}
+
+/* PELIGRO/ERROR (Rojo) */
+.badge--danger {
+  color: white;
+  background-color: var(--color-danger-base, #dc3545);
+}
+
+/* CLARO (Gris muy claro) */
+.badge--light {
+  color: var(--color-text-dark, #333);
+  background-color: var(--color-bg-base, #f8f9fa);
+  border: 1px solid var(--color-border-subtle, #dee2e6);
+}

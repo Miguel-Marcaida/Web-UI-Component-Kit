@@ -1,0 +1,73 @@
+/*
+ * ===========================================
+ * 07-INDICATORS: INDICATOR-02-PROGRESS-BAR
+ * ===========================================
+ */
+
+/* * 1. CLASE BASE DEL CONTENEDOR DE PROGRESO */
+.progress {
+  /* Layout */
+  display: flex;
+  height: 1rem; /* Altura predeterminada (Mediana) */
+  overflow: hidden; /* Oculta cualquier desbordamiento de la barra interna */
+
+  /* Diseño */
+  background-color: var(--color-bg-base, #e9ecef);
+  border-radius: var(--border-radius-sm, 0.25rem);
+  box-shadow: var(--shadow-inner-sm, inset 0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* * 2. BARRA INTERNA (El llenado) */
+.progress-bar {
+  /* Layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Diseño Base */
+  color: white; /* Color de texto por defecto */
+  background-color: var(
+    --color-primary-base,
+    #007bff
+  ); /* Color principal por defecto */
+
+  /* Transición: Para que el cambio de porcentaje se vea suave */
+  transition: width 0.6s ease;
+
+  /* Asegura que el texto no se envuelva */
+  white-space: nowrap;
+}
+
+/* 3. TAMAÑO PEQUEÑO */
+.progress--sm {
+  height: 0.5rem;
+}
+.progress--sm .progress-bar {
+  font-size: 0.65rem; /* Texto más pequeño para barras pequeñas */
+}
+
+/* 4. ESTILOS CONTEXTUALES (COLORES DE LA BARRA) */
+
+/* Primario (Ya definido arriba) */
+/* .progress-bar {} */
+
+/* Éxito (Verde) */
+.progress-bar--success {
+  background-color: var(--color-success-base, #28a745);
+}
+
+/* Información (Azul Claro) */
+.progress-bar--info {
+  background-color: var(--color-info-base, #17a2b8);
+}
+
+/* Advertencia (Amarillo/Naranja) */
+.progress-bar--warning {
+  background-color: var(--color-warning-base, #ffc107);
+  color: var(--color-text-dark, #333); /* Texto oscuro para fondo claro */
+}
+
+/* Peligro/Error (Rojo) */
+.progress-bar--danger {
+  background-color: var(--color-danger-base, #dc3545);
+}
