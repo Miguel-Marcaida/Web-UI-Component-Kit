@@ -127,6 +127,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "08-tables": {
+      title: "Módulo 08: Tablas",
+      components: [
+        {
+          name: "01. Tabla Base",
+          path: "/src/components/08-tables/table-01-base/index.html",
+        },
+        {
+          name: "02. Tabla Avanzada (Zebra)",
+          path: "/src/components/08-tables/table-02-advanced/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");

@@ -61,6 +61,13 @@ body {
   --base-font-size: 16px;
   --spacing-unit: 8px; /* Unidad base para margin/padding */
   --radius-base: 4px; /* Radio de borde base */
+
+  /* ===========================================
+     * TIPOGRAFÍA / ESCALA DE FUENTES
+     * =========================================== */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
 }
 
 /* ==================================== */

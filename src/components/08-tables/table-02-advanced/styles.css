@@ -1,0 +1,28 @@
+/*
+ * ===========================================
+ * 08-TABLES: TABLE-02-ADVANCED (ZEBRA Y HOVER)
+ * ===========================================
+ */
+
+/* 1. ESTILO ZEBRA (table--striped) */
+/* Usamos #DCDCDC, un gris claro pero visible que no es blanco puro. */
+.table--striped tbody tr:nth-child(odd) {
+  background-color: #dcdcdc;
+}
+
+/* 2. EFECTO HOVER (table--hover) */
+/* Usamos un color Info/Cyan claro que resalta bien sobre el fondo Zebra y el blanco. */
+.table--hover tbody tr:hover {
+  background-color: #d1ecf1;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* 3. Estilos de cabecera y contenido (Mantenidos) */
+.table--striped thead {
+  border-bottom: 2px solid var(--color-border-base, #ccc);
+}
+
+.table--striped td {
+  vertical-align: middle;
+}

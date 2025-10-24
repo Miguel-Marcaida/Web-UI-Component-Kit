@@ -1,0 +1,45 @@
+<div class="table-container">
+    
+    <table class="table">
+        
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Estado</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>#1001</td>
+                <td>Licencia Pro</td>
+                <td>1</td>
+                <td><span class="badge badge--success">Activo</span></td>
+                <td>$99.00</td>
+            </tr>
+            <tr>
+                <td>#1002</td>
+                <td>Soporte Premium</td>
+                <td>12 meses</td>
+                <td><span class="badge badge--info">Pendiente</span></td>
+                <td>$120.00</td>
+            </tr>
+            <tr>
+                <td>#1003</td>
+                <td>Desarrollo Custom</td>
+                <td>N/A</td>
+                <td><span class="badge badge--danger">Cancelado</span></td>
+                <td>$3,500.00</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="5">Totales y resúmenes al final de la tabla.</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

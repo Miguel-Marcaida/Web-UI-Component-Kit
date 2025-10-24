@@ -1,0 +1,59 @@
+/*
+ * ===========================================
+ * 08-TABLES: TABLE-01-BASE (TABLA SIMPLE)
+ * ===========================================
+ */
+
+/* 1. CONTENEDOR DE TABLA (Para scroll horizontal en móviles) */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Permite scroll horizontal si la tabla es demasiado ancha */
+  margin-bottom: 1.5rem;
+}
+
+/* 2. CLASE BASE DE LA TABLA */
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Asegura que no haya doble borde */
+  /* El diseño se basa en bordes internos en celdas, no en la tabla completa */
+}
+
+/* 3. ESTILOS DE CABECERA (thead) */
+.table thead {
+  background-color: var(--color-bg-base, #f8f9fa); /* Fondo ligeramente gris */
+  border-bottom: 2px solid var(--color-border-subtle, #dee2e6); /* Separador inferior */
+}
+
+.table th {
+  padding: 0.75rem; /* Espaciado dentro de la celda de cabecera */
+  text-align: left;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-light, #555);
+  border-bottom: inherit; /* Hereda el borde del thead */
+}
+
+/* 4. ESTILOS DE CUERPO Y PIE (tbody, tfoot) */
+.table td {
+  padding: 0.75rem; /* Espaciado dentro de las celdas de datos */
+  vertical-align: top;
+  font-size: var(--font-size-base, 1rem);
+  color: var(--color-text-dark, #333);
+
+  /* Borde inferior para separar filas */
+  border-bottom: 1px solid var(--color-border-subtle, #eee);
+}
+
+/* Eliminar el borde inferior de la última fila del cuerpo */
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Estilo del pie de página (tfoot) */
+.table tfoot td {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-light, #777);
+  border-top: 2px solid var(--color-border-subtle, #dee2e6); /* Borde superior para separar del cuerpo */
+}
