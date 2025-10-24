@@ -153,6 +153,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "10-navigation-page": {
+      title: "Módulo 10: Navegación de Página",
+      components: [
+        {
+          name: "01. Paginación",
+          path: "/src/components/10-navigation-page/navPage-01-pagination/index.html",
+        },
+        {
+          name: "02. Migas de Pan (Breadcrumb)",
+          path: "/src/components/10-navigation-page/navPage-02-breadcrumb/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");

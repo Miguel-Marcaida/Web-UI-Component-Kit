@@ -1,0 +1,51 @@
+/*
+ * ===========================================
+ * 10-NAVIGATION-PAGE: NAVPAGE-02-BREADCRUMB
+ * ===========================================
+ */
+
+/* 1. CONTENEDOR (OL) */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap; /* Para manejo en móviles */
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: var(--color-bg-base, #f8f9fa); /* Fondo sutil */
+  border-radius: var(--border-radius-sm, 0.25rem);
+}
+
+/* 2. ÍTEM DE LA RUTA (LI) */
+.breadcrumb-item {
+  font-size: var(--font-size-sm, 0.875rem);
+}
+
+/* 3. SEPARADOR (Generado automáticamente) */
+/* Agrega el carácter de chevron (>) antes de cada item, excepto el primero */
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: var(--color-text-light, #6c757d);
+  content: "/"; /* Usaremos el slash simple, pero el chevron es común */
+}
+
+/* 4. ESTILO DEL ENLACE */
+.breadcrumb-item a {
+  color: var(--color-primary-base, #007bff);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+.breadcrumb-item a:hover {
+  color: var(--color-primary-dark, #0056b3);
+  text-decoration: underline;
+}
+
+/* 5. ESTADO ACTIVO (Página actual) */
+.breadcrumb-item.active {
+  color: var(
+    --color-text-dark,
+    #6c757d
+  ); /* Color gris/apagado para el ítem final */
+  font-weight: 500;
+}
