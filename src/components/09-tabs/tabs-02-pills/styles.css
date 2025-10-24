@@ -1,0 +1,76 @@
+/*
+ * ===========================================
+ * 09-TABS: TABS-02-PILLS (PESTAÑAS ESTILO PÍLDORA)
+ * ===========================================
+ */
+
+/* 1. IMPORTAR ESTILOS BASE */
+/* Incluimos los estilos base para .nav, .nav-item, y .nav-link */
+@import url("/src/components/09-tabs/tabs-01-basic/styles.css");
+
+/* 2. CLASE MODIFICADORA (nav--pills) */
+
+/* Eliminamos el borde inferior que viene de nav--tabs */
+.nav--pills {
+  border-bottom: none;
+  padding: 0.5rem; /* Pequeño padding alrededor de las píldoras */
+  border-radius: var(
+    --border-radius-lg,
+    0.5rem
+  ); /* Opcional: contenedor redondeado */
+  background-color: var(
+    --color-bg-base,
+    #f8f9fa
+  ); /* Fondo sutil para contener las píldoras */
+}
+
+/* Espacio entre los items */
+.nav--pills .nav-item {
+  margin-right: 0.5rem; /* Espacio horizontal entre las píldoras */
+  margin-bottom: 0; /* Asegura que no haya margen inferior si se envuelve */
+}
+
+/* 3. ESTILO DEL ENLACE/BOTÓN PÍLDORA (.nav-link) */
+
+.nav--pills .nav-link {
+  /* Forma de píldora */
+  border-radius: var(
+    --border-radius-pill,
+    50rem
+  ); /* Esquinas muy redondeadas */
+  margin-bottom: 0; /* Resetea el -1px que venía de tabs-01-basic */
+
+  /* Estado Base (No activo) */
+  color: var(--color-text-dark, #333);
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+/* 4. ESTADO HOVER */
+.nav--pills .nav-link:hover {
+  color: var(--color-primary-dark, #0056b3);
+  background-color: var(
+    --color-bg-subtle,
+    #eaeaea
+  ); /* Gris muy suave al pasar */
+  border-color: transparent;
+}
+
+/* 5. ESTADO ACTIVO (.nav-link.active) */
+.nav--pills .nav-link.active {
+  color: white; /* Texto blanco para la píldora activa */
+  background-color: var(
+    --color-primary-base,
+    #007bff
+  ); /* Fondo principal (azul) */
+  border-color: transparent; /* No queremos borde */
+}
+
+/* Asegurar que el contenido no tenga borde superior */
+.nav--pills + .tab-content {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  background-color: transparent;
+}

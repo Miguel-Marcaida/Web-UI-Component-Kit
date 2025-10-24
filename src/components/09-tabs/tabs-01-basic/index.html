@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pestañas 01: Básicas</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/09-tabs/index.html">Volver a Pestañas</a>
+      </nav>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Pestañas 01: Básicas (Navegación con Subrayado)</h2>
+        <p class="description">
+          Un conjunto de pestañas simple y limpio. Se basa en una lista
+          horizontal con un indicador de subrayado para la opción activa.
+          Requiere un poco de JavaScript para su funcionamiento.
+        </p>
+
+        <section
+          class="preview-area"
+          style="padding: 2rem; background-color: var(--color-bg-base)"
+        >
+          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+
+          <div class="tabs-container">
+            <ul class="nav nav--tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="tab-1-btn"
+                  data-target="tab-1-pane"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                >
+                  Descripción
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="tab-2-btn"
+                  data-target="tab-2-pane"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Especificaciones
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="tab-3-btn"
+                  data-target="tab-3-pane"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Comentarios
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div
+                class="tab-pane active"
+                id="tab-1-pane"
+                role="tabpanel"
+                tabindex="0"
+              >
+                <p>
+                  Esta es la descripción detallada del producto. Contenido de la
+                  primera pestaña.
+                </p>
+              </div>
+              <div
+                class="tab-pane"
+                id="tab-2-pane"
+                role="tabpanel"
+                tabindex="0"
+              >
+                <p>
+                  Tabla con especificaciones técnicas: Peso (2kg), Dimensiones
+                  (10x15cm), Material (Aluminio).
+                </p>
+              </div>
+              <div
+                class="tab-pane"
+                id="tab-3-pane"
+                role="tabpanel"
+                tabindex="0"
+              >
+                <p>
+                  ¡Aún no hay comentarios! Sé el primero en dejar tu opinión.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+          <h4>JavaScript</h4>
+          <pre><code class="language-javascript js-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

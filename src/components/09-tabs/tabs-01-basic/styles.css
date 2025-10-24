@@ -1,0 +1,93 @@
+/*
+ * ===========================================
+ * 09-TABS: TABS-01-BASIC (PESTAÑAS CON SUBRAYADO)
+ * ===========================================
+ */
+
+/* 1. CLASE BASE DE NAVEGACIÓN (UL) */
+.nav {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las pestañas se envuelvan si no hay espacio */
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+/* 2. ESTILO GENERAL DE PESTAÑAS (nav--tabs) */
+.nav--tabs {
+  /* Fondo y borde para el contenedor completo */
+  border-bottom: 1px solid var(--color-border-base, #ccc);
+  margin-bottom: 1.5rem; /* Espacio entre las pestañas y el contenido */
+}
+
+/* 3. ITEM DE NAVEGACIÓN (LI) */
+.nav-item {
+  margin-bottom: -1px; /* Tira el borde del item hacia arriba, sobre el borde del .nav--tabs */
+}
+
+/* 4. ENLACE/BOTÓN DE NAVEGACIÓN (nav-link) */
+.nav-link {
+  /* Configuración de botón/enlace */
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-top-left-radius: var(--border-radius-sm, 0.25rem);
+  border-top-right-radius: var(--border-radius-sm, 0.25rem);
+
+  /* Tipografía */
+  color: var(--color-text-light, #6c757d);
+  font-weight: 500;
+  text-decoration: none;
+
+  /* Transición para el hover y active */
+  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+/* Estado Hover/Focus */
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-primary-dark, #0056b3);
+  border-color: var(--color-border-subtle, #e9ecef)
+    var(--color-border-subtle, #e9ecef) var(--color-border-base, #ccc);
+  text-decoration: none;
+  z-index: 1; /* Asegura que la pestaña esté sobre la línea base */
+}
+
+/* 5. ESTADO ACTIVO (.nav-link.active) */
+.nav-link.active {
+  color: var(--color-primary-base, #007bff); /* Color principal */
+  background-color: var(--color-bg-base, #fff); /* Fondo blanco */
+
+  /* Borde que simula el subrayado */
+  border-color: var(--color-border-base, #ccc) var(--color-border-base, #ccc)
+    var(--color-bg-base, #fff);
+}
+.nav-link.active:hover {
+  color: var(
+    --color-primary-base,
+    #007bff
+  ); /* Mantener el color activo en hover */
+  border-color: var(--color-border-base, #ccc) var(--color-border-base, #ccc)
+    var(--color-bg-base, #fff);
+}
+
+/* 6. PANELES DE CONTENIDO */
+.tab-content {
+  /* Estilo del área que contiene todos los paneles */
+  padding: 1rem;
+  border: 1px solid var(--color-border-base, #ccc);
+  border-top: none; /* Quitamos el borde superior que se superpone con las pestañas */
+  border-radius: 0 0 var(--border-radius-sm, 0.25rem)
+    var(--border-radius-sm, 0.25rem);
+  background-color: var(--color-bg-base, #fff);
+}
+
+/* Ocultar y mostrar paneles */
+.tab-pane {
+  display: none;
+}
+.tab-pane.active {
+  display: block; /* Solo se muestra el panel activo */
+}

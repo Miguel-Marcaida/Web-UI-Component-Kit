@@ -140,6 +140,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "09-tabs": {
+      title: "Módulo 09: Pestañas",
+      components: [
+        {
+          name: "01. Pestañas Básicas",
+          path: "/src/components/09-tabs/tabs-01-basic/index.html",
+        },
+        {
+          name: "02. Pestañas Estilo Píldora",
+          path: "/src/components/09-tabs/tabs-02-pills/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");
