@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objeto Multimedia</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/11-multimedia/index.html"
+          >Volver a Multimedia</a
+        >
+      </nav>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Objeto Multimedia (Media Object)</h2>
+        <p class="description">
+          Un patrón de diseño flexible que coloca un objeto multimedia (imagen,
+          icono o video) a la izquierda o derecha de un bloque de contenido
+          textual. Es ideal para listas de comentarios o feeds.
+        </p>
+
+        <section
+          class="preview-area"
+          style="padding: 3rem; background-color: var(--color-bg-base)"
+        >
+          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+
+          <div class="media">
+            <img
+              src="https://placehold.co/64x64/E0E0E0/333333/png"
+              class="media-img"
+              alt="Avatar"
+            />
+            <div class="media-body">
+              <h5 class="mt-0">Título del Usuario</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+              scelerisque ante sollicitudin. Curabitur vel.
+
+              <div class="media mt-3">
+                <img
+                  src="https://placehold.co/48x48/C0C0C0/333333/png"
+                  class="media-img-sm"
+                  alt="Avatar Respuesta"
+                />
+                <div class="media-body">
+                  <h6 class="mt-0">Respuesta del Moderador</h6>
+                  ¡Gracias por tu comentario! Lo hemos tomado en cuenta para la
+                  próxima versión.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+  </body>
+</html>

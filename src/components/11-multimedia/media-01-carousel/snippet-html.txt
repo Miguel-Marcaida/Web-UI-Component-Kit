@@ -1,0 +1,34 @@
+<div id="miCarrusel" class="carousel">
+    
+    <div class="carousel-inner">
+        
+        <div class="carousel-item active" data-index="0">
+            <img src="URL_IMAGEN_1.jpg" alt="Imagen 1" class="d-block w-100">
+            <div class="carousel-caption">
+                <h5>Título del Slide 1</h5>
+                <p>Breve descripción del contenido.</p>
+            </div>
+        </div>
+        
+        <div class="carousel-item" data-index="1">
+            <img src="URL_IMAGEN_2.jpg" alt="Imagen 2" class="d-block w-100">
+        </div>
+        
+        <div class="carousel-item" data-index="2">
+            <img src="URL_IMAGEN_3.jpg" alt="Imagen 3" class="d-block w-100">
+        </div>
+    </div>
+    
+    <button class="carousel-control prev" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="carousel-control next" aria-label="Siguiente">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="carousel-indicators">
+        <button class="dot active" data-slide-to="0" aria-label="Ir a Slide 1"></button>
+        <button class="dot" data-slide-to="1" aria-label="Ir a Slide 2"></button>
+        <button class="dot" data-slide-to="2" aria-label="Ir a Slide 3"></button>
+    </div>
+</div>

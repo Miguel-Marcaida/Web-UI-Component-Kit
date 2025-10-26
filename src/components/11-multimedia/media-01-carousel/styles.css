@@ -1,0 +1,119 @@
+/*
+ * ===========================================
+ * 11-MULTIMEDIA: MEDIA-01-CAROUSEL
+ * ===========================================
+ */
+
+/* 1. CONTENEDOR PRINCIPAL (.carousel) */
+.carousel {
+  position: relative;
+  overflow: hidden; /* Oculta los slides que están fuera de la vista */
+  width: 100%;
+  max-width: 800px; /* Ancho máximo para el ejemplo */
+  margin: 0 auto;
+  border-radius: var(--border-radius-lg, 0.5rem);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. CONTENEDOR INTERNO DE SLIDES (.carousel-inner) */
+.carousel-inner {
+  display: flex;
+  /* Usamos auto para dejar que los ítems definan el ancho total */
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+  /* La transformación debe funcionar con 100% del width del CONTENEDOR VISIBLE */
+}
+
+/* 3. ITEMS (Slides individuales) */
+.carousel-item {
+  /* Cada ítem debe ocupar el 100% del ancho del carrusel padre */
+  flex-shrink: 0; /* IMPORANTE: Evita que los items se encojan */
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  /* Las imágenes de ejemplo deben ocupar el 100% de la altura y ancho del item */
+}
+.carousel-item .slide-content {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 4. CONTROLES (Flechas de navegación) */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  /* Estilo del botón */
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.carousel-control:hover {
+  opacity: 1;
+}
+
+.carousel-control.prev {
+  left: 0;
+  border-top-right-radius: var(--border-radius-sm, 0.25rem);
+  border-bottom-right-radius: var(--border-radius-sm, 0.25rem);
+}
+
+.carousel-control.next {
+  right: 0;
+  border-top-left-radius: var(--border-radius-sm, 0.25rem);
+  border-bottom-left-radius: var(--border-radius-sm, 0.25rem);
+}
+
+/* 5. INDICADORES (Puntos inferiores) */
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-indicators .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0;
+}
+
+.carousel-indicators .dot.active,
+.carousel-indicators .dot:hover {
+  background-color: white;
+}
+
+/* 6. CAPTION (Texto sobre la imagen - opcional) */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+}

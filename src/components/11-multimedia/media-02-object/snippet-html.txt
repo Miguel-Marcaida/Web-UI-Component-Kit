@@ -1,0 +1,20 @@
+<div class="media">
+    <div class="media-figure">
+        <img src="https://via.placeholder.com/64" alt="Avatar del usuario" class="media-img">
+    </div>
+    
+    <div class="media-body">
+        <h5 class="mt-0">Nombre del Usuario</h5>
+        <p>Este es el comentario principal. El patrón Media Object es ideal para la estructuración flexible de contenido en listas y feeds. El cuerpo se expande para ocupar el espacio restante.</p>
+        
+        <div class="media mt-3">
+            <div class="media-figure">
+                <img src="https://via.placeholder.com/48" alt="Avatar del respondedor" class="media-img-sm">
+            </div>
+            <div class="media-body">
+                <h6 class="mt-0">Nombre del Respondedor</h6>
+                <p>Esta es una respuesta directa al comentario principal, mostrando cómo se pueden anidar las estructuras.</p>
+            </div>
+        </div>
+        </div>
+</div>

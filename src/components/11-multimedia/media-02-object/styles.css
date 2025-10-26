@@ -1,0 +1,71 @@
+/*
+ * ===========================================
+ * 11-MULTIMEDIA: MEDIA-02-OBJECT
+ * ===========================================
+ */
+
+/* 1. CONTENEDOR PRINCIPAL (.media) */
+.media {
+  display: flex; /* Convierte el contenedor en un Flex Container */
+  align-items: flex-start; /* Alinea los ítems (figura y cuerpo) a la parte superior */
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(
+    --color-bg-subtle,
+    #f8f9fa
+  ); /* Fondo sutil para destacar el bloque */
+  border-radius: var(--border-radius-sm, 0.25rem);
+}
+
+/* Manejo de margen para objetos anidados */
+.media.mt-3 {
+  margin-top: 1rem; /* Margen para separar el objeto anidado */
+  padding: 1rem;
+  background-color: var(
+    --color-bg-base,
+    #fff
+  ); /* Fondo más claro para la respuesta */
+  border: 1px solid var(--color-border-subtle, #eee);
+}
+
+/* 2. ELEMENTO FIGURA (.media-figure) */
+/* Contiene la imagen o el avatar */
+.media-figure {
+  margin-right: 1rem; /* Espacio entre la imagen y el texto */
+  /* Usar flex-shrink: 0 asegura que la figura no se encoja cuando el espacio es limitado */
+  flex-shrink: 0;
+}
+
+/* 3. IMAGEN (Avatar o Icono) */
+.media-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%; /* Típico para avatares */
+  object-fit: cover; /* Asegura que la imagen no se distorsione */
+}
+.media-img-sm {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 4. CUERPO DEL CONTENIDO (.media-body) */
+.media-body {
+  /* flex-grow: 1 hace que este elemento ocupe todo el espacio restante */
+  flex-grow: 1;
+  overflow: hidden; /* Importante para que el contenido largo no desborde si no hay espacio */
+}
+
+/* Estilos de Tipografía */
+.media-body h5,
+.media-body h6 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.media-body p {
+  margin-bottom: 0;
+  font-size: var(--font-size-sm, 0.875rem);
+}

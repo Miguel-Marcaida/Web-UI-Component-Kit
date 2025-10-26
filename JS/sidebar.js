@@ -166,6 +166,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "11-multimedia": {
+      title: "Módulo 11: Elementos Multimedia",
+      components: [
+        {
+          name: "01. Carrusel (Carousel)",
+          path: "/src/components/11-multimedia/media-01-carousel/index.html",
+        },
+        {
+          name: "02. Objeto Multimedia (Media Object)",
+          path: "/src/components/11-multimedia/media-02-object/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");
