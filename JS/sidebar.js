@@ -192,6 +192,15 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "13-typography": {
+      title: "Módulo 13: Tipografía y Aspectos Finales",
+      components: [
+        {
+          name: "01. Utilidades de Texto",
+          path: "/src/components/13-typography/util-01-text-helpers/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");

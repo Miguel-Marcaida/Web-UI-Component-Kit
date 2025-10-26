@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utilidades de Texto</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/13-typography/index.html"
+          >Volver a Tipografía</a
+        >
+      </nav>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Utilidades de Texto</h2>
+        <p class="description">
+          Clases de ayuda de un solo propósito para modificar la alineación, el
+          peso (bold/light), la transformación (mayúsculas/minúsculas) y la
+          decoración del texto.
+        </p>
+
+        <h3>1. Alineación de Texto (`text-`)</h3>
+        <p>Clases para la propiedad <code>text-align</code>.</p>
+
+        <table class="table" style="width: 50%">
+          <thead>
+            <tr>
+              <th>Clase</th>
+              <th>Propiedad CSS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>text-start</code></td>
+              <td><code>text-align: left</code></td>
+            </tr>
+            <tr>
+              <td><code>text-end</code></td>
+              <td><code>text-align: right</code></td>
+            </tr>
+            <tr>
+              <td><code>text-center</code></td>
+              <td><code>text-align: center</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="mt-4">2. Transformación de Texto (`text-`)</h3>
+        <p>Clases para la propiedad <code>text-transform</code>.</p>
+
+        <div class="example-box">
+          <p class="text-uppercase">
+            Este texto está en mayúsculas (text-uppercase).
+          </p>
+          <p class="text-lowercase">
+            ESTE TEXTO ESTÁ EN MINÚSCULAS (text-lowercase).
+          </p>
+          <p class="text-capitalize">
+            este texto tiene capitalización (text-capitalize).
+          </p>
+        </div>
+
+        <h3 class="mt-4">3. Peso y Estilo de Fuente (`fw-`, `fst-`)</h3>
+        <p>
+          Clases para el peso (<code>font-weight</code>) y el estilo
+          (<code>font-style</code>) de la fuente.
+        </p>
+
+        <div class="example-box">
+          <p class="fw-bold">Texto en negrita (fw-bold).</p>
+          <p class="fw-light">Texto con peso ligero (fw-light).</p>
+          <p class="fst-italic">Texto en cursiva (fst-italic).</p>
+        </div>
+
+        <h3 class="mt-4">4. Código de Utilidades CSS (Para /CSS/main.css)</h3>
+        <p>
+          Estas clases son de ámbito global y deben ser añadidas al archivo
+          **<code>/CSS/main.css</code>**.
+        </p>
+
+        <pre><code class="language-css css-snippet" data-snippet="snippet-css.txt">...</code></pre>
+      </main>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+  </body>
+</html>
