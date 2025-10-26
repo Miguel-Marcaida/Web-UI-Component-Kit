@@ -1,0 +1,12 @@
+/*
+ * Archivo: styles.css
+ * Ubicación: /src/components/13-typography/type-02-utils/
+ * Descripción: Estilos de demostración para utilidades de tipografía.
+ */
+
+.text-sample {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}

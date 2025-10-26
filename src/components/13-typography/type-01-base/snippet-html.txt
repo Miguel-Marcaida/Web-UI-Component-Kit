@@ -1,0 +1,6 @@
+
+<h1>H1: Título Principal</h1>
+<h2>H2: Sección de Contenido</h2>
+<h3>H3: Subsección</h3>
+<p class="text-lead">Este es un párrafo destacado (lead), usado para introducción.</p>
+<p>Este es un párrafo estándar. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

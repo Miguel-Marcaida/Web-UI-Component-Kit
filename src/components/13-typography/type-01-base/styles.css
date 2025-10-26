@@ -1,0 +1,19 @@
+/*
+ * Archivo: styles.css
+ * Ubicación: /src/components/13-typography/type-01-base/
+ * Descripción: Estilos de demostración para Tipografía Base, siguiendo el formato de módulos anteriores.
+ */
+
+.heading-sample {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px dashed var(--color-secondary);
+    background-color: var(--color-bg-light); 
+}
+
+.text-lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* Nota: Los estilos H1-H6 deben estar en /CSS/main.css */
