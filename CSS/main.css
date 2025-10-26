@@ -281,6 +281,397 @@ body {
   font-weight: bold;
 }
 
+/*
+ * ===========================================
+ * MÓDULO 12: UTILIDADES GLOBALES
+ * ===========================================
+ */
+
+/* -------------------------------------------
+ * 12-01: UTILIDADES DE ESPACIADO (MARGIN & PADDING)
+ * -------------------------------------------
+ * Formato: {propiedad}{lado}-{tamaño}
+ * Propiedad: m (margin), p (padding)
+ * Lado: t (top), b (bottom), s (start/left), e (end/right), x (horizontal), y (vertical)
+ * Tamaño: 0 (0), 1 (0.25rem), 2 (0.5rem), 3 (1rem), 4 (1.5rem), 5 (3rem), auto (auto)
+ */
+
+:root {
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 3rem;
+}
+
+/* Generador de Espaciado */
+.m-0,
+.p-0 {
+  margin: var(--spacing-0) !important;
+  padding: var(--spacing-0) !important;
+}
+.m-1,
+.p-1 {
+  margin: var(--spacing-1) !important;
+  padding: var(--spacing-1) !important;
+}
+.m-2,
+.p-2 {
+  margin: var(--spacing-2) !important;
+  padding: var(--spacing-2) !important;
+}
+.m-3,
+.p-3 {
+  margin: var(--spacing-3) !important;
+  padding: var(--spacing-3) !important;
+}
+.m-4,
+.p-4 {
+  margin: var(--spacing-4) !important;
+  padding: var(--spacing-4) !important;
+}
+.m-5,
+.p-5 {
+  margin: var(--spacing-5) !important;
+  padding: var(--spacing-5) !important;
+}
+.m-auto {
+  margin: auto !important;
+}
+
+/* Propiedad Margin */
+.m-t-0 {
+  margin-top: var(--spacing-0) !important;
+}
+.m-b-0 {
+  margin-bottom: var(--spacing-0) !important;
+}
+.m-s-0 {
+  margin-left: var(--spacing-0) !important;
+} /* start (left) */
+.m-e-0 {
+  margin-right: var(--spacing-0) !important;
+} /* end (right) */
+.m-x-0 {
+  margin-left: var(--spacing-0) !important;
+  margin-right: var(--spacing-0) !important;
+}
+.m-y-0 {
+  margin-top: var(--spacing-0) !important;
+  margin-bottom: var(--spacing-0) !important;
+}
+.m-t-auto {
+  margin-top: auto !important;
+}
+.m-b-auto {
+  margin-bottom: auto !important;
+}
+.m-s-auto {
+  margin-left: auto !important;
+}
+.m-e-auto {
+  margin-right: auto !important;
+}
+.m-x-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Propiedad Padding */
+.p-t-0 {
+  padding-top: var(--spacing-0) !important;
+}
+.p-b-0 {
+  padding-bottom: var(--spacing-0) !important;
+}
+.p-s-0 {
+  padding-left: var(--spacing-0) !important;
+}
+.p-e-0 {
+  padding-right: var(--spacing-0) !important;
+}
+.p-x-0 {
+  padding-left: var(--spacing-0) !important;
+  padding-right: var(--spacing-0) !important;
+}
+.p-y-0 {
+  padding-top: var(--spacing-0) !important;
+  padding-bottom: var(--spacing-0) !important;
+}
+
+/* Bucle para Tamaños (1 a 5) */
+/* --- MARGIN --- */
+/* Top (t) */
+.m-t-1 {
+  margin-top: var(--spacing-1) !important;
+}
+.m-t-2 {
+  margin-top: var(--spacing-2) !important;
+}
+.m-t-3 {
+  margin-top: var(--spacing-3) !important;
+}
+.m-t-4 {
+  margin-top: var(--spacing-4) !important;
+}
+.m-t-5 {
+  margin-top: var(--spacing-5) !important;
+}
+/* Bottom (b) */
+.m-b-1 {
+  margin-bottom: var(--spacing-1) !important;
+}
+.m-b-2 {
+  margin-bottom: var(--spacing-2) !important;
+}
+.m-b-3 {
+  margin-bottom: var(--spacing-3) !important;
+}
+.m-b-4 {
+  margin-bottom: var(--spacing-4) !important;
+}
+.m-b-5 {
+  margin-bottom: var(--spacing-5) !important;
+}
+/* Start (s - left) */
+.m-s-1 {
+  margin-left: var(--spacing-1) !important;
+}
+.m-s-2 {
+  margin-left: var(--spacing-2) !important;
+}
+.m-s-3 {
+  margin-left: var(--spacing-3) !important;
+}
+.m-s-4 {
+  margin-left: var(--spacing-4) !important;
+}
+.m-s-5 {
+  margin-left: var(--spacing-5) !important;
+}
+/* End (e - right) */
+.m-e-1 {
+  margin-right: var(--spacing-1) !important;
+}
+.m-e-2 {
+  margin-right: var(--spacing-2) !important;
+}
+.m-e-3 {
+  margin-right: var(--spacing-3) !important;
+}
+.m-e-4 {
+  margin-right: var(--spacing-4) !important;
+}
+.m-e-5 {
+  margin-right: var(--spacing-5) !important;
+}
+/* Horizontal (x) */
+.m-x-1 {
+  margin-left: var(--spacing-1) !important;
+  margin-right: var(--spacing-1) !important;
+}
+.m-x-2 {
+  margin-left: var(--spacing-2) !important;
+  margin-right: var(--spacing-2) !important;
+}
+.m-x-3 {
+  margin-left: var(--spacing-3) !important;
+  margin-right: var(--spacing-3) !important;
+}
+.m-x-4 {
+  margin-left: var(--spacing-4) !important;
+  margin-right: var(--spacing-4) !important;
+}
+.m-x-5 {
+  margin-left: var(--spacing-5) !important;
+  margin-right: var(--spacing-5) !important;
+}
+/* Vertical (y) */
+.m-y-1 {
+  margin-top: var(--spacing-1) !important;
+  margin-bottom: var(--spacing-1) !important;
+}
+.m-y-2 {
+  margin-top: var(--spacing-2) !important;
+  margin-bottom: var(--spacing-2) !important;
+}
+.m-y-3 {
+  margin-top: var(--spacing-3) !important;
+  margin-bottom: var(--spacing-3) !important;
+}
+.m-y-4 {
+  margin-top: var(--spacing-4) !important;
+  margin-bottom: var(--spacing-4) !important;
+}
+.m-y-5 {
+  margin-top: var(--spacing-5) !important;
+  margin-bottom: var(--spacing-5) !important;
+}
+
+/* --- PADDING --- */
+/* Top (t) */
+.p-t-1 {
+  padding-top: var(--spacing-1) !important;
+}
+.p-t-2 {
+  padding-top: var(--spacing-2) !important;
+}
+.p-t-3 {
+  padding-top: var(--spacing-3) !important;
+}
+.p-t-4 {
+  padding-top: var(--spacing-4) !important;
+}
+.p-t-5 {
+  padding-top: var(--spacing-5) !important;
+}
+/* Bottom (b) */
+.p-b-1 {
+  padding-bottom: var(--spacing-1) !important;
+}
+.p-b-2 {
+  padding-bottom: var(--spacing-2) !important;
+}
+.p-b-3 {
+  padding-bottom: var(--spacing-3) !important;
+}
+.p-b-4 {
+  padding-bottom: var(--spacing-4) !important;
+}
+.p-b-5 {
+  padding-bottom: var(--spacing-5) !important;
+}
+/* Start (s - left) */
+.p-s-1 {
+  padding-left: var(--spacing-1) !important;
+}
+.p-s-2 {
+  padding-left: var(--spacing-2) !important;
+}
+.p-s-3 {
+  padding-left: var(--spacing-3) !important;
+}
+.p-s-4 {
+  padding-left: var(--spacing-4) !important;
+}
+.p-s-5 {
+  padding-left: var(--spacing-5) !important;
+}
+/* End (e - right) */
+.p-e-1 {
+  padding-right: var(--spacing-1) !important;
+}
+.p-e-2 {
+  padding-right: var(--spacing-2) !important;
+}
+.p-e-3 {
+  padding-right: var(--spacing-3) !important;
+}
+.p-e-4 {
+  padding-right: var(--spacing-4) !important;
+}
+.p-e-5 {
+  padding-right: var(--spacing-5) !important;
+}
+/* Horizontal (x) */
+.p-x-1 {
+  padding-left: var(--spacing-1) !important;
+  padding-right: var(--spacing-1) !important;
+}
+.p-x-2 {
+  padding-left: var(--spacing-2) !important;
+  padding-right: var(--spacing-2) !important;
+}
+.p-x-3 {
+  padding-left: var(--spacing-3) !important;
+  padding-right: var(--spacing-3) !important;
+}
+.p-x-4 {
+  padding-left: var(--spacing-4) !important;
+  padding-right: var(--spacing-4) !important;
+}
+.p-x-5 {
+  padding-left: var(--spacing-5) !important;
+  padding-right: var(--spacing-5) !important;
+}
+/* Vertical (y) */
+.p-y-1 {
+  padding-top: var(--spacing-1) !important;
+  padding-bottom: var(--spacing-1) !important;
+}
+.p-y-2 {
+  padding-top: var(--spacing-2) !important;
+  padding-bottom: var(--spacing-2) !important;
+}
+.p-y-3 {
+  padding-top: var(--spacing-3) !important;
+  padding-bottom: var(--spacing-3) !important;
+}
+.p-y-4 {
+  padding-top: var(--spacing-4) !important;
+  padding-bottom: var(--spacing-4) !important;
+}
+.p-y-5 {
+  padding-top: var(--spacing-5) !important;
+  padding-bottom: var(--spacing-5) !important;
+}
+
+/* -------------------------------------------
+ * 12-02: UTILIDADES DE VISUALIZACIÓN Y FLUJO
+ * -------------------------------------------
+ */
+
+/* Utilidades de Display */
+.d-none {
+  display: none !important;
+}
+.d-inline {
+  display: inline !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.d-flex {
+  display: flex !important;
+}
+.d-inline-flex {
+  display: inline-flex !important;
+}
+
+/* Utilidades de Flotación */
+.float-start {
+  float: left !important;
+}
+.float-end {
+  float: right !important;
+}
+.float-none {
+  float: none !important;
+}
+
+/* Clearfix (Para limpiar flotantes) */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Utilidades de Accesibilidad (Screen Reader Only) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* ======================================= */
 /* 4. MEDIA QUERY: ARQUITECTURA DE DOCUMENTACIÓN (MOBILE) */
 /* ======================================= */

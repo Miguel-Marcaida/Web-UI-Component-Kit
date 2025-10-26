@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utilidades de Visualización y Flujo</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none; color: white"
+          >Web UI Kit</a
+        >
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/12-utilities/index.html"
+          >Volver a Utilidades</a
+        >
+      </nav>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Utilidades de Visualización y Flujo</h2>
+        <p class="description">
+          Clases de ayuda para modificar rápidamente la propiedad
+          <code>display</code>, el flujo de elementos (`float`) y la visibilidad
+          para lectores de pantalla.
+        </p>
+
+        <h3>1. Utilidades de Display (`d-`)</h3>
+        <p>
+          Clases para cambiar el valor de la propiedad <code>display</code>.
+          Útil para modificar rápidamente cómo se comporta un elemento sin
+          editar el CSS del componente.
+        </p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Clase</th>
+              <th>Propiedad CSS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>d-none</code></td>
+              <td><code>display: none</code></td>
+            </tr>
+            <tr>
+              <td><code>d-inline</code></td>
+              <td><code>display: inline</code></td>
+            </tr>
+            <tr>
+              <td><code>d-block</code></td>
+              <td><code>display: block</code></td>
+            </tr>
+            <tr>
+              <td><code>d-inline-block</code></td>
+              <td><code>display: inline-block</code></td>
+            </tr>
+            <tr>
+              <td><code>d-flex</code></td>
+              <td><code>display: flex</code></td>
+            </tr>
+            <tr>
+              <td><code>d-inline-flex</code></td>
+              <td><code>display: inline-flex</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="mt-4">2. Utilidades de Flotación (`float-`)</h3>
+        <p>
+          Clases para flotar elementos a la izquierda o derecha, o para eliminar
+          la flotación.
+        </p>
+
+        <table class="table" style="width: 50%">
+          <thead>
+            <tr>
+              <th>Clase</th>
+              <th>Propiedad CSS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>float-start</code></td>
+              <td><code>float: left</code></td>
+            </tr>
+            <tr>
+              <td><code>float-end</code></td>
+              <td><code>float: right</code></td>
+            </tr>
+            <tr>
+              <td><code>float-none</code></td>
+              <td><code>float: none</code></td>
+            </tr>
+            <tr>
+              <td><code>clearfix</code></td>
+              <td>Soluciona el problema de elementos flotantes.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="mt-4">3. Utilidades de Lectores de Pantalla</h3>
+        <p>
+          Clases para ocultar visualmente un elemento **mientras se mantiene
+          disponible para tecnologías de asistencia** (ej. lectores de
+          pantalla).
+        </p>
+
+        <div class="example-box">
+          <span class="sr-only"
+            >Texto oculto solo para lectores de pantalla</span
+          >
+          El texto de la utilidad <code>sr-only</code> no es visible aquí.
+        </div>
+
+        <h3 class="mt-4">4. Código de Utilidades CSS (Para /CSS/main.css)</h3>
+        <p>
+          Estas clases son de ámbito global y deben ser añadidas al archivo
+          **<code>/CSS/main.css</code>**.
+        </p>
+
+        <pre><code class="language-css css-snippet" data-snippet="snippet-css.txt">...</code></pre>
+      </main>
+    </div>
+
+    <footer id="main-footer"></footer>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/main.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+  </body>
+</html>

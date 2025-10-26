@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const htmlSnippetContainer = document.querySelector(".html-snippet");
   const cssSnippetContainer = document.querySelector(".css-snippet");
   const jsSnippetContainer = document.querySelector(".js-snippet");
+  // NUEVA CONST: Busca el elemento <code> con la clase css-snippet que tiene el atributo data-snippet
+  const utilityCssSnippetContainer = document.querySelector(
+    ".css-snippet[data-snippet='snippet-css.txt']"
+  );
 
   const highlightElement = (element) => {
     if (window.Prism && element) {
@@ -47,6 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
   loadSnippet("snippet-html.txt", htmlSnippetContainer);
   loadSnippet("styles.css", cssSnippetContainer);
   loadSnippet("script.js", jsSnippetContainer); // Nota: Ahora maneja opcionalidad de script.js
+  // NUEVA LLAMADA: Carga el snippet de utilidades CSS en su propio contenedor
+  if (utilityCssSnippetContainer) {
+    loadSnippet("snippet-css.txt", utilityCssSnippetContainer);
+  }
 
   // --- LÓGICA DE SIDEBAR TOGGLE (UNIFICADA) ---
   const toggleButton = document.getElementById("sidebar-toggle");

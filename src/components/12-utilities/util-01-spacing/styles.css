@@ -1,0 +1,14 @@
+/*
+ * ===========================================
+ * 12-UTILITIES: UTIL-01-SPACING (ESTILOS DE DEMO)
+ * ===========================================
+ */
+
+.example-box {
+  border: 2px dashed var(--color-primary-base, #007bff);
+  background-color: var(--color-bg-subtle, #f0f0f0);
+  text-align: center;
+  color: var(--color-text-dark, #333);
+}
+
+/* Nota: Las clases m-t-4 y p-3 serán definidas en /CSS/main.css */

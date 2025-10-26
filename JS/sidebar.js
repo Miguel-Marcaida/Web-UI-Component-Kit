@@ -179,6 +179,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "12-utilities": {
+      title: "Módulo 12: Utilidades y Helpers",
+      components: [
+        {
+          name: "01. Espaciado (Margin & Padding)",
+          path: "/src/components/12-utilities/util-01-spacing/index.html",
+        },
+        {
+          name: "02. Visualización y Flujo",
+          path: "/src/components/12-utilities/util-02-visibility/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");
