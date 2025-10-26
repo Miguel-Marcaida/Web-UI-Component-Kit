@@ -1,4 +1,4 @@
-/* Alineación de Texto */
+
 .text-start { text-align: left !important; }
 .text-center { text-align: center !important; }
 

@@ -1,18 +1,17 @@
 /* ===========================================
 // LAYOUT: VISTA PREVIA ESPECÍFICA
-// Se usa en la documentación para espaciar los grupos de botones
 // =========================================== */
 .button-group-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Espacio entre las filas de botones */
+  gap: 2rem; 
 }
 
 .button-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem; /* Espacio entre los botones individuales */
+  gap: 1rem; 
 }
 
 /* ===========================================
@@ -26,54 +25,64 @@
   font-size: 1rem;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.25rem;
+  border-radius: var(--radius-base, 0.25rem);
   transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
-  text-decoration: none; /* Útil si se usa en un <a> */
+  text-decoration: none; 
 
-  /* === CORRECCIÓN para ÍCONOS y Alineación Vertical === */
+  /* Alineación para ÍCONOS (USO DE FLEXBOX - OK) */
   display: flex;
-  align-items: center; /* Alinea ícono y texto verticalmente */
-  justify-content: center; /* Centra el contenido (texto) horizontalmente */
-  gap: 0.5rem; /* Espacio entre el ícono y el texto (Soluciona el problema de aglomeración) */
-  /* ==================================================== */
-
-  /* Estado Deshabilitado */
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+  align-items: center; 
+  justify-content: center; 
+  gap: 0.5rem; 
 }
 
+/* Estado Deshabilitado */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
 /* --------------------
-// VARIANTES DE COLOR (SOLID)
+// VARIANTES DE COLOR (SÓLIDO)
 // -------------------- */
 
 .btn--primary {
-  background-color: var(--color-primary-main);
-  color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
 
-  &:hover:not(:disabled) {
-    background-color: var(--color-primary-dark);
-  }
+.btn--primary:hover:not(:disabled) {
+  background-color: #0056b3; 
 }
 
 .btn--secondary {
-  background-color: var(--color-secondary-main);
-  color: var(--color-white);
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverse);
+}
 
-  &:hover:not(:disabled) {
-    background-color: var(--color-secondary-dark);
-  }
+.btn--secondary:hover:not(:disabled) {
+  background-color: #5a6268; 
+}
+
+.btn--success {
+  background-color: var(--color-success);
+  color: var(--color-text-inverse);
+}
+
+.btn--success:hover:not(:disabled) {
+  background-color: #1e7e34; 
 }
 
 .btn--danger {
-  background-color: var(--color-danger-main);
-  color: var(--color-white);
-
-  &:hover:not(:disabled) {
-    background-color: var(--color-danger-dark);
-  }
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
 }
+
+.btn--danger:hover:not(:disabled) {
+  background-color: #bd2130; 
+}
+
 
 /* --------------------
 // VARIANTES DE ESTILO (OUTLINE)
@@ -83,55 +92,55 @@
   background-color: transparent;
   border-width: 2px;
   border-style: solid;
-  /* Ajuste de padding para compensar el borde (mantenido del paso anterior) */
   padding: calc(0.75rem - 2px) calc(1.5rem - 2px);
 }
 
 .btn--primary.btn--outline {
-  color: var(--color-primary-main);
-  border-color: var(--color-primary-main);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
 
-  &:hover:not(:disabled) {
-    background-color: var(--color-primary-light);
-    color: var(--color-white);
-  }
+.btn--primary.btn--outline:hover:not(:disabled) {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
 }
 
 .btn--secondary.btn--outline {
-  color: var(--color-secondary-main);
-  border-color: var(--color-secondary-main);
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
 
-  &:hover:not(:disabled) {
-    background-color: var(--color-secondary-light);
-    color: var(--color-white);
-  }
+.btn--secondary.btn--outline:hover:not(:disabled) {
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverse);
 }
 
 .btn--danger.btn--outline {
-  color: var(--color-danger-main);
-  border-color: var(--color-danger-main);
-
-  &:hover:not(:disabled) {
-    background-color: var(--color-danger-light);
-    color: var(--color-white);
-  }
+  color: var(--color-danger);
+  border-color: var(--color-danger);
 }
+
+.btn--danger.btn--outline:hover:not(:disabled) {
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+
 
 /* --------------------
 // VARIANTES DE TAMAÑO
 // -------------------- */
 
 .btn--sm {
-  padding: 0.5rem 1rem; /* Botón pequeño (Small) */
+  padding: 0.5rem 1rem; 
   font-size: 0.875rem;
 }
 
 .btn--lg {
-  padding: 1rem 2rem; /* Botón grande (Large) */
+  padding: 1rem 2rem; 
   font-size: 1.125rem;
 }
 
 .btn--full {
-  width: 100%; /* Botón de ancho completo */
+  width: 100%; 
   display: block;
 }

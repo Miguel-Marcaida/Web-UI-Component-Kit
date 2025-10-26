@@ -767,6 +767,119 @@ body {
     color: var(--color-text-inverse, white) !important;
 }
 
+/* -------------------------------------------
+ * 12-02: UTILIDADES DE VISUALIZACIÓN Y FLUJO
+ * -------------------------------------------
+ */
+
+/* Utilidades de Display (Existentes) */
+.d-none { display: none !important; }
+.d-inline { display: inline !important; }
+.d-block { display: block !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-inline-flex { display: inline-flex !important; }
+
+/* =========================================== */
+/* UTILS DE FLEXBOX (DISTRIBUCIÓN Y ALINEACIÓN)*/
+/* =========================================== */
+
+/* Dirección y Envoltura (Direction & Wrap) */
+.flex-row { flex-direction: row !important; }
+.flex-row-reverse { flex-direction: row-reverse !important; }
+.flex-column { flex-direction: column !important; }
+.flex-column-reverse { flex-direction: column-reverse !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+.flex-nowrap { flex-wrap: nowrap !important; }
+
+/* Justificación (Eje Principal - justify-content) */
+.justify-content-start { justify-content: flex-start !important; }
+.justify-content-end { justify-content: flex-end !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.justify-content-around { justify-content: space-around !important; }
+.justify-content-evenly { justify-content: space-evenly !important; } /* (Moderno) */
+
+/* Alineación de Ítems (Eje Cruzado - align-items) */
+.align-items-start { align-items: flex-start !important; }
+.align-items-end { align-items: flex-end !important; }
+.align-items-center { align-items: center !important; }
+.align-items-baseline { align-items: baseline !important; }
+.align-items-stretch { align-items: stretch !important; }
+
+/* Alineación Propia (Eje Cruzado - align-self) */
+.align-self-start { align-self: flex-start !important; }
+.align-self-end { align-self: flex-end !important; }
+.align-self-center { align-self: center !important; }
+.align-self-baseline { align-self: baseline !important; }
+.align-self-stretch { align-self: stretch !important; }
+
+/* Crecimiento y Encogimiento (Grow & Shrink) */
+.flex-grow-1 { flex-grow: 1 !important; } /* Absorbe el espacio restante */
+.flex-shrink-0 { flex-shrink: 0 !important; } /* Evita que el ítem se encoja */
+/* La utilidad m-x-auto ya maneja el centrado horizontal para un solo ítem flex */
+
+/* ------------------------------------------- */
+/* UTILS DE GRID (La que usamos para el demo) */
+/* ------------------------------------------- */
+
+/* Para las demostraciones de Card que ya definimos: */
+.d-grid {
+    display: grid !important;
+}
+.grid-responsive-auto {
+    /* Auto-fit para el catálogo de componentes */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+.g-4 {
+    /* Gap basado en tu escala de espaciado */
+    gap: var(--spacing-4) !important; 
+}
+
+
+/* Utilidades de Flotación (Existentes) */
+.float-start { float: left !important; }
+/* ... (El resto de tus utilidades de Flotación, Clearfix, etc.) */
+
+/* ===========================================
+ * 14-01: UTILIDADES DE COLOR Y FONDO
+ * =========================================== */
+
+/* 1. UTILS DE TEXTO (TEXTO Y ENLACES) */
+
+/* Colores de Marca */
+.text-primary { color: var(--color-primary) !important; }
+.text-secondary { color: var(--color-secondary) !important; }
+
+/* Colores de Estado */
+.text-success { color: var(--color-success) !important; }
+.text-danger { color: var(--color-danger) !important; }
+.text-base { color: var(--color-text-base) !important; }
+.text-inverse { color: var(--color-text-inverse) !important; }
+
+/* Enlaces sin subrayado */
+.text-link { 
+    color: var(--color-link) !important; 
+    text-decoration: none !important;
+}
+.text-link:hover { 
+    text-decoration: underline !important; 
+}
+
+
+/* 2. UTILS DE FONDO (BACKGROUND) */
+
+/* Colores de Marca y Estado */
+.bg-primary { background-color: var(--color-primary) !important; }
+.bg-secondary { background-color: var(--color-secondary) !important; }
+.bg-success { background-color: var(--color-success) !important; }
+.bg-danger { background-color: var(--color-danger) !important; }
+
+/* Colores de Fondo Globales */
+.bg-base { background-color: var(--color-bg-base) !important; }
+.bg-light { background-color: var(--color-bg-light) !important; }
+.bg-dark { background-color: var(--color-bg-dark) !important; }
+.bg-transparent { background-color: transparent !important; }
 
 
 

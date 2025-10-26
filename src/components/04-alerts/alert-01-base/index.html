@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alerta 01: Base (Contextuales)</title>
+    <title>Alerta 01: Contextual</title>
 
     <link rel="stylesheet" href="/CSS/main.css" />
     <link rel="stylesheet" href="/CSS/prism.css" />
@@ -11,24 +11,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header id="main-header">
       <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
+        <a href="/index.html" class="text-decoration-none text-inverse"
           >Web UI Kit</a
         >
       </h1>
-
-      <button
-        id="sidebar-toggle"
-        aria-expanded="false"
-        aria-controls="docs-sidebar"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
 
       <nav>
         <a href="/src/components/04-alerts/index.html">Volver a Alertas</a>
@@ -37,58 +28,78 @@
 
     <div class="docs-container">
       <main class="docs-content">
-        <h2>Alerta 01: Base (Contextuales)</h2>
-        <p class="description">
-          Alertas simples con estilos que indican el contexto del mensaje
-          (éxito, información, advertencia, error).
+        <h2>Alerta 01: Contextual (Composición)</h2>
+        <p class="description m-b-4">
+          Mensajes contextuales creados mediante la **composición de utilidades**
+          (fondo, texto, espaciado) sobre la clase estructural base
+          <code>.alert</code>.
         </p>
 
         <section
-          class="preview-area"
-          style="padding: 2rem; background-color: var(--color-bg-base)"
+          class="preview-area p-4"
+          style="background-color: var(--color-bg-light)"
         >
-          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+          <h3 class="m-b-3">Vista Previa</h3>
 
           <div class="alert-container">
-            <div class="alert alert--success" role="alert">
-              <i class="fas fa-check-circle"></i>
-              <p>
-                ¡Operación exitosa! Los cambios se han guardado correctamente.
+            <div
+              class="alert bg-success text-inverse p-3 d-flex align-items-center"
+              role="alert"
+            >
+              <i class="fas fa-check-circle m-e-3"></i>
+              <p class="flex-grow-1 m-0">
+                ¡Éxito! Su operación se completó correctamente. Esta alerta usa
+                las utilidades **<code>bg-success</code>** y
+                **<code>text-inverse</code>**.
+              </p>
+              <button class="alert__close m-s-auto" aria-label="Cerrar">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+
+            <div
+              class="alert bg-danger text-inverse p-4 d-flex align-items-center"
+              role="alert"
+            >
+              <i class="fas fa-exclamation-triangle m-e-4"></i>
+              <p class="m-0">
+                ¡Error de Conexión! No se pudo guardar el registro. Intente
+                nuevamente.
               </p>
             </div>
 
-            <div class="alert alert--info" role="alert">
-              <i class="fas fa-info-circle"></i>
-              <p>
-                Información: Recuerda completar tu perfil antes de la fecha
-                límite.
+            <div
+              class="alert bg-primary text-inverse p-3 d-flex align-items-center"
+              role="alert"
+            >
+              <i class="fas fa-info-circle m-e-3"></i>
+              <p class="flex-grow-1 m-0">
+                Información: Esto es un mensaje contextual creado con los colores
+                principales del tema.
               </p>
             </div>
 
-            <div class="alert alert--warning" role="alert">
-              <i class="fas fa-exclamation-triangle"></i>
-              <p>
-                Advertencia: Tu sesión está a punto de caducar. Por favor,
-                recarga la página.
+            <div
+              class="alert bg-secondary text-base p-4 d-flex align-items-center"
+              role="alert"
+            >
+              <i class="fas fa-exclamation-circle m-e-4"></i>
+              <p class="m-0">
+                Advertencia sutil: Esto usa los colores secundarios/gris para un
+                mensaje de advertencia menos invasivo.
               </p>
             </div>
 
-            <div class="alert alert--danger" role="alert">
-              <i class="fas fa-times-circle"></i>
-              <p>
-                Error: No se pudo conectar con el servidor. Inténtalo de nuevo
-                más tarde.
-              </p>
-            </div>
+
           </div>
         </section>
 
-        <section class="code-snippets">
-          <h3>Código Fuente</h3>
+        <section class="code-snippets m-t-4">
+          <h3>Código Fuente (Uso de Utilidades)</h3>
           <h4>HTML</h4>
           <pre><code class="language-html html-snippet">...</code></pre>
-          <h4>CSS</h4>
-          <pre><code class="language-css css-snippet">...</code></pre>
+          <h4>CSS (Estilos Específicos del Componente)</h4>
+          <pre><code class="language-css css-snippet" data-snippet="styles.css">...</code></pre>
         </section>
       </main>
     </div>
@@ -97,6 +108,5 @@
     <script src="/JS/prism.js"></script>
     <script src="/JS/main.js"></script>
     <script src="/JS/docs.js"></script>
-    <script src="/JS/sidebar.js"></script>
   </body>
 </html>

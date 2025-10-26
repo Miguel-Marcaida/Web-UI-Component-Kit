@@ -1,107 +1,51 @@
-/*
- * ===========================================
- * 04-ALERTS: ALERT-01-BASE (CONTEXTUALES) - AUTOSUFICIENTE
- * ===========================================
- */
+/* ===========================================
+ * ALERTA BASE: Estilos Estructurales (Puros)
+ * Archivo: /src/components/04-alerts/alert-01-base/styles.css
+ * NOTA: Colores, fondos y espaciado vienen de las utilidades de main.css.
+ * =========================================== */
 
-/* Valores de color definidos localmente para autosuficiencia */
-:root {
-  --color-success-base: #28a745;
-  --color-success-light: #d4edda;
-  --color-success-dark: #155724;
-
-  --color-info-base: #17a2b8;
-  --color-info-light: #d1ecf1;
-  --color-info-dark: #0c5460;
-
-  --color-warning-base: #ffc107;
-  --color-warning-light: #fff3cd;
-  --color-warning-dark: #856404;
-
-  --color-danger-base: #dc3545;
-  --color-danger-light: #f8d7da;
-  --color-danger-dark: #721c24;
-
-  --border-radius-sm: 0.25rem; /* Aseguramos el radio */
-}
-
-/* * 1. CONTENEDOR DE ALERTAS 
- */
-.alert-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* * 2. CLASE BASE DE ALERTA 
- */
+/* 1. CLASE BASE DE ALERTA */
 .alert {
-  display: flex;
-  align-items: flex-start; /* Alinea los ítems arriba para párrafos largos */
-  padding: 1.125rem 1.5rem;
-  border-radius: var(--border-radius-sm);
-  font-size: 1.125rem; /* Usar valor directo */
-
-  color: var(
-    --color-text-dark,
-    #333
-  ); /* Fallback por si la variable no existe */
-  border: 1px solid transparent;
+    /* Define solo la estructura y el radio. 
+     * Las propiedades: display: flex y align-items: center/start se definen en el HTML. 
+     */
+    border-radius: var(--radius-base); /* Usamos la variable global de main.css */
+    border: 1px solid var(--color-border); /* Borde por defecto, aunque los colores lo anularán */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
+    line-height: 1.5;
+    
+    /* Nota: El padding (p-3) y el display (d-flex) se usarán como utilidades */
 }
 
-/* Icono dentro de la alerta */
+/* 2. Estilos para los íconos (ajuste fino) */
 .alert i {
-  font-size: 1.25rem;
-  margin-right: 1rem;
-  flex-shrink: 0;
-  padding-top: 0.1rem; /* Ajuste visual */
+    font-size: 1.25rem;
+    margin-right: var(--spacing-3); /* Usamos la utilidad de espaciado para margen derecho (m-e-3) */
+    flex-shrink: 0;
+    /* Usaremos la utilidad .m-e-3 en el HTML, por lo que el margin-right aquí es opcional */
 }
 
-/* Párrafo dentro de la alerta */
-.alert p {
-  margin: 0;
-  line-height: 1.5;
+/* 3. Estilos del Botón de Cierre (para la 'X') */
+.alert__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: inherit; /* Hereda el color del texto */
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    
+    /* Empuja el cierre a la derecha con auto-margin en el HTML: .m-s-auto */
 }
 
-/* * 3. ESTILOS CONTEXTUALES (COLORES) 
- */
-
-/* ÉXITO (SUCCESS) */
-.alert--success {
-  background-color: var(--color-success-light);
-  color: var(--color-success-dark);
-  border-color: var(--color-success-base);
-}
-.alert--success i {
-  color: var(--color-success-base);
+.alert__close:hover {
+    opacity: 1;
 }
 
-/* INFORMACIÓN (INFO) */
-.alert--info {
-  background-color: var(--color-info-light);
-  color: var(--color-info-dark);
-  border-color: var(--color-info-base);
-}
-.alert--info i {
-  color: var(--color-info-base);
-}
-
-/* ADVERTENCIA (WARNING) */
-.alert--warning {
-  background-color: var(--color-warning-light);
-  color: var(--color-warning-dark);
-  border-color: var(--color-warning-base);
-}
-.alert--warning i {
-  color: var(--color-warning-base);
-}
-
-/* ERROR/PELIGRO (DANGER) */
-.alert--danger {
-  background-color: var(--color-danger-light);
-  color: var(--color-danger-dark);
-  border-color: var(--color-danger-base);
-}
-.alert--danger i {
-  color: var(--color-danger-base);
+/* 4. Contenedor de Alertas (para el demo) */
+.alert-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4); /* Usamos la utilidad de espaciado (g-4) */
 }

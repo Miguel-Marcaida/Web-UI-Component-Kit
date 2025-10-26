@@ -1,84 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input 01: Campos de Texto Estándar</title>
-    
-    <link rel="stylesheet" href="/CSS/main.css">
-    <link rel="stylesheet" href="/CSS/prism.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <link rel="stylesheet" href="styles.css"> 
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input 01: Campos de Texto Base</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header id="main-header">
-    <h1><a href="/index.html" style="text-decoration: none; color: white;">Web UI Kit</a></h1>
-    
-    <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
-        <i class="fas fa-bars"></i>
-    </button>
-    
-    <nav>
+      <h1>
+        <a href="/index.html" class="text-decoration-none text-inverse"
+          >Web UI Kit</a
+        >
+      </h1>
+      <nav>
         <a href="/src/components/02-forms/index.html">Volver a Formularios</a>
-    </nav>
-</header>
+      </nav>
+    </header>
 
     <div class="docs-container">
-        
-        <main class="docs-content">
-            <h2>Input 01: Campos de Texto Estándar</h2>
-            <p class="description">Componente base para la entrada de texto con soporte para mensajes de ayuda y validación. Utilizamos la estructura semántica LABEL + INPUT + HINT.</p>
+      <main class="docs-content">
+        <h2>Input 01: Campos de Texto Base</h2>
+        <p class="description m-b-4">
+          Estilo base para <code>&lt;input type="text"&gt;</code>,
+          <code>&lt;textarea&gt;</code> y <code>&lt;select&gt;</code>, utilizando
+          la clase <code>.form-control</code>.
+        </p>
 
-            <section class="preview-area" style="padding: 3rem 0; background-color: var(--color-bg-base);">
-                <h3 style="margin-bottom: 2rem;">Vista Previa</h3>
-                
-                <div class="input-grid">
-                    
-                    <div class="input-group">
-                        <label for="input-basic" class="input-label">Nombre de Usuario</label>
-                        <input type="text" id="input-basic" placeholder="Ingrese su nombre">
-                        <small class="input-hint">Máximo 15 caracteres.</small>
-                    </div>
+        <section
+          class="preview-area p-4"
+          style="background-color: var(--color-bg-light)"
+        >
+          <h3 class="m-b-3">Vista Previa</h3>
 
-                    <div class="input-group input-group--with-icon">
-                            <label for="input-email" class="input-label">Correo Electrónico</label>
-                            <div class="input-icon-wrapper">
-                                <i class="fas fa-envelope input-icon"></i>
-                                <input type="email" id="input-email" placeholder="ejemplo@dominio.com">
-                            </div>
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="input-disabled" class="input-label">Dominio (Deshabilitado)</label>
-                        <input type="text" id="input-disabled" value="mi-proyecto.com" disabled>
-                        <small class="input-hint">Este campo no se puede editar.</small>
-                    </div>
+          <div class="input-grid" data-name="form-inputs">
+            <div class="input-group">
+              <label for="input-basic" class="input-label">Nombre de Usuario</label>
+              <input
+                type="text"
+                id="input-basic"
+                class="form-control"
+                placeholder="Ej. miguel.marcaida"
+              />
+              <span class="input-hint">El nombre debe tener entre 5 y 15 caracteres.</span>
+            </div>
 
-                    <div class="input-group is-invalid">
-                        <label for="input-error" class="input-label">Contraseña</label>
-                        <input type="password" id="input-error" placeholder="Mínimo 8 caracteres" aria-describedby="error-message-1">
-                        <small id="error-message-1" class="input-hint">La contraseña debe tener al menos un número.</small>
-                    </div>
-                    
-                </div>
-            </section>
-            
-            <section class="code-snippets">
-                <h3>Código Fuente</h3>
-                <h4>HTML (Estructura Básica)</h4>
-                <pre><code class="language-html html-snippet">...</code></pre>
-                <h4>CSS</h4>
-                <pre><code class="language-css css-snippet">...</code></code>
-            </section>
-            
-        </main>
+            <div class="input-group input-group--with-icon">
+              <label for="input-icon" class="input-label">Correo Electrónico</label>
+              <div class="input-icon-wrapper">
+                <i class="input-icon fas fa-envelope"></i>
+                <input
+                  type="email"
+                  id="input-icon"
+                  class="form-control"
+                  placeholder="ejemplo@dominio.com"
+                />
+              </div>
+            </div>
+
+            <div class="input-group is-invalid">
+              <label for="input-error" class="input-label">Contraseña</label>
+              <input
+                type="password"
+                id="input-error"
+                class="form-control is-invalid"
+                placeholder="Mínimo 8 caracteres"
+              />
+              <span class="input-hint">La contraseña es demasiado corta.</span>
+            </div>
+
+            <div class="input-group">
+              <label for="input-disabled" class="input-label">Código de País</label>
+              <input
+                type="text"
+                id="input-disabled"
+                class="form-control"
+                value="+54"
+                disabled
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="code-snippets m-t-4">
+          <h3 class="m-b-2">Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet" data-source="form-inputs">...</code></pre>
+          <h4>CSS (<code>styles.css</code>)</h4>
+          <pre><code class="language-css css-snippet" data-source="styles.css">...</code></pre>
+        </section>
+      </main>
     </div>
 
     <footer id="main-footer"></footer>
-    <script src="/JS/prism.js"></script> 
-    <script src="/JS/main.js"></script>
-    <script src="/JS/docs.js"></script> 
-    <script src="/JS/sidebar.js"></script> 
-</body>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+  </body>
 </html>

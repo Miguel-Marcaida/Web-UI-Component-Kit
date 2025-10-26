@@ -58,3 +58,29 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+/* * 3. ELEMENTOS MULTIMEDIA EN LA TARJETA */
+
+.card__media {
+    /* Contenedor opcional si se requiere un aspect-ratio, pero útil para la estructura. */
+    display: block;
+    width: 100%;
+    /* No se aplica padding aquí; se hace con utilidades si es necesario. */
+}
+
+.card__img {
+    /* Ocupa el 100% del ancho del contenedor */
+    display: block;
+    width: 100%;
+    
+    /* Asegura que la imagen no se estire y cubra el área */
+    height: auto;
+    object-fit: cover;
+}
+
+/* Regla para CORREGIR BORDES REDONDEADOS */
+/* Si la imagen es el primer hijo de .card, debe heredar el borde superior redondeado. */
+.card > .card__media:first-child .card__img {
+    border-top-left-radius: var(--border-radius-md, 0.5rem);
+    border-top-right-radius: var(--border-radius-md, 0.5rem);
+}
