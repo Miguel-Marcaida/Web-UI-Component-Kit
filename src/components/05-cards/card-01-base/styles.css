@@ -1,10 +1,11 @@
 /*
  * ===========================================
  * 05-CARDS: CARD-01-BASE (TARJETA BASE)
+ * (Limpio de espaciado fijo)
  * ===========================================
  */
 
-/* * 1. CLASE BASE DE TARJETA */
+/* * 1. CLASE BASE DE TARJETA (ESTRUCTURA Y APARIENCIA) */
 .card {
   /* Layout */
   display: flex;
@@ -12,10 +13,10 @@
   width: 100%;
 
   /* Apariencia */
-  background-color: var(--color-bg-card, white); /* Fondo blanco por defecto */
+  background-color: var(--color-bg-card, white);
   border: 1px solid var(--color-border-subtle, #e0e0e0);
   border-radius: var(--border-radius-md, 0.5rem);
-  overflow: hidden; /* Importante para tarjetas con media */
+  overflow: hidden;
   box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.1));
   transition: box-shadow 0.2s ease;
 }
@@ -24,18 +25,17 @@
   box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
-/* * 2. SECCIONES INTERNAS */
+/* * 2. SECCIONES INTERNAS (ESTRUCTURA) */
 
 /* Header */
 .card__header {
-  padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--color-border-subtle, #e0e0e0);
-  background-color: var(--color-bg-base, #f9f9f9); /* Ligeramente gris */
+  background-color: var(--color-bg-base, #f9f9f9);
 }
 
 /* Título */
 .card__title {
-  margin: 0;
+  margin: 0; /* Mantenemos el reset de margin */
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-text-dark, #333);
@@ -43,19 +43,14 @@
 
 /* Cuerpo */
 .card__body {
-  padding: 1.25rem;
-  flex-grow: 1; /* Asegura que el cuerpo ocupe el espacio restante */
+  flex-grow: 1;
   color: var(--color-text-base, #555);
 }
 
 /* Pie de página (Footer/Acciones) */
 .card__footer {
-  padding: 1rem 1.25rem;
   border-top: 1px solid var(--color-border-subtle, #e0e0e0);
-  background-color: var(
-    --color-bg-card,
-    white
-  ); /* Mismo color que el fondo de la tarjeta */
+  background-color: var(--color-bg-card, white);
 
   /* Layout para botones o enlaces de acción */
   display: flex;

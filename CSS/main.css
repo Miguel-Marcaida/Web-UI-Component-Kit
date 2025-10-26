@@ -35,6 +35,8 @@ body {
   --color-secondary: #6c757d; /* Gris: Botones secundarios, texto sutil. */
   --color-success: #28a745;
   --color-danger: #dc3545;
+  --spacing-base: 1rem; /* Define 1rem como unidad base de diseño (16px) */
+  --spacing-unit: 0.5rem; /* O la unidad más pequeña que uses (8px) */
 
   /* ================================================= */
   /* 2. Colores del Tema (Fácil de cambiar) */
@@ -735,6 +737,39 @@ body {
   text-decoration: underline !important;
 }
 
+/* ===========================================
+ * RESET BÁSICO Y ESTILOS DE ENLACE
+ * =========================================== */
+
+/* * 1. RESPETAR EL COLOR INVERSO EN EL HEADER
+ * Asegura que los enlaces dentro del header (fondo oscuro) se vean blancos 
+ * y corrige el problema del color violeta (:visited).
+ */
+#main-header a,
+#main-header a:link,
+#main-header a:visited {
+    color: var(--color-text-inverse, white); /* Fuerza el color blanco o inverso */
+    text-decoration: none; /* Mantén limpio */
+}
+
+#main-header a:hover {
+    /* Puedes añadir un ligero cambio de color o transparencia al pasar el mouse */
+    color: var(--color-text-inverse, white);
+    opacity: 0.8;
+}
+
+/* * NOTA: Esta misma corrección aplica a la clase .text-inverse
+ * (Asumiendo que .text-inverse se usa para el enlace del título)
+ */
+.text-inverse,
+.text-inverse:link,
+.text-inverse:visited {
+    color: var(--color-text-inverse, white) !important;
+}
+
+
+
+
 /* ======================================= */
 /* 4. MEDIA QUERY: ARQUITECTURA DE DOCUMENTACIÓN (MOBILE) */
 /* ======================================= */
@@ -749,16 +784,7 @@ body {
   /* Mostrar el Botón Toggle en Móvil */
   /* Sidebar Toggle Button */
   #sidebar-toggle {
-    display: none; /* Oculto por defecto en desktop */
-    background: none;
-    border: 1px solid white;
-    color: white;
-    font-size: 1.8rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: var(--radius-base);
-    order: 3;
-
+    
     /* 🔴 CORRECCIÓN PARA EL ICONO */
     display: flex;
     align-items: center;

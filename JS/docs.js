@@ -6,7 +6,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- LÓGICA DE CARGA DE SNIPPETS (EXISTENTE) ---
   const htmlSnippetContainer = document.querySelector(".html-snippet");
-  const cssSnippetContainer = document.querySelector(".css-snippet");
+  //    (Excluye el contenedor que usará el snippet-css.txt)
+  const cssSnippetContainer = document.querySelector(
+    ".css-snippet:not([data-snippet='snippet-css.txt'])"
+  );
   const jsSnippetContainer = document.querySelector(".js-snippet");
   // NUEVA CONST: Busca el elemento <code> con la clase css-snippet que tiene el atributo data-snippet
   const utilityCssSnippetContainer = document.querySelector(

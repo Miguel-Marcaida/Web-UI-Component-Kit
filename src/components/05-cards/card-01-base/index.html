@@ -17,7 +17,7 @@
   <body>
     <header id="main-header">
       <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
+        <a href="/index.html" class="text-decoration-none text-inverse"
           >Web UI Kit</a
         >
       </h1>
@@ -36,58 +36,52 @@
     </header>
 
     <div class="docs-container">
+      <aside id="docs-sidebar" class="docs-sidebar">
+        </aside>
       <main class="docs-content">
         <h2>Tarjeta 01: Base</h2>
-        <p class="description">
+        <p class="description m-b-4">
           Contenedor minimalista diseñado para agrupar información relacionada
           de manera clara, utilizando divisiones para encabezado, cuerpo y pie
           de página/acciones.
         </p>
 
-        <section
-          class="preview-area"
-          style="padding: 2rem; background-color: var(--color-bg-base)"
-        >
-          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+        <section class="preview-area p-4" style="background-color: var(--color-bg-light)">
+          <h3 class="m-b-3">Vista Previa</h3>
 
-          <div
-            class="card-examples-grid"
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              gap: 1.5rem;
-            "
-          >
-            <div class="card card--base">
-              <div class="card__header">
+          <div class="card-examples-grid d-grid grid-responsive-auto g-4">
+            
+            <article class="card">
+              <div class="card__header p-x-4 p-y-3">
                 <h4 class="card__title">Título de la Tarjeta</h4>
               </div>
-              <div class="card__body">
+              <div class="card__body p-4">
                 <p>
-                  Este es el cuerpo principal de la tarjeta. Es ideal para
-                  listas de contenido, pequeños formularios o datos resumidos.
+                  Este es el cuerpo principal de la tarjeta. El padding es
+                  gestionado por la clase <code>p-4</code> de utilidades.
                 </p>
               </div>
-              <div class="card__footer">
+              <div class="card__footer p-x-4 p-y-3">
                 <button class="btn btn--primary btn--sm">
                   Acción Principal
                 </button>
               </div>
-            </div>
+            </article>
 
-            <div class="card card--base">
-              <div class="card__body">
-                <p>
+            <article class="card">
+              <div class="card__body p-4">
+                <p class="m-b-3">
                   Esta tarjeta omite el encabezado y se enfoca directamente en
-                  el contenido. El pie de página con el enlace es opcional.
+                  el contenido. El espaciado inferior del párrafo 
+                  (<code>m-b-3</code>) se controla con una utilidad.
                 </p>
                 <a href="#" class="text-link">Leer más</a>
               </div>
-            </div>
+            </article>
           </div>
         </section>
 
-        <section class="code-snippets">
+        <section class="code-snippets m-t-4">
           <h3>Código Fuente</h3>
           <h4>HTML</h4>
           <pre><code class="language-html html-snippet">...</code></pre>
