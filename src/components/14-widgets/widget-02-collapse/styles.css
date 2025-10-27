@@ -1,0 +1,96 @@
+/*
+ * Archivo: styles.css (para widget-02-collapse)
+ * Propósito: Define la apariencia y la animación del componente.
+ */
+
+/* =================================== */
+/* 1. ESTRUCTURA BASE DEL COLAPSABLE */
+/* =================================== */
+
+.collapse-group {
+    /* Contenedor principal */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+}
+
+.collapse-item {
+    /* Separador visual entre ítems */
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* El último ítem no lleva borde inferior */
+.collapse-item:last-child {
+    border-bottom: none;
+}
+
+/* =================================== */
+/* 2. CABECERA Y BOTÓN */
+/* =================================== */
+
+.collapse-header {
+    /* Contenedor del botón */
+    margin: 0;
+}
+
+.collapse-button {
+    /* El elemento interactivo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: left;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-base);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.collapse-button:hover {
+    background-color: var(--color-bg-hover);
+}
+
+/* Icono de Flecha */
+.collapse-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estado de Colapsable CERRADO (flecha abajo por defecto) */
+.collapse-button.collapsed .collapse-icon {
+    transform: rotate(0deg);
+}
+
+/* Estado de Colapsable ABIERTO (flecha arriba) */
+.collapse-button:not(.collapsed) .collapse-icon {
+    transform: rotate(180deg);
+}
+
+/* =================================== */
+/* 3. CONTENIDO COLAPSABLE Y ANIMACIÓN */
+/* =================================== */
+
+.collapse-content {
+    /* Estado inicial: CERRADO */
+    height: 0; 
+    overflow: hidden;
+    /* 🔑 TRANSICIÓN CRUCIAL: Habilita la animación de altura */
+    transition: height 0.3s ease-out; 
+}
+
+.collapse-body {
+    /* El contenido real dentro del collapse */
+    padding: 1rem 2rem 2rem 2rem; 
+    background-color: var(--color-bg-light);
+    border-top: 1px solid var(--color-border);
+}
+
+/* El contenido del primer elemento (si está expandido) no tiene border-top */
+.collapse-item:first-child .collapse-body {
+    border-top: none;
+}

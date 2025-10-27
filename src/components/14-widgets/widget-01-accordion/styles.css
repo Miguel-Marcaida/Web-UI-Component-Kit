@@ -1,0 +1,102 @@
+/*
+ * Archivo: styles.css (para widget-01-accordion)
+ */
+
+/* =================================== */
+/* 1. ESTRUCTURA BASE DEL ACORDEÓN */
+/* =================================== */
+
+.accordion {
+    /* Contenedor principal */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+}
+
+.accordion-item {
+    /* Separador visual entre ítems */
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* El último ítem no lleva borde inferior */
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+/* =================================== */
+/* 2. CABECERA Y BOTÓN */
+/* =================================== */
+
+.accordion-header {
+    /* Contenedor del botón, generalmente un <h2> */
+    margin: 0;
+}
+
+.accordion-button {
+    /* El elemento interactivo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 2rem; /* Espaciado interno claro */
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: left;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-base);
+    border: none; /* Eliminar borde nativo */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.accordion-button:hover {
+    background-color: var(--color-bg-hover);
+}
+
+/* Icono de Flecha */
+.accordion-icon {
+    font-size: 1.2rem;
+    /* 🛑 TRANSICIÓN DEL ÍCONO */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estado de Acordeón CERRADO (flecha abajo por defecto) */
+.accordion-button.collapsed .accordion-icon {
+    transform: rotate(0deg);
+}
+
+/* Estado de Acordeón ABIERTO (flecha arriba) */
+.accordion-button:not(.collapsed) .accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* =================================== */
+/* 3. CONTENIDO COLAPSABLE Y ANIMACIÓN */
+/* =================================== */
+
+.accordion-collapse {
+    /* Estado inicial: CERRADO */
+    height: 0; 
+    overflow: hidden;
+    /* 🛑 TRANSICIÓN CRUCIAL */
+    transition: height 0.3s ease-out; 
+    /* Importante: NO USAR background-color ni border aquí si no es necesario */
+}
+
+.accordion-body {
+    /* El contenido real dentro del collapse */
+    padding: 1rem 2rem 2rem 2rem; /* Ajuste para un mejor diseño */
+    background-color: var(--color-bg-light); /* Fondo sutil para el contenido */
+    border-top: 1px solid var(--color-border);
+}
+
+/* El contenido del primer elemento (si está expandido) no tiene border-top */
+.accordion-item:first-child .accordion-body {
+    border-top: none;
+}
+
+/* El último elemento (si está expandido) no tiene border-bottom en el item */
+.accordion-item:last-child .accordion-body {
+    border-bottom: none;
+}

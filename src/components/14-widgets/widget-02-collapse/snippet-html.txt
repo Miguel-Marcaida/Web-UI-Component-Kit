@@ -1,0 +1,73 @@
+<div class="collapse-group" id="collapseDemo">
+  <div class="collapse-item">
+    <h2 class="collapse-header" id="demoHeadingOne">
+      <button
+        class="collapse-button"
+        type="button"
+        data-collapse-target="#demoCollapseOne"
+        aria-expanded="true"
+        aria-controls="demoCollapseOne"
+      >
+        <span>Opción 1: Controles de Privacidad</span>
+        <i class="fas fa-chevron-down collapse-icon"></i>
+      </button>
+    </h2>
+    <div
+      id="demoCollapseOne"
+      class="collapse-content is-expanded"
+      aria-labelledby="demoHeadingOne"
+    >
+      <div class="collapse-body">
+        Puedes personalizar el nivel de acceso a tus datos personales.
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse-item">
+    <h2 class="collapse-header" id="demoHeadingTwo">
+      <button
+        class="collapse-button collapsed"
+        type="button"
+        data-collapse-target="#demoCollapseTwo"
+        aria-expanded="false"
+        aria-controls="demoCollapseTwo"
+      >
+        <span>Opción 2: Notificaciones</span>
+        <i class="fas fa-chevron-down collapse-icon"></i>
+      </button>
+    </h2>
+    <div
+      id="demoCollapseTwo"
+      class="collapse-content"
+      aria-labelledby="demoHeadingTwo"
+    >
+      <div class="collapse-body">
+        Activa o desactiva las notificaciones por correo electrónico y móvil.
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse-item">
+    <h2 class="collapse-header" id="demoHeadingThree">
+      <button
+        class="collapse-button collapsed"
+        type="button"
+        data-collapse-target="#demoCollapseThree"
+        aria-expanded="false"
+        aria-controls="demoCollapseThree"
+      >
+        <span>Opción 3: Opciones Avanzadas</span>
+        <i class="fas fa-chevron-down collapse-icon"></i>
+      </button>
+    </h2>
+    <div
+      id="demoCollapseThree"
+      class="collapse-content"
+      aria-labelledby="demoHeadingThree"
+    >
+      <div class="collapse-body">
+        Estas opciones son para usuarios expertos.
+      </div>
+    </div>
+  </div>
+</div>

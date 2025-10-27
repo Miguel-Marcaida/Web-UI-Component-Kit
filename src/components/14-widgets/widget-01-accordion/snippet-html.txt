@@ -1,0 +1,43 @@
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-accordion-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <span>¿Qué es un Acordeón?</span>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse is-expanded" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="accordion-body">
+                Un acordeón es una lista vertical de títulos colapsables que ocultan o muestran contenido. Por lo general, solo se puede abrir un panel a la vez. Este patrón mejora la usabilidad al reducir el desorden visual.
+            </div>
+        </div>
+    </div>
+    
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-accordion-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <span>¿Para qué sirve?</span>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="accordion-body">
+                Se utiliza comúnmente en secciones de Preguntas Frecuentes (FAQ), listas de características, o para mostrar pasos de un proceso largo.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-accordion-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <span>Implementación en JS.</span>
+                <i class="fas fa-chevron-down accordion-icon"></i>
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="accordion-body">
+                La funcionalidad completa se maneja con JavaScript, que calcula la altura del contenido del cuerpo y aplica transiciones suaves, asegurando que solo un panel esté abierto en un momento dado.
+            </div>
+        </div>
+    </div>
+</div>

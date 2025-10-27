@@ -205,6 +205,19 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    "14-widgets": {
+      title: "Módulo 14: Widgets Avanzados",
+      components: [
+        {
+          name: "01. Acordeón (Accordion)",
+          path: "/src/components/14-widgets/widget-01-accordion/index.html",
+        },
+        {
+          name: "02. Colapsable (Collapse)",
+          path: "/src/components/14-widgets/widget-02-collapse/index.html",
+        },
+      ],
+    },
   };
 
   const docsContainer = document.querySelector(".docs-container");
