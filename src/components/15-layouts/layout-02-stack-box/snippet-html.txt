@@ -1,0 +1,11 @@
+<div class="d-flex flex-column" style="max-width: 300px;">
+    <div class="p-3 bg-light m-y-3">Elemento 1</div>
+    <div class="p-3 bg-light m-y-3">Elemento 2</div>
+    <div class="p-3 bg-light m-y-3">Elemento 3</div>
+</div>
+
+<div class="w-full" style="border: 1px solid #ccc;">
+    <div class="w-25 bg-primary p-2">Ancho 25% (.w-25)</div>
+    <div class="w-50 bg-success p-2">Ancho 50% (.w-50)</div>
+    <div class="w-75 bg-danger p-2">Ancho 75% (.w-75)</div>
+</div>

@@ -230,6 +230,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "01. Flexbox y Grid Helpers",
                     path: "/src/components/15-layouts/layout-01-flex-grid/index.html",
                 },
+                {
+                    name: "02. Stack y Box Models",
+                    path: "/src/components/15-layouts/layout-02-stack-box/index.html",
+                },
             ],
         },
     };

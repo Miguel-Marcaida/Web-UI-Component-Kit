@@ -1,0 +1,28 @@
+/*
+ * =================================================
+ * LAYOUT 02 - STYLES.CSS
+ * Estilos específicos de la demo (cosméticos)
+ * =================================================
+ */
+
+/* Contenedores de Demostración */
+.demo-box {
+    padding: 1rem;
+    background-color: white;
+    border-radius: var(--radius-base);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Ítems internos de la demo */
+.demo-item {
+    background-color: var(--color-bg-hover);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+}
+
+/* Dimensiones de la demo (para w-*) */
+.demo-dimension {
+    height: 30px;
+    border-radius: var(--radius-base);
+}
