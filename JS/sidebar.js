@@ -244,6 +244,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
             ],
         },
+        "15-layouts": {
+            title: "Módulo 15: Layouts",
+            components: [
+                // ... (componentes 15.01 a 15.04)
+            ],
+        },
+        "16-js-utilities": {
+            title: "Módulo 16: JavaScript Utilities",
+            components: [
+                {
+                    name: "16.01: Toggle y Eventos Básicos",
+                    path: "/src/components/16-js-utilities/js-01-toggle-basic/index.html",
+                },
+            ],
+        },
     };
 
     const docsContainer = document.querySelector(".docs-container");
