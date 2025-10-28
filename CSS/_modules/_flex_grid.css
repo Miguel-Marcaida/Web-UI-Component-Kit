@@ -1,0 +1,137 @@
+/*
+ * =================================================
+ * MÓDULO: UTILIDADES DE FLEXBOX Y GRID
+ * Controla la distribución de elementos.
+ * =================================================
+ */
+
+/* MÓDULO 01: BOTONES (Extensión: Tamaños) */
+
+/* BTN BASE (Mediano/Default) */
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-base, 1rem);
+}
+
+/* BTN PEQUEÑO (Small) */
+.btn--sm {
+    padding: 0.3rem 0.75rem;
+    font-size: var(--font-size-sm, 0.875rem);
+}
+
+/* BTN GRANDE (Large) */
+.btn--lg {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-lg, 1.125rem);
+}
+
+/* =========================================== */
+/* UTILS DE FLEXBOX (DISTRIBUCIÓN Y ALINEACIÓN)*/
+/* =========================================== */
+
+/* Se asume una clase contenedora principal como .flex-container o el uso de .d-flex */
+/* Si tienes .flex-container { display: flex; }, la deberías añadir aquí.
+   Si solo usas .d-flex del módulo _display.css, no es necesario.
+   Dejaré la definición que usaste en el snippet de la demo 15.01: */
+.flex-container {
+    display: flex !important;
+}
+
+/* Dirección y Envoltura (Direction & Wrap) */
+.flex-row {
+    flex-direction: row !important;
+}
+.flex-row-reverse {
+    flex-direction: row-reverse !important;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.flex-column-reverse {
+    flex-direction: column-reverse !important;
+}
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+
+/* Justificación (Eje Principal - justify-content) */
+.justify-content-start {
+    justify-content: flex-start !important;
+}
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.justify-content-between {
+    justify-content: space-between !important;
+}
+.justify-content-around {
+    justify-content: space-around !important;
+}
+.justify-content-evenly {
+    justify-content: space-evenly !important;
+}
+
+/* Alineación de Ítems (Eje Cruzado - align-items) */
+.align-items-start {
+    align-items: flex-start !important;
+}
+.align-items-end {
+    align-items: flex-end !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.align-items-baseline {
+    align-items: baseline !important;
+}
+.align-items-stretch {
+    align-items: stretch !important;
+}
+
+/* Alineación Propia (Eje Cruzado - align-self) */
+.align-self-start {
+    align-self: flex-start !important;
+}
+.align-self-end {
+    align-self: flex-end !important;
+}
+.align-self-center {
+    align-self: center !important;
+}
+.align-self-baseline {
+    align-self: baseline !important;
+}
+.align-self-stretch {
+    align-self: stretch !important;
+}
+
+/* Crecimiento y Encogimiento (Grow & Shrink) */
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+.flex-shrink-0 {
+    flex-shrink: 0 !important;
+}
+
+/* ------------------------------------------- */
+/* UTILS DE GRID (La que usamos para el demo) */
+/* ------------------------------------------- */
+
+/* Usamos .d-grid para display: grid; (del módulo _display.css) */
+.d-grid {
+    display: grid !important;
+}
+.grid-responsive-auto {
+    /* Auto-fit para el catálogo de componentes o responsive general */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+/* Utility para Grid Gap (Espacio entre filas/columnas) */
+.g-4 {
+    gap: var(--spacing-4) !important;
+}

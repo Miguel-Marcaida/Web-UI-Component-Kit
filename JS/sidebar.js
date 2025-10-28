@@ -223,6 +223,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
             ],
         },
+        "15-layouts": {
+            title: "Módulo 15: Layouts",
+            components: [
+                {
+                    name: "01. Flexbox y Grid Helpers",
+                    path: "/src/components/15-layouts/layout-01-flex-grid/index.html",
+                },
+            ],
+        },
     };
 
     const docsContainer = document.querySelector(".docs-container");

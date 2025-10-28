@@ -1,0 +1,12 @@
+<div class="demo-box flex-container justify-center align-center h-150 p-4">
+    <div class="demo-item">Item Centrado</div>
+    <div class="demo-item">Item Centrado</div>
+</div>
+
+<div class="demo-box grid-container grid-responsive-auto g-3">
+    <div class="demo-item">Columna Auto 1</div>
+    <div class="demo-item">Columna Auto 2</div>
+    <div class="demo-item">Columna Auto 3</div>
+    <div class="demo-item">Columna Auto 4</div>
+    <div class="demo-item">Columna Auto 5</div>
+</div>

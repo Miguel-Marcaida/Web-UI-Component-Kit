@@ -1,0 +1,44 @@
+/*
+ * =================================================
+ * MÓDULO: UTILIDADES DE VISUALIZACIÓN Y FLUJO
+ * Controla la propiedad display, float y clearfix.
+ * =================================================
+ */
+
+/* Utilidades de Display */
+.d-none {
+    display: none !important;
+}
+.d-inline {
+    display: inline !important;
+}
+.d-block {
+    display: block !important;
+}
+.d-inline-block {
+    display: inline-block !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.d-inline-flex {
+    display: inline-flex !important;
+}
+
+/* Utilidades de Flotación */
+.float-start {
+    float: left !important;
+}
+.float-end {
+    float: right !important;
+}
+.float-none {
+    float: none !important;
+}
+
+/* Clearfix (Para limpiar flotantes) */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}

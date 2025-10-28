@@ -1,0 +1,58 @@
+/*
+ * =================================================
+ * MÓDULO: RESET, NORMALIZACIÓN Y ESTILOS BASE
+ * =================================================
+ */
+
+/* 1. CSS RESET / Normalización Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Modelo de caja moderno */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* Define la base para la unidad rem */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Fuente y tamaño base */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem; /* Equivalente a 16px */
+    line-height: 1.5;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-base);
+}
+
+/* 2. RESET BÁSICO Y ESTILOS DE ENLACE */
+
+/* * 1. RESPETAR EL COLOR INVERSO EN EL HEADER
+ * Asegura que los enlaces dentro del header (fondo oscuro) se vean blancos 
+ * y corrige el problema del color violeta (:visited).
+ */
+#main-header a,
+#main-header a:link,
+#main-header a:visited {
+    color: var(
+        --color-text-inverse,
+        white
+    ); /* Fuerza el color blanco o inverso */
+    text-decoration: none; /* Mantén limpio */
+}
+
+#main-header a:hover {
+    /* Puedes añadir un ligero cambio de color o transparencia al pasar el mouse */
+    color: var(--color-text-inverse, white);
+    opacity: 0.8;
+}
+
+/* * NOTA: Esta misma corrección aplica a la clase .text-inverse */
+.text-inverse,
+.text-inverse:link,
+.text-inverse:visited {
+    color: var(--color-text-inverse, white) !important;
+}

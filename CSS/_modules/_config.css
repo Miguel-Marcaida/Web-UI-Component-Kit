@@ -1,0 +1,45 @@
+/*
+ * =================================================
+ * MÓDULO: CONFIGURACIÓN Y VARIABLES GLOBALES
+ * Define todos los tokens de diseño (Colores, Spacing, Radios, Tipografía Base).
+ * =================================================
+ */
+:root {
+    /* 1. Colores Primarios y de Marca */
+    --color-primary: #007bff; /* Azul: Botones principales, enlaces, acentos. */
+    --color-secondary: #6c757d; /* Gris: Botones secundarios, texto sutil. */
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+
+    /* 2. Colores del Tema */
+    --color-bg-base: #f8f9fa; /* Fondo principal del body (muy claro) */
+    --color-bg-dark: #1f2937; /* Fondos oscuros: Headers, Navs principales */
+    --color-bg-light: #f3f4f6; /* Fondos secundarios: Dropdowns, Menús colapsados. */
+    --color-bg-hover: #e9ecef; /* Fondo al pasar el mouse (hover) */
+
+    /* Texto */
+    --color-text-base: #343a40; /* Color de texto principal para fondos claros */
+    --color-text-inverse: #ffffff; /* Color de texto para fondos oscuros (Blanco puro) */
+    --color-link: var(--color-primary); /* Enlaces usan el color primario */
+
+    /* Otros */
+    --color-border: #dee2e6; /* Bordes y separadores ligeros */
+
+    /* 3. Tipografía, Radio y Spacing (Unidades Base) */
+    --base-font-size: 16px;
+    --radius-base: 4px; /* Radio de borde base */
+
+    /* TIPOGRAFÍA / ESCALA DE FUENTES */
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-base: 1rem; /* 16px */
+    --font-size-lg: 1.125rem; /* 18px */
+    --font-weight-bold: bold; /* Variable usada en el componente 15.01 */
+
+    /* SPACING SCALE (Usado para utilidades m-*, p-*, g-*) */
+    --spacing-0: 0;
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 1rem;
+    --spacing-4: 1.5rem;
+    --spacing-5: 3rem;
+}

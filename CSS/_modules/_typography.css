@@ -1,0 +1,99 @@
+/*
+ * =================================================
+ * MÓDULO: UTILIDADES DE TIPOGRAFÍA Y COLOR DE TEXTO
+ * Controla la alineación, peso, estilo y color del texto.
+ * =================================================
+ */
+
+/* 1. UTILIDADES DE TIPOGRAFÍA */
+
+/* Alineación de Texto */
+.text-start {
+    text-align: left !important;
+}
+.text-end {
+    text-align: right !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.text-justify {
+    text-align: justify !important;
+}
+
+/* Transformación de Texto */
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+/* Peso de Fuente */
+.fw-bold {
+    font-weight: bold !important;
+}
+.fw-bolder {
+    font-weight: bolder !important;
+}
+.fw-normal {
+    font-weight: normal !important;
+}
+.fw-light {
+    font-weight: lighter !important;
+}
+.fw-semibold {
+    font-weight: 600 !important;
+}
+
+/* Estilo de Fuente */
+.fst-italic {
+    font-style: italic !important;
+}
+.fst-normal {
+    font-style: normal !important;
+}
+
+/* Decoración de Texto */
+.text-decoration-none {
+    text-decoration: none !important;
+}
+.text-decoration-underline {
+    text-decoration: underline !important;
+}
+
+/* 2. UTILIDADES DE COLOR DE TEXTO */
+
+/* Colores de Marca */
+.text-primary {
+    color: var(--color-primary) !important;
+}
+.text-secondary {
+    color: var(--color-secondary) !important;
+}
+
+/* Colores de Estado y Globales */
+.text-success {
+    color: var(--color-success) !important;
+}
+.text-danger {
+    color: var(--color-danger) !important;
+}
+.text-base {
+    color: var(--color-text-base) !important;
+}
+.text-inverse {
+    color: var(--color-text-inverse) !important;
+}
+
+/* Enlaces sin subrayado */
+.text-link {
+    color: var(--color-link) !important;
+    text-decoration: none !important;
+}
+.text-link:hover {
+    text-decoration: underline !important;
+}

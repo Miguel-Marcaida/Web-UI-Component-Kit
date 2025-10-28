@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Layout 01: Flexbox y Grid Helpers</title>
+
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="/CSS/prism.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a
+                    href="/index.html"
+                    style="text-decoration: none; color: white"
+                    >Web UI Kit</a
+                >
+            </h1>
+            <button
+                id="sidebar-toggle"
+                aria-expanded="false"
+                aria-controls="docs-sidebar"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <a href="../index.html">Volver a Layouts</a>
+            </nav>
+        </header>
+
+        <div class="docs-container">
+            <main class="docs-content">
+                <h2>Layout 01: Flexbox y Grid Helpers</h2>
+                <p class="description m-b-4">
+                    Clases auxiliares CSS que permiten establecer rápidamente un
+                    contenedor como **Flexbox** o **Grid**, controlando la
+                    dirección, alineación y espaciado de sus elementos hijos.
+                </p>
+
+                <section
+                    class="preview-area p-4 m-b-4"
+                    style="background-color: var(--color-bg-light)"
+                >
+                    <h3 style="margin-bottom: 1.5rem">
+                        Flexbox: Alineación y Justificación
+                    </h3>
+
+                    <p class="text-sm m-b-3">
+                        Utiliza la clase <code>.flex-container</code> y las
+                        utilidades <code>.justify-*</code> y
+                        <code>.align-*</code>.
+                    </p>
+
+                    <div
+                        class="demo-box flex-container justify-center align-center h-150 p-4"
+                    >
+                        <div class="demo-item">Item Centrado</div>
+                        <div class="demo-item">Item Centrado</div>
+                    </div>
+                </section>
+
+                <hr />
+
+                <section
+                    class="preview-area p-4"
+                    style="background-color: var(--color-bg-light)"
+                >
+                    <h3 style="margin-bottom: 1.5rem">
+                        Grid: Estructuras Responsivas
+                    </h3>
+
+                    <p class="text-sm m-b-3">
+                        Habilita la grilla con <code>.grid-container</code> y
+                        define el comportamiento con
+                        <code>.grid-responsive-auto</code> y el espaciado con
+                        <code>.g-*</code>.
+                    </p>
+
+                    <div
+                        class="demo-box grid-container grid-responsive-auto g-3"
+                    >
+                        <div class="demo-item">Columna Auto 1</div>
+                        <div class="demo-item">Columna Auto 2</div>
+                        <div class="demo-item">Columna Auto 3</div>
+                        <div class="demo-item">Columna Auto 4</div>
+                        <div class="demo-item">Columna Auto 5</div>
+                    </div>
+                </section>
+
+                <section class="code-snippets">
+                    <h3>Código Fuente</h3>
+                    <h4>HTML</h4>
+                    <pre><code class="language-html html-snippet">...</code></pre>
+                    <h4>CSS (Estilos de demostración en styles.css)</h4>
+                    <pre><code class="language-css css-snippet">...</code></pre>
+                    <h4>Clases de Layout Útiles (main.css)</h4>
+                    <pre><code class="language-css css-snippet-util">
+/* CLASES DE LAYOUT DISPONIBLES EN main.css */
+
+/* DISPLAY */
+.flex-container { display: flex; } /* Asumiendo que .flex-container existe y es display: flex */
+.d-grid { display: grid !important; }
+
+/* FLEXBOX: ALINEACIÓN Y JUSTIFICACIÓN (Subset) */
+.justify-content-center { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.align-items-center { align-items: center !important; }
+.align-items-end { align-items: flex-end !important; }
+
+/* GRID: RESPONSIVE Y GAP (Subset) */
+.grid-responsive-auto { 
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+.g-4 { gap: var(--spacing-4) !important; }
+                    
+
+                    </code></pre>
+                </section>
+            </main>
+        </div>
+
+        <footer id="main-footer"></footer>
+        <script src="/JS/prism.js"></script>
+        <script src="/JS/main.js"></script>
+        <script src="/JS/docs.js"></script>
+        <script src="/JS/sidebar.js"></script>
+    </body>
+</html>

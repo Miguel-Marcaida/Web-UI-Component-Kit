@@ -1,0 +1,300 @@
+/*
+ * =================================================
+ * MÓDULO: UTILIDADES DE ESPACIADO (MARGIN & PADDING)
+ * Genera clases para m-*, p-* basadas en la escala de espaciado.
+ * =================================================
+ */
+
+/* * Formato: {propiedad}{lado}-{tamaño}
+ * Propiedad: m (margin), p (padding)
+ * Lado: t (top), b (bottom), s (start/left), e (end/right), x (horizontal), y (vertical)
+ * Tamaño: 0 (0), 1 (0.25rem), 2 (0.5rem), 3 (1rem), 4 (1.5rem), 5 (3rem), auto (auto)
+ */
+
+/* Utilidades para tamaño CERO y Auto */
+.m-0,
+.p-0 {
+    margin: var(--spacing-0) !important;
+    padding: var(--spacing-0) !important;
+}
+.m-auto {
+    margin: auto !important;
+}
+.m-x-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ----------------------------------- */
+/* MARGIN (M) - Tamaño completo */
+/* ----------------------------------- */
+.m-1 {
+    margin: var(--spacing-1) !important;
+}
+.m-2 {
+    margin: var(--spacing-2) !important;
+}
+.m-3 {
+    margin: var(--spacing-3) !important;
+}
+.m-4 {
+    margin: var(--spacing-4) !important;
+}
+.m-5 {
+    margin: var(--spacing-5) !important;
+}
+
+/* Margin Top (t) */
+.m-t-1 {
+    margin-top: var(--spacing-1) !important;
+}
+.m-t-2 {
+    margin-top: var(--spacing-2) !important;
+}
+.m-t-3 {
+    margin-top: var(--spacing-3) !important;
+}
+.m-t-4 {
+    margin-top: var(--spacing-4) !important;
+}
+.m-t-5 {
+    margin-top: var(--spacing-5) !important;
+}
+.m-t-auto {
+    margin-top: auto !important;
+}
+
+/* Margin Bottom (b) */
+.m-b-1 {
+    margin-bottom: var(--spacing-1) !important;
+}
+.m-b-2 {
+    margin-bottom: var(--spacing-2) !important;
+}
+.m-b-3 {
+    margin-bottom: var(--spacing-3) !important;
+}
+.m-b-4 {
+    margin-bottom: var(--spacing-4) !important;
+}
+.m-b-5 {
+    margin-bottom: var(--spacing-5) !important;
+}
+.m-b-auto {
+    margin-bottom: auto !important;
+}
+
+/* Margin Start (s - left) */
+.m-s-1 {
+    margin-left: var(--spacing-1) !important;
+}
+.m-s-2 {
+    margin-left: var(--spacing-2) !important;
+}
+.m-s-3 {
+    margin-left: var(--spacing-3) !important;
+}
+.m-s-4 {
+    margin-left: var(--spacing-4) !important;
+}
+.m-s-5 {
+    margin-left: var(--spacing-5) !important;
+}
+.m-s-auto {
+    margin-left: auto !important;
+}
+
+/* Margin End (e - right) */
+.m-e-1 {
+    margin-right: var(--spacing-1) !important;
+}
+.m-e-2 {
+    margin-right: var(--spacing-2) !important;
+}
+.m-e-3 {
+    margin-right: var(--spacing-3) !important;
+}
+.m-e-4 {
+    margin-right: var(--spacing-4) !important;
+}
+.m-e-5 {
+    margin-right: var(--spacing-5) !important;
+}
+.m-e-auto {
+    margin-right: auto !important;
+}
+
+/* Margin Horizontal (x) */
+.m-x-1 {
+    margin-left: var(--spacing-1) !important;
+    margin-right: var(--spacing-1) !important;
+}
+.m-x-2 {
+    margin-left: var(--spacing-2) !important;
+    margin-right: var(--spacing-2) !important;
+}
+.m-x-3 {
+    margin-left: var(--spacing-3) !important;
+    margin-right: var(--spacing-3) !important;
+}
+.m-x-4 {
+    margin-left: var(--spacing-4) !important;
+    margin-right: var(--spacing-4) !important;
+}
+.m-x-5 {
+    margin-left: var(--spacing-5) !important;
+    margin-right: var(--spacing-5) !important;
+}
+
+/* Margin Vertical (y) */
+.m-y-1 {
+    margin-top: var(--spacing-1) !important;
+    margin-bottom: var(--spacing-1) !important;
+}
+.m-y-2 {
+    margin-top: var(--spacing-2) !important;
+    margin-bottom: var(--spacing-2) !important;
+}
+.m-y-3 {
+    margin-top: var(--spacing-3) !important;
+    margin-bottom: var(--spacing-3) !important;
+}
+.m-y-4 {
+    margin-top: var(--spacing-4) !important;
+    margin-bottom: var(--spacing-4) !important;
+}
+.m-y-5 {
+    margin-top: var(--spacing-5) !important;
+    margin-bottom: var(--spacing-5) !important;
+}
+
+/* ----------------------------------- */
+/* PADDING (P) - Tamaño completo */
+/* ----------------------------------- */
+.p-1 {
+    padding: var(--spacing-1) !important;
+}
+.p-2 {
+    padding: var(--spacing-2) !important;
+}
+.p-3 {
+    padding: var(--spacing-3) !important;
+}
+.p-4 {
+    padding: var(--spacing-4) !important;
+}
+.p-5 {
+    padding: var(--spacing-5) !important;
+}
+
+/* Padding Top (t) */
+.p-t-1 {
+    padding-top: var(--spacing-1) !important;
+}
+.p-t-2 {
+    padding-top: var(--spacing-2) !important;
+}
+.p-t-3 {
+    padding-top: var(--spacing-3) !important;
+}
+.p-t-4 {
+    padding-top: var(--spacing-4) !important;
+}
+.p-t-5 {
+    padding-top: var(--spacing-5) !important;
+}
+
+/* Padding Bottom (b) */
+.p-b-1 {
+    padding-bottom: var(--spacing-1) !important;
+}
+.p-b-2 {
+    padding-bottom: var(--spacing-2) !important;
+}
+.p-b-3 {
+    padding-bottom: var(--spacing-3) !important;
+}
+.p-b-4 {
+    padding-bottom: var(--spacing-4) !important;
+}
+.p-b-5 {
+    padding-bottom: var(--spacing-5) !important;
+}
+
+/* Padding Start (s - left) */
+.p-s-1 {
+    padding-left: var(--spacing-1) !important;
+}
+.p-s-2 {
+    padding-left: var(--spacing-2) !important;
+}
+.p-s-3 {
+    padding-left: var(--spacing-3) !important;
+}
+.p-s-4 {
+    padding-left: var(--spacing-4) !important;
+}
+.p-s-5 {
+    padding-left: var(--spacing-5) !important;
+}
+
+/* Padding End (e - right) */
+.p-e-1 {
+    padding-right: var(--spacing-1) !important;
+}
+.p-e-2 {
+    padding-right: var(--spacing-2) !important;
+}
+.p-e-3 {
+    padding-right: var(--spacing-3) !important;
+}
+.p-e-4 {
+    padding-right: var(--spacing-4) !important;
+}
+.p-e-5 {
+    padding-right: var(--spacing-5) !important;
+}
+
+/* Padding Horizontal (x) */
+.p-x-1 {
+    padding-left: var(--spacing-1) !important;
+    padding-right: var(--spacing-1) !important;
+}
+.p-x-2 {
+    padding-left: var(--spacing-2) !important;
+    padding-right: var(--spacing-2) !important;
+}
+.p-x-3 {
+    padding-left: var(--spacing-3) !important;
+    padding-right: var(--spacing-3) !important;
+}
+.p-x-4 {
+    padding-left: var(--spacing-4) !important;
+    padding-right: var(--spacing-4) !important;
+}
+.p-x-5 {
+    padding-left: var(--spacing-5) !important;
+    padding-right: var(--spacing-5) !important;
+}
+
+/* Padding Vertical (y) */
+.p-y-1 {
+    padding-top: var(--spacing-1) !important;
+    padding-bottom: var(--spacing-1) !important;
+}
+.p-y-2 {
+    padding-top: var(--spacing-2) !important;
+    padding-bottom: var(--spacing-2) !important;
+}
+.p-y-3 {
+    padding-top: var(--spacing-3) !important;
+    padding-bottom: var(--spacing-3) !important;
+}
+.p-y-4 {
+    padding-top: var(--spacing-4) !important;
+    padding-bottom: var(--spacing-4) !important;
+}
+.p-y-5 {
+    padding-top: var(--spacing-5) !important;
+    padding-bottom: var(--spacing-5) !important;
+}
