@@ -1,0 +1,32 @@
+/*
+ * =================================================
+ * MÓDULO: COMPONENTES BÁSICOS Y PATRONES REUTILIZABLES
+ * Contiene el CSS de componentes reutilizables como Cards, Alertas y Media Object.
+ * =================================================
+ */
+
+/* =================================================
+ * PATRÓN: MEDIA OBJECT (15.03)
+ * Contenedor de una imagen fija y un cuerpo flexible.
+ * =================================================
+ */
+.media {
+    display: flex; /* Contenedor Flex principal */
+    align-items: flex-start; /* Alinea los ítems en la parte superior (por defecto) */
+}
+.media--reverse {
+    flex-direction: row-reverse; /* Mueve la imagen al final */
+}
+
+.media-img {
+    flex-shrink: 0; /* Asegura que la imagen no se encoja */
+    width: 64px; /* Ancho fijo para la imagen/avatar */
+    height: 64px;
+    border-radius: 50%; /* Típico para avatares */
+    object-fit: cover;
+    background-color: var(--color-bg-light);
+}
+
+.media-body {
+    flex-grow: 1; /* Permite que el cuerpo ocupe todo el espacio restante */
+}

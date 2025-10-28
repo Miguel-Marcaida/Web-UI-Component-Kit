@@ -10,6 +10,7 @@
 
 /* --- Layout y Componentes --- */
 @import url("./_modules/_layout.css");
+@import url("./_modules/_components.css"); /* <--- ¡AÑADIDO AQUÍ! */
 /* @import url('./_modules/_components.css'); <- Podrías añadirlo después para otros componentes */
 
 /* --- Utilidades --- */

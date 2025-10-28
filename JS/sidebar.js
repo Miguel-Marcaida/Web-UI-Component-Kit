@@ -234,6 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "02. Stack y Box Models",
                     path: "/src/components/15-layouts/layout-02-stack-box/index.html",
                 },
+                {
+                    name: "03. Objeto Media (Media Object)",
+                    path: "/src/components/15-layouts/layout-03-media-object/index.html",
+                },
             ],
         },
     };
