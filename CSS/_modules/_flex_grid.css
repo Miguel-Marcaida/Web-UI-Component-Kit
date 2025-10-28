@@ -135,3 +135,22 @@
 .g-4 {
     gap: var(--spacing-4) !important;
 }
+
+/* =========================================== */
+/* UTILS DE CENTRADO */
+/* =========================================== */
+
+/* Centrado Horizontal y Vertical (Centro Absoluto usando Flexbox) */
+.center-xy {
+    display: flex !important;
+    justify-content: center !important; /* Centra horizontalmente */
+    align-items: center !important; /* Centra verticalmente */
+}
+
+/* Centrado Horizontal de Bloque (Usando margen automático) 
+   NOTA: Esta clase ya existe en _spacing.css, pero la incluimos para referencia 
+   o para asegurar que overridee otras propiedades si fuera necesario. */
+.m-x-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

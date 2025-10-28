@@ -238,6 +238,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "03. Objeto Media (Media Object)",
                     path: "/src/components/15-layouts/layout-03-media-object/index.html",
                 },
+                {
+                    name: "04. Centrado (Center Utility)",
+                    path: "/src/components/15-layouts/layout-04-center/index.html",
+                },
             ],
         },
     };

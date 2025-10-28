@@ -1,0 +1,11 @@
+<div class="center-xy bg-primary" style="min-height: 200px;">
+    <div class="p-4 bg-base shadow-sm">
+        Contenido Centrado con .center-xy
+    </div>
+</div>
+
+<div class="bg-light p-3">
+    <div class="m-x-auto bg-white p-3 border" style="width: 250px;">
+        Centrado Horizontal con .m-x-auto
+    </div>
+</div>
