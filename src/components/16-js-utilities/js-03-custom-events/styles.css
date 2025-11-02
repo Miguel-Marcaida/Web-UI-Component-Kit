@@ -1,0 +1,20 @@
+/*
+ * =================================================
+ * JS 03 - STYLES.CSS
+ * Estilos específicos de la demo (cosméticos)
+ * =================================================
+ */
+
+/* DEMO RECEPTOR */
+.listener-box {
+    min-height: 80px;
+    border-radius: var(--radius-base);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Estado activo del receptor cuando recibe un evento */
+.listener-box.is-active {
+    background-color: var(--color-success-light);
+    border-color: var(--color-success-dark);
+    box-shadow: 0 0 10px var(--color-success-light);
+}

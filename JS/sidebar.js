@@ -261,6 +261,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "16.02: Debounce y Throttle",
                     path: "/src/components/16-js-utilities/js-02-debounce-throttle/index.html",
                 },
+                {
+                    name: "16.03: Eventos Personalizados (Custom Events)",
+                    path: "/src/components/16-js-utilities/js-03-custom-events/index.html",
+                },
             ],
         },
     };

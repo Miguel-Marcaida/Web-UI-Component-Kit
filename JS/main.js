@@ -12,6 +12,7 @@ document.write('<script src="/JS/modules/_core.js"></script>');
 document.write('<script src="/JS/modules/_toggle.js"></script>');
 
 document.write('<script src="/JS/modules/_performance.js"></script>');
+document.write('<script src="/JS/modules/_events.js"></script>');
 
 // 3. Inicializar el Kit
 document.addEventListener("DOMContentLoaded", () => {
