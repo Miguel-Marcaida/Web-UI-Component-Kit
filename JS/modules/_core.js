@@ -21,35 +21,88 @@
         const target = event.target;
 
         // ------------------------------------------
-        // Lógica de TOGGLE (Para todos los elementos [data-toggle-target] o #sidebar-toggle)
+        // Lógica de TOGGLE (1. Botones de Apertura/Cierre)
         // ------------------------------------------
-        // Si el elemento clicado o alguno de sus padres coincide con el selector de Toggle.
         const toggleTrigger = target.closest(
             "[data-toggle-target], #sidebar-toggle"
         );
 
         if (toggleTrigger && ModuleFunctions.toggle) {
             event.preventDefault();
-            // Llama a la función toggleState, que será importada de otro módulo.
             ModuleFunctions.toggle(toggleTrigger);
             return;
         }
 
-        // * Otros manejadores de eventos (Modals, Tabs, etc.) irán aquí.
+        // ------------------------------------------
+        // Lógica de CIERRE GLOBAL (2. Fondo Oscuro de Modales/Popovers)
+        // ------------------------------------------
+        const activeModals = document.querySelectorAll(
+            ".modal-container.is-active, .popover-container.is-active"
+        );
+
+        if (activeModals.length > 0) {
+            activeModals.forEach((modal) => {
+                // Selector más específico para el contenido interno
+                const content = modal.querySelector(
+                    ".modal-content, .popover-content"
+                );
+
+                // Verificar si el clic fue en el contenedor (el fondo) y NO dentro del contenido
+                // También verificamos que 'content' exista para evitar errores
+                if (
+                    modal.classList.contains("is-active") &&
+                    content &&
+                    !content.contains(target)
+                ) {
+                    // Simula un trigger con el ID del modal/popover para cerrar
+                    const closeTrigger = {
+                        dataset: { toggleTarget: modal.id },
+                    };
+                    if (ModuleFunctions.toggle) {
+                        ModuleFunctions.toggle(closeTrigger);
+                    }
+                }
+            });
+        }
+
+        // * Otros manejadores de eventos (Tabs, etc.) irán aquí.
     }
 
     // =================================================
-    // 2. INITIALIZATION
+    // 2. MANEJO DE TECLAS (Cierre con ESC)
+    // =================================================
+
+    /**
+     * Maneja eventos de teclado globales (cerrar modales con ESC).
+     */
+    function handleDocumentKeydown(event) {
+        // Cierre con la tecla ESC
+        if (event.key === "Escape") {
+            const activeModals = document.querySelectorAll(
+                ".modal-container.is-active, .popover-container.is-active"
+            );
+
+            activeModals.forEach((modal) => {
+                // Cerramos el modal usando la utilidad toggle
+                const closeTrigger = { dataset: { toggleTarget: modal.id } };
+                if (ModuleFunctions.toggle) {
+                    ModuleFunctions.toggle(closeTrigger);
+                }
+            });
+        }
+    }
+
+    // =================================================
+    // 3. INITIALIZATION (Actualizada)
     // =================================================
 
     /**
      * Función que se ejecuta cuando el DOM está listo.
      */
     function initialize() {
-        // Carga y configura los módulos
-
-        // Asignar el Listener ÚNICO al cuerpo
+        // Asignar los Listeners ÚNICOS
         document.body.addEventListener("click", handleDocumentClick);
+        document.addEventListener("keydown", handleDocumentKeydown); // NUEVO: Listener de Teclado
 
         // * Otras inicializaciones de componentes (ej. Carruseles) irán aquí.
     }
