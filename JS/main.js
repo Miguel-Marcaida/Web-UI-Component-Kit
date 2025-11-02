@@ -11,6 +11,8 @@ document.write('<script src="/JS/modules/_core.js"></script>');
 // Nota: Deben cargarse antes de la inicialización.
 document.write('<script src="/JS/modules/_toggle.js"></script>');
 
+document.write('<script src="/JS/modules/_performance.js"></script>');
+
 // 3. Inicializar el Kit
 document.addEventListener("DOMContentLoaded", () => {
     if (window.UI_KIT_CORE && window.UI_KIT_CORE.init) {

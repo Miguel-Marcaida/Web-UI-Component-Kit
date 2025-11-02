@@ -1,0 +1,22 @@
+<div class="debounce-demo">
+    <input type="text" id="debounce-input" placeholder="Escribe aquí rápidamente..." class="form-input">
+    <p class="m-0 text-sm">
+        Última ejecución: <span id="debounce-output" class="fw-bold">Esperando...</span>
+    </p>
+</div>
+
+<hr>
+
+<div class="p-t-2">
+    <p class="text-sm">
+        Área con scroll:
+    </p>
+    <div id="throttle-area" class="throttle-area p-3 border">
+        <p class="m-b-0 text-sm">
+            Ejecuciones de Scroll: <span id="throttle-output" class="fw-bold">0</span>
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+</div>

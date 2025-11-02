@@ -1,0 +1,22 @@
+/*
+ * =================================================
+ * JS 02 - STYLES.CSS
+ * Estilos específicos de la demo (cosméticos)
+ * =================================================
+ */
+
+/* DEMO THROTTLE */
+.throttle-area {
+    /* Altura fija para que la barra de scroll sea visible */
+    height: 150px;
+    overflow-y: scroll;
+    padding: var(--spacing-4);
+    transition: background-color 0.1s ease;
+}
+
+/* Indicador de actividad para la demo de Debounce/Throttle */
+.form-input.is-active,
+.throttle-area.is-active {
+    background-color: var(--color-warning-light);
+    border-color: var(--color-warning-dark);
+}
