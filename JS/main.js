@@ -13,6 +13,8 @@
         "./modules/_performance.js",
         "./modules/_events.js",
         // Aquí se pueden añadir otros módulos de componentes (ej. carousels.js)
+        // NUEVO: Módulos de componentes
+        "./modules/carousel.js", // <--- AÑADIR ESTA LÍNEA
     ];
 
     /**
