@@ -117,5 +117,9 @@
         setModule: (name, func) => {
             ModuleFunctions[name] = func;
         },
+        // CORRECCIÓN VITAL: Permite que otros módulos (como carousel) accedan a dependencias
+        getModule: (name) => {
+            return ModuleFunctions[name];
+        },
     };
 })(); // Fin del IIFE

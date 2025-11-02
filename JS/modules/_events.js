@@ -1,50 +1,71 @@
 /**
  * =========================================================
  * MÓDULO: _EVENTS.JS
- * Contiene utilidades para la comunicación entre módulos
- * mediante Custom Events (Eventos Personalizados).
+ * Contiene utilidades para la delegación de eventos y la comunicación
+ * entre módulos mediante Custom Events (Eventos Personalizados).
  * =========================================================
  */
 
 (function () {
-    /**
-     * Emite (dispara) un evento personalizado en el Documento.
-     * @param {string} name - Nombre del evento (ej. 'modal:closed').
-     * @param {object} data - Datos a adjuntar al evento (accesibles en event.detail).
-     */
+    "use strict";
+
+    // -----------------------------------------------------------------
+    // CUSTOM EVENTS (TU CÓDIGO ORIGINAL)
+    // -----------------------------------------------------------------
+
     function emit(name, data = {}) {
-        // Creamos un nuevo CustomEvent
         const event = new CustomEvent(name, {
-            detail: data, // Adjuntamos los datos al objeto 'detail'
-            bubbles: true, // Permitimos que el evento suba por el DOM
+            detail: data,
+            bubbles: true,
             cancelable: true,
         });
-
-        // Disparamos el evento en el Documento (ámbito global)
         document.dispatchEvent(event);
     }
 
-    /**
-     * Añade un escuchador para un evento personalizado.
-     * @param {string} name - Nombre del evento.
-     * @param {Function} callback - Función a ejecutar cuando se reciba el evento.
-     */
     function on(name, callback) {
-        // Escuchamos el evento en el Documento
         document.addEventListener(name, callback);
     }
 
-    /**
-     * Remueve un escuchador de eventos.
-     */
     function off(name, callback) {
         document.removeEventListener(name, callback);
     }
 
-    // Exportar las funciones de Eventos
-    window.UI_KIT_EVENTS = {
+    // -----------------------------------------------------------------
+    // DELEGACIÓN (ADICIÓN NECESARIA PARA EL CARRUSEL)
+    // -----------------------------------------------------------------
+
+    /**
+     * Implementa la delegación de eventos. Permite escuchar un evento en un padre
+     * y solo ejecutar el callback si el target coincide con el selector hijo.
+     */
+    function delegate(container, eventType, selector, callback) {
+        container.addEventListener(eventType, function (e) {
+            // target.closest(selector) encuentra el control (.carousel-control)
+            const target = e.target.closest(selector);
+
+            // Verifica si el target existe Y si pertenece al contenedor
+            if (target && container.contains(target)) {
+                callback(e);
+            }
+        });
+    }
+
+    // -----------------------------------------------------------------
+    // REGISTRO EN EL CORE (ADICIÓN NECESARIA PARA GETMODULE)
+    // -----------------------------------------------------------------
+
+    const EventsModule = {
         emit: emit,
         on: on,
         off: off,
+        delegate: delegate, // Exportamos la función que necesita el carrusel
     };
+
+    // Registrar el módulo 'events' en el Core para que 'carousel.js' lo pueda obtener
+    if (window.UI_KIT_CORE && window.UI_KIT_CORE.setModule) {
+        window.UI_KIT_CORE.setModule("events", EventsModule);
+    } else {
+        // Fallback: Si el Core no existe, exponemos las funciones de forma global
+        window.UI_KIT_EVENTS = EventsModule;
+    }
 })();

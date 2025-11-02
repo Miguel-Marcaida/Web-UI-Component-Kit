@@ -5,21 +5,18 @@
 
 (function () {
     // 1. DEFINICIÓN DE MÓDULOS EN ORDEN
-    // Nota: El orden es crucial para asegurar que _core.js y _toggle.js estén disponibles.
     const MODULES = [
         "./modules/_core.js", // 1. Esqueleto de delegación y API global (DEBE SER EL PRIMERO)
         "./modules/_toggle.js", // 2. Lógica de alternancia (requiere _core)
         "./modules/_autoinit.js", // 3. NUEVO: Módulo de Inicialización Automática
         "./modules/_performance.js",
         "./modules/_events.js",
-        // Aquí se pueden añadir otros módulos de componentes (ej. carousels.js)
         // NUEVO: Módulos de componentes
-        "./modules/carousel.js", // <--- AÑADIR ESTA LÍNEA
+        "./modules/carousel.js", // <--- AÑADIDA LÍNEA DEL CARRUSEL
     ];
 
     /**
      * Carga un script dinámicamente usando DOM Manipulation.
-     * Esto evita el uso de document.write().
      */
     function loadScript(src) {
         return new Promise((resolve, reject) => {
@@ -35,9 +32,7 @@
     }
 
     // 2. CARGA SECUENCIAL Y ASÍNCRONA DE MÓDULOS
-    // Usa 'reduce' para encadenar las promesas y garantizar el orden.
     function loadAllModules() {
-        // La promesa inicial se resuelve inmediatamente.
         let chain = Promise.resolve();
 
         MODULES.forEach((modulePath) => {
@@ -53,6 +48,40 @@
             .then(() => {
                 // Verificar e inicializar el Core después de que todos los módulos hayan cargado
                 if (window.UI_KIT_CORE && window.UI_KIT_CORE.init) {
+                    const autoInit = window.UI_KIT_CORE.getModule("autoInit");
+
+                    if (autoInit) {
+                        // === REGISTRO MANUAL DE COMPONENTES ===
+                        // Los componentes que no tienen 'init' propio deben registrarse aquí.
+
+                        // 1. Registro del Toggle
+                        if (window.UI && window.UI.Toggle) {
+                            autoInit.register(
+                                "[data-toggle]",
+                                window.UI.Toggle.init
+                            );
+                            console.log(
+                                "[MAIN.JS] Componente Toggle registrado."
+                            );
+                        }
+
+                        // 2. Registro del Carrusel
+                        if (window.UI && window.UI.Carousel) {
+                            autoInit.register(
+                                ".carousel",
+                                window.UI.Carousel.init
+                            );
+                            console.log(
+                                "[MAIN.JS] Componente Carrusel registrado."
+                            );
+                        }
+
+                        // === FIN DEL REGISTRO ===
+
+                        // Ejecutar la inicialización global
+                        autoInit.initializeAll();
+                    }
+
                     window.UI_KIT_CORE.init();
                     console.log("[MAIN.JS] UI Kit inicializado con éxito.");
                 } else {
