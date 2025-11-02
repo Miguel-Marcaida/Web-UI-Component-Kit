@@ -104,7 +104,11 @@
         document.body.addEventListener("click", handleDocumentClick);
         document.addEventListener("keydown", handleDocumentKeydown); // NUEVO: Listener de Teclado
 
-        // * Otras inicializaciones de componentes (ej. Carruseles) irán aquí.
+        // NUEVO: Llamar al inicializador automático si está disponible
+        // El módulo _autoinit.js se registró como 'autoInit' en ModuleFunctions.
+        if (ModuleFunctions.autoInit) {
+            ModuleFunctions.autoInit.initializeAll();
+        }
     }
 
     // Exportar la función principal del core para que main.js la pueda llamar.
