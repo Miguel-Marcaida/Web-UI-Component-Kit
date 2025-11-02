@@ -4,44 +4,65 @@
  * ===========================================
  */
 
-/* * 1. CLASE BASE DEL POPOVER */
-.popover {
-  /* Posicionamiento: Crucial para anclarlo al elemento padre */
-  position: absolute;
-  z-index: 1010; /* Debe estar por encima del modal base */
+/* * 1. CLASE BASE DEL POPOVER (Renombrada para ser compatible con JS core) */
+.popover-container {
+    /* <--- CAMBIO DE .popover A .popover-container */
+    /* Posicionamiento: Crucial para anclarlo al elemento padre */
+    position: absolute;
+    z-index: 1010; /* Debe estar por encima del modal base */
 
-  /* Diseño */
-  background-color: var(--color-bg-card, white);
-  border: 1px solid var(--color-border-subtle, #ccc);
-  border-radius: var(--border-radius-sm, 0.25rem);
-  box-shadow: var(--shadow-md, 0 2px 8px rgba(0, 0, 0, 0.1));
-  max-width: 300px;
+    /* Diseño */
+    background-color: var(--color-bg-card, white);
+    border: 1px solid var(--color-border-subtle, #ccc);
+    border-radius: var(--border-radius-sm, 0.25rem);
+    box-shadow: var(--shadow-md, 0 2px 8px rgba(0, 0, 0, 0.1));
+    max-width: 300px;
 
-  /* Puntero del ratón para cuando no es un tooltip */
-  cursor: default;
+    /* Puntero del ratón para cuando no es un tooltip */
+    cursor: default;
+
+    /* CONTROL DE VISIBILIDAD POR EL JS */
+    visibility: hidden; /* Oculto por defecto */
+    opacity: 0;
+    /* Incluimos visibilty y opacity en la transición */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* * NUEVO: REGLA DE VISIBILIDAD (Añadida para el toggleState) */
+.popover-container.is-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 2. CONTENIDO INTERNO (El HTML usa .popover__content y el JS espera .popover-content. Mantenemos el HTML BEM por ahora) */
+.popover__content {
+    padding: 0.75rem 1rem;
+    font-size: var(--font-size-sm, 0.9rem);
+    color: var(--color-text-dark, #333);
+}
+
+/* ... (El resto de las reglas BEM internas: .popover__title, .popover__arrow, etc. permanecen igual) ... */
 /* 2. CONTENIDO INTERNO */
 .popover__content {
-  padding: 0.75rem 1rem;
-  font-size: var(--font-size-sm, 0.9rem);
-  color: var(--color-text-dark, #333);
+    padding: 0.75rem 1rem;
+    font-size: var(--font-size-sm, 0.9rem);
+    color: var(--color-text-dark, #333);
 }
 
 .popover__title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
-  font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 /* * 3. LA FLECHA (ARROW) */
 
 .popover__arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
-  /* Crear la forma triangular usando bordes transparentes */
-  border: 7px solid transparent;
+    position: absolute;
+    width: 0;
+    height: 0;
+    /* Crear la forma triangular usando bordes transparentes */
+    border: 7px solid transparent;
 }
 
 /* * 4. ESTILOS DE POSICIÓN Y FLECHA */
@@ -51,65 +72,65 @@
 
 /* POPOVER ABAJO (popover--bottom): Flecha apunta hacia ARRIBA */
 .popover--bottom .popover__arrow {
-  top: -14px; /* Mover arriba la mitad del borde * 2 */
-  left: 50%;
-  transform: translateX(-50%);
-  /* Solo el borde inferior tiene color (parece que la punta está arriba) */
-  border-bottom-color: var(--color-border-subtle, #ccc);
+    top: -14px; /* Mover arriba la mitad del borde * 2 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Solo el borde inferior tiene color (parece que la punta está arriba) */
+    border-bottom-color: var(--color-border-subtle, #ccc);
 }
 .popover--bottom .popover__arrow::after {
-  content: "";
-  position: absolute;
-  top: 2px; /* Mover 2px abajo para el borde interno */
-  left: -7px;
-  border: 7px solid transparent;
-  border-bottom-color: var(--color-bg-card, white);
+    content: "";
+    position: absolute;
+    top: 2px; /* Mover 2px abajo para el borde interno */
+    left: -7px;
+    border: 7px solid transparent;
+    border-bottom-color: var(--color-bg-card, white);
 }
 
 /* POPOVER ARRIBA (popover--top): Flecha apunta hacia ABAJO */
 .popover--top .popover__arrow {
-  bottom: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-top-color: var(--color-border-subtle, #ccc);
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: var(--color-border-subtle, #ccc);
 }
 .popover--top .popover__arrow::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: -7px;
-  border: 7px solid transparent;
-  border-top-color: var(--color-bg-card, white);
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: -7px;
+    border: 7px solid transparent;
+    border-top-color: var(--color-bg-card, white);
 }
 
 /* POPOVER A LA DERECHA (popover--right): Flecha apunta a la IZQUIERDA */
 .popover--right .popover__arrow {
-  left: -14px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-right-color: var(--color-border-subtle, #ccc);
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right-color: var(--color-border-subtle, #ccc);
 }
 .popover--right .popover__arrow::after {
-  content: "";
-  position: absolute;
-  left: 2px;
-  top: -7px;
-  border: 7px solid transparent;
-  border-right-color: var(--color-bg-card, white);
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: -7px;
+    border: 7px solid transparent;
+    border-right-color: var(--color-bg-card, white);
 }
 
 /* POPOVER A LA IZQUIERDA (popover--left): Flecha apunta a la DERECHA */
 .popover--left .popover__arrow {
-  right: -14px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-left-color: var(--color-border-subtle, #ccc);
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left-color: var(--color-border-subtle, #ccc);
 }
 .popover--left .popover__arrow::after {
-  content: "";
-  position: absolute;
-  right: 2px;
-  top: -7px;
-  border: 7px solid transparent;
-  border-left-color: var(--color-bg-card, white);
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: -7px;
+    border: 7px solid transparent;
+    border-left-color: var(--color-bg-card, white);
 }
