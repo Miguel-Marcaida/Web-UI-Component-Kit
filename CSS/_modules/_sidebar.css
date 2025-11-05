@@ -1,0 +1,189 @@
+/*
+ * =================================================
+ * MÓDULO: BARRA LATERAL (SIDEBAR) - CONSOLIDACIÓN ESTRUCTURAL
+ * Archivo: _modules/_sidebar.css
+ * =================================================
+ */
+
+/* === 1. ARQUITECTURA BASE (DESKTOP) === */
+
+/* Contenedor Flexbox Principal (DOCS ARCHITECTURE) */
+.docs-container {
+    display: flex;
+    /* Se mantiene la lógica calc(100vh) */
+    min-height: calc(100vh - var(--spacing-5));
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: var(--spacing-4) 0; /* ✅ REFACTORIZADO: Padding vertical por defecto */
+}
+
+/* Estilos de la Barra Lateral (#docs-sidebar) */
+#docs-sidebar {
+    /* Por defecto, oculta la barra lateral en pantallas pequeñas */
+    display: none;
+
+    /* ✅ REFACTORIZADO: Fondo de la superficie para distinguirlo del body */
+    background-color: var(--color-surface);
+    border-radius: var(
+        --radius-base
+    ); /* Añadido radio base para suavizar bordes */
+
+    /* Propiedades de escritorio */
+    flex: 0 0 25rem;
+    padding-right: var(
+        --spacing-4
+    ); /* ✅ REFACTORIZADO: Espacio entre barra y contenido */
+    overflow-y: auto;
+    max-height: calc(
+        100vh - var(--spacing-4)
+    ); /* ✅ REFACTORIZADO: Altura ajustada */
+    position: sticky;
+    top: var(--spacing-4); /* ✅ REFACTORIZADO: Sticky top ajustado */
+
+    /* 🎨 REFACTORIZADO: Sombra Modular (Funciona en Light/Dark) */
+    box-shadow: 0 0 10px rgba(var(--color-shadow-base), var(--shadow-opacity));
+    border-right: none;
+}
+
+/* Estilos para el Contenido Principal de Docs */
+.docs-content {
+    flex-grow: 1;
+    padding: var(--spacing-4); /* ✅ REFACTORIZADO: Padding de contenido */
+    padding-left: var(
+        --spacing-5
+    ); /* ✅ REFACTORIZADO: Más espacio entre sidebar y contenido */
+}
+
+/* Bloques de Código (RESPONSIVIDAD BASE) */
+.code-snippets pre {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: var(--spacing-3); /* ✅ REFACTORIZADO */
+}
+
+/* Área de Vista Previa (RESPONSIVIDAD BASE) */
+.preview-area {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Títulos de Módulo */
+#docs-sidebar h3 {
+    font-size: var(--font-size-lg); /* ✅ REFACTORIZADO */
+    color: var(
+        --color-text-secondary
+    ); /* ✅ REFACTORIZADO: Usa color secundario para sutileza */
+    margin: var(--spacing-3) 0 var(--spacing-2) 0; /* ✅ REFACTORIZADO: Usando Spacing Scale */
+    font-weight: var(--font-weight-semi); /* ✅ REFACTORIZADO */
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Estilos de la Lista de Componentes (.component-list) */
+.component-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.component-list li a {
+    display: block;
+    padding: var(--spacing-2) var(--spacing-3); /* ✅ REFACTORIZADO */
+    text-decoration: none;
+    color: var(--color-text-base); /* ✅ REFACTORIZADO */
+    border-radius: var(--radius-base); /* ✅ REFACTORIZADO */
+    transition: background-color 0.2s;
+}
+
+.component-list li a:hover {
+    /* ✅ REFACTORIZADO: Usa el fondo ligero, sutil en ambos temas */
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
+}
+
+/* Estilo de Elemento Activo (.is-active) */
+.component-list li a.is-active {
+    font-weight: var(--font-weight-bold); /* ✅ REFACTORIZADO */
+    background-color: var(--color-primary);
+    color: var(
+        --color-text-inverse
+    ); /* ✅ REFACTORIZADO: Asegura texto legible sobre primario */
+    padding: var(--spacing-2) var(--spacing-3); /* ✅ REFACTORIZADO */
+}
+
+/* === 2. RESPONSIVIDAD (MOBILE/DESKTOP) === */
+
+@media (min-width: 992px) {
+    /* Reactivación del Layout Flexbox */
+    .docs-container {
+        padding: var(--spacing-4) 5%; /* ✅ REFACTORIZADO */
+        margin: 0 auto;
+    }
+
+    /* Reglas de Sidebar */
+    #docs-sidebar {
+        display: block;
+        flex: 0 0 25rem;
+        padding-right: var(--spacing-4); /* ✅ REFACTORIZADO */
+    }
+
+    /* Reglas de Contenido */
+    .docs-content {
+        padding-left: var(--spacing-4); /* ✅ REFACTORIZADO */
+    }
+}
+
+/* Estilos de MOBILE (Anulación y Comportamiento) */
+@media (max-width: 767px) {
+    /* LAYOUT PRINCIPAL: Anulación y Apilamiento */
+    .docs-container {
+        flex-direction: column;
+        min-height: auto;
+        padding: 0 0;
+        margin: 0 0;
+    }
+
+    /* SIDEBAR (Barra Lateral - Propiedades de Mobile) */
+    #docs-sidebar {
+        display: block;
+        position: fixed; /* ✅ CORREGIDO: Usar fixed para una superposición móvil correcta */
+        top: 60px; /* Se mantiene 60px asumiendo el header mide eso */
+        left: 0;
+        width: 85%; /* Mejor que 100%, deja una pequeña sombra */
+        /* ✅ REFACTORIZADO: Usa la superficie para el panel */
+        background-color: var(--color-surface);
+        height: calc(100vh - 60px);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out;
+        border-right: none;
+        overflow-y: auto;
+        padding: var(--spacing-4) 0; /* Añadido padding interno para el contenido */
+
+        /* ✅ REFACTORIZADO: Sombra más fuerte (opacidad forzada) para efecto overlay */
+        box-shadow: 5px 0 10px rgba(var(--color-shadow-base), 0.7);
+    }
+
+    /* Clase de Estado: SIDEBAR ABIERTO (Controlado por JS) */
+    .docs-container.is-sidebar-open #docs-sidebar {
+        transform: translateX(0);
+        border-right: 1px solid var(--color-border); /* ✅ REFACTORIZADO */
+    }
+
+    /* CONTENIDO (Content) */
+    .docs-content {
+        flex-grow: 1;
+        padding: var(--spacing-4) var(--spacing-3); /* ✅ REFACTORIZADO */
+        width: 100%;
+        min-width: 0;
+    }
+
+    .preview-area {
+        min-width: 0;
+    }
+
+    /* Bloque de código a agregar dentro de @media (max-width: 767px) en _sidebar.css */
+    #sidebar-toggle {
+        display: flex !important;
+    }
+}

@@ -1,56 +1,80 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: NAV-01 (Barra Simple Flex)          */
+/* ==================================================== */
+
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Micro-Reset de Encapsulamiento (box-sizing) */
+/* Asegura el modelo de caja correcto para el componente y sus hijos. */
+.nav-01,
+.nav-01 *,
+.nav-01 *::before,
+.nav-01 *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
 /* ==================================== */
 /* 1. ESTILOS BASE Y VARIABLES DEL COMPONENTE NAV-01 */
 /* ==================================== */
 
-/* Contenedor principal del componente */
+/* Contenedor principal del componente (TODO FUSIONADO) */
 .nav-01 {
-  /* Usamos el color de fondo oscuro de nuestra variable global */
-  background-color: var(--color-bg-dark);
-  padding: 1.5rem 2rem;
-  color: var(--color-text-inverse); /* Usamos la variable para texto blanco */
-  border-radius: var(--radius-base); /* Usamos variable de borde */
+    /* 1. Variables Críticas Locales para Autonomía (Teal/Verde Azulado) */
+    --local-bg: #008080; /* Fondo: Verde Azulado */
+    --local-text: white;
+    --local-hover: #005f5f; /* Hover: Un tono más oscuro */
+    --local-radius: 1rem; /* Borde: Más notorio */
+
+    /* 2. Estilos Principales */
+    background-color: var(--local-bg);
+    padding: 1.5rem 2rem;
+    color: var(--local-text);
+    border-radius: var(--local-radius);
 }
 
 /* Enlaces del logo (lado izquierdo) */
 .nav-01__logo a {
-  color: var(--color-text-inverse);
-  text-decoration: none;
-  font-size: 2rem; /* Tamaño de letra grande para el logo */
-  font-weight: bold;
-  /* En Mobile First, el logo va solo arriba */
-  display: block;
-  text-align: center;
-  margin-bottom: 1.5rem; /* Espacio debajo del logo en móvil */
+    color: var(--local-text);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-/* Lista de enlaces de navegación */
+/* Lista de enlaces de navegación (Incluye reset de lista para autonomía) */
 .nav-01__links {
-  list-style: none; /* Eliminar los puntos de la lista */
-  /* En Mobile First, la lista se apila verticalmente (comportamiento por defecto) */
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem; /* Espacio vertical entre elementos */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 /* Elementos de la lista */
 .nav-01__links li {
-  text-align: center; /* Centrar los elementos en móvil */
+    text-align: center;
 }
 
 /* Estilo de los enlaces */
 .nav-01__links a {
-  color: var(--color-text-inverse);
-  text-decoration: none;
-  padding: 1rem;
-  display: block; /* Para que el área clicable sea grande */
-  transition: background-color 0.3s;
-  border-radius: 0.3rem;
+    color: var(--local-text);
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 0.3rem;
+    white-space: normal;
 }
 
 /* Efecto al pasar el ratón */
 .nav-01__links a:hover {
-  /* OPTIMIZACIÓN: Usamos un tono oscuro sutil para que el texto blanco se vea mejor */
-  background-color: #2c3e50;
+    background-color: var(--local-hover);
 }
 
 /* ==================================== */
@@ -59,28 +83,28 @@
 
 /* Aplica estos estilos SÓLO cuando la pantalla sea más grande que 768px (Tablet/Desktop) */
 @media (min-width: 768px) {
-  /* Contenedor principal: Cambiamos a disposición horizontal */
-  .nav-01 {
-    display: flex;
-    justify-content: space-between; /* El logo a la izquierda, los enlaces a la derecha */
-    align-items: center;
-    padding: 1rem 3rem; /* Menos padding vertical */
-  }
+    /* Contenedor principal: Cambiamos a disposición horizontal */
+    .nav-01 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3rem;
+    }
 
-  /* Logo: Quitamos el centrado y el margen inferior */
-  .nav-01__logo a {
-    margin-bottom: 0;
-    text-align: left;
-  }
+    /* Logo: Quitamos el centrado y el margen inferior */
+    .nav-01__logo a {
+        margin-bottom: 0;
+        text-align: left;
+    }
 
-  /* Lista de enlaces: Volvemos a la disposición horizontal */
-  .nav-01__links {
-    flex-direction: row;
-    gap: 2rem; /* Más espacio horizontal entre elementos */
-  }
+    /* Lista de enlaces: Volvemos a la disposición horizontal */
+    .nav-01__links {
+        flex-direction: row;
+        gap: 2rem;
+    }
 
-  /* Enlaces: Quitamos el display block (innecesario en horizontal) y el padding horizontal */
-  .nav-01__links a {
-    padding: 0.5rem 1rem;
-  }
+    /* Enlaces: Ajuste de padding */
+    .nav-01__links a {
+        padding: 0.5rem 1rem;
+    }
 }

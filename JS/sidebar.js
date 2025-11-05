@@ -244,12 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
             ],
         },
-        "15-layouts": {
-            title: "Módulo 15: Layouts",
-            components: [
-                // ... (componentes 15.01 a 15.04)
-            ],
-        },
+
         "16-js-utilities": {
             title: "Módulo 16: JavaScript Utilities",
             components: [

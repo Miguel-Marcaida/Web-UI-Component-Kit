@@ -15,54 +15,46 @@
 
 html {
     /* Define la base para la unidad rem */
-    font-size: 62.5%;
+    font-size: 62.5%; /* 10px base para 1rem */
     scroll-behavior: smooth;
 
-    /* === INICIO: Solución Sticky Footer === */
-    height: 100%; /* El HTML debe ocupar el 100% de la ventana */
-    /* === FIN: Solución Sticky Footer === */
+    /* === Solución Sticky Footer: El HTML debe ocupar el 100% de la ventana === */
+    height: 100%;
 }
 
 body {
-    /* Fuente y tamaño base */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.6rem; /* Equivalente a 16px */
+    /* 1. FUENTE Y TAMAÑO BASE: Usando la nueva variable modular */
+    font-family: var(
+        --font-family-base
+    ); /* ✅ REFACTORIZADO: Usa la pila de fuentes de config.css */
+    font-size: var(--font-size-base); /* Usa 1.6rem (16px) como tamaño base */
     line-height: 1.5;
-    background-color: var(--color-bg-base);
-    color: var(--color-text-base);
 
-    /* === INICIO: Solución Sticky Footer === */
-    min-height: 100%; /* El Body debe ocupar al menos el 100% del HTML */
-    display: flex; /* Hacemos que el body sea un contenedor flexible */
-    flex-direction: column; /* Apilamos los elementos verticalmente */
-    /* === FIN: Solución Sticky Footer === */
+    /* 2. COLOR BASE: Ahora en Modo Oscuro (Default) */
+    background-color: var(--color-bg-base); /* Será #1e1e1e en Dark Mode */
+    color: var(--color-text-base); /* Será #e0e0e0 en Dark Mode */
+
+    /* 3. ARQUITECTURA: Solución Sticky Footer */
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
-
-/* El main (contenido principal) debe crecer para empujar al footer */
-/* NOTA SENIOR: Esta regla se aplicará al #main-content. Dado que #main-content
-   ya tiene una regla en _layout.css, se puede añadir aquí si queremos que aplique
-   a todos los layouts, o añadirla en _layout.css. Por ahora, es más seguro aplicarla
-   donde el #main-content existe. */
 
 /* 2. RESET BÁSICO Y ESTILOS DE ENLACE */
 
 /* * 1. RESPETAR EL COLOR INVERSO EN EL HEADER
- * Asegura que los enlaces dentro del header (fondo oscuro) se vean blancos 
+ * Asegura que los enlaces dentro del header (fondo oscuro) se vean claros
  * y corrige el problema del color violeta (:visited).
  */
 #main-header a,
 #main-header a:link,
 #main-header a:visited {
-    color: var(
-        --color-text-inverse,
-        white
-    ); /* Fuerza el color blanco o inverso */
-    text-decoration: none; /* Mantén limpio */
+    color: var(--color-text-base);
+    text-decoration: none;
 }
 
 #main-header a:hover {
-    /* Puedes añadir un ligero cambio de color o transparencia al pasar el mouse */
-    color: var(--color-text-inverse, white);
+    color: var(--color-text-base);
     opacity: 0.8;
 }
 
@@ -70,5 +62,14 @@ body {
 .text-inverse,
 .text-inverse:link,
 .text-inverse:visited {
-    color: var(--color-text-inverse, white) !important;
+    /* ✅ REFACTORIZADO: Eliminado el 'white' fijo por el respaldo de la variable */
+    color: var(--color-text-inverse) !important;
+}
+
+/* Regla de responsividad estándar para todo contenido media */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }

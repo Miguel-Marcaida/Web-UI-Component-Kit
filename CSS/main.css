@@ -5,17 +5,19 @@
  * ============================================
  */
 
-@import url("./_modules/_config.css");
-@import url("./_modules/_reset_base.css");
+@import url("./_modules/_config.css"); /* CRÍTICO: Variables de color y estructura */
+@import url("./_modules/_reset_base.css"); /* CRÍTICO: Reseteo de estilos base */
 
 /* --- Layout y Componentes --- */
 @import url("./_modules/_layout.css");
+@import url("./_modules/_sidebar.css"); /* CRÍTICO: El módulo que estamos refactorizando */
 @import url("./_modules/_components.css"); /* <--- ¡AÑADIDO AQUÍ! */
-/* @import url('./_modules/_components.css'); <- Podrías añadirlo después para otros componentes */
 
-/* --- Utilidades --- */
+/* --- Utilidades (Comentadas por no usarse en el HTML actual) --- */
+/*
 @import url("./_modules/_spacing.css");
 @import url("./_modules/_display.css");
-@import url("./_modules/_typography.css");
+@import url("./_modules/_typography.css"); 
 @import url("./_modules/_colors.css");
 @import url("./_modules/_flex_grid.css");
+*/
