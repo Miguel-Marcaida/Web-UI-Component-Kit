@@ -17,6 +17,10 @@ html {
     /* Define la base para la unidad rem */
     font-size: 62.5%;
     scroll-behavior: smooth;
+
+    /* === INICIO: Solución Sticky Footer === */
+    height: 100%; /* El HTML debe ocupar el 100% de la ventana */
+    /* === FIN: Solución Sticky Footer === */
 }
 
 body {
@@ -26,7 +30,19 @@ body {
     line-height: 1.5;
     background-color: var(--color-bg-base);
     color: var(--color-text-base);
+
+    /* === INICIO: Solución Sticky Footer === */
+    min-height: 100%; /* El Body debe ocupar al menos el 100% del HTML */
+    display: flex; /* Hacemos que el body sea un contenedor flexible */
+    flex-direction: column; /* Apilamos los elementos verticalmente */
+    /* === FIN: Solución Sticky Footer === */
 }
+
+/* El main (contenido principal) debe crecer para empujar al footer */
+/* NOTA SENIOR: Esta regla se aplicará al #main-content. Dado que #main-content
+   ya tiene una regla en _layout.css, se puede añadir aquí si queremos que aplique
+   a todos los layouts, o añadirla en _layout.css. Por ahora, es más seguro aplicarla
+   donde el #main-content existe. */
 
 /* 2. RESET BÁSICO Y ESTILOS DE ENLACE */
 

@@ -49,6 +49,9 @@
     padding: 4rem 5%;
     max-width: 120rem;
     margin: 0 auto;
+    /* === INICIO: Solución Sticky Footer === */
+    flex-grow: 1; /* Permite que el contenido principal crezca y ocupe el espacio libre */
+    /* === FIN: Solución Sticky Footer === */
 }
 
 /* Sección Hero (Bienvenida) */
