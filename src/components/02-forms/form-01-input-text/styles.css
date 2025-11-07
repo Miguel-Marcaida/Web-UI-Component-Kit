@@ -1,9 +1,35 @@
-/* ======================================= */
-/* INPUT-01: CAMPOS DE TEXTO ESTÁNDAR (VERSION ULTRA-SEGURA) */
-/* ======================================= */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: FORM-01 (Campos de Texto)           */
+/* Esquema: Neutro/Claro con acentos Teal/Rojo          */
+/* ==================================================== */
 
-/* Estilos de Contenedor para la Documentación */
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.input-group,
+.input-group *,
+.input-group *::before,
+.input-group *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales y Estilos Base */
+
+/* Definición de Variables Locales dentro de un selector que envuelve el componente */
 .input-grid {
+    /* Variables Locales */
+    --local-bg: white;
+    --local-text: #1a1a1a;
+    --local-border: #ccc;
+    --local-focus-accent: #008080; /* Teal */
+    --local-error-accent: #dc3545; /* Rojo */
+    --local-hint: #6c757d;
+    --local-padding-x: 1rem;
+    --local-padding-y: 0.75rem;
+    --local-radius: 0.25rem;
+    background-color: var(--local-bg);
+    /* Estilos de Contenedor para la Documentación (se mantienen) */
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -12,49 +38,65 @@
 .input-group {
     display: flex;
     flex-direction: column;
+    /* Eliminamos el margin-bottom para que el componente sea más modular */
     margin-bottom: 1rem;
 }
 
-/* 1. Etiqueta (Label) */
+/* 2. Etiqueta (Label) */
 .input-label {
     display: block;
     margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-text-dark);
+    color: var(--local-text);
 }
 
-/* 2. Campo de Entrada Base */
+/* 3. Campo de Entrada Base (.form-control) */
 .form-control {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: var(--local-padding-y) var(--local-padding-x);
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--color-text-base);
-    background-color: white; /* Color fijo para seguridad */
-    border: 1px solid var(--color-border, #ccc); /* Fallback de borde */
-    border-radius: var(--radius-base, 0.25rem);
+
+    /* Colores Autónomos */
+    color: var(--local-text);
+    background-color: var(--local-bg);
+    border: 1px solid var(--local-border);
+    border-radius: var(--local-radius);
+
+    /* Transiciones y box-sizing (se mantienen) */
     transition: border-color 0.2s, box-shadow 0.2s;
     box-sizing: border-box;
 }
 
-/* Estado de Foco (Focus) */
+/* 4. Estado de Foco (Focus) */
 .form-control:focus {
-    border-color: var(--color-primary, #007bff);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    border-color: var(--local-focus-accent);
+    /* Usamos el color de acento local para la sombra */
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--local-focus-accent) 25%, transparent);
     outline: none;
 }
 
-/* Estado de Error */
+/* 5. Estado de Error */
 .form-control.is-invalid {
-    border-color: var(--color-danger, #dc3545);
+    border-color: var(--local-error-accent);
 }
 
+.input-group.is-invalid .input-label, /* Resaltamos la etiqueta */
 .input-group.is-invalid .input-hint {
-    color: var(--color-danger, #dc3545);
+    color: var(--local-error-accent);
 }
 
-/* 3. Input con Icono (Solo la estructura necesaria) */
+/* 6. Texto de Ayuda (Hint) */
+.input-hint {
+    display: block;
+    font-size: 0.875rem; /* Pequeño */
+    color: var(--local-hint);
+    margin-top: 0.25rem;
+}
+
+/* 7. Input con Icono (Variación) */
 .input-icon-wrapper {
     position: relative;
 }
@@ -63,12 +105,22 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 1rem;
-    color: var(--color-secondary, #6c757d);
-    pointer-events: none; 
+    left: var(--local-padding-x); /* Usa la variable de padding */
+    color: var(--local-hint);
+    pointer-events: none;
     font-size: 1rem;
 }
 
 .input-group--with-icon .input-icon-wrapper .form-control {
-    padding-left: 2.5rem;
+    /* Ajuste de padding: padding-x + 0.5rem (para el espacio) */
+    padding-left: calc(var(--local-padding-x) + 1rem + 0.5rem);
+}
+
+/* 8. Estado Deshabilitado (Disabled) */
+.form-control:disabled {
+    background-color: #f5f5f5;
+    color: var(--local-hint);
+    border-color: #e0e0e0;
+    cursor: not-allowed;
+    opacity: 0.8;
 }
