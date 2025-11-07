@@ -1,147 +1,170 @@
-/* ======================================= */
-/* NAV-04: MENÚ CON DROPDOWN (MOBILE FIRST) */
-/* ======================================= */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: NAV-04 (Menú con Dropdown)          */
+/* Refactorizado a esquema Teal/Claro para Dual-Mode    */
+/* ==================================================== */
+
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.nav-04,
+.nav-04 *,
+.nav-04 *::before,
+.nav-04 *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Estilos Base y Variables Locales */
 
 .nav-04 {
-  background-color: var(
-    --color-bg-dark
-  ); /* Fondo oscuro para el nav principal */
-  color: white;
-  padding: 0;
+    /* 1. Variables Críticas Locales para Autonomía (Esquema Teal) */
+    --local-bg: #008080; /* Fondo del Nav principal */
+    --local-surface: #009999; /* Fondo del Submenú */
+    --local-text: white; /* Texto claro */
+    --local-hover: #005f5f; /* Hover (Teal Oscuro) */
+    --local-border: rgba(255, 255, 255, 0.1);
+    --local-separator: rgba(255, 255, 255, 0.2);
+    --local-radius: 4px;
+
+    /* 2. Estilos Principales */
+    background-color: var(--local-bg);
+    color: var(--local-text);
+    padding: 0;
 }
 
 .nav-04__list {
-  display: flex;
-  flex-direction: column; /* MOBILE: Menú apilado verticalmente */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+    display: flex;
+    flex-direction: column; /* MOBILE: Vertical */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* Simula font-size de 1.125rem (18px) */
+    font-size: 1.125rem;
 }
 
 .nav-04__list > li {
-  /* Separador visual para los ítems del menú en móvil */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Separador visual en móvil */
+    border-bottom: 1px solid var(--local-separator);
 }
 
 .nav-04__list > li a,
 .dropdown-toggle {
-  display: block;
-  width: 100%;
-  padding: 12px 16px;
-  text-decoration: none;
-  color: white;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  font-size: 1rem;
+    display: block;
+    width: 100%;
+    /* Espaciado fijo (simula spacing-3) */
+    padding: 1.2rem 1.6rem;
+    text-decoration: none;
+    color: var(--local-text);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1em; /* Hereda de la lista */
 }
 
 .nav-04__list > li a:hover,
 .dropdown-toggle:hover {
-  /* background-color: var(--color-bg-hover); */
-  background-color: #2c3e50;
+    background-color: var(--local-hover);
 }
 
-/* 1. Estilos del Dropdown */
+/* 2. Estilos del Dropdown */
 
 .dropdown-item {
-  position: relative;
+    position: relative;
 }
 
 .dropdown-toggle {
-  /* Mantiene el padding y el estilo de botón/enlace */
-  display: flex; /* Para alinear el texto y el icono/flecha */
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .dropdown-menu {
-  /* MOBILE: Por defecto, está oculto y tiene ancho completo */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: var(
-    --color-bg-light
-  ); /* ¡ESTA ES LA VARIABLE QUE FALLABA! */
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+    /* MOBILE: Por defecto, está oculto y tiene ancho completo */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Fondo del submenú, ligeramente distinto al principal */
+    background-color: var(--local-surface);
+    border-top: 1px solid var(--local-border);
 
-  /* Estado inicial: oculto */
-  display: none;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
+    /* Estado inicial: oculto */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 
 /* Estado ACTIVO del Dropdown */
 .dropdown-item.is-open .dropdown-menu {
-  display: block;
-  opacity: 1;
+    display: block;
+    opacity: 1;
 }
 
 .dropdown-menu li a {
-  display: block;
-  padding: 10px 32px; /* Más padding para indentar el submenú */
-  text-decoration: none;
-  color: var(--color-text-base); /* Corregido: Usamos la variable base */
+    display: block;
+    /* Más padding para indentar el submenú (simula spacing-2 y un valor mayor) */
+    padding: 0.8rem 2.5rem;
+    /* El texto en el submenú sigue siendo blanco para alto contraste */
+    color: var(--local-text);
+    text-decoration: none;
 }
 
 .dropdown-menu li a:hover {
-  background-color: var(--color-bg-hover);
+    background-color: var(--local-hover);
 }
 
 .dropdown-separator {
-  height: 1px;
-  background-color: var(--color-border);
-  margin: 4px 0;
+    height: 1px;
+    background-color: var(--local-separator);
+    margin: 4px 0;
 }
 
 /* ======================================= */
-/* 3. Media Query (Desktop: Horizontal)    */
+/* 3. Media Query (Desktop: Horizontal)    */
 /* ======================================= */
 @media (min-width: 768px) {
-  .nav-04__list {
-    flex-direction: row; /* DESKTOP: Menú horizontal */
-    justify-content: flex-start;
-  }
+    .nav-04__list {
+        flex-direction: row; /* DESKTOP: Horizontal */
+        justify-content: flex-start;
+    }
 
-  .nav-04__list > li {
-    border-bottom: none; /* Elimina la línea divisoria vertical */
-    /* Añadimos separación vertical entre items */
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-  }
+    .nav-04__list > li {
+        border-bottom: none;
+        border-right: 1px solid var(--local-separator);
+    }
 
-  .nav-04__list > li:last-child {
-    border-right: none;
-  }
+    .nav-04__list > li:last-child {
+        border-right: none;
+    }
 
-  .nav-04__list > li a,
-  .dropdown-toggle {
-    padding: 1rem 1.2rem; /* Ajuste de padding horizontal en escritorio */
-  }
+    .nav-04__list > li a,
+    .dropdown-toggle {
+        /* Ajuste de padding horizontal en escritorio */
+        padding: 1rem 1.2rem;
+    }
 
-  /* Dropdown en Desktop */
-  .dropdown-item {
-    position: relative;
-  }
+    /* Dropdown en Desktop */
+    .dropdown-item {
+        position: relative;
+    }
 
-  .dropdown-menu {
-    /* DESKTOP: Se posiciona absolutamente */
-    position: absolute;
-    top: 100%; /* Justo debajo del toggle */
-    left: 0;
-    min-width: 200px;
-    z-index: 1000;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    background-color: var(
-      --color-bg-light
-    ); /* Aseguramos el color en desktop */
-  }
+    .dropdown-menu {
+        /* DESKTOP: Se posiciona absolutamente */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        z-index: 1000;
+        border: 1px solid var(--local-border);
+        /* Usamos shadow hardcoded para autonomía */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        border-radius: var(--local-radius);
+        background-color: var(--local-surface);
+    }
 
-  /* Ocultamos por defecto el contenido desplegable en desktop, ya que el JS lo maneja */
-  .dropdown-item .dropdown-menu {
-    display: none;
-  }
+    /* Ocultamos por defecto el contenido desplegable en desktop, ya que el JS lo maneja */
+    .dropdown-item .dropdown-menu {
+        display: none;
+    }
 }
