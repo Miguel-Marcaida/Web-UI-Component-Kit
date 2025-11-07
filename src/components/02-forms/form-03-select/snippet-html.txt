@@ -1,7 +1,7 @@
 <div class="input-group">
     <label for="select-basic" class="input-label">Seleccione una Opción</label>
     <div class="select-wrapper">
-        <select id="select-basic">
+        <select id="select-basic" class="form-control">
             <option value="" disabled selected>
                 -- Elige una categoría --
             </option>
@@ -10,26 +10,31 @@
             <option value="3">Opción Tres</option>
         </select>
     </div>
-    <small class="input-hint">El wrapper le da la apariencia de Input 01.</small>
+    <span class="input-hint">El wrapper le da la apariencia de Input 01.</span>
 </div>
 
 <div class="input-group">
     <label for="select-disabled" class="input-label">Selección Deshabilitada</label>
     <div class="select-wrapper">
-        <select id="select-disabled" disabled>
+        <select id="select-disabled" class="form-control" disabled>
             <option value="" disabled selected>
                 -- Campo Inactivo --
             </option>
             <option value="1">Opción Uno</option>
         </select>
     </div>
-    <small class="input-hint">El campo no permite interacción.</small>
+    <span class="input-hint">El campo no permite interacción.</span>
 </div>
 
 <div class="input-group is-invalid">
     <label for="select-error" class="input-label">Selección Requerida</label>
     <div class="select-wrapper">
-        <select id="select-error" aria-describedby="error-message-3">
+        <select 
+            id="select-error" 
+            class="form-control is-invalid" 
+            aria-describedby="error-message-3"
+            aria-invalid="true"
+        >
             <option value="" disabled selected>
                 -- Seleccione un tipo --
             </option>
@@ -37,5 +42,5 @@
             <option value="2">Tipo B</option>
         </select>
     </div>
-    <small id="error-message-3" class="input-hint">Debe elegir una opción de la lista.</small>
+    <span id="error-message-3" class="input-hint">Debe elegir una opción de la lista.</span>
 </div>

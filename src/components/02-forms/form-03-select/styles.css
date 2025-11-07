@@ -1,118 +1,159 @@
-/* ======================================= */
-/* INPUT-03: SELECT Y DROPDOWN NATIVO      */
-/* ======================================= */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: FORM-03 (Select/Dropdown)           */
+/* Extiende lógica de Form-01 (Inputs)                  */
+/* ==================================================== */
 
-/* Reutilizamos la grilla de Input-01 para la demostración */
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.input-group,
+.input-group *,
+.input-group *::before,
+.input-group *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales (Idénticas a Form-01 para consistencia) */
+
 .input-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Variables Locales */
+    --local-bg: white;
+    --local-text: #1a1a1a;
+    --local-border: #ccc;
+    --local-focus-accent: #008080; /* Teal */
+    --local-error-accent: #dc3545; /* Rojo */
+    --local-hint: #6c757d;
+    --local-padding-x: 1rem;
+    --local-padding-y: 0.75rem;
+    --local-radius: 0.25rem;
+    --local-icon-size: 1.2rem;
+
+    /* Fondo fijo para la vista previa */
+    background-color: var(--local-bg);
+    padding: 20px;
+    border-radius: var(--local-radius);
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* Reutilizamos la estructura base de Input-01/02 */
 .input-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
+
+/* 2. Estilos de Base (Reutilizados de Form-01) */
 
 .input-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--color-text-base);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--local-text);
 }
 
 .input-hint {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  color: var(--color-secondary);
+    display: block;
+    font-size: 0.875rem;
+    color: var(--local-hint);
+    margin-top: 0.25rem;
 }
 
-/* ======================================= */
-/* ESTILO DEL SELECT */
-/* ======================================= */
+/* 3. Estructura del Select (Wrapper) */
 
 .select-wrapper {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
-.select-wrapper select {
-  /* MISMO ESTILO BASE QUE LOS INPUTS */
-  width: 100%;
-  padding: 1rem 3.5rem 1rem 1.2rem; /* Aumentamos el padding DERECHO para la flecha */
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: var(--color-text-base);
-  background-color: var(--color-bg-base);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  transition: border-color 0.2s, box-shadow 0.2s;
+/* 4. Estilo del Elemento <select> */
+.select-wrapper .form-control {
+    /* MISMO ESTILO BASE QUE LOS INPUTS */
+    width: 100%;
+    /* Ajuste de Padding: Usamos variables locales, y aumentamos el padding DERECHO */
+    padding: var(--local-padding-y) calc(var(--local-padding-x) + 2rem)
+        var(--local-padding-y) var(--local-padding-x);
 
-  /* TRUCO CLAVE: OCULTAR LA FLECHA NATIVA DEL NAVEGADOR */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: inherit;
+
+    color: var(--local-text);
+    background-color: var(--local-bg);
+    border: 1px solid var(--local-border);
+    border-radius: var(--local-radius);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+
+    /* TRUCO CLAVE: OCULTAR LA FLECHA NATIVA */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
 }
 
-/* 1. Flecha Personalizada (Pseudo-Elemento) */
+/* 5. Flecha Personalizada (Pseudo-Elemento) */
 .select-wrapper::after {
-  content: "\25BC"; /* Código Unicode de un triángulo hacia abajo (Flecha) */
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  color: var(--color-secondary);
-  pointer-events: none; /* Asegura que el clic pase al select */
-  transition: color 0.2s;
+    content: "\25BC"; /* Triángulo hacia abajo */
+    position: absolute;
+    top: 50%;
+    right: var(--local-padding-x); /* Posiciona la flecha usando la variable */
+    transform: translateY(-50%);
+    font-size: var(--local-icon-size);
+    color: var(--local-hint);
+    pointer-events: none;
+    transition: color 0.2s, transform 0.2s;
 }
 
-/* 2. Estado de Foco (Focus) */
-.select-wrapper select:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-  outline: none;
+/* 6. Estados (Foco, Deshabilitado, Error) */
+
+/* Foco */
+.select-wrapper .form-control:focus {
+    border-color: var(--local-focus-accent);
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--local-focus-accent) 25%, transparent);
+    outline: none;
 }
 
-/* Girar la flecha al hacer foco para un mejor feedback visual */
-.select-wrapper select:focus + .select-wrapper::after {
-  transform: translateY(-50%) rotate(180deg);
-  color: var(--color-primary);
+/* Girar la flecha al hacer foco */
+.select-wrapper .form-control:focus + .select-wrapper::after,
+.select-wrapper:focus-within::after {
+    /* Añadimos :focus-within para mayor compatibilidad */
+    transform: translateY(-50%) rotate(180deg);
+    color: var(--local-focus-accent);
 }
 
-/* 3. Estado Deshabilitado (Disabled) */
-.select-wrapper select[disabled] {
-  background-color: var(--color-bg-hover);
-  cursor: not-allowed;
-  opacity: 0.8;
+/* Deshabilitado */
+.select-wrapper .form-control[disabled] {
+    background-color: #f5f5f5;
+    color: var(--local-hint);
+    border-color: #e0e0e0;
+    cursor: not-allowed;
+    opacity: 0.8;
 }
 
-.select-wrapper select[disabled] + .select-wrapper::after {
-  opacity: 0.5;
+.select-wrapper .form-control[disabled] + .select-wrapper::after {
+    opacity: 0.5;
 }
 
-/* ======================================= */
-/* VARIACIONES DE ESTADO (Error) */
-/* ======================================= */
-
-.input-group.is-invalid select {
-  border-color: var(--color-danger);
+/* Error */
+.input-group.is-invalid .form-control {
+    border-color: var(--local-error-accent);
 }
 
-.input-group.is-invalid select:focus {
-  border-color: var(--color-danger);
-  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+.input-group.is-invalid .form-control:focus {
+    border-color: var(--local-error-accent);
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--local-error-accent) 25%, transparent);
 }
 
+.input-group.is-invalid .input-label,
 .input-group.is-invalid .input-hint {
-  color: var(--color-danger);
+    color: var(--local-error-accent);
 }
 
 .input-group.is-invalid .select-wrapper::after {
-  color: var(--color-danger);
+    color: var(--local-error-accent);
 }
