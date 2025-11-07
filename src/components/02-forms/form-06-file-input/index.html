@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Input 06: File Input</title>
+
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="/CSS/prism.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a
+                    href="/index.html"
+                    style="text-decoration: none; color: white"
+                    >Web UI Kit</a
+                >
+            </h1>
+
+            <button
+                id="sidebar-toggle"
+                aria-expanded="false"
+                aria-controls="docs-sidebar"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav>
+                <a href="/src/components/02-forms/index.html"
+                    >Volver a Formularios</a
+                >
+            </nav>
+        </header>
+
+        <div class="docs-container">
+            <main class="docs-content">
+                <h2>Input 06: File Input (Subida de Archivos)</h2>
+                <p class="description module-description">
+                    Un componente para la subida de archivos (<span
+                        class="code-inline"
+                        >type="file"</span
+                    >) con un diseño personalizado que reemplaza el botón
+                    nativo, manteniendo la funcionalidad y accesibilidad.
+                </p>
+
+                <section
+                    class="preview-area module-preview"
+                    style="padding: 3rem 0"
+                >
+                    <h3>Vista Previa</h3>
+
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <h4>Input de Archivo Básico</h4>
+                            <div class="input-file-control">
+                                <input
+                                    type="file"
+                                    id="file-1"
+                                    class="input-file-control__input"
+                                    aria-describedby="file-hint-1"
+                                />
+                                <label
+                                    for="file-1"
+                                    class="input-file-control__label"
+                                >
+                                    <span class="file-path"
+                                        >Seleccionar archivo...</span
+                                    >
+                                    <span class="file-button">Examinar</span>
+                                </label>
+                                <small id="file-hint-1" class="form-text"
+                                    >Max 5MB. Formatos: PDF, JPG, PNG.</small
+                                >
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <h4>Input de Archivo Deshabilitado</h4>
+                            <div class="input-file-control">
+                                <input
+                                    type="file"
+                                    id="file-2"
+                                    class="input-file-control__input"
+                                    disabled
+                                    aria-describedby="file-hint-2"
+                                />
+                                <label
+                                    for="file-2"
+                                    class="input-file-control__label"
+                                >
+                                    <span class="file-path"
+                                        >Subida deshabilitada.</span
+                                    >
+                                    <span class="file-button">Examinar</span>
+                                </label>
+                                <small id="file-hint-2" class="form-text"
+                                    >Función no disponible en modo demo.</small
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="code-snippets">
+                    <h3>Código Fuente</h3>
+                    <h4>HTML</h4>
+                    <pre><code class="language-html html-snippet">...</code></pre>
+                    <h4>CSS</h4>
+                    <pre><code class="language-css css-snippet">...</code></pre>
+                    <h4>JavaScript</h4>
+                    <pre><code class="language-javascript js-snippet">...</code></pre>
+                </section>
+            </main>
+        </div>
+
+        <footer id="main-footer">
+            <p>
+                © 2025 Web UI Component Kit. Desarrollado con Front-end Puro
+                (HTML, CSS & JS). Arquitectura modular y autónoma.        
+            </p>
+        </footer>
+        <script src="/JS/prism.js"></script>
+        <script src="/JS/main.js"></script>
+        <script src="/JS/docs.js"></script>
+        <script src="/JS/sidebar.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

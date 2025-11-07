@@ -54,6 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "05. Toggle Switch",
                     path: "/src/components/02-forms/form-05-toggle-switch/index.html",
                 },
+                {
+                    name: "06. File Input",
+                    path: "/src/components/02-forms/form-06-file-input/index.html",
+                },
             ],
         },
         // CÓDIGO A INSERTAR EN SIDEBAR.JS

@@ -1,0 +1,147 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: FORM-06 (File Input)                */
+/* Estructura Base para Autonomía y Consistencia        */
+/* ==================================================== */
+
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.input-group,
+.input-file-control,
+.input-file-control *,
+.input-file-control *::before,
+.input-file-control *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales (Consistencia) */
+
+.input-grid {
+    /* Variables Locales */
+    --local-bg: white;
+    --local-text: #1a1a1a;
+    --local-border: #ccc;
+    --local-focus-accent: #008080; /* Teal */
+    --local-error-accent: #dc3545; /* Rojo */
+    --local-hint: #6c757d;
+
+    /* Variables de estilo para Input de Archivo */
+    --file-border-radius: 0.25rem;
+    --file-padding-y: 0.5rem;
+    --file-padding-x: 0.75rem;
+
+    /* Fondo fijo para la vista previa */
+    background-color: var(--local-bg);
+    padding: 20px;
+    border-radius: var(--file-border-radius);
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    color: var(--local-text);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre el h4 y el control */
+}
+
+/* 2. Estructura del File Input */
+
+/* Ocultar el input type="file" nativo */
+.input-file-control__input {
+    /* Ocultar visualmente, pero mantener la accesibilidad */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.input-file-control {
+    position: relative; /* Contexto para el label */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. Estilo del Label (Contenedor Visual) */
+
+.input-file-control__label {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--local-border);
+    border-radius: var(--file-border-radius);
+    overflow: hidden; /* Asegura que el contenido no se salga */
+    cursor: pointer;
+    background-color: var(--local-bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 4. Estilo del Campo de Ruta (file-path) */
+
+.file-path {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    padding: var(--file-padding-y) var(--file-padding-x);
+    color: var(--local-text);
+    /* El texto inicial 'Seleccionar archivo...' debería ser más discreto */
+    color: var(--local-hint);
+    /* Truncar el nombre del archivo si es muy largo */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    border: 1px solid #008080;
+}
+
+/* 5. Estilo del Botón (file-button) */
+
+.file-button {
+    /* El botón usa el color de acento del kit (Teal) */
+    background-color: #f0f0f0; /* Fondo ligero para el botón */
+    color: var(--local-text);
+    padding: var(--file-padding-y) var(--file-padding-x);
+    border-left: 1px solid var(--local-border);
+    user-select: none;
+    font-weight: 600;
+    line-height: 1; /* Para centrar el texto verticalmente */
+}
+
+/* 6. ESTADOS INTERACTIVOS (Focus/Hover) */
+
+/* El foco debe aplicarse al input oculto, pero estilizar el label visual */
+.input-file-control__input:focus + .input-file-control__label {
+    border-color: var(--local-focus-accent);
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--local-focus-accent) 25%, transparent);
+}
+
+.input-file-control__label:hover {
+    border-color: #aaa; /* Ligeramente más oscuro al pasar el ratón */
+}
+
+.input-file-control__label:hover .file-button {
+    background-color: #e0e0e0; /* Botón ligeramente más oscuro al pasar el ratón */
+}
+
+/* 7. ESTADO DESHABILITADO (Disabled) */
+
+.input-file-control__input:disabled + .input-file-control__label {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: #f8f8f8;
+}
+
+.input-file-control__input:disabled + .input-file-control__label .file-button {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+}
+
+.input-file-control__input:disabled + .input-file-control__label .file-path {
+    color: #a0a0a0;
+}

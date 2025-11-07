@@ -1,0 +1,43 @@
+<div class="input-group">
+    <h4>Subir Archivo de Perfil</h4>
+    
+    <div class="input-file-control">
+        <input 
+            type="file" 
+            id="file-profile" 
+            name="file-profile"
+            class="input-file-control__input" 
+            accept=".pdf, .jpg, .png"
+            aria-describedby="file-hint-profile" 
+        />
+        
+        <label for="file-profile" class="input-file-control__label">
+            <span class="file-path">Seleccionar CV o Foto de Perfil...</span>
+            
+            <span class="file-button">Examinar</span>
+        </label>
+        
+        <small id="file-hint-profile" class="form-text">
+            Max 5MB. Formatos aceptados: PDF, JPG, PNG.
+        </small>
+    </div>
+</div>
+
+<div class="input-group">
+    <h4>Subida Deshabilitada</h4>
+    <div class="input-file-control">
+        <input 
+            type="file" 
+            id="file-disabled" 
+            name="file-disabled"
+            class="input-file-control__input" 
+            disabled 
+            aria-describedby="file-hint-disabled" 
+        />
+        <label for="file-disabled" class="input-file-control__label">
+            <span class="file-path">Función no disponible temporalmente.</span>
+            <span class="file-button">Examinar</span>
+        </label>
+        <small id="file-hint-disabled" class="form-text">Mantenimiento de servidor. Intente más tarde.</small>
+    </div>
+</div>
