@@ -1,0 +1,213 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: FORM-07 (Range Slider)              */
+/* Control Deslizante de Rango con Llenado Dinámico     */
+/* ==================================================== */
+
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.input-group,
+.range-control,
+.range-control *,
+.range-control *::before,
+.range-control *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales y Grid */
+
+.input-grid {
+    /* Variables Locales */
+    --local-bg: white;
+    --local-text: #1a1a1a;
+    --local-border: #ccc;
+    --local-focus-accent: #008080; /* Teal */
+    --local-fill-color: #008080; /* Color principal del relleno */
+    --local-hint: #6c757d;
+
+    /* Variables de estilo para Range Slider */
+    --range-track-height: 8px; /* Altura de la pista */
+    --range-thumb-size: 20px; /* Tamaño del "pulgar" */
+    --range-thumb-bg: var(--local-fill-color);
+    --range-thumb-border: white;
+
+    /* Fondo fijo para la vista previa */
+    background-color: var(--local-bg);
+    padding: 20px;
+    border-radius: 0.25rem;
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    color: var(--local-text);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* 2. Estructura del Range Control */
+
+.range-control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.range-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.range-control__input {
+    flex-grow: 1;
+    /* Reseteo nativo */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: var(--range-track-height);
+    background: transparent;
+    margin: 10px 0;
+
+    /* Variable CSS que será controlada por JavaScript para el llenado */
+    --range-fill: 50%;
+}
+
+/* El valor actual (range-value) */
+.range-value {
+    font-weight: bold;
+    color: var(--local-fill-color);
+    width: 40px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.range-value.is-disabled {
+    color: var(--local-hint);
+    opacity: 0.7;
+}
+
+/* 3. ESTILIZADO DEL RANGE SLIDER (Track y Thumb) */
+
+/* === PISTA (TRACK): Implementando Llenado con Degradado === */
+
+/* Track para navegadores basados en Webkit (Chrome, Safari) */
+.range-control__input::-webkit-slider-runnable-track {
+    width: 100%;
+    height: var(--range-track-height);
+    border-radius: var(--range-track-height);
+    cursor: pointer;
+    /* Llenado: Usa degradado. Color de relleno (var(--local-fill-color)) hasta --range-fill, luego el color de fondo gris (#e0e0e0) */
+    background: linear-gradient(
+        to right,
+        var(--local-fill-color) var(--range-fill),
+        #e0e0e0 var(--range-fill)
+    );
+}
+
+/* Track para Firefox */
+.range-control__input::-moz-range-track {
+    width: 100%;
+    height: var(--range-track-height);
+    border-radius: var(--range-track-height);
+    cursor: pointer;
+    background: linear-gradient(
+        to right,
+        var(--local-fill-color) var(--range-fill),
+        #e0e0e0 var(--range-fill)
+    );
+}
+
+/* === PULGAR (THUMB) === */
+
+/* Thumb para navegadores basados en Webkit (Chrome, Safari) */
+.range-control__input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: var(--range-thumb-size);
+    width: var(--range-thumb-size);
+    border-radius: 50%;
+    background: var(--range-thumb-bg);
+    cursor: pointer;
+    margin-top: calc((var(--range-track-height) - var(--range-thumb-size)) / 2);
+    border: 3px solid var(--range-thumb-border);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+/* Thumb para Firefox */
+.range-control__input::-moz-range-thumb {
+    height: var(--range-thumb-size);
+    width: var(--range-thumb-size);
+    border-radius: 50%;
+    background: var(--range-thumb-bg);
+    cursor: pointer;
+    border: 3px solid var(--range-thumb-border);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+/* 4. ESTADOS INTERACTIVOS (Focus/Hover) */
+
+/* Focus en el Thumb para Webkit (el foco lo maneja el input) */
+.range-control__input:focus::-webkit-slider-thumb {
+    background: color-mix(in srgb, var(--range-thumb-bg) 85%, black);
+    box-shadow: 0 0 0 4px
+        color-mix(in srgb, var(--local-focus-accent) 40%, transparent);
+}
+
+/* Focus en el Thumb para Firefox */
+.range-control__input:focus::-moz-range-thumb {
+    background: color-mix(in srgb, var(--range-thumb-bg) 85%, black);
+    box-shadow: 0 0 0 4px
+        color-mix(in srgb, var(--local-focus-accent) 40%, transparent);
+}
+
+/* Hover en el Thumb (Webkit) */
+.range-control__input:hover::-webkit-slider-thumb {
+    background: color-mix(in srgb, var(--range-thumb-bg) 90%, black);
+}
+
+/* Hover en el Thumb (Firefox) */
+.range-control__input:hover::-moz-range-thumb {
+    background: color-mix(in srgb, var(--range-thumb-bg) 90%, black);
+}
+
+/* 5. ESTADO DESHABILITADO (Disabled) */
+
+.range-control__input:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Thumb Deshabilitado (Webkit) */
+.range-control__input:disabled::-webkit-slider-thumb {
+    background: var(--local-border);
+    cursor: not-allowed;
+}
+
+/* Track Deshabilitado (Webkit) */
+.range-control__input:disabled::-webkit-slider-runnable-track {
+    background: #f0f0f0;
+}
+
+/* Thumb Deshabilitado (Firefox) */
+.range-control__input:disabled::-moz-range-thumb {
+    background: var(--local-border);
+    cursor: not-allowed;
+}
+
+/* Track Deshabilitado (Firefox) */
+.range-control__input:disabled::-moz-range-track {
+    background: #f0f0f0;
+}

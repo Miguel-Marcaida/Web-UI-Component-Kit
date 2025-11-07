@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "06. File Input",
                     path: "/src/components/02-forms/form-06-file-input/index.html",
                 },
+                {
+                    name: "07. Range Slider",
+                    path: "/src/components/02-forms/form-07-range-slider/index.html",
+                },
             ],
         },
         // CÓDIGO A INSERTAR EN SIDEBAR.JS

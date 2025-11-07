@@ -1,0 +1,50 @@
+<div class="input-group">
+    <h4>Ajuste de Volumen</h4>
+    
+    <div class="range-control">
+        <label for="range-volumen" class="form-label">Volumen (0-100)</label>
+        <div class="range-wrapper">
+            <span class="range-value" id="range-volumen-output">50</span>
+            
+            <input 
+                type="range" 
+                id="range-volumen" 
+                name="range-volumen"
+                min="0" 
+                max="100" 
+                value="50" 
+                step="1"
+                class="range-control__input"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="50"
+                aria-controls="range-volumen-output"
+            />
+        </div>
+    </div>
+</div>
+
+<div class="input-group">
+    <h4>Ajuste de Zoom (Deshabilitado)</h4>
+    <div class="range-control">
+        <label for="range-zoom" class="form-label">Zoom (1x-5x)</label>
+        <div class="range-wrapper">
+             <span class="range-value is-disabled" id="range-zoom-output">2.5</span>
+            <input 
+                type="range" 
+                id="range-zoom" 
+                name="range-zoom"
+                min="1" 
+                max="5" 
+                value="2.5" 
+                step="0.5"
+                class="range-control__input"
+                disabled
+                aria-valuemin="1"
+                aria-valuemax="5"
+                aria-valuenow="2.5"
+                aria-controls="range-zoom-output"
+            />
+        </div>
+    </div>
+</div>
