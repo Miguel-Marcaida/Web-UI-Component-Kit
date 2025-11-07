@@ -1,113 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input 02: Textarea (Área de Texto)</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Input 02: Textarea (Área de Texto)</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link rel="stylesheet" href="/CSS/prism.css" />
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="/CSS/prism.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a
+                    href="/index.html"
+                    style="text-decoration: none; color: white"
+                    >Web UI Kit</a
+                >
+            </h1>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+            <button
+                id="sidebar-toggle"
+                aria-expanded="false"
+                aria-controls="docs-sidebar"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header id="main-header">
-      <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
-      </h1>
+            <nav>
+                <a href="/src/components/02-forms/index.html"
+                    >Volver a Formularios</a
+                >
+            </nav>
+        </header>
 
-      <button
-        id="sidebar-toggle"
-        aria-expanded="false"
-        aria-controls="docs-sidebar"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+        <div class="docs-container">
+            <main class="docs-content">
+                <h2>Input 02: Textarea (Área de Texto Multi-línea)</h2>
+                <p class="description module-description">
+                    Componente estándar para comentarios y mensajes largos,
+                    manteniendo la estética y los estados de foco/error del
+                    Input 01.
+                </p>
 
-      <nav>
-        <a href="/src/components/02-forms/index.html">Volver a Formularios</a>
-      </nav>
-    </header>
+                <section
+                    class="preview-area module-preview"
+                    style="padding: 3rem 0"
+                >
+                    <h3>Vista Previa</h3>
 
-    <div class="docs-container">
-      <main class="docs-content">
-        <h2>Input 02: Textarea (Área de Texto Multi-línea)</h2>
-        <p class="description">
-          Componente estándar para comentarios y mensajes largos, manteniendo la
-          estética y los estados de foco/error del Input 01.
-        </p>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="textarea-basic" class="input-label"
+                                >Comentarios</label
+                            >
+                            <textarea
+                                id="textarea-basic"
+                                class="form-control"
+                                rows="4"
+                                placeholder="Escribe tu mensaje aquí..."
+                            ></textarea>
+                            <span class="input-hint"
+                                >Describe tu solicitud en detalle (max. 500
+                                palabras).</span
+                            >
+                        </div>
 
-        <section
-          class="preview-area"
-          style="padding: 3rem 0; background-color: var(--color-bg-base)"
-        >
-          <h3 style="margin-bottom: 2rem">Vista Previa</h3>
+                        <div class="input-group is-invalid">
+                            <label for="textarea-error" class="input-label"
+                                >Detalles del Fallo</label
+                            >
+                            <textarea
+                                id="textarea-error"
+                                class="form-control is-invalid"
+                                rows="4"
+                                placeholder="Describe el problema aquí..."
+                                aria-describedby="error-message-2"
+                                aria-invalid="true"
+                            ></textarea>
+                            <span id="error-message-2" class="input-hint"
+                                >Este campo es obligatorio.</span
+                            >
+                        </div>
 
-          <div class="input-grid">
-            <div class="input-group">
-              <label for="textarea-basic" class="input-label"
-                >Comentarios</label
-              >
-              <textarea
-                id="textarea-basic"
-                rows="4"
-                placeholder="Escribe tu mensaje aquí..."
-              ></textarea>
-              <small class="input-hint"
-                >Describe tu solicitud en detalle (max. 500 palabras).</small
-              >
-            </div>
-
-            <div class="input-group is-invalid">
-              <label for="textarea-error" class="input-label"
-                >Detalles del Fallo</label
-              >
-              <textarea
-                id="textarea-error"
-                rows="4"
-                placeholder="Describe el problema aquí..."
-                aria-describedby="error-message-2"
-              ></textarea>
-              <small id="error-message-2" class="input-hint"
-                >Este campo es obligatorio.</small
-              >
-            </div>
-
-            <div class="input-group">
-              <label for="textarea-disabled" class="input-label"
-                >Notas de Lectura</label
-              >
-              <textarea id="textarea-disabled" rows="4" disabled>
+                        <div class="input-group">
+                            <label for="textarea-disabled" class="input-label"
+                                >Notas de Lectura</label
+                            >
+                            <textarea
+                                id="textarea-disabled"
+                                class="form-control"
+                                rows="4"
+                                disabled
+                            >
 El cliente no puede editar esta sección.</textarea
-              >
-              <small class="input-hint"
-                >El campo está inactivo por defecto.</small
-              >
-            </div>
-          </div>
-        </section>
+                            >
+                            <span class="input-hint"
+                                >El campo está inactivo por defecto.</span
+                            >
+                        </div>
+                    </div>
+                </section>
 
-        <section class="code-snippets">
-          <h3>Código Fuente</h3>
-          <h4>HTML (Estructura Básica)</h4>
-          <pre><code class="language-html html-snippet">...</code></pre>
-          <h4>CSS</h4>
-          <pre><code class="language-css css-snippet">...</code></pre>
-        </section>
-      </main>
-    </div>
+                <section class="code-snippets">
+                    <h3>Código Fuente</h3>
+                    <h4>HTML (Estructura Básica)</h4>
+                    <pre><code class="language-html html-snippet">...</code></pre>
+                    <h4>CSS</h4>
+                    <pre><code class="language-css css-snippet">...</code></pre>
+                </section>
+            </main>
+        </div>
 
-    <footer id="main-footer"></footer>
-    <script src="/JS/prism.js"></script>
-    <script src="/JS/main.js"></script>
-    <script src="/JS/docs.js"></script>
-    <script src="/JS/sidebar.js"></script>
-  </body>
+        <footer id="main-footer">
+            <p>
+                © 2025 Web UI Component Kit. Desarrollado con Front-end Puro
+                (HTML, CSS & JS). Arquitectura modular y autónoma.        
+            </p>
+        </footer>
+        <script src="/JS/prism.js"></script>
+        <script src="/JS/main.js"></script>
+        <script src="/JS/docs.js"></script>
+        <script src="/JS/sidebar.js"></script>
+    </body>
 </html>

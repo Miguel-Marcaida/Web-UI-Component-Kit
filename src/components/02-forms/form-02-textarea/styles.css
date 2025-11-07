@@ -1,86 +1,126 @@
-/* ======================================= */
-/* INPUT-02: TEXTAREA (ÁREA DE TEXTO)      */
-/* ======================================= */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: FORM-02 (Textarea)                  */
+/* Extiende lógica de Form-01 (Inputs)                  */
+/* ==================================================== */
 
-/* Reutilizamos la grilla de Input-01 para la demostración */
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.input-group,
+.input-group *,
+.input-group *::before,
+.input-group *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales (Idénticas a Form-01 para consistencia) */
+
 .input-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Variables Locales (Valores de Form-01) */
+    --local-bg: white;
+    --local-text: #1a1a1a;
+    --local-border: #ccc;
+    --local-focus-accent: #008080; /* Teal */
+    --local-error-accent: #dc3545; /* Rojo */
+    --local-hint: #6c757d;
+    --local-padding-x: 1rem;
+    --local-padding-y: 0.75rem;
+    --local-radius: 0.25rem;
+
+    /* Fondo fijo para la vista previa */
+    background-color: var(--local-bg);
+    padding: 20px;
+    border-radius: var(--local-radius);
+
+    /* Estilos de Contenedor para la Documentación (se mantienen) */
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* Reutilizamos la estructura base de Input-01 */
 .input-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* Eliminamos el margin-bottom para que el componente sea más modular */
+    /* Lo manejamos con el 'gap' del grid. */
 }
 
-/* Etiqueta (Label) - Reutilizada de main.css si es necesario, o definida aquí para el componente */
+/* 2. Estilos de Base (Reutilizados de Form-01) */
+
 .input-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--color-text-base);
+    display: block;
+    margin-bottom: 0.5rem;
+    /* Usamos el font-size de Form-01: 1rem (base) */
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--local-text);
 }
 
-/* 1. Área de Texto (Textarea) */
-.input-group textarea {
-  width: 100%;
-  /* Mismo padding y fuente que los inputs para consistencia */
-  padding: 1rem 1.2rem;
-  font-size: 1.6rem;
-  line-height: 1.5;
-  font-family: inherit; /* Muy importante para que use la fuente base */
-  color: var(--color-text-base);
-  background-color: var(--color-bg-base);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  transition: border-color 0.2s, box-shadow 0.2s;
+/* Aplica el estilo base a cualquier elemento con .form-control (Input, Textarea, Select) */
+.form-control {
+    width: 100%;
+    padding: var(--local-padding-y) var(--local-padding-x);
+    font-size: 1rem;
+    line-height: 1.5;
 
-  /* CONTROL DE REDIMENSIONAMIENTO */
-  /* permitimos el resize verticalmente, pero no horizontalmente (para evitar problemas de layout) */
-  resize: vertical;
-  min-height: 100px; /* Altura mínima para asegurar visibilidad */
+    /* Propiedad clave para Textarea: usar la fuente del body */
+    font-family: inherit;
+
+    color: var(--local-text);
+    background-color: var(--local-bg);
+    border: 1px solid var(--local-border);
+    border-radius: var(--local-radius);
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
 }
 
-/* Estado de Foco (Focus) */
-.input-group textarea:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-  outline: none;
+/* 3. Propiedades Específicas del TEXTAREA */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
 }
 
-/* Estado Deshabilitado (Disabled) */
-.input-group textarea[disabled] {
-  background-color: var(--color-bg-hover);
-  cursor: not-allowed;
-  opacity: 0.8;
+/* 4. Estados (Reutilizados de Form-01, aplicables al .form-control) */
+
+/* Foco */
+.form-control:focus {
+    border-color: var(--local-focus-accent);
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--local-focus-accent) 25%, transparent);
+    outline: none;
 }
 
-/* Mensaje de Ayuda/Hint - Reutilizada de main.css o Input-01 */
-.input-hint {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  color: var(--color-secondary);
+/* Deshabilitado */
+.form-control:disabled {
+    background-color: #f5f5f5;
+    color: var(--local-hint);
+    border-color: #e0e0e0;
+    cursor: not-allowed;
+    opacity: 0.8;
 }
 
-/* ======================================= */
-/* VARIACIONES DE ESTADO */
-/* ======================================= */
-
-/* Estado de Error (Clase is-invalid) */
-.input-group.is-invalid textarea {
-  border-color: var(--color-danger);
+/* Error */
+.form-group.is-invalid .form-control {
+    border-color: var(--local-error-accent);
 }
 
-.input-group.is-invalid textarea:focus {
-  border-color: var(--color-danger);
-  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
-}
-
+.input-group.is-invalid .input-label,
 .input-group.is-invalid .input-hint {
-  color: var(--color-danger);
+    color: var(--local-error-accent);
+}
+
+.input-group.is-invalid .form-control:focus {
+    border-color: var(--local-error-accent);
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--local-error-accent) 25%, transparent);
+}
+
+/* 5. Texto de Ayuda (Hint) */
+.input-hint {
+    display: block;
+    font-size: 0.875rem; /* El tamaño consistente de Form-01 */
+    color: var(--local-hint);
+    margin-top: 0.25rem;
 }
