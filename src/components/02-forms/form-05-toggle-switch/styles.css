@@ -1,0 +1,168 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: FORM-05 (Toggle/Switch)             */
+/* Estructura Base para Autonomía y Consistencia        */
+/* ==================================================== */
+
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.input-group,
+.toggle-control,
+.toggle-control *,
+.toggle-control *::before,
+.toggle-control *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales (Idénticas a Form-01) */
+
+.input-grid {
+    /* Variables Locales */
+    --local-bg: white;
+    --local-text: #1a1a1a;
+    --local-border: #ccc;
+    --local-focus-accent: #008080; /* Teal */
+    --local-error-accent: #dc3545; /* Rojo */
+    --local-hint: #6c757d;
+
+    /* VARIABLES ESPECÍFICAS DEL TOGGLE */
+    --toggle-width: 50px;
+    --toggle-height: 28px;
+    --toggle-thumb-size: 20px;
+    --toggle-offset: 4px; /* (height - thumb-size) / 2 */
+
+    /* Fondo fijo para la vista previa */
+    background-color: var(--local-bg);
+    padding: 20px;
+    border-radius: 0.25rem;
+    color: var(--local-text);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre el h4 y el control */
+}
+
+/* 2. Estructura de Control (Toggle) */
+
+.toggle-control {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el switch y la etiqueta */
+    cursor: pointer;
+}
+
+.toggle-control__label {
+    /* **Ajuste 1: Convertir en contexto de posicionamiento** */
+    position: relative;
+
+    /* El padding-left debe compensar el espacio que ocupa el switch visual */
+    padding-left: calc(var(--toggle-width) + 1rem);
+
+    font-size: 1rem;
+    color: var(--local-text);
+    cursor: pointer;
+    user-select: none;
+    /* Eliminamos margin-right, que estaba en ::before y movía la etiqueta */
+}
+
+/* --- AQUÍ SE AGREGARÁN LOS ESTILOS AVANZADOS DEL SWITCH --- */
+
+/* 3. Ocultar el Input Nativo (A11Y) */
+.toggle-control__input {
+    /* Ocultar, pero mantener accesible para el foco */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* 4. Estilo del Switch Visual (Track y Thumb) */
+
+/* 4. Estilo del Switch Visual (Track y Thumb) */
+
+/* El Track (La Barra) - Usamos ::before en la etiqueta */
+.toggle-control__label::before {
+    content: "";
+    display: block; /* Debe ser block para ocupar su propio espacio y no afectar la línea base */
+    position: absolute; /* Posicionarlo absolutamente dentro del label */
+
+    /* Posicionamiento del Track dentro del Label */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    /* Eliminamos margin-right: 1rem; */
+    border-radius: calc(var(--toggle-height) / 2);
+    background-color: var(--local-border);
+    transition: background-color 0.3s ease;
+}
+
+/* El Thumb (El Círculo Deslizable) - Usamos ::after en la etiqueta */
+.toggle-control__label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0; /* Left: 0 ahora es relativo al label, no al flujo */
+
+    /* Cálculo de la posición inicial para el thumb */
+    transform: translate(
+        var(--toggle-offset),
+        -50%
+    ); /* Posicionamiento inicial es correcto */
+
+    width: var(--toggle-thumb-size);
+    height: var(--toggle-thumb-size);
+    border-radius: 50%;
+    background-color: var(--local-bg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* 5. ESTADO CHECKED (ON) */
+
+/* Mover el Thumb y cambiar el color del Track */
+.toggle-control__input:checked + .toggle-control__label::before {
+    background-color: var(--local-focus-accent); /* Color Teal cuando está ON */
+}
+
+.toggle-control__input:checked + .toggle-control__label::after {
+    /* Calculamos el desplazamiento final del thumb */
+    /* Desplazamiento = Ancho del Track - Tamaño del Thumb - Doble del Offset */
+    --toggle-move: calc(
+        var(--toggle-width) - var(--toggle-thumb-size) - 2 *
+            var(--toggle-offset)
+    );
+    transform: translate(calc(var(--toggle-offset) + var(--toggle-move)), -50%);
+}
+
+/* 6. ESTADO FOCO (ACCESIBILIDAD) */
+
+.toggle-control__input:focus + .toggle-control__label::before {
+    /* Aplicamos la sombra de foco consistente (Teal) */
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--local-focus-accent) 25%, transparent);
+}
+
+/* 7. ESTADO DESHABILITADO (DISABLED) */
+
+.toggle-control__input:disabled + .toggle-control__label {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.toggle-control__input:disabled + .toggle-control__label::before {
+    background-color: #e0e0e0; /* Gris más claro cuando está Disabled */
+}

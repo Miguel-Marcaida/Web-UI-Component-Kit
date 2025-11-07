@@ -1,0 +1,40 @@
+<div class="input-group">
+    <h4>Toggle Básico (OFF)</h4>
+    <div class="toggle-control">
+        <input 
+            type="checkbox" 
+            id="toggle-1" 
+            name="toggle-basico" 
+            class="toggle-control__input" 
+        />
+        <label for="toggle-1" class="toggle-control__label">Estado OFF</label>
+    </div>
+</div>
+
+<div class="input-group">
+    <h4>Toggle Activo (ON)</h4>
+    <div class="toggle-control">
+        <input 
+            type="checkbox" 
+            id="toggle-2" 
+            name="toggle-activo" 
+            class="toggle-control__input" 
+            checked
+        />
+        <label for="toggle-2" class="toggle-control__label">Notificaciones (Activo)</label>
+    </div>
+</div>
+
+<div class="input-group">
+    <h4>Toggle Deshabilitado</h4>
+    <div class="toggle-control">
+        <input 
+            type="checkbox" 
+            id="toggle-3" 
+            name="toggle-disabled" 
+            class="toggle-control__input" 
+            disabled
+        />
+        <label for="toggle-3" class="toggle-control__label">Modo Invitado (Deshabilitado)</label>
+    </div>
+</div>

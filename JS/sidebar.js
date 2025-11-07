@@ -50,6 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "04. Checkboxes & Radios",
                     path: "/src/components/02-forms/form-04-checkbox-radio/index.html",
                 },
+                {
+                    name: "05. Toggle Switch",
+                    path: "/src/components/02-forms/form-05-toggle-switch/index.html",
+                },
             ],
         },
         // CÓDIGO A INSERTAR EN SIDEBAR.JS
