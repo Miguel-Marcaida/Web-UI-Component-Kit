@@ -1,89 +1,113 @@
-/* ======================================= */
-/* NAV-03: MENÚ DE PESTAÑAS (TABS)         */
-/* ======================================= */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: NAV-03 (Menú de Pestañas / Tabs)    */
+/* Refactorizado a esquema Teal/Claro para Dual-Mode    */
+/* ==================================================== */
 
-.tabs-container {
-  max-width: 800px;
-  margin: 20px 0;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base); /* Usamos variable de borde */
-  overflow: hidden; /* Importante para bordes */
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.tabs-container,
+.tabs-container *,
+.tabs-container *::before,
+.tabs-container *::after {
+    box-sizing: border-box;
 }
 
-/* 1. Lista de Pestañas (Mobile First: Vertical/Full Width) */
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales (Esquema Teal) */
+.tabs-container {
+    /* Variables Críticas Locales para Autonomía */
+    --local-bg: #008080; /* Fondo del componente (Teal Base) */
+    --local-surface: #009999; /* Fondo de la lista de pestañas (Teal un poco más claro) */
+    --local-text: white; /* Texto principal */
+    --local-text-secondary: rgba(
+        255,
+        255,
+        255,
+        0.7
+    ); /* Texto inactivo (Gris claro) */
+    --local-primary: #ffd700; /* Color de acento para la pestaña activa (Oro/Amarillo) */
+    --local-hover: #005f5f; /* Hover sutil (Teal Oscuro) */
+    --local-border: rgba(255, 255, 255, 0.1);
+    --local-radius: 4px;
+
+    /* Estilos del Contenedor Principal */
+    max-width: 800px;
+    margin: 20px 0;
+    border: 1px solid var(--local-border);
+    border-radius: var(--local-radius);
+    overflow: hidden;
+}
+
+/* 2. Lista de Pestañas (Mobile First) */
 .tab-list {
-  display: flex;
-  /* En móvil, permitimos que se envuelvan si hay muchas pestañas */
-  flex-wrap: wrap;
-  border-bottom: 2px solid var(--color-border);
-  background-color: var(--color-bg-light); /* Fondo claro para la navegación */
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--local-border);
+    background-color: var(--local-surface);
 }
 
 .tab-list__item {
-  /* Estilo del botón de pestaña */
-  flex-grow: 1; /* Permite que llenen el ancho si solo hay una fila */
-  padding: 1rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  text-align: center;
-  /* Ajustamos el tamaño a un valor legible (14px) */
-  font-size: 1.4rem;
-  /* Usamos la variable de texto base */
-  color: var(--color-text-base);
-  transition: color 0.2s, background-color 0.2s;
-
-  /* En Mobile, usamos border-right para separarlas si están en fila */
-  border-right: 1px solid var(--color-border);
+    flex-grow: 1;
+    padding: 1rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 1.4rem;
+    /* Texto inactivo */
+    color: var(--local-text-secondary);
+    transition: color 0.2s, background-color 0.2s;
+    border-right: 1px solid var(--local-border);
 }
 
 .tab-list__item:last-child {
-  border-right: none;
+    border-right: none;
 }
 
-/* 1.1 Estado Activo de la Pestaña */
+/* 2.1 Estado Activo de la Pestaña */
 .tab-list__item.is-active {
-  /* CORREGIDO: Usamos variable para el fondo blanco */
-  background-color: var(--color-bg-base);
-  color: var(--color-primary); /* Texto de color primario */
-  font-weight: bold;
-  /* Línea indicadora azul en la parte inferior para destacar */
-  border-bottom: 2px solid var(--color-primary);
-  margin-bottom: -2px; /* Superpone el borde del contenedor */
+    /* Fondo activo: Base Teal, para integrarse al panel */
+    background-color: var(--local-bg);
+    /* Texto activo: Color de acento de alto contraste */
+    color: var(--local-primary);
+    font-weight: 700;
+    /* Línea indicadora activa */
+    border-bottom: 2px solid var(--local-primary);
+    margin-bottom: -2px;
 }
 
+/* 2.2 Estado Hover (Sólo si no está activo) */
 .tab-list__item:hover:not(.is-active) {
-  background-color: var(--color-bg-hover);
+    background-color: var(--local-hover);
 }
 
-/* 2. Paneles de Contenido */
+/* 3. Paneles de Contenido */
 .tab-panels {
-  padding: 1.5rem;
-  /* variable para el fondo del panel */
-  background-color: var(--color-bg-base);
+    padding: 1.5rem;
+    /* Fondo del panel principal */
+    background-color: var(--local-bg);
+    color: var(--local-text);
 }
 
 .tab-panels__item {
-  padding: 0;
-  line-height: 1.6;
+    padding: 0;
+    line-height: 1.6;
 }
 
 .tab-panels__item[hidden] {
-  display: none;
+    display: none;
 }
 
 /* ======================================= */
-/* 3. Media Query (Desktop: Horizontal Flex) */
+/* 4. Media Query (Desktop) */
 /* ======================================= */
 @media (min-width: 600px) {
-  .tab-list {
-    /* Fuerza a que las pestañas estén en una sola fila en escritorio */
-    flex-wrap: nowrap;
-  }
-
-  .tab-list__item {
-    /* Elimina el flex-grow para que el ancho dependa del contenido */
-    flex-grow: 0;
-    padding: 1rem 1.5rem; /* Más padding horizontal */
-  }
+    .tab-list {
+        flex-wrap: nowrap;
+    }
+    .tab-list__item {
+        flex-grow: 0;
+        padding: 1rem 1.5rem;
+    }
 }

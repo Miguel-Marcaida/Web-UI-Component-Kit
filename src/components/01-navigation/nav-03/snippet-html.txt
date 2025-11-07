@@ -26,13 +26,11 @@
         </div>
         
         <div id="panel-ajustes" class="tab-panels__item" role="tabpanel" 
-             aria-labelledby="tab-ajustes" tabindex="0" hidden>
-            <p>Contenido 2: Opciones de privacidad y notificaciones.</p>
+             aria-labelledby="tab-ajustes" tabindex="-1" hidden> <p>Contenido 2: Opciones de privacidad y notificaciones.</p>
         </div>
         
         <div id="panel-actividad" class="tab-panels__item" role="tabpanel" 
-             aria-labelledby="tab-actividad" tabindex="0" hidden>
-            <p>Contenido 3: Historial de acciones y actividad reciente.</p>
+             aria-labelledby="tab-actividad" tabindex="-1" hidden> <p>Contenido 3: Historial de acciones y actividad reciente.</p>
         </div>
     </div>
 </div>
