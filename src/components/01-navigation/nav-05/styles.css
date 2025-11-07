@@ -1,79 +1,99 @@
-/* ======================================= */
-/* NAV-05: MENÚ PÍLDORA (MOBILE FIRST)     */
-/* ======================================= */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: NAV-05 (Menú Píldora / Pill Menu)   */
+/* Refactorizado a esquema Teal/Claro para Dual-Mode    */
+/* ==================================================== */
+
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.nav-05,
+.nav-05 *,
+.nav-05 *::before,
+.nav-05 *::after {
+    box-sizing: border-box;
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales y Estilos Base */
 
 .nav-05 {
-  /* El contenedor principal debe permitir el desplazamiento horizontal */
-  width: 100%;
-  overflow-x: auto; /* Permite el scroll si la lista excede el ancho */
-  -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS */
-  padding-bottom: 5px; /* Pequeño padding para asegurar que se vea la barra de scroll */
+    /* Variables Críticas Locales para Autonomía (Esquema Claro/Teal) */
+    --local-bg-active: #008080; /* Fondo activo: Teal */
+    --local-text-active: white; /* Texto activo: Blanco */
+    --local-bg-base: white; /* Fondo de enlace base: Transparente */
+    --local-text-base: #2c2c2c; /* Texto de enlace base: Gris oscuro */
+    --local-border: #d0d0d0; /* Borde y separador: Gris claro */
+    --local-hover: #e8e8e8; /* Fondo de Hover: Gris muy claro */
+    --local-radius: 50px; /* Borde redondeado */
+
+    /* El contenedor principal debe permitir el desplazamiento horizontal */
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
 }
 
 .nav-05__list {
-  /* Flexbox para alinear los ítems horizontalmente */
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
 
-  /* Clave: No permitimos que los ítems se envuelvan */
-  flex-wrap: nowrap;
+    /* Borde redondeado exterior usando la variable local */
+    border: 1px solid var(--local-border);
+    border-radius: var(--local-radius);
 
-  /* El borde redondeado exterior */
-  border: 1px solid var(--color-border);
-  border-radius: 50px; /* Un valor grande para el efecto píldora */
-
-  /* Asegura que el contenido se mantenga en una sola fila y cause el overflow */
-  width: max-content;
-  min-width: 100%; /* Asegura que al menos ocupe el ancho completo si hay pocos ítems */
+    width: max-content;
+    min-width: 100%;
 }
 
 .nav-05__list li {
-  /* Elimina el margen por defecto */
-  margin: 0;
+    margin: 0;
 }
 
 .nav-05__list a {
-  display: block;
-  text-decoration: none;
-  padding: 0.5rem 1.5rem; /* Padding interno */
-  color: var(--color-text-base);
-  white-space: nowrap; /* Evita que el texto de los enlaces se rompa */
-  transition: all 0.2s ease-in-out;
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    color: var(--local-text-base);
+    background-color: var(--local-bg-base); /* Transparente */
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
 }
 
-/* 1. Estilos del Hover */
+/* 2. Estilos de Interacción y Estado */
+
+/* Hover */
 .nav-05__list a:hover {
-  background-color: var(--color-bg-hover);
+    background-color: var(--local-hover);
 }
 
-/* 2. Estilo del Elemento Activo */
+/* Activo */
 .nav-05__list a.is-active,
 .nav-05__list a[aria-current="page"] {
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse); /* Texto blanco sobre color primario */
-  font-weight: 600;
+    background-color: var(--local-bg-active);
+    color: var(--local-text-active);
+    font-weight: 600;
 }
 
 /* Borde Interior: Separa los elementos de la lista */
 .nav-05__list li:not(:last-child) {
-  border-right: 1px solid var(--color-border);
+    border-right: 1px solid var(--local-border);
 }
 
-/* Estilo para los elementos activos que tocan un borde (para eliminar el borde interior) */
-/* El elemento activo no debe tener borde a su derecha, ya que el color de fondo lo hace innecesario. */
+/* Eliminamos el borde del elemento activo (si el navegador lo soporta) */
 .nav-05__list li:has(a.is-active):not(:last-child) {
-  border-right-color: transparent;
+    border-right-color: transparent;
 }
 
 /* Asegurar bordes redondeados solo en los extremos de la lista */
 .nav-05__list li:first-child a {
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+    border-top-left-radius: var(--local-radius);
+    border-bottom-left-radius: var(--local-radius);
 }
 
 .nav-05__list li:last-child a {
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+    border-top-right-radius: var(--local-radius);
+    border-bottom-right-radius: var(--local-radius);
 }
