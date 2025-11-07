@@ -1,92 +1,123 @@
-/* ======================================= */
-/* INPUT-04: CHECKBOX Y RADIO BUTTONS      */
-/* ======================================= */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: FORM-04 (Checkbox y Radio)          */
+/* Extiende lógica de Form-01 (Inputs)                  */
+/* ==================================================== */
 
-.input-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+
+.input-group,
+.custom-control,
+.custom-control *,
+.custom-control *::before,
+.custom-control *::after {
+    box-sizing: border-box;
 }
 
-.control-group {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Espacio entre los controles */
-  margin-bottom: 1.5rem;
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales (Idénticas a Form-01) */
+
+.input-grid {
+    /* Variables Locales */
+    --local-bg: white;
+    --local-text: #1a1a1a;
+    --local-border: #ccc;
+    --local-focus-accent: #008080; /* Teal */
+    --local-error-accent: #dc3545; /* Rojo */
+    --local-hint: #6c757d;
+    --local-size: 20px; /* Tamaño base del control */
+    --local-border-width: 2px;
+
+    /* Fondo fijo para la vista previa */
+    background-color: var(--local-bg);
+    padding: 20px;
+    border-radius: 0.25rem; /* Usando el valor hardcodeado para consistencia */
+    color: var(--local-text);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ✅ Renombrado a input-group para consistencia con los demás módulos */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los controles */
+    /* Eliminamos margin-bottom: 1.5rem, manejado por el gap del grid */
 }
 
 /* Contenedor principal de cada control */
 .custom-control {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
-/* 1. Ocultar el Input Nativo */
+/* 2. Ocultar el Input Nativo (Técnica de A11Y) */
 .custom-control__input {
-  /* Mueve el input fuera del viewport sin afectar el flujo */
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none; /* Asegura que la interacción sea via label */
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
 }
 
-/* 2. Etiqueta (Label) y Estilo Base */
+/* 3. Etiqueta (Label) y Estilo Base */
 .custom-control__label {
-  position: relative;
-  padding-left: 28px; /* Espacio para el control visual (tamaño 20px + margen) */
-  font-size: 1.6rem;
-  color: var(--color-text-base);
-  line-height: 1.2;
-  cursor: pointer;
+    position: relative;
+    /* Espacio para el control visual (tamaño + margen) */
+    padding-left: calc(var(--local-size) + 8px);
+    font-size: 1rem; /* Consistencia con Form-01 */
+    color: var(--local-text);
+    line-height: 1.2;
+    cursor: pointer;
 }
 
-/* 3. El Control Visual (::before) */
+/* 4. El Control Visual (::before) - El Cuadrado/Círculo */
 .custom-control__label::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--color-border);
-  background-color: var(--color-bg-base);
-  transition: all 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--local-size);
+    height: var(--local-size);
+    border: var(--local-border-width) solid var(--local-border);
+    background-color: var(--local-bg);
+    transition: all 0.2s ease-in-out;
 }
 
-/* 4. La Marca de Seleccionado (::after) */
+/* 5. La Marca de Seleccionado (::after) - El Tilde/Punto */
 .custom-control__label::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%) scale(0); /* Empieza oculto */
-  transition: transform 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0); /* Empieza oculto */
+    transition: transform 0.2s ease-in-out;
 }
 
 /* ======================================= */
-/* ESTADO CHECKED */
+/* ESTADO CHECKBOX */
 /* ======================================= */
 
 /* Cuando el input Checkbox está CHECKED */
 .custom-control__input[type="checkbox"]:checked
-  + .custom-control__label::before {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+    + .custom-control__label::before {
+    background-color: var(--local-focus-accent);
+    border-color: var(--local-focus-accent);
 }
 
 /* Dibujar el Tilde (Tick) para Checkboxes */
 .custom-control__input[type="checkbox"]:checked
-  + .custom-control__label::after {
-  /* Estilo del tilde (usando rotación y bordes) */
-  width: 6px;
-  height: 12px;
-  border: solid var(--color-text-inverse); /* Tilde blanco */
-  border-width: 0 2px 2px 0;
-  left: 7px;
-  transform: translateY(-60%) rotate(45deg) scale(1); /* Mostrar el tilde */
+    + .custom-control__label::after {
+    /* Estilo del tilde */
+    width: 6px;
+    height: 12px;
+    border: solid var(--local-bg); /* Tilde blanco (usando fondo local) */
+    border-width: 0 2px 2px 0;
+    left: 7px;
+    transform: translateY(-60%) rotate(45deg) scale(1);
 }
 
 /* ======================================= */
@@ -95,47 +126,47 @@
 
 /* Redondez para Radio Buttons */
 .custom-control__input[type="radio"] + .custom-control__label::before {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 /* Cuando el input Radio está CHECKED */
 .custom-control__input[type="radio"]:checked + .custom-control__label::before {
-  background-color: var(--color-bg-base); /* Mantiene el fondo blanco */
-  border-color: var(--color-primary); /* Borde azul */
+    background-color: var(--local-bg);
+    border-color: var(--local-focus-accent);
 }
 
 /* Dibujar el punto central para Radio Buttons */
 .custom-control__input[type="radio"]:checked + .custom-control__label::after {
-  /* Estilo del punto */
-  width: 12px;
-  height: 12px;
-  background-color: var(--color-primary); /* Punto azul */
-  border-radius: 50%;
-  left: 4px;
-  transform: translateY(-50%) scale(1); /* Mostrar el punto */
-}
-
-/* ======================================= */
-/* ESTADO DESHABILITADO (DISABLED) */
-/* ======================================= */
-
-/* El input está deshabilitado */
-.custom-control__input:disabled + .custom-control__label {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.custom-control__input:disabled + .custom-control__label::before {
-  background-color: var(--color-bg-hover); /* Fondo gris claro */
-  border-color: var(--color-border);
+    /* Estilo del punto */
+    width: 12px;
+    height: 12px;
+    background-color: var(--local-focus-accent); /* Punto Teal */
+    border-radius: 50%;
+    left: 4px;
+    transform: translateY(-50%) scale(1);
 }
 
 /* ======================================= */
 /* ESTADO FOCO (ACCESIBILIDAD) */
 /* ======================================= */
 
-/* El input está enfocado (via teclado) */
+/* Sombra de foco usando el acento Teal */
 .custom-control__input:focus + .custom-control__label::before {
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-  border-color: var(--color-primary);
+    border-color: var(--local-focus-accent);
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--local-focus-accent) 25%, transparent);
+}
+
+/* ======================================= */
+/* ESTADO DESHABILITADO (DISABLED) */
+/* ======================================= */
+
+.custom-control__input:disabled + .custom-control__label {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.custom-control__input:disabled + .custom-control__label::before {
+    background-color: #f5f5f5; /* Color gris suave */
+    border-color: #e0e0e0;
 }
