@@ -1,0 +1,10 @@
+{
+    "tabWidth": 4,
+    "useTabs": false,
+    "endOfLine": "lf",
+    "insertFinalNewline": false,
+    "trailingComma": "es5",
+    "htmlWhitespaceSensitivity": "ignore",
+    "singleAttributePerLine": false,
+    "printWidth": 999
+}

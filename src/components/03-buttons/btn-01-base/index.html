@@ -1,91 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Botón 01: Contextual y Tamaños</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Botón 01: Contextual y Tamaños</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link rel="stylesheet" href="/CSS/prism.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" /> 
-  </head>
-  <body>
-    <header id="main-header">
-      <h1>
-        <a href="/index.html" class="text-decoration-none text-inverse"
-          >Web UI Kit</a
-        >
-      </h1>
-      <nav>
-        <a href="/src/components/03-buttons/index.html">Volver a Botones</a>
-      </nav>
-    </header>
-
-    <div class="docs-container">
-      <main class="docs-content">
-        <h2>Botón 01: Contextual y Tamaños</h2>
-        <p class="description m-b-4">
-          Botones construidos sobre la clase base <code>.btn</code> y usando modificadores para el color, estilo (outline) y tamaño.
-        </p>
-
-        <section
-          class="preview-area p-4"
-          style="background-color: var(--color-bg-light)"
-        >
-          <h3 class="m-b-3">1. Botones Sólidos (Colores Contextuales)</h3>
-          <div class="button-group m-b-4" data-name="buttons-solid">
-            <button class="btn btn--primary">
-              <i class="fas fa-rocket"></i> Primario
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="/CSS/prism.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none; color: white">Web UI Kit</a>
+            </h1>
+            <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                <i class="fas fa-bars"></i>
             </button>
-            <button class="btn btn--secondary">Secundario</button>
-            <button class="btn btn--success">
-              <i class="fas fa-check"></i> Éxito
-            </button>
-            <button class="btn btn--danger">Peligro</button>
-            <button class="btn btn--primary" disabled>Deshabilitado</button>
-          </div>
+            <nav>
+                <a href="/src/components/03-buttons/index.html">Volver a Botones</a>
+            </nav>
+        </header>
 
-          <h3 class="m-b-3">2. Botones Outline</h3>
-          <div class="button-group m-b-4" data-name="buttons-outline">
-            <button class="btn btn--outline btn--primary">Primario Outline</button>
-            <button class="btn btn--outline btn--danger">Peligro Outline</button>
-          </div>
+        <div class="docs-container">
+            <main class="docs-content">
+                <h2>Botón 01: Contextual y Tamaños</h2>
+                <p class="description component-description">
+                    Botones construidos sobre la clase base
+                    <code>.btn</code>
+                    y usando modificadores para el color, estilo (outline) y tamaño.
+                </p>
 
-          <h3 class="m-b-3">3. Tamaños y Ancho Completo</h3>
-          <div class="button-group" data-name="buttons-sizes">
-            <button class="btn btn--primary btn--sm">Pequeño</button>
-            <button class="btn btn--secondary">Mediano (Default)</button>
-            <button class="btn btn--danger btn--lg">Grande</button>
-          </div>
-          <button class="btn btn--primary btn--full m-t-4" data-name="button-full">Ancho Completo</button>
-          </section>
+                <section class="preview-area component-preview">
+                    <h3 class="preview-title">1. Botones Sólidos (Colores Contextuales)</h3>
+                    <div class="button-group" data-name="buttons-solid">
+                        <button class="btn btn--primary">
+                            <i class="fas fa-rocket"></i>
+                            Primario
+                        </button>
+                        <button class="btn btn--secondary">Secundario</button>
+                        <button class="btn btn--success">
+                            <i class="fas fa-check"></i>
+                            Éxito
+                        </button>
+                        <button class="btn btn--danger">Peligro</button>
+                        <button class="btn btn--primary" disabled>Deshabilitado</button>
+                    </div>
 
-        <section class="code-snippets m-t-4">
-          <h3 class="m-b-2">Código Fuente (HTML y CSS)</h3>
-          
-          <h4>HTML (Botones Sólidos)</h4>
-          <pre><code class="language-html html-snippet" data-source="buttons-solid">
-            </code></pre>
-          
-          <h4>HTML (Botones Outline)</h4>
-          <pre><code class="language-html html-snippet" data-source="buttons-outline">
-            </code></pre>
-          
-          <h4>CSS (<code>styles.css</code>)</h4>
-          <pre><code class="language-css css-snippet" data-source="styles.css">
-            /* El JS llenará este bloque leyendo el contenido de styles.css */
-          </code></pre>
+                    <h3 class="preview-title">2. Botones Outline</h3>
+                    <div class="button-group" data-name="buttons-outline">
+                        <button class="btn btn--outline btn--primary">Primario Outline</button>
+                        <button class="btn btn--outline btn--danger">Peligro Outline</button>
+                    </div>
 
-        </section>
-      </main>
-    </div>
+                    <h3 class="preview-title">3. Tamaños y Ancho Completo</h3>
+                    <div class="button-group" data-name="buttons-sizes">
+                        <button class="btn btn--primary btn--sm">Pequeño</button>
+                        <button class="btn btn--secondary">Mediano (Default)</button>
+                        <button class="btn btn--danger btn--lg">Grande</button>
+                    </div>
+                    <button class="btn btn--primary btn--full" data-name="button-full">Ancho Completo</button>
+                </section>
 
-    <footer id="main-footer"></footer>
-    <script src="/JS/prism.js"></script>
-    <script src="/JS/docs.js"></script> 
-  </body>
+                <section class="code-snippets component-snippets">
+                    <h3 class="preview-title">Código Fuente (HTML y CSS)</h3>
+
+                    <h4>HTML</h4>
+                    <pre><code class="language-html html-snippet" data-source="buttons-solid">
+                    </code></pre>
+
+                    <h4>CSS</h4>
+                    <pre><code class="language-css css-snippet" data-source="styles.css">
+                        /* El JS llenará este bloque leyendo el contenido de styles.css */
+                    </code></pre>
+                </section>
+            </main>
+        </div>
+
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+        <script src="/JS/prism.js"></script>
+        <script src="/JS/main.js"></script>
+        <script src="/JS/docs.js"></script>
+        <script src="/JS/sidebar.js"></script>
+    </body>
 </html>

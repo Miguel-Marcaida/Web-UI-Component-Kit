@@ -1,17 +1,82 @@
-/* ===========================================
-// LAYOUT: VISTA PREVIA ESPECÍFICA
-// =========================================== */
-.button-group-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; 
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: BTN-01 (Contextual y Tamaños)       */
+/* Incluye Layout interno para autonomía completa       */
+/* ==================================================== */
+
+/* === INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+.preview-area,
+.component-description,
+.preview-title,
+.button-group,
+.btn,
+.btn *,
+.btn *::before,
+.btn *::after {
+    box-sizing: border-box;
+    margin: 0; /* Reset de margen para control total */
+    padding: 0; /* Reset de padding */
+}
+
+.component-description {
+    margin-bottom: 2rem; /* Separación de la descripción del componente */
+}
+
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 1. Definición de Variables Locales y Layout */
+
+.preview-area {
+    /* Variables Locales (Aislamiento en el contenedor real) */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-text-inverse: #ffffff;
+
+    --color-primary-dark: #0056b3;
+    --color-secondary-dark: #5a6268;
+    --color-success-dark: #1e7e34;
+    --color-danger-dark: #bd2130;
+
+    --radius-base: 0.25rem;
+    --font-weight-medium: 600;
+    --font-size-base: 1rem;
+    --border-width-base: 2px;
+
+    --padding-y-base: 0.75rem;
+    --padding-x-base: 1.5rem;
+    --gap-base: 1rem;
+
+    /* Estilos del Contenedor de Vista Previa (Reemplaza p-4 y style en HTML) */
+    padding: 2rem; /* Espaciado interno de la preview */
+    background-color: var(--color-bg-light, #f8f9fa); /* Fallback si --color-bg-light no está en main.css */
+    border-radius: var(--radius-base);
+}
+
+.preview-title {
+    margin-bottom: 1rem; /* Espaciado inferior del título */
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
 .button-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-base); /* Espaciado horizontal entre botones */
+    margin-bottom: 2rem; /* 🛑 Separación vertical entre grupos (Resuelve amontonamiento) */
+}
+
+/* El último button-group no necesita margen inferior (evita espacio extra) */
+.button-group:last-of-type {
+    margin-bottom: 0;
+}
+
+/* El botón de ancho completo necesita margen superior para separarse del grupo de arriba */
+.btn--full {
+    width: 100%;
+    display: block;
+    margin-top: 2rem;
 }
 
 /* ===========================================
@@ -19,128 +84,113 @@
 // =========================================== */
 
 .btn {
-  /* Reseteo y Base */
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-base, 0.25rem);
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
-  text-decoration: none; 
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    padding: var(--padding-y-base) var(--padding-x-base);
+    border-radius: var(--radius-base);
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+    text-decoration: none;
+    user-select: none;
 
-  /* Alineación para ÍCONOS (USO DE FLEXBOX - OK) */
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  gap: 0.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 /* Estado Deshabilitado */
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.btn:disabled,
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
-
 
 /* --------------------
 // VARIANTES DE COLOR (SÓLIDO)
 // -------------------- */
-
 .btn--primary {
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
 }
-
 .btn--primary:hover:not(:disabled) {
-  background-color: #0056b3; 
+    background-color: var(--color-primary-dark);
 }
 
 .btn--secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-text-inverse);
+    background-color: var(--color-secondary);
+    color: var(--color-text-inverse);
 }
-
 .btn--secondary:hover:not(:disabled) {
-  background-color: #5a6268; 
+    background-color: var(--color-secondary-dark);
 }
-
 .btn--success {
-  background-color: var(--color-success);
-  color: var(--color-text-inverse);
+    background-color: var(--color-success);
+    color: var(--color-text-inverse);
 }
-
 .btn--success:hover:not(:disabled) {
-  background-color: #1e7e34; 
+    background-color: var(--color-success-dark);
 }
-
 .btn--danger {
-  background-color: var(--color-danger);
-  color: var(--color-text-inverse);
+    background-color: var(--color-danger);
+    color: var(--color-text-inverse);
 }
-
 .btn--danger:hover:not(:disabled) {
-  background-color: #bd2130; 
+    background-color: var(--color-danger-dark);
 }
-
 
 /* --------------------
 // VARIANTES DE ESTILO (OUTLINE)
 // -------------------- */
 
 .btn--outline {
-  background-color: transparent;
-  border-width: 2px;
-  border-style: solid;
-  padding: calc(0.75rem - 2px) calc(1.5rem - 2px);
+    background-color: transparent;
+    border-width: var(--border-width-base);
+    border-style: solid;
+    padding: calc(var(--padding-y-base) - var(--border-width-base)) calc(var(--padding-x-base) - var(--border-width-base));
 }
 
 .btn--primary.btn--outline {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
 }
-
 .btn--primary.btn--outline:hover:not(:disabled) {
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
 }
-
 .btn--secondary.btn--outline {
-  color: var(--color-secondary);
-  border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
 }
-
 .btn--secondary.btn--outline:hover:not(:disabled) {
-  background-color: var(--color-secondary);
-  color: var(--color-text-inverse);
+    background-color: var(--color-secondary);
+    color: var(--color-text-inverse);
 }
-
 .btn--danger.btn--outline {
-  color: var(--color-danger);
-  border-color: var(--color-danger);
+    color: var(--color-danger);
+    border-color: var(--color-danger);
 }
-
 .btn--danger.btn--outline:hover:not(:disabled) {
-  background-color: var(--color-danger);
-  color: var(--color-text-inverse);
+    background-color: var(--color-danger);
+    color: var(--color-text-inverse);
 }
-
 
 /* --------------------
 // VARIANTES DE TAMAÑO
 // -------------------- */
 
 .btn--sm {
-  padding: 0.5rem 1rem; 
-  font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
 }
 
 .btn--lg {
-  padding: 1rem 2rem; 
-  font-size: 1.125rem;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
 }
 
 .btn--full {
-  width: 100%; 
-  display: block;
+    width: 100%;
+    display: block;
 }
