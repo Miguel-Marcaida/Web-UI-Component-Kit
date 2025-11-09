@@ -1,72 +1,234 @@
-/* ===========================================
-// LAYOUT DE VISTA PREVIA (Compartido con btn-01-base)
-// =========================================== */
-.button-group-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: BTN-02 (Iconos y Circular)          */
+/* Extensión del BTN-01 con soporte de íconos y layout  */
+/* ==================================================== */
+
+/* === 1. INICIO: AUTONOMÍA CSS (Micro-Reset) === */
+/* Asegura que el box-sizing y los márgenes sean locales */
+.preview-area,
+.component-description,
+.preview-title,
+.preview-subtitle,
+.button-group,
+.btn,
+.btn *,
+.btn *::before,
+.btn *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.component-description {
+    margin-bottom: 2rem;
+}
+/* === FIN: AUTONOMÍA CSS (Micro-Reset) === */
+
+/* 2. Definición de Variables Locales y Layout */
+
+.preview-area {
+    /* Variables Locales (Clonadas de BTN-01 para autonomía total) */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-text-inverse: #ffffff;
+
+    --color-primary-dark: #0056b3;
+    --color-secondary-dark: #5a6268;
+    --color-success-dark: #1e7e34;
+    --color-danger-dark: #bd2130;
+
+    --radius-base: 0.25rem;
+    --font-weight-medium: 600;
+    --font-size-base: 1rem;
+    --border-width-base: 2px;
+
+    --padding-y-base: 0.75rem;
+    --padding-x-base: 1.5rem;
+    --gap-base: 1rem;
+
+    /* Nuevas variables para Botones de Icono */
+    --icon-btn-diameter-base: 3rem;
+    --icon-btn-diameter-sm: 2.5rem;
+    --icon-btn-diameter-lg: 4rem; /* Aumentado a 4rem para mayor visibilidad en LG */
+    /* 🛑 CAMBIO CRÍTICO: Fondo Fijo y Claro para Autonomía Visual 🛑 */
+    --preview-bg-color: #f8f9fa;
+    --preview-text-color: black;
+    /* Estilos del Contenedor de Vista Previa (Reemplaza estilos inline) */
+    padding: 3rem 2rem;
+    background-color: var(--preview-bg-color, #ffffff);
+    border-radius: var(--radius-base);
+}
+
+.preview-title {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--preview-text-color);
+}
+
+/* Reemplazo de selector h4 por la clase autónoma .preview-subtitle */
+.preview-subtitle {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--preview-text-color);
 }
 
 .button-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-base);
+    margin-bottom: 2rem;
 }
 
-h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
+.button-group:last-of-type {
+    margin-bottom: 0;
 }
 
 /* ===========================================
-// EXTENSIÓN: SOPORTE DE ÍCONOS
+// 3. COMPONENTE: BOTÓN BASE (.btn) - Clonado de BTN-01
 // =========================================== */
 
-/* Estilo para botones con ícono y texto */
-.btn--icon {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* Espacio entre el ícono y el texto */
+.btn {
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    padding: var(--padding-y-base) var(--padding-x-base);
+    border-radius: var(--radius-base);
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+    text-decoration: none;
+    user-select: none;
+
+    /* Habilita iconos y texto alineados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
+
+/* Estado Deshabilitado */
+.btn:disabled,
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- VARIANTES DE COLOR Y OUTLINE (Completas) --- */
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+.btn--primary:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+}
+.btn--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-text-inverse);
+}
+.btn--secondary:hover:not(:disabled) {
+    background-color: var(--color-secondary-dark);
+}
+.btn--danger {
+    background-color: var(--color-danger);
+    color: var(--color-text-inverse);
+}
+.btn--danger:hover:not(:disabled) {
+    background-color: var(--color-danger-dark);
+}
+.btn--outline {
+    background-color: transparent;
+    border-width: var(--border-width-base);
+    border-style: solid;
+    padding: calc(var(--padding-y-base) - var(--border-width-base)) calc(var(--padding-x-base) - var(--border-width-base));
+}
+.btn--primary.btn--outline {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.btn--primary.btn--outline:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+.btn--secondary.btn--outline {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+.btn--secondary.btn--outline:hover:not(:disabled) {
+    background-color: var(--color-secondary);
+    color: var(--color-text-inverse);
+}
+.btn--danger.btn--outline {
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+}
+.btn--danger.btn--outline:hover:not(:disabled) {
+    background-color: var(--color-danger);
+    color: var(--color-text-inverse);
+}
+
+/* --- VARIANTES DE TAMAÑO (Completas) --- */
+.btn--sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+.btn--lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+/* ===========================================
+// 4. EXTENSIÓN: SOPORTE DE ÍCONOS (Código del usuario integrado y corregido)
+// =========================================== */
+
+/* Estilo para botones con ícono y texto (uso de gap ya en .btn) */
+/* .btn--icon {
+    /* No se necesitan reglas aquí, ya usa flexbox y gap de .btn
+} */
 
 /* --------------------
 // BOTONES CIRCULARES (SOLO ÍCONO)
 // -------------------- */
 
 .btn--icon-only {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Igualar el alto y el ancho para formar un círculo */
-  width: 3rem; /* Tamaño base estándar (igual al padding horizontal) */
-  height: 3rem; /* Igual al padding vertical */
-  padding: 0; /* Elimina el padding de texto */
-  border-radius: 50%; /* Hace el botón circular */
+    width: var(--icon-btn-diameter-base);
+    height: var(--icon-btn-diameter-base);
+    padding: 0;
+    border-radius: 50%;
+    /* Reafirma centrado */
+    justify-content: center;
 }
 
 /* Ajuste de tamaño para variantes */
 .btn--icon-only.btn--sm {
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 0.875rem;
+    width: var(--icon-btn-diameter-sm);
+    height: var(--icon-btn-diameter-sm);
+    /* font-size: 0.875rem; - Heredado de .btn--sm */
 }
 
 .btn--icon-only.btn--lg {
-  width: 3.5rem;
-  height: 3.5rem;
-  font-size: 1.125rem;
+    width: var(--icon-btn-diameter-lg);
+    height: var(--icon-btn-diameter-lg);
+    /* font-size: 1.125rem; - Heredado de .btn--lg */
 }
 
 /* Ajuste para contorno (outline) */
 .btn--icon-only.btn--outline {
-  /* Compensar el borde de 2px en el tamaño (3rem - 4px) */
-  width: calc(3rem - 4px);
-  height: calc(3rem - 4px);
+    /* Usa la variable de borde base */
+    width: calc(var(--icon-btn-diameter-base) - var(--border-width-base) * 2);
+    height: calc(var(--icon-btn-diameter-base) - var(--border-width-base) * 2);
 }
 
 .btn--icon-only.btn--sm.btn--outline {
-  width: calc(2.5rem - 4px);
-  height: calc(2.5rem - 4px);
+    width: calc(var(--icon-btn-diameter-sm) - var(--border-width-base) * 2);
+    height: calc(var(--icon-btn-diameter-sm) - var(--border-width-base) * 2);
+}
+
+.btn--icon-only.btn--lg.btn--outline {
+    width: calc(var(--icon-btn-diameter-lg) - var(--border-width-base) * 2);
+    height: calc(var(--icon-btn-diameter-lg) - var(--border-width-base) * 2);
 }
