@@ -7,79 +7,51 @@
 
         <link rel="stylesheet" href="/CSS/main.css" />
         <link rel="stylesheet" href="/CSS/prism.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <header id="main-header">
             <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
             </h1>
 
-            <button
-                id="sidebar-toggle"
-                aria-expanded="false"
-                aria-controls="docs-sidebar"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <a href="/src/components/01-navigation/index.html"
-                    >Volver a Navegación</a
-                >
-            </nav>
-        </header>
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
 
+                <nav>
+                    <a href="/src/components/01-navigation/index.html">Volver a Navegación</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
         <div class="docs-container">
             <main class="docs-content">
                 <h2>Nav 04: Menú con Dropdown (Desplegable)</h2>
-                <p class="description">
-                    Una barra de navegación horizontal que incluye un elemento
-                    con un submenú desplegable. Implementa el patrón **ARIA
-                    Dropdown** para accesibilidad y usabilidad con teclado.
-                </p>
+                <p class="description">Una barra de navegación horizontal que incluye un elemento con un submenú desplegable. Implementa el patrón **ARIA Dropdown** para accesibilidad y usabilidad con teclado.</p>
 
                 <section class="preview-area">
                     <h3 style="margin-bottom: 2rem">Vista Previa</h3>
 
-                    <nav
-                        class="nav-04"
-                        aria-label="Menú principal con opciones desplegables"
-                    >
+                    <nav class="nav-04" aria-label="Menú principal con opciones desplegables">
                         <ul class="nav-04__list">
                             <li><a href="#">Inicio</a></li>
                             <li><a href="#">Servicios</a></li>
 
                             <li class="dropdown-item">
-                                <button
-                                    class="dropdown-toggle"
-                                    id="dropdownMenuButton"
-                                    aria-expanded="false"
-                                    aria-controls="dropdownMenu"
-                                >
-                                    Productos ▾
-                                </button>
+                                <button class="dropdown-toggle" id="dropdownMenuButton" aria-expanded="false" aria-controls="dropdownMenu">Productos ▾</button>
 
-                                <ul
-                                    class="dropdown-menu"
-                                    id="dropdownMenu"
-                                    role="menu"
-                                    aria-labelledby="dropdownMenuButton"
-                                >
+                                <ul class="dropdown-menu" id="dropdownMenu" role="menu" aria-labelledby="dropdownMenuButton">
                                     <li><a href="#">Sub-Categoría A</a></li>
                                     <li><a href="#">Sub-Categoría B</a></li>
-                                    <li
-                                        role="separator"
-                                        class="dropdown-separator"
-                                    ></li>
+                                    <li role="separator" class="dropdown-separator"></li>
                                     <li><a href="#">Ver Todo</a></li>
                                 </ul>
                             </li>
@@ -101,13 +73,11 @@
             </main>
         </div>
         <footer id="main-footer">
-            <p>
-                © 2025 Web UI Component Kit. Desarrollado con Front-end Puro
-                (HTML, CSS & JS). Arquitectura modular y autónoma.        
-            </p>
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
         </footer>
         <script src="/JS/prism.js"></script>
-        <script src="/JS/main.js"></script>
+        <script defer src="/JS/_theme.js"></script>
+
         <script src="/JS/docs.js"></script>
         <script src="/JS/sidebar.js"></script>
         <script src="script.js"></script>

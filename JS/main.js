@@ -6,10 +6,9 @@
 (function () {
     // 1. DEFINICIÓN DE MÓDULOS EN ORDEN
     const MODULES = [
-        "./modules/_theme.js",
-        // "./modules/_core.js", // 1. Esqueleto de delegación y API global (DEBE SER EL PRIMERO)
+        "./modules/_core.js", // 1. Esqueleto de delegación y API global (DEBE SER EL PRIMERO)
         // "./modules/_theme.js",
-        // "./modules/_toggle.js", // 2. Lógica de alternancia (requiere _core)
+        "./modules/_toggle.js", // 2. Lógica de alternancia (requiere _core)
         // "./modules/_autoinit.js", // 3. NUEVO: Módulo de Inicialización Automática
         // "./modules/_performance.js",
         // "./modules/_events.js",

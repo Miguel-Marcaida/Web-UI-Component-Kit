@@ -1,10 +1,11 @@
 // ===========================================
-// SIDEBAR.JS: INYECTA Y ACTIVA LA BARRA LATERAL CONTEXTUAL
+// SIDEBAR.JS: INYECTA Y ACTIVA LA BARRA LATERAL CONTEXTUAL (AHORA AUTÓNOMO)
 // ===========================================
 
 document.addEventListener("DOMContentLoaded", () => {
     // 1. ESTRUCTURA COMPLETA DEL CATÁLOGO
-    // Usamos rutas ABSOLUTAS para la inyección.
+    // ... (El objeto componentCatalog permanece igual) ...
+
     const componentCatalog = {
         "01-navigation": {
             title: "Módulo 01: Navegación",
@@ -287,9 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- LÓGICA DE DETECCIÓN DEL MÓDULO ACTUAL ---
 
     // Intentar encontrar qué módulo estamos viendo (ej. '01-navigation' o '02-forms')
-    let currentModuleKey = Object.keys(componentCatalog).find((key) =>
-        currentPathname.includes(`/components/${key}/`)
-    );
+    let currentModuleKey = Object.keys(componentCatalog).find((key) => currentPathname.includes(`/components/${key}/`));
 
     // Si no estamos dentro de una carpeta de módulo, o si es un índice (ej. /02-forms/index.html), salir.
     // El sidebar SOLO se inyecta en las páginas de COMPONENTE (ej. /input-01/index.html)
@@ -317,6 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let otherModulesHTML = "";
     Object.keys(componentCatalog).forEach((key) => {
         if (key !== currentModuleKey) {
+            // Utilizamos el enlace al índice del módulo para "Otros Módulos"
             otherModulesHTML += `
                 <li><a href="/src/components/${key}/index.html">${componentCatalog[key].title}</a></li>
             `;
@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <ul class="component-list">
                 ${componentListHTML}
             </ul>
-            
+
             <h3 style="margin-top: 2rem;">Otros Módulos</h3>
             <ul class="component-list">
                 ${otherModulesHTML}
@@ -341,5 +341,57 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. INSERCIÓN: Insertamos la barra lateral antes del main content.
     docsContainer.insertAdjacentHTML("afterbegin", sidebarHTML);
 
-    // console.log(`Sidebar inyectado para: ${moduleData.title}`);
+    // ------------------------------------------------------------------
+    // 3. ¡LÓGICA DE AUTONOMÍA AÑADIDA!
+    //    Ahora sidebar.js maneja su propio toggle, eliminando dependencias.
+    // ------------------------------------------------------------------
+
+    const sidebarToggleBtn = document.getElementById("sidebar-toggle");
+    const sidebarElement = document.getElementById("docs-sidebar");
+    const docsContainerElement = document.querySelector(".docs-container"); // Añadido para manejar la clase is-sidebar-open
+
+    if (sidebarToggleBtn && sidebarElement) {
+        // Función de toggle unificada, adaptada de _toggle.js
+        const toggleSidebar = (willBeActive) => {
+            // El elemento al que se le aplicará el is-active (la barra lateral)
+            sidebarElement.classList.toggle("is-active", willBeActive);
+
+            // Togglenar también la clase en el trigger (para feedback visual)
+            sidebarToggleBtn.classList.toggle("is-active", willBeActive);
+
+            // LÓGICA ARIA
+            sidebarToggleBtn.setAttribute("aria-expanded", willBeActive);
+            sidebarElement.setAttribute("aria-hidden", !willBeActive);
+
+            // LÓGICA ESPECÍFICA PARA EL SIDEBAR (cambio de icono y contenedor principal)
+            const icon = sidebarToggleBtn.querySelector("i");
+            if (icon) {
+                icon.classList.toggle("fa-bars", !willBeActive);
+                icon.classList.toggle("fa-times", willBeActive);
+            }
+
+            if (docsContainerElement) {
+                docsContainerElement.classList.toggle("is-sidebar-open", willBeActive);
+            }
+        };
+
+        // Listener principal para el botón hamburguesa
+        sidebarToggleBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            const willBeActive = !sidebarElement.classList.contains("is-active");
+            toggleSidebar(willBeActive);
+        });
+
+        // Opcional: Cierre al hacer clic fuera del sidebar (similar a la lógica de Modales en _core.js)
+        document.addEventListener("click", (event) => {
+            const isSidebarOpen = sidebarElement.classList.contains("is-active");
+
+            // Si la barra lateral está abierta Y el clic no fue dentro de la barra Y no fue en el botón
+            if (isSidebarOpen && !sidebarElement.contains(event.target) && !sidebarToggleBtn.contains(event.target)) {
+                // Cerrar la barra lateral
+                toggleSidebar(false);
+            }
+        });
+    }
+    // console.log(`Sidebar inyectado y activado para: ${moduleData.title}`);
 });
