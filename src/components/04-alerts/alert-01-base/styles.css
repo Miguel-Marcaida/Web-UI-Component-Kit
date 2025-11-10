@@ -1,51 +1,98 @@
-/* ===========================================
- * ALERTA BASE: Estilos Estructurales (Puros)
- * Archivo: /src/components/04-alerts/alert-01-base/styles.css
- * NOTA: Colores, fondos y espaciado vienen de las utilidades de main.css.
- * =========================================== */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO PURO: ALERT-01 (Alertas Contextuales) */
+/* Este CSS es 100% autónomo y NO depende de clases de utilidad externas. */
+/* ==================================================== */
 
-/* 1. CLASE BASE DE ALERTA */
-.alert {
-    /* Define solo la estructura y el radio. 
-     * Las propiedades: display: flex y align-items: center/start se definen en el HTML. 
-     */
-    border-radius: var(--radius-base); /* Usamos la variable global de main.css */
-    border: 1px solid var(--color-border); /* Borde por defecto, aunque los colores lo anularán */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
-    line-height: 1.5;
-    
-    /* Nota: El padding (p-3) y el display (d-flex) se usarán como utilidades */
+/* === 1. INICIO: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+.preview-area {
+    /* Variables de Estilo Locales */
+    --radius-base: 0.25rem;
+    --padding-base: 1rem; /* Usaremos 1rem (equivalente a p-3) como padding fijo */
+    --gap-base: 1.5rem; /* Espacio entre alertas (equivalente a g-4) */
+    --icon-margin-end: 1rem; /* Espacio después del ícono (equivalente a m-e-3) */
+
+    /* Variables de Color ESENCIALES */
+    --color-primary: #007bff;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-secondary: #6c757d;
+    --color-text-inverse: #ffffff;
+    --color-text-base: #212529;
+    --color-border: #adb5bd;
 }
 
-/* 2. Estilos para los íconos (ajuste fino) */
+/* Micro-Reset para el snippet */
+.alert-container,
+.alert,
+.alert * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* === FIN: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+
+/* ===========================================
+// 2. CLASE BASE DE ALERTA (.alert)
+// =========================================== */
+.alert {
+    /* Estructura Pura y Layout Integrado (Elimina d-flex, align-items-center, p-3 del HTML) */
+    display: flex;
+    align-items: center;
+    padding: var(--padding-base);
+
+    border-radius: var(--radius-base);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    line-height: 1.5;
+    /* Borde por defecto, si no se define en la variante de color */
+    border: 1px solid transparent;
+}
+
+/* 3. VARIANTES DE COLOR (Sustituye bg-X y text-X) */
+.alert--success {
+    background-color: var(--color-success);
+    color: var(--color-text-inverse);
+}
+.alert--danger {
+    background-color: var(--color-danger);
+    color: var(--color-text-inverse);
+}
+.alert--primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+.alert--secondary {
+    background-color: var(--color-secondary);
+    /* En este caso, la alerta secundaria usa color oscuro, pero mantendremos el estándar */
+    color: var(--color-text-inverse);
+}
+
+/* 4. Estilos para los íconos (ajuste fino) */
 .alert i {
     font-size: 1.25rem;
-    margin-right: var(--spacing-3); /* Usamos la utilidad de espaciado para margen derecho (m-e-3) */
+    margin-right: var(--icon-margin-end); /* Margen fijo integrado (Sustituye m-e-3) */
     flex-shrink: 0;
-    /* Usaremos la utilidad .m-e-3 en el HTML, por lo que el margin-right aquí es opcional */
 }
 
-/* 3. Estilos del Botón de Cierre (para la 'X') */
+/* 5. Estilos del Botón de Cierre (para la 'X') */
 .alert__close {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1.8rem;
     line-height: 1;
-    color: inherit; /* Hereda el color del texto */
+    color: inherit;
     opacity: 0.8;
     transition: opacity 0.2s ease;
-    
-    /* Empuja el cierre a la derecha con auto-margin en el HTML: .m-s-auto */
+    margin-left: auto; /* Mueve el cierre a la derecha (Sustituye m-s-auto) */
 }
 
 .alert__close:hover {
     opacity: 1;
 }
 
-/* 4. Contenedor de Alertas (para el demo) */
+/* 6. Contenedor de Alertas (para el demo) */
 .alert-container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-4); /* Usamos la utilidad de espaciado (g-4) */
+    gap: var(--gap-base); /* Espacio entre alertas */
 }
