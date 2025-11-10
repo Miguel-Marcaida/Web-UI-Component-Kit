@@ -6,33 +6,29 @@
         <title>Módulo 01: Navegación</title>
 
         <link rel="stylesheet" href="/CSS/main.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     </head>
     <body>
         <header id="main-header">
             <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
+                <a href="/index.html" style="text-decoration: none; color: text-inverse">Web UI Kit</a>
             </h1>
 
-            <nav>
-                <a href="/index.html">Volver a Inicio</a>
-            </nav>
-        </header>
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="/index.html">Volver a Inicio</a>
+                </nav>
 
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
         <main id="main-content">
             <section class="hero-section">
                 <h2>Módulo 01: Componentes de Navegación</h2>
-                <p>
-                    Colección de barras de navegación y estructuras de menú
-                    diseñadas para ser funcionales, accesibles y responsivas.
-                </p>
+                <p>Colección de barras de navegación y estructuras de menú diseñadas para ser funcionales, accesibles y responsivas.</p>
             </section>
 
             <div class="grid-container">
@@ -43,45 +39,30 @@
 
                 <a href="nav-02/index.html" class="category-card">
                     <h4>02. Menú Hamburguesa (Mobile)</h4>
-                    <p>
-                        Implementación de botón de hamburguesa para menú móvil.
-                    </p>
+                    <p>Implementación de botón de hamburguesa para menú móvil.</p>
                 </a>
 
                 <a href="nav-03/index.html" class="category-card">
                     <h4>03. Menú de Pestañas</h4>
-                    <p>
-                        Navegación lateral o superior estilizada como pestañas.
-                    </p>
+                    <p>Navegación lateral o superior estilizada como pestañas.</p>
                 </a>
 
                 <a href="nav-04/index.html" class="category-card">
                     <h4>04. Menú con Dropdown</h4>
-                    <p>
-                        Menú con sub-elementos que se despliegan al pasar el
-                        ratón.
-                    </p>
+                    <p>Menú con sub-elementos que se despliegan al pasar el ratón.</p>
                 </a>
 
                 <a href="nav-05/index.html" class="category-card">
                     <h4>05. Menú Píldora</h4>
-                    <p>
-                        Menú con estilo de píldoras para selección de categoría
-                        secundaria.
-                    </p>
+                    <p>Menú con estilo de píldoras para selección de categoría secundaria.</p>
                 </a>
             </div>
         </main>
 
         <footer id="main-footer">
-            <p>
-                © 2025 Web UI Component Kit. Desarrollado con Front-end Puro
-                (HTML, CSS & JS). Arquitectura modular y autónoma.
-            </p>
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
         </footer>
 
-        <script src="/JS/docs.js"></script>
-        <script src="/JS/main.js"></script>
-        <script src="/JS/sidebar.js"></script>
+        <script defer src="/JS/_theme.js"></script>
     </body>
 </html>

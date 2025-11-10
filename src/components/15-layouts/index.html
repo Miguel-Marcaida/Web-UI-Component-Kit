@@ -5,84 +5,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Módulo 15: Layouts</title>
         <link rel="stylesheet" href="/CSS/main.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     </head>
     <body>
         <header id="main-header">
             <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
             </h1>
-            <nav>
-                <a href="/index.html#components">Volver al Inicio</a>
-            </nav>
-        </header>
 
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="/index.html">Volver al Inicio</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
         <main id="main-content">
             <section class="hero-section">
                 <h2>Módulo 15: Layouts</h2>
-                <p>
-                    Clases y patrones que controlan la disposición de los
-                    elementos en la página, utilizando Flexbox y Grid para crear
-                    estructuras robustas y responsivas.
-                </p>
+                <p>Clases y patrones que controlan la disposición de los elementos en la página, utilizando Flexbox y Grid para crear estructuras robustas y responsivas.</p>
             </section>
 
             <section class="component-section">
                 <div class="grid-container">
-                    <a
-                        href="layout-01-flex-grid/index.html"
-                        class="category-card"
-                    >
+                    <a href="layout-01-flex-grid/index.html" class="category-card">
                         <h4>01. Flexbox y Grid Helpers</h4>
-                        <p>
-                            Clases rápidas para inicializar contenedores Flex o
-                            Grid, controlando la alineación y el espaciado
-                            interno.
-                        </p>
+                        <p>Clases rápidas para inicializar contenedores Flex o Grid, controlando la alineación y el espaciado interno.</p>
                     </a>
-                    <a
-                        href="layout-02-stack-box/index.html"
-                        class="category-card"
-                    >
+                    <a href="layout-02-stack-box/index.html" class="category-card">
                         <h4>02. Stack y Box Models</h4>
-                        <p>
-                            Utilidades para apilar elementos vertical u
-                            horizontalmente (Stack) y para definir rápidamente
-                            dimensiones (ancho/alto) de contenedores.
-                        </p>
+                        <p>Utilidades para apilar elementos vertical u horizontalmente (Stack) y para definir rápidamente dimensiones (ancho/alto) de contenedores.</p>
                     </a>
 
-                    <a
-                        href="layout-03-media-object/index.html"
-                        class="category-card"
-                    >
+                    <a href="layout-03-media-object/index.html" class="category-card">
                         <h4>03. Objeto Media (Media Object)</h4>
-                        <p>
-                            Patrón de disposición para una imagen fija
-                            (izquierda/derecha) junto a un bloque de contenido
-                            flexible. Ideal para comentarios o feeds.
-                        </p>
+                        <p>Patrón de disposición para una imagen fija (izquierda/derecha) junto a un bloque de contenido flexible. Ideal para comentarios o feeds.</p>
                     </a>
 
                     <a href="layout-04-center/index.html" class="category-card">
                         <h4>04. Centrado (Center Utility)</h4>
-                        <p>
-                            Utilidad para centrar contenido horizontal y
-                            verticalmente dentro de cualquier contenedor, usando
-                            Flexbox.
-                        </p>
+                        <p>Utilidad para centrar contenido horizontal y verticalmente dentro de cualquier contenedor, usando Flexbox.</p>
                     </a>
                 </div>
             </section>
         </main>
 
-        <footer id="main-footer"></footer>
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+
+        <script defer src="/JS/_theme.js"></script>
     </body>
 </html>

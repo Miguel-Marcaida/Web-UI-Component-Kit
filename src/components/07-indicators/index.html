@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Módulo 07: Indicadores</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Módulo 07: Indicadores</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header id="main-header">
-      <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
-      </h1>
-      <nav>
-        <a href="/index.html">Volver a Inicio</a>
-      </nav>
-    </header>
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
 
-    <main id="main-content">
-      <section class="hero-section">
-        <h2>Módulo 07: Indicadores y Progreso</h2>
-        <p>
-          Componentes visuales utilizados para mostrar estados de elementos,
-          contadores de notificaciones o el avance de una tarea.
-        </p>
-      </section>
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="/index.html">Volver a Inicio</a>
+                </nav>
 
-      <div class="grid-container">
-        <a href="indicator-01-badge/index.html" class="category-card">
-          <h4>01. Badge (Etiqueta de Estado)</h4>
-          <p>
-            Pequeñas etiquetas contextuales con colores que indican el estado de
-            un elemento.
-          </p>
-        </a>
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
+        <main id="main-content">
+            <section class="hero-section">
+                <h2>Módulo 07: Indicadores y Progreso</h2>
+                <p>Componentes visuales utilizados para mostrar estados de elementos, contadores de notificaciones o el avance de una tarea.</p>
+            </section>
 
-        <a href="indicator-02-progress-bar/index.html" class="category-card">
-          <h4>02. Barra de Progreso</h4>
-          <p>
-            Barras visuales para representar el porcentaje de completitud de una
-            tarea.
-          </p>
-        </a>
-      </div>
-    </main>
+            <div class="grid-container">
+                <a href="indicator-01-badge/index.html" class="category-card">
+                    <h4>01. Badge (Etiqueta de Estado)</h4>
+                    <p>Pequeñas etiquetas contextuales con colores que indican el estado de un elemento.</p>
+                </a>
 
-    <footer id="main-footer"></footer>
-  </body>
+                <a href="indicator-02-progress-bar/index.html" class="category-card">
+                    <h4>02. Barra de Progreso</h4>
+                    <p>Barras visuales para representar el porcentaje de completitud de una tarea.</p>
+                </a>
+            </div>
+        </main>
+
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+
+        <script defer src="/JS/_theme.js"></script>
+    </body>
 </html>

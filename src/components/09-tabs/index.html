@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Módulo 09: Pestañas</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Módulo 09: Pestañas</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header id="main-header">
-      <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
-      </h1>
-      <nav>
-        <a href="/index.html">Volver a Inicio</a>
-      </nav>
-    </header>
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
 
-    <main id="main-content">
-      <section class="hero-section">
-        <h2>Módulo 09: Navegación con Pestañas</h2>
-        <p>
-          Componentes de navegación que permiten alternar entre secciones de
-          contenido dentro de un mismo contenedor, optimizando el espacio.
-        </p>
-      </section>
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="/index.html">Volver a Inicio</a>
+                </nav>
 
-      <div class="grid-container">
-        <a href="tabs-01-basic/index.html" class="category-card">
-          <h4>01. Pestañas Básicas</h4>
-          <p>
-            Estilo de navegación simple con indicador de subrayado para la
-            pestaña activa.
-          </p>
-        </a>
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
+        <main id="main-content">
+            <section class="hero-section">
+                <h2>Módulo 09: Navegación con Pestañas</h2>
+                <p>Componentes de navegación que permiten alternar entre secciones de contenido dentro de un mismo contenedor, optimizando el espacio.</p>
+            </section>
 
-        <a href="tabs-02-pills/index.html" class="category-card">
-          <h4>02. Pestañas Estilo Píldora</h4>
-          <p>
-            Estilo de pestañas más parecido a botones, ideales para navegación
-            de filtros o secundarias.
-          </p>
-        </a>
-      </div>
-    </main>
+            <div class="grid-container">
+                <a href="tabs-01-basic/index.html" class="category-card">
+                    <h4>01. Pestañas Básicas</h4>
+                    <p>Estilo de navegación simple con indicador de subrayado para la pestaña activa.</p>
+                </a>
 
-    <footer id="main-footer"></footer>
-  </body>
+                <a href="tabs-02-pills/index.html" class="category-card">
+                    <h4>02. Pestañas Estilo Píldora</h4>
+                    <p>Estilo de pestañas más parecido a botones, ideales para navegación de filtros o secundarias.</p>
+                </a>
+            </div>
+        </main>
+
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+
+        <script defer src="/JS/_theme.js"></script>
+    </body>
 </html>

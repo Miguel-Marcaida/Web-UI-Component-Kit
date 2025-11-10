@@ -4,205 +4,116 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Web UI Component Kit - Catálogo Principal</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
         <link rel="stylesheet" href="/CSS/main.css" />
     </head>
     <body>
         <header id="main-header">
-            <nav>
-                <a href="#components">Componentes</a>
-                <a href="#layouts">Layouts</a>
-                <a
-                    href="https://github.com/Miguel-Marcaida/Web-UI-Component-Kit.git"
-                    target="_blank"
-                    >Github</a
-                >
-            </nav>
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
+
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="#components">Componentes</a>
+                    <a href="#layouts">Layouts</a>
+                    <a href="https://github.com/Miguel-Marcaida/Web-UI-Component-Kit.git" target="_blank">Github</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
         </header>
 
         <main id="main-content">
             <section class="hero-section">
                 <h2>Biblioteca de Patrones de Diseño Front-end Puros.</h2>
-                <p>
-                    Explora y copia cientos de módulos UI construidos con HTML,
-                    CSS y JavaScript modernos, enfocados en la Responsividad y
-                    Accesibilidad.
-                </p>
+                <p>Explora y copia cientos de módulos UI construidos con HTML, CSS y JavaScript modernos, enfocados en la Responsividad y Accesibilidad.</p>
             </section>
 
             <section id="components" class="category-grid">
                 <h3>🧩 Componentes Modulares</h3>
                 <div class="grid-container">
-                    <a
-                        href="/src/components/01-navigation/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/01-navigation/index.html" class="category-card">
                         <h4>01. Navegación</h4>
                         <p>Menús, barras superiores, sidebars y breadcrumbs.</p>
                     </a>
 
-                    <a
-                        href="/src/components/02-forms/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/02-forms/index.html" class="category-card">
                         <h4>02. Formularios</h4>
-                        <p>
-                            Inputs de texto, selectores, áreas de texto y
-                            checkboxes.
-                        </p>
+                        <p>Inputs de texto, selectores, áreas de texto y checkboxes.</p>
                     </a>
 
-                    <a
-                        href="/src/components/03-buttons/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/03-buttons/index.html" class="category-card">
                         <h4>03. Botones</h4>
-                        <p>
-                            Elementos de acción con diversos estilos y estados.
-                        </p>
+                        <p>Elementos de acción con diversos estilos y estados.</p>
                     </a>
 
-                    <a
-                        href="/src/components/04-alerts/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/04-alerts/index.html" class="category-card">
                         <h4>04. Alertas</h4>
-                        <p>
-                            Mensajes contextuales de éxito, error, y
-                            advertencia.
-                        </p>
+                        <p>Mensajes contextuales de éxito, error, y advertencia.</p>
                     </a>
 
-                    <a
-                        href="/src/components/05-cards/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/05-cards/index.html" class="category-card">
                         <h4>05. Tarjetas</h4>
-                        <p>
-                            Contenedores flexibles para agrupar contenido
-                            relacionado.
-                        </p>
+                        <p>Contenedores flexibles para agrupar contenido relacionado.</p>
                     </a>
 
-                    <a
-                        href="/src/components/06-modals/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/06-modals/index.html" class="category-card">
                         <h4>06. Modales & Popups</h4>
-                        <p>
-                            Ventanas emergentes que requieren interacción del
-                            usuario.
-                        </p>
+                        <p>Ventanas emergentes que requieren interacción del usuario.</p>
                     </a>
 
-                    <a
-                        href="/src/components/07-indicators/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/07-indicators/index.html" class="category-card">
                         <h4>07. Indicadores & Progreso</h4>
-                        <p>
-                            Elementos para mostrar estado, notificaciones y
-                            avance de tareas.
-                        </p>
+                        <p>Elementos para mostrar estado, notificaciones y avance de tareas.</p>
                     </a>
 
-                    <a
-                        href="/src/components/08-tables/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/08-tables/index.html" class="category-card">
                         <h4>08. Tablas de Datos</h4>
-                        <p>
-                            Estructuras para organizar y visualizar grandes
-                            conjuntos de datos.
-                        </p>
+                        <p>Estructuras para organizar y visualizar grandes conjuntos de datos.</p>
                     </a>
 
-                    <a
-                        href="/src/components/09-tabs/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/09-tabs/index.html" class="category-card">
                         <h4>09. Navegación con Pestañas</h4>
-                        <p>
-                            Elementos para alternar la visualización de
-                            diferentes paneles de contenido.
-                        </p>
+                        <p>Elementos para alternar la visualización de diferentes paneles de contenido.</p>
                     </a>
 
-                    <a
-                        href="/src/components/10-navigation-page/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/10-navigation-page/index.html" class="category-card">
                         <h4>10. Navegación de Página</h4>
-                        <p>
-                            Componentes de contexto como la Paginación y las
-                            Migas de Pan (Breadcrumbs).
-                        </p>
+                        <p>Componentes de contexto como la Paginación y las Migas de Pan (Breadcrumbs).</p>
                     </a>
 
-                    <a
-                        href="/src/components/11-multimedia/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/11-multimedia/index.html" class="category-card">
                         <h4>11. Elementos Multimedia</h4>
-                        <p>
-                            Componentes interactivos y de presentación,
-                            incluyendo Carruseles y Media Objects.
-                        </p>
+                        <p>Componentes interactivos y de presentación, incluyendo Carruseles y Media Objects.</p>
                     </a>
 
-                    <a
-                        href="/src/components/12-utilities/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/12-utilities/index.html" class="category-card">
                         <h4>12. Utilidades y Helpers</h4>
-                        <p>
-                            Clases de ayuda para gestionar rápidamente el
-                            espaciado, la visualización y el flujo de los
-                            elementos.
-                        </p>
+                        <p>Clases de ayuda para gestionar rápidamente el espaciado, la visualización y el flujo de los elementos.</p>
                     </a>
 
-                    <a
-                        href="/src/components/13-typography/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/13-typography/index.html" class="category-card">
                         <h4>13. Tipografía y Aspectos Finales</h4>
-                        <p>
-                            Utilidades para la alineación, transformación y
-                            decoración del texto.
-                        </p>
+                        <p>Utilidades para la alineación, transformación y decoración del texto.</p>
                     </a>
 
-                    <a
-                        href="/src/components/14-widgets/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/14-widgets/index.html" class="category-card">
                         <h4>14. Widgets Avanzados</h4>
-                        <p>
-                            Componentes interactivos complejos: Acordeones,
-                            Collapses y Toolbars.
-                        </p>
+                        <p>Componentes interactivos complejos: Acordeones, Collapses y Toolbars.</p>
                     </a>
 
-                    <a
-                        href="/src/components/15-layouts/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/components/15-layouts/index.html" class="category-card">
                         <h4>15. Layouts</h4>
-                        <p>
-                            tilidades avanzadas de Flexbox, Grid, Stack y
-                            patrones de diseño (Media Object, Centrado).
-                        </p>
+                        <p>tilidades avanzadas de Flexbox, Grid, Stack y patrones de diseño (Media Object, Centrado).</p>
                     </a>
 
-                    <a
-                        href="src/components/16-js-utilities/index.html"
-                        class="category-card"
-                    >
+                    <a href="src/components/16-js-utilities/index.html" class="category-card">
                         <h4>16. JavaScript Utilities</h4>
-                        <p>
-                            Funciones clave de JS para interactividad, como
-                            Toggle, Debounce y manejo de eventos del DOM.
-                        </p>
+                        <p>Funciones clave de JS para interactividad, como Toggle, Debounce y manejo de eventos del DOM.</p>
                     </a>
                 </div>
             </section>
@@ -210,10 +121,7 @@
             <section id="layouts" class="category-grid">
                 <h3>🏗️ Ejemplos de Layouts</h3>
                 <div class="grid-container">
-                    <a
-                        href="/src/layouts/landing-page/index.html"
-                        class="category-card"
-                    >
+                    <a href="/src/layouts/landing-page/index.html" class="category-card">
                         <h4>Landing Page Simple</h4>
                         <p>Estructura completa para campañas de marketing.</p>
                     </a>
@@ -225,6 +133,6 @@
             <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro.</p>
         </footer>
 
-        <script src="/JS/main.js"></script>
+        <script defer src="/JS/_theme.js"></script>
     </body>
 </html>

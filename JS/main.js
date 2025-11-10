@@ -6,13 +6,15 @@
 (function () {
     // 1. DEFINICIÓN DE MÓDULOS EN ORDEN
     const MODULES = [
-        "./modules/_core.js", // 1. Esqueleto de delegación y API global (DEBE SER EL PRIMERO)
-        "./modules/_toggle.js", // 2. Lógica de alternancia (requiere _core)
-        "./modules/_autoinit.js", // 3. NUEVO: Módulo de Inicialización Automática
-        "./modules/_performance.js",
-        "./modules/_events.js",
-        // NUEVO: Módulos de componentes
-        "./modules/carousel.js", // <--- AÑADIDA LÍNEA DEL CARRUSEL
+        "./modules/_theme.js",
+        // "./modules/_core.js", // 1. Esqueleto de delegación y API global (DEBE SER EL PRIMERO)
+        // "./modules/_theme.js",
+        // "./modules/_toggle.js", // 2. Lógica de alternancia (requiere _core)
+        // "./modules/_autoinit.js", // 3. NUEVO: Módulo de Inicialización Automática
+        // "./modules/_performance.js",
+        // "./modules/_events.js",
+        // // NUEVO: Módulos de componentes
+        // "./modules/carousel.js", // <--- AÑADIDA LÍNEA DEL CARRUSEL
     ];
 
     /**
@@ -56,24 +58,14 @@
 
                         // 1. Registro del Toggle
                         if (window.UI && window.UI.Toggle) {
-                            autoInit.register(
-                                "[data-toggle]",
-                                window.UI.Toggle.init
-                            );
-                            console.log(
-                                "[MAIN.JS] Componente Toggle registrado."
-                            );
+                            autoInit.register("[data-toggle]", window.UI.Toggle.init);
+                            console.log("[MAIN.JS] Componente Toggle registrado.");
                         }
 
                         // 2. Registro del Carrusel
                         if (window.UI && window.UI.Carousel) {
-                            autoInit.register(
-                                ".carousel",
-                                window.UI.Carousel.init
-                            );
-                            console.log(
-                                "[MAIN.JS] Componente Carrusel registrado."
-                            );
+                            autoInit.register(".carousel", window.UI.Carousel.init);
+                            console.log("[MAIN.JS] Componente Carrusel registrado.");
                         }
 
                         // === FIN DEL REGISTRO ===
@@ -85,16 +77,11 @@
                     window.UI_KIT_CORE.init();
                     console.log("[MAIN.JS] UI Kit inicializado con éxito.");
                 } else {
-                    console.error(
-                        "[MAIN.JS] Error al inicializar UI_KIT_CORE. Verifique la carga de _core.js"
-                    );
+                    console.error("[MAIN.JS] Error al inicializar UI_KIT_CORE. Verifique la carga de _core.js");
                 }
             })
             .catch((error) => {
-                console.error(
-                    "[MAIN.JS] Error al cargar uno o más módulos:",
-                    error
-                );
+                console.error("[MAIN.JS] Error al cargar uno o más módulos:", error);
             });
     });
 })();

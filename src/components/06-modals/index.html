@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Módulo 06: Modales</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Módulo 06: Modales</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header id="main-header">
-      <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
-      </h1>
-      <nav>
-        <a href="/index.html">Volver a Inicio</a>
-      </nav>
-    </header>
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
 
-    <main id="main-content">
-      <section class="hero-section">
-        <h2>Módulo 06: Modales y Popups</h2>
-        <p>
-          Ventanas emergentes que se superponen a la interfaz principal para
-          solicitar una acción crítica o mostrar información contextual.
-        </p>
-      </section>
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="/index.html">Volver a Inicio</a>
+                </nav>
 
-      <div class="grid-container">
-        <a href="modal-01-base/index.html" class="category-card">
-          <h4>01. Modal Base</h4>
-          <p>
-            El clásico modal de pantalla completa, centrado, ideal para
-            formularios o confirmaciones.
-          </p>
-        </a>
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
+        <main id="main-content">
+            <section class="hero-section">
+                <h2>Módulo 06: Modales y Popups</h2>
+                <p>Ventanas emergentes que se superponen a la interfaz principal para solicitar una acción crítica o mostrar información contextual.</p>
+            </section>
 
-        <a href="modal-02-popover/index.html" class="category-card">
-          <h4>02. Popover/Tooltip</h4>
-          <p>Pequeños mensajes emergentes anclados a un elemento específico.</p>
-        </a>
-      </div>
-    </main>
+            <div class="grid-container">
+                <a href="modal-01-base/index.html" class="category-card">
+                    <h4>01. Modal Base</h4>
+                    <p>El clásico modal de pantalla completa, centrado, ideal para formularios o confirmaciones.</p>
+                </a>
 
-    <footer id="main-footer"></footer>
-  </body>
+                <a href="modal-02-popover/index.html" class="category-card">
+                    <h4>02. Popover/Tooltip</h4>
+                    <p>Pequeños mensajes emergentes anclados a un elemento específico.</p>
+                </a>
+            </div>
+        </main>
+
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+
+        <script defer src="/JS/_theme.js"></script>
+    </body>
 </html>

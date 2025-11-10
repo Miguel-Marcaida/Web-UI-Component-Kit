@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Módulo 11: Elementos Multimedia</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Módulo 11: Elementos Multimedia</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header id="main-header">
-      <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
-      </h1>
-      <nav>
-        <a href="/index.html">Volver a Inicio</a>
-      </nav>
-    </header>
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
 
-    <main id="main-content">
-      <section class="hero-section">
-        <h2>Módulo 11: Elementos Multimedia</h2>
-        <p>
-          Componentes diseñados para la presentación de contenido visual
-          dinámico (Carrusel) y la estructuración de bloques de contenido que
-          incluyen imágenes y texto (Media Object).
-        </p>
-      </section>
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="/index.html">Volver a Inicio</a>
+                </nav>
 
-      <div class="grid-container">
-        <a href="media-01-carousel/index.html" class="category-card">
-          <h4>01. Carrusel (Slider)</h4>
-          <p>
-            Un componente de diapositivas que requiere CSS, HTML y JavaScript
-            avanzado.
-          </p>
-        </a>
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
+        <main id="main-content">
+            <section class="hero-section">
+                <h2>Módulo 11: Elementos Multimedia</h2>
+                <p>Componentes diseñados para la presentación de contenido visual dinámico (Carrusel) y la estructuración de bloques de contenido que incluyen imágenes y texto (Media Object).</p>
+            </section>
 
-        <a href="media-02-object/index.html" class="category-card">
-          <h4>02. Objeto Multimedia</h4>
-          <p>
-            Estructura flexible para listas de comentarios, avatares y contenido
-            asociado.
-          </p>
-        </a>
-      </div>
-    </main>
+            <div class="grid-container">
+                <a href="media-01-carousel/index.html" class="category-card">
+                    <h4>01. Carrusel (Slider)</h4>
+                    <p>Un componente de diapositivas que requiere CSS, HTML y JavaScript avanzado.</p>
+                </a>
 
-    <footer id="main-footer"></footer>
-  </body>
+                <a href="media-02-object/index.html" class="category-card">
+                    <h4>02. Objeto Multimedia</h4>
+                    <p>Estructura flexible para listas de comentarios, avatares y contenido asociado.</p>
+                </a>
+            </div>
+        </main>
+
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+
+        <script defer src="/JS/_theme.js"></script>
+    </body>
 </html>

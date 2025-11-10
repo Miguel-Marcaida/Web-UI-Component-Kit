@@ -19,9 +19,14 @@
 }
 
 #main-header h1 {
-    font-size: var(
-        --font-size-lg
-    ); /* ✅ REFACTORIZADO: Usando escala de fuentes */
+    font-size: var(--font-size-lg); /* ✅ REFACTORIZADO: Usando escala de fuentes */
+}
+
+/* Contenedor de Navegación y Toggle de Tema */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4); /* Espacio entre Nav y Toggle */
 }
 
 #main-header nav a {
@@ -29,9 +34,7 @@
     color: var(--color-text-base);
     text-decoration: none;
     margin-left: var(--spacing-4); /* ✅ REFACTORIZADO: Usando Spacing Scale */
-    font-weight: var(
-        --font-weight-semi
-    ); /* ✅ REFACTORIZADO: Usando peso de fuente */
+    font-weight: var(--font-weight-semi); /* ✅ REFACTORIZADO: Usando peso de fuente */
     transition: color 0.3s;
 }
 
@@ -39,14 +42,30 @@
     color: var(--color-primary);
 }
 
+/* 🛑 NUEVO: Estilos del Botón Toggle de Tema 🛑 */
+#theme-toggle {
+    /* Estilo minimalista, usando la estética de botón de ícono sin fondo que ya manejamos */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-base);
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-2);
+    border-radius: var(--radius-base);
+    transition: color 0.3s, background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    color: var(--color-primary);
+    background-color: var(--color-bg-light); /* Fondo sutil al hacer hover */
+}
+
 /* Sidebar Toggle Button (Oculto en Desktop) */
 #sidebar-toggle {
     display: none;
     background-color: var(--color-bg-light); /* ✅ REFACTORIZADO */
     border: 1px solid var(--color-border); /* ✅ REFACTORIZADO: Usa color de borde modular */
-    color: var(
-        --color-text-base
-    ); /* ✅ REFACTORIZADO: Usa color de texto modular */
+    color: var(--color-text-base); /* ✅ REFACTORIZADO: Usa color de texto modular */
     font-size: var(--font-size-lg); /* ✅ REFACTORIZADO */
     padding: var(--spacing-2) var(--spacing-3); /* ✅ REFACTORIZADO */
     cursor: pointer;
@@ -147,5 +166,17 @@
     /* El Nav de la cabecera también puede ser ocultado o ajustado */
     #main-header nav {
         order: 2;
+    }
+
+    /* 🛑 CORRECCIÓN CRÍTICA: NO OCULTAR EL NAV en el índice principal 🛑 */
+    /* En su lugar, ajustamos el tamaño de fuente y el espaciado para que quepa */
+    #main-header nav a {
+        font-size: var(--font-size-sm); /* Reducir la fuente */
+        margin-left: var(--spacing-2); /* Reducir el margen */
+    }
+
+    .nav-wrapper {
+        order: 2; /* Sigue al h1 (order 1 por defecto) */
+        gap: var(--spacing-3);
     }
 }
