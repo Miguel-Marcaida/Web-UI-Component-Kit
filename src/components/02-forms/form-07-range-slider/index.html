@@ -15,18 +15,24 @@
     <body>
         <header id="main-header">
             <h1>
-                <a href="/index.html" style="text-decoration: none; color: white">Web UI Kit</a>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
             </h1>
 
-            <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-            <nav>
-                <a href="/src/components/02-forms/index.html">Volver a Formularios</a>
-            </nav>
+                <nav>
+                    <a href="/src/components/02-forms/index.html">Volver a Formularios</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
         </header>
-
         <div class="docs-container">
             <main class="docs-content">
                 <h2>Input 07: Range Slider (Control Deslizante)</h2>
@@ -79,10 +85,10 @@
         </div>
 
         <footer id="main-footer">
-            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.        </p>
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
         </footer>
         <script src="/JS/prism.js"></script>
-        <script src="/JS/main.js"></script>
+        <script defer src="/JS/_theme.js"></script>
         <script src="/JS/docs.js"></script>
         <script src="/JS/sidebar.js"></script>
         <script src="script.js"></script>

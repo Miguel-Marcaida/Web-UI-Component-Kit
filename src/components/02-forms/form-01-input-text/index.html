@@ -7,110 +7,72 @@
 
         <link rel="stylesheet" href="/CSS/main.css" />
         <link rel="stylesheet" href="/CSS/prism.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <header id="main-header">
             <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
             </h1>
 
-            <button
-                id="sidebar-toggle"
-                aria-expanded="false"
-                aria-controls="docs-sidebar"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-            <nav>
-                <a href="/src/components/02-forms/index.html"
-                    >Volver a Formularios</a
-                >
-            </nav>
+                <nav>
+                    <a href="/src/components/02-forms/index.html">Volver a Formularios</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
         </header>
-
         <div class="docs-container">
             <main class="docs-content">
                 <h2>Input 01: Campos de Texto Base</h2>
                 <p class="description module-description">
-                    Estilo base para <code>&lt;input type="text"&gt;</code>,
-                    <code>&lt;textarea&gt;</code> y <code>&lt;select&gt;</code>,
-                    utilizando la clase <code>.form-control</code>.
+                    Estilo base para
+                    <code>&lt;input type="text"&gt;</code>
+                    ,
+                    <code>&lt;textarea&gt;</code>
+                    y
+                    <code>&lt;select&gt;</code>
+                    , utilizando la clase
+                    <code>.form-control</code>
+                    .
                 </p>
 
-                <section
-                    class="preview-area module-preview"
-                    style="background-color: var(--color-bg-light)"
-                >
+                <section class="preview-area module-preview" style="background-color: var(--color-bg-light)">
                     <h3>Vista Previa</h3>
 
                     <div class="input-grid" data-name="form-inputs">
                         <div class="input-group">
-                            <label for="input-basic" class="input-label"
-                                >Nombre de Usuario</label
-                            >
-                            <input
-                                type="text"
-                                id="input-basic"
-                                class="form-control"
-                                placeholder="Ej. miguel.marcaida"
-                            />
-                            <span class="input-hint"
-                                >El nombre debe tener entre 5 y 15
-                                caracteres.</span
-                            >
+                            <label for="input-basic" class="input-label">Nombre de Usuario</label>
+                            <input type="text" id="input-basic" class="form-control" placeholder="Ej. miguel.marcaida" />
+                            <span class="input-hint">El nombre debe tener entre 5 y 15 caracteres.</span>
                         </div>
 
                         <div class="input-group input-group--with-icon">
-                            <label for="input-icon" class="input-label"
-                                >Correo Electrónico</label
-                            >
+                            <label for="input-icon" class="input-label">Correo Electrónico</label>
                             <div class="input-icon-wrapper">
                                 <i class="input-icon fas fa-envelope"></i>
-                                <input
-                                    type="email"
-                                    id="input-icon"
-                                    class="form-control"
-                                    placeholder="ejemplo@dominio.com"
-                                />
+                                <input type="email" id="input-icon" class="form-control" placeholder="ejemplo@dominio.com" />
                             </div>
                         </div>
 
                         <div class="input-group is-invalid">
-                            <label for="input-error" class="input-label"
-                                >Contraseña</label
-                            >
-                            <input
-                                type="password"
-                                id="input-error"
-                                class="form-control is-invalid"
-                                placeholder="Mínimo 8 caracteres"
-                            />
-                            <span class="input-hint"
-                                >La contraseña es demasiado corta.</span
-                            >
+                            <label for="input-error" class="input-label">Contraseña</label>
+                            <input type="password" id="input-error" class="form-control is-invalid" placeholder="Mínimo 8 caracteres" />
+                            <span class="input-hint">La contraseña es demasiado corta.</span>
                         </div>
 
                         <div class="input-group">
-                            <label for="input-disabled" class="input-label"
-                                >Código de País</label
-                            >
-                            <input
-                                type="text"
-                                id="input-disabled"
-                                class="form-control"
-                                value="+54"
-                                disabled
-                            />
+                            <label for="input-disabled" class="input-label">Código de País</label>
+                            <input type="text" id="input-disabled" class="form-control" value="+54" disabled />
                         </div>
                     </div>
                 </section>
@@ -126,14 +88,11 @@
         </div>
 
         <footer id="main-footer">
-            <p>
-                © 2025 Web UI Component Kit. Desarrollado con Front-end Puro
-                (HTML, CSS & JS). Arquitectura modular y autónoma.        
-            </p>
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
         </footer>
 
         <script src="/JS/prism.js"></script>
-        <script src="/JS/main.js"></script>
+        <script defer src="/JS/_theme.js"></script>
         <script src="/JS/docs.js"></script>
         <script src="/JS/sidebar.js"></script>
     </body>

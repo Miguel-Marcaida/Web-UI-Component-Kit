@@ -8,103 +8,67 @@
         <link rel="stylesheet" href="/CSS/main.css" />
         <link rel="stylesheet" href="/CSS/prism.css" />
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <header id="main-header">
             <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
             </h1>
 
-            <button
-                id="sidebar-toggle"
-                aria-expanded="false"
-                aria-controls="docs-sidebar"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-            <nav>
-                <a href="/src/components/02-forms/index.html"
-                    >Volver a Formularios</a
-                >
-            </nav>
+                <nav>
+                    <a href="/src/components/02-forms/index.html">Volver a Formularios</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
         </header>
-
         <div class="docs-container">
             <main class="docs-content">
                 <h2>Input 05: Toggle Switch</h2>
                 <p class="description module-description">
                     Un componente tipo
-                    <span class="code-inline">switch</span> para representar
-                    estados binarios (ON/OFF). Implementado con un
-                    <span class="code-inline">checkbox</span> estilizado para
-                    mantener la accesibilidad.
+                    <span class="code-inline">switch</span>
+                    para representar estados binarios (ON/OFF). Implementado con un
+                    <span class="code-inline">checkbox</span>
+                    estilizado para mantener la accesibilidad.
                 </p>
 
-                <section
-                    class="preview-area module-preview"
-                    style="padding: 3rem 0"
-                >
+                <section class="preview-area module-preview" style="padding: 3rem 0">
                     <h3>Vista Previa</h3>
 
                     <div class="input-grid">
                         <div class="input-group">
                             <h4>Toggle Básico</h4>
                             <div class="toggle-control">
-                                <input
-                                    type="checkbox"
-                                    id="toggle-1"
-                                    class="toggle-control__input"
-                                />
-                                <label
-                                    for="toggle-1"
-                                    class="toggle-control__label"
-                                    >Estado ON/OFF</label
-                                >
+                                <input type="checkbox" id="toggle-1" class="toggle-control__input" />
+                                <label for="toggle-1" class="toggle-control__label">Estado ON/OFF</label>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <h4>Toggle Activo (Checked)</h4>
                             <div class="toggle-control">
-                                <input
-                                    type="checkbox"
-                                    id="toggle-2"
-                                    class="toggle-control__input"
-                                    checked
-                                />
-                                <label
-                                    for="toggle-2"
-                                    class="toggle-control__label"
-                                    >Notificaciones</label
-                                >
+                                <input type="checkbox" id="toggle-2" class="toggle-control__input" checked />
+                                <label for="toggle-2" class="toggle-control__label">Notificaciones</label>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <h4>Toggle Deshabilitado</h4>
                             <div class="toggle-control">
-                                <input
-                                    type="checkbox"
-                                    id="toggle-3"
-                                    class="toggle-control__input"
-                                    disabled
-                                />
-                                <label
-                                    for="toggle-3"
-                                    class="toggle-control__label"
-                                    >Modo Invitado</label
-                                >
+                                <input type="checkbox" id="toggle-3" class="toggle-control__input" disabled />
+                                <label for="toggle-3" class="toggle-control__label">Modo Invitado</label>
                             </div>
                         </div>
                     </div>
@@ -121,13 +85,10 @@
         </div>
 
         <footer id="main-footer">
-            <p>
-                © 2025 Web UI Component Kit. Desarrollado con Front-end Puro
-                (HTML, CSS & JS). Arquitectura modular y autónoma.        
-            </p>
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
         </footer>
         <script src="/JS/prism.js"></script>
-        <script src="/JS/main.js"></script>
+        <script defer src="/JS/_theme.js"></script>
         <script src="/JS/docs.js"></script>
         <script src="/JS/sidebar.js"></script>
     </body>
