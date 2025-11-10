@@ -1,11 +1,9 @@
-<h4>Grupos de Botones (Button Group)</h4>
 <div class="btn-group" role="group" aria-label="Herramientas de edición">
     <button class="btn btn--primary btn--outline">Izquierda</button>
     <button class="btn btn--primary btn--outline">Centro</button>
     <button class="btn btn--primary btn--outline">Derecha</button>
 </div>
 
-<h4>Toggle Buttons (Selección de Estado)</h4>
 <div class="btn-group toggle-group" role="group" aria-label="Selección de vista">
     <button class="btn btn--secondary btn--toggle is-active">
         <i class="fas fa-th-large"></i> Vista Cuadrícula

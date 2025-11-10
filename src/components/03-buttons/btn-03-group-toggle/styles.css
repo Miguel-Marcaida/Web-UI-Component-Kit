@@ -1,57 +1,158 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: BTN-03 (Grupos y Toggle Buttons)    */
+/* Estructura para agrupar botones y definir estados.    */
+/* ==================================================== */
+
+/* === 1. INICIO: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+.preview-area {
+    /* Micro-Reset para garantizar el box-sizing local */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* Variables de Color locales definidas solo dentro de esta vista previa */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-white: #ffffff;
+    --color-secondary-light: #5a6268;
+    --color-text-inverse: #ffffff;
+
+    --color-primary-dark: #0056b3;
+    --color-secondary-dark: #5a6268;
+
+    /* Variables de Estilo locales */
+    --radius-base: 0.25rem;
+    --border-width-base: 1px;
+    --padding-y-base: 0.75rem;
+    --padding-x-base: 1.5rem;
+    --font-weight-medium: 600;
+}
+
+.button-group-container,
+h4,
+.btn-group,
+.btn-group .btn {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* === FIN: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+
 /* ===========================================
-// LAYOUT DE VISTA PREVIA
+// 2. COMPONENTE BASE: BOTÓN (.btn) - INCLUIDO PARA AUTONOMÍA
+// =========================================== */
+.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    padding: var(--padding-y-base) var(--padding-x-base);
+    border-radius: var(--radius-base);
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+    text-decoration: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Estado Deshabilitado */
+.btn:disabled,
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- VARIANTES DE COLOR Y OUTLINE --- */
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+.btn--primary:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+}
+.btn--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-text-inverse);
+}
+.btn--secondary:hover:not(:disabled) {
+    background-color: var(--color-secondary-dark);
+}
+
+.btn--outline {
+    background-color: transparent;
+    border-width: var(--border-width-base);
+    border-style: solid;
+    padding: calc(var(--padding-y-base) - var(--border-width-base)) calc(var(--padding-x-base) - var(--border-width-base));
+}
+.btn--primary.btn--outline {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.btn--primary.btn--outline:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+.btn--secondary.btn--outline {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+.btn--secondary.btn--outline:hover:not(:disabled) {
+    background-color: var(--color-secondary);
+    color: var(--color-text-inverse);
+}
+
+/* --- VARIANTES DE TAMAÑO --- */
+.btn--sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+.btn--lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+/* ===========================================
+// 3. LAYOUT Y COMPONENTES ESPECÍFICOS DEL MÓDULO (Original)
 // =========================================== */
 .button-group-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
 h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
 }
 
 /* ===========================================
 // BUTTON GROUP (btn-group)
 // =========================================== */
 .btn-group {
-  display: flex; /* Contenedor de ancho completo */
+    display: flex;
 }
 
 .btn-group .btn {
-  /* Base de la unión */
-  border-radius: 0;
-  border-width: 1px;
-  border-style: solid;
-  margin: 0; /* Clave para la unión */
-
-  /* Auto-Suficiencia: Redefine Flex y Espaciado */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* Fuerza el espaciado interno */
-  gap: 0.5rem;
-
-  /* Distribución uniforme del espacio */
-  flex: 1 1 auto;
+    border-radius: 0;
+    border-width: var(--border-width-base);
+    border-style: solid;
+    margin: 0;
+    flex: 1 1 auto;
 }
 
-/* Corrige la superposición de bordes */
 .btn-group .btn + .btn {
-  margin-left: -1px;
+    margin-left: calc(-1 * var(--border-width-base));
 }
 
-/* Redondez de las esquinas */
 .btn-group .btn:first-child {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: var(--radius-base);
+    border-bottom-left-radius: var(--radius-base);
 }
 
 .btn-group .btn:last-child {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: var(--radius-base);
+    border-bottom-right-radius: var(--radius-base);
 }
 
 /* ===========================================
@@ -60,17 +161,20 @@ h4 {
 
 /* Estilos de inactivo */
 .toggle-group .btn {
-  border-color: var(--color-secondary-main);
-  color: var(--color-secondary-main);
-  background-color: transparent;
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    background-color: transparent;
 }
 
 .toggle-group .btn.is-active {
-  background-color: var(--color-secondary-main);
-  color: var(--color-white);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-color: var(--color-secondary);
 }
 
 .toggle-group .btn:not(.is-active):hover {
-  background-color: var(--color-secondary-light);
-  color: var(--color-white);
+    background-color: var(--color-secondary-light);
+    color: var(--color-white);
+    border-color: var(--color-secondary-light);
+    z-index: 1;
 }
