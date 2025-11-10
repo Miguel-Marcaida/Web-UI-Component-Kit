@@ -1,45 +1,128 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: BTN-04 (Botones Flotantes - FAB)    */
+/* Estilo del Botón de Acción Flotante (Floating Action Button). */
+/* ==================================================== */
+
+/* === 1. INICIO: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+.preview-area {
+    /* Micro-Reset para garantizar el box-sizing local */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* Variables de Color locales definidas solo dentro de esta vista previa */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-white: #ffffff;
+    --color-text-inverse: #ffffff;
+
+    --color-primary-dark: #0056b3;
+    --color-secondary-dark: #5a6268;
+
+    /* Variables de Estilo locales */
+    --radius-base: 0.25rem;
+    --border-width-base: 1px;
+    --font-weight-medium: 600;
+}
+
+.fab-container,
+.fab,
+.fab * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* === FIN: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+
 /* ===========================================
-// LAYOUT: Contenedor para posicionar el FAB
-// El contenedor debe tener 'position: relative;'
+// 2. COMPONENTE BASE: BOTÓN (.btn) - INCLUIDO PARA AUTONOMÍA
 // =========================================== */
-.fab-container {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-end;
+.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    padding: 0.75rem 1.5rem; /* Usando valores fijos ya que FAB anula padding */
+    border-radius: var(--radius-base);
+    transition: background-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+    text-decoration: none;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Estado Deshabilitado */
+.btn:disabled,
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- VARIANTES DE COLOR --- */
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+.btn--primary:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+}
+.btn--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-text-inverse);
+}
+.btn--secondary:hover:not(:disabled) {
+    background-color: var(--color-secondary-dark);
 }
 
 /* ===========================================
-// ESTILO BASE FAB (.fab)
-// Se basa en .btn, pero con dimensiones fijas
+// 3. LAYOUT: Contenedor para posicionar el FAB (Original FAB CSS)
+// =========================================== */
+.fab-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+/* ===========================================
+// ESTILO ESPECÍFICO FAB (.fab)
 // =========================================== */
 .fab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Asegurar que el box-shadow cambie al hacer hover */
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.fab:hover:not(:disabled) {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 /* --------------------
 // FAB PRINCIPAL (fab--main)
 // -------------------- */
 .fab--main {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 1.25rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.25rem;
 }
 
 /* --------------------
 // FAB MINI/SECUNDARIO (fab--mini)
 // -------------------- */
 .fab--mini {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
 }
