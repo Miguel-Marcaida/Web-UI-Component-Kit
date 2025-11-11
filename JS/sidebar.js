@@ -122,6 +122,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "02. Tarjeta con Media",
                     path: "/src/components/05-cards/card-02-media/index.html",
                 },
+                {
+                    name: "03. Tarjeta con Header y Footer",
+                    path: "/src/components/05-cards/card-03-header-footer/index.html",
+                },
+                {
+                    name: "04. Tarjeta Horizontal",
+                    path: "/src/components/05-cards/card-04-horizontal/index.html",
+                },
+                {
+                    name: "05. Tarjeta de Perfil/Avatar",
+                    path: "/src/components/05-cards/card-05-profile/index.html",
+                },
             ],
         },
         "06-modals": {
