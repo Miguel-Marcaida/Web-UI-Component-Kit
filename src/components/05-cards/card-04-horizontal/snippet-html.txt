@@ -1,0 +1,45 @@
+<div class="card card--horizontal">
+    <div class="card__media">
+        <img
+            src="https://www.img2go.com/es/cambiar-tamano-de-imagen"
+            alt="Descripción del contenido multimedia"
+            class="card__img"
+        />
+    </div>
+    <div class="card__content-wrapper">
+        <div class="card__body">
+            <h4 class="card__title">Título del Contenido Horizontal</h4>
+            <p class="card__meta">Metadatos del ítem: ej. Categoría o Fecha</p>
+            <p>
+                Este layout es ideal para listados complejos y debe ser colocado dentro de un contenedor de ancho completo.
+            </p>
+        </div>
+        <div class="card__footer">
+            <a href="#" class="text-link">Ver Más</a>
+        </div>
+    </div>
+</div>
+
+<div class="card card--horizontal">
+    <div class="card__media">
+        <img
+            src="https://www.img2go.com/es/cambiar-tamano-de-imagen"
+            alt="Descripción de la acción"
+            class="card__img"
+        />
+    </div>
+    <div class="card__content-wrapper">
+        <div class="card__body">
+            <h4 class="card__title">Título de Producto Destacado</h4>
+            <p>
+                Utilice el footer para acciones clave en listados de comercio electrónico o dashboards.
+            </p>
+        </div>
+        <div class="card__footer">
+            <button class="btn btn--primary btn--sm">Comprar</button>
+            <button class="btn btn--secondary btn--sm">
+                <i class="fas fa-eye"></i>
+            </button>
+        </div>
+    </div>
+</div>
