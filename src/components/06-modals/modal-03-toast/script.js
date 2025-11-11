@@ -33,7 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
             icon: "fas fa-info-circle",
             duration: 0, // 0 significa cierre manual
         },
-        // Se puede añadir 'warning' aquí si se desea
+
+        warning: {
+            // Añadir este template
+            title: "Advertencia",
+            message: "Revise su información antes de continuar.",
+            icon: "fas fa-exclamation-circle",
+            duration: 4000,
+        },
     };
 
     /**

@@ -147,6 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "02. Popover/Tooltip",
                     path: "/src/components/06-modals/modal-02-popover/index.html",
                 },
+                {
+                    name: "03. Alerta Fija (Toast)",
+                    path: "/src/components/06-modals/modal-03-toast/index.html",
+                },
             ],
         },
         "07-indicators": {
