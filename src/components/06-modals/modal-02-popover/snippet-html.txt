@@ -1,22 +1,42 @@
-<button 
-    class="btn btn--secondary" 
-    data-toggle-target="popover-1" 
-    aria-expanded="false"
->
-    Popover (Clic)
-</button>
+<div style="position: relative; display: inline-block;">
+    <button
+        class="btn btn--secondary"
+        data-popover-target="#popover-accion-ejemplo"
+        data-popover-trigger="click"
+        aria-describedby="popover-accion-ejemplo"
+    >
+        Click para Acción
+    </button>
 
-<div 
-    id="popover-1" 
-    class="popover-container popover--right"
-    role="tooltip" 
->
-    <div class="popover__arrow"></div> 
-    
-    <div class="popover__content">
-        <h5 class="popover__title">Ayuda Rápida</h5>
-        <p>Esta información es contextual al botón. Se cierra al hacer clic fuera.</p>
-        
-        <button class="close-btn" data-toggle-target="popover-1">Cerrar</button>
+    <div id="popover-accion-ejemplo" class="popover popover--right" role="tooltip" aria-hidden="true">
+        <div class="popover__content">
+            <p class="popover__title">Ajustes Rápidos</p>
+            <p class="popover__text">Guarda o elimina el elemento antes de continuar.</p>
+            <div class="popover__actions">
+                <button class="btn btn--primary btn--sm">Guardar</button>
+                <button class="btn btn--secondary btn--sm">Eliminar</button>
+            </div>
+        </div>
+        <div class="popover__arrow"></div>
+    </div>
+</div>
+
+<br><br>
+
+<div style="position: relative; display: inline-block;">
+    <span
+        class="text-with-tooltip"
+        data-popover-target="#tooltip-info-ejemplo"
+        data-popover-trigger="hover"
+        aria-describedby="tooltip-info-ejemplo"
+    >
+        Pase el mouse por aquí
+    </span>
+
+    <div id="tooltip-info-ejemplo" class="popover popover--top popover--small" role="tooltip" aria-hidden="true">
+        <div class="popover__content">
+            Este es un mensaje de ayuda contextual.
+        </div>
+        <div class="popover__arrow"></div>
     </div>
 </div>

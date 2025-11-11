@@ -1,136 +1,205 @@
-/*
- * ===========================================
- * 06-MODALS: MODAL-02-POPOVER/TOOLTIP
- * ===========================================
+/**
+ * Modal 02: Popover / Tooltip
+ * Módulo autónomo que implementa popovers y tooltips contextuales.
+ * ESTRICTAMENTE AUTÓNOMO: No utiliza variables CSS externas.
  */
 
-/* * 1. CLASE BASE DEL POPOVER (Renombrada para ser compatible con JS core) */
-.popover-container {
-    /* <--- CAMBIO DE .popover A .popover-container */
-    /* Posicionamiento: Crucial para anclarlo al elemento padre */
-    position: absolute;
-    z-index: 1010; /* Debe estar por encima del modal base */
+/* ==================================================== */
+/* 0. AUTONOMÍA CSS (Variables Locales y Estilos Base) */
+/* ==================================================== */
 
-    /* Diseño */
-    background-color: var(--color-bg-card, white);
-    border: 1px solid var(--color-border-subtle, #ccc);
-    border-radius: var(--border-radius-sm, 0.25rem);
-    box-shadow: var(--shadow-md, 0 2px 8px rgba(0, 0, 0, 0.1));
-    max-width: 300px;
-
-    /* Puntero del ratón para cuando no es un tooltip */
-    cursor: default;
-
-    /* CONTROL DE VISIBILIDAD POR EL JS */
-    visibility: hidden; /* Oculto por defecto */
-    opacity: 0;
-    /* Incluimos visibilty y opacity en la transición */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+.popover-example-wrapper {
+    /* Este contenedor debe ser relativo en el documento de prueba */
+    position: relative;
+    padding: 3rem;
+    min-height: 200px;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    /* Usa un color neutro de fondo para el ejemplo */
+    color: #212529;
+    background-color: #f8f9fa;
 }
 
-/* * NUEVO: REGLA DE VISIBILIDAD (Añadida para el toggleState) */
-.popover-container.is-active {
+/* Definimos variables locales para el snippet */
+.popover {
+    /* Variables de Espaciado/Tamaño */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --popover-max-width: 275px;
+    --popover-small-width: 150px;
+
+    /* 1. Variables de Color (AUTONOMÍA PURA: sin referencias externas) */
+    --color-bg-popover: #ffffff; /* Fijo: Fondo blanco de burbuja */
+    --color-text-popover: #212529; /* Fijo: Texto oscuro */
+    --color-border-popover: #dee2e6; /* Fijo: Borde gris claro */
+
+    /* 2. VARIABLES DE BOTÓN REQUERIDAS */
+    --color-primary: #007bff; /* Fijo: Color primario azul */
+    --color-text-inverse: #ffffff; /* Fijo: Texto de botón inverso */
+
+    /* Variables de Flecha */
+    --arrow-size: 8px;
+}
+
+/* ========================================= */
+/* 1. ESTRUCTURA BASE Y VISIBILIDAD */
+/* ========================================= */
+
+.popover {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+    /* ... (resto de estilos de estructura) ... */
+    z-index: 1060;
+    max-width: var(--popover-max-width);
+    transform: translate(0, 0);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.popover.is-active {
     visibility: visible;
     opacity: 1;
 }
 
-/* 2. CONTENIDO INTERNO (El HTML usa .popover__content y el JS espera .popover-content. Mantenemos el HTML BEM por ahora) */
-.popover__content {
-    padding: 0.75rem 1rem;
-    font-size: var(--font-size-sm, 0.9rem);
-    color: var(--color-text-dark, #333);
+.popover--small {
+    max-width: var(--popover-small-width);
 }
 
-/* ... (El resto de las reglas BEM internas: .popover__title, .popover__arrow, etc. permanecen igual) ... */
-/* 2. CONTENIDO INTERNO */
+/* 1.1 Contenido */
 .popover__content {
-    padding: 0.75rem 1rem;
-    font-size: var(--font-size-sm, 0.9rem);
-    color: var(--color-text-dark, #333);
+    background-color: var(--color-bg-popover);
+    color: var(--color-text-popover);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-border-popover);
+    border-radius: 0.3rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 .popover__title {
-    margin: 0 0 0.5rem 0;
-    font-size: 1rem;
     font-weight: 600;
+    margin-top: 0;
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
 }
 
-/* * 3. LA FLECHA (ARROW) */
+.popover__text {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.popover__actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    justify-content: flex-end;
+}
+
+/* ========================================= */
+/* 2. POSICIONAMIENTO Y FLECHA */
+/* ========================================= */
 
 .popover__arrow {
     position: absolute;
-    width: 0;
-    height: 0;
-    /* Crear la forma triangular usando bordes transparentes */
-    border: 7px solid transparent;
+    display: block;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    transform: rotate(45deg);
+    z-index: -1;
 }
 
-/* * 4. ESTILOS DE POSICIÓN Y FLECHA */
-/* Nota: La lógica JS se encarga de aplicar las coordenadas TOP/LEFT, 
- * el CSS solo define la posición de la flecha dentro del popover.
- */
+.popover__arrow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-popover);
+    border: 1px solid var(--color-border-popover);
+}
 
-/* POPOVER ABAJO (popover--bottom): Flecha apunta hacia ARRIBA */
+/* --- Posiciones y clips (Se mantienen igual) --- */
+.popover--bottom {
+    margin-top: var(--arrow-size);
+}
 .popover--bottom .popover__arrow {
-    top: -14px; /* Mover arriba la mitad del borde * 2 */
+    top: calc(var(--arrow-size) * -1);
     left: 50%;
-    transform: translateX(-50%);
-    /* Solo el borde inferior tiene color (parece que la punta está arriba) */
-    border-bottom-color: var(--color-border-subtle, #ccc);
+    margin-left: calc(var(--arrow-size) / -2);
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
 }
-.popover--bottom .popover__arrow::after {
-    content: "";
-    position: absolute;
-    top: 2px; /* Mover 2px abajo para el borde interno */
-    left: -7px;
-    border: 7px solid transparent;
-    border-bottom-color: var(--color-bg-card, white);
+.popover--top {
+    margin-top: calc(var(--arrow-size) * -1);
 }
-
-/* POPOVER ARRIBA (popover--top): Flecha apunta hacia ABAJO */
 .popover--top .popover__arrow {
-    bottom: -14px;
+    bottom: calc(var(--arrow-size) * -1);
     left: 50%;
-    transform: translateX(-50%);
-    border-top-color: var(--color-border-subtle, #ccc);
+    margin-left: calc(var(--arrow-size) / -2);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
 }
-.popover--top .popover__arrow::after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: -7px;
-    border: 7px solid transparent;
-    border-top-color: var(--color-bg-card, white);
+.popover--right {
+    margin-left: var(--arrow-size);
 }
-
-/* POPOVER A LA DERECHA (popover--right): Flecha apunta a la IZQUIERDA */
 .popover--right .popover__arrow {
-    left: -14px;
+    left: calc(var(--arrow-size) * -1);
     top: 50%;
-    transform: translateY(-50%);
-    border-right-color: var(--color-border-subtle, #ccc);
+    margin-top: calc(var(--arrow-size) / -2);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
-.popover--right .popover__arrow::after {
-    content: "";
-    position: absolute;
-    left: 2px;
-    top: -7px;
-    border: 7px solid transparent;
-    border-right-color: var(--color-bg-card, white);
+.popover--left {
+    margin-left: calc(var(--arrow-size) * -1);
+}
+.popover--left .popover__arrow {
+    right: calc(var(--arrow-size) * -1);
+    top: 50%;
+    margin-top: calc(var(--arrow-size) / -2);
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
 }
 
-/* POPOVER A LA IZQUIERDA (popover--left): Flecha apunta a la DERECHA */
-.popover--left .popover__arrow {
-    right: -14px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-left-color: var(--color-border-subtle, #ccc);
+/* --- UTILIDADES INCLUIDAS (Botones) --- */
+/* (Usan variables fijas definidas arriba, sin dependencia) */
+.btn {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    line-height: 1.5;
+    transition: all 0.15s ease-in-out;
 }
-.popover--left .popover__arrow::after {
-    content: "";
-    position: absolute;
-    right: 2px;
-    top: -7px;
-    border: 7px solid transparent;
-    border-left-color: var(--color-bg-card, white);
+.btn--sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+.btn--primary {
+    color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.btn--primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.btn--secondary {
+    color: var(--color-text-popover);
+    background-color: var(--color-bg-popover);
+    border-color: var(--color-border-popover);
+}
+.btn--secondary:hover {
+    background-color: var(--color-border-popover);
+}
+.text-with-tooltip {
+    text-decoration: underline dashed;
+    cursor: help;
 }

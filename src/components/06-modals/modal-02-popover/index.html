@@ -3,120 +3,63 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Modal 02: Popover/Tooltip</title>
+        <title>Modal 02: Popover / Tooltip</title>
 
         <link rel="stylesheet" href="/CSS/main.css" />
         <link rel="stylesheet" href="/CSS/prism.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <header id="main-header">
             <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
             </h1>
 
-            <button
-                id="sidebar-toggle"
-                aria-expanded="false"
-                aria-controls="docs-sidebar"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-            <nav>
-                <a href="/src/components/06-modals/index.html"
-                    >Volver a Modales</a
-                >
-            </nav>
+                <nav>
+                    <a href="/src/components/06-modals/index.html">Volver a Modales</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
         </header>
 
         <div class="docs-container">
             <main class="docs-content">
-                <h2>Modal 02: Popover/Tooltip</h2>
-                <p class="description">
-                    Pequeñas ventanas emergentes de contenido que se anclan a un
-                    elemento activador. Se utilizan para mostrar ayuda
-                    contextual, información o un menú de opciones.
-                </p>
+                <h2>Modal 02: Popover / Tooltip</h2>
+                <p class="description">Contenedores contextuales de información que aparecen cerca de un elemento al interactuar con él (hover o click). A diferencia de un modal, no bloquean la interacción con el resto de la página.</p>
 
-                <section
-                    class="preview-area"
-                    style="
-                        padding: 5rem;
-                        background-color: var(--color-bg-base);
-                        text-align: center;
-                    "
-                >
-                    <h3 style="margin-bottom: 3rem">Vista Previa</h3>
+                <section class="preview-area">
+                    <h3>Vista Previa</h3>
+                    <div class="popover-example-wrapper">
+                        <button class="btn btn--secondary" data-popover-target="#popover-action" data-popover-trigger="click" aria-describedby="popover-action">Click para Acción</button>
 
-                    <div
-                        style="
-                            display: flex;
-                            justify-content: space-around;
-                            gap: 3rem;
-                        "
-                    >
-                        <button
-                            id="popover-btn-1"
-                            class="btn btn--secondary"
-                            data-toggle-target="popover-1"
-                            aria-expanded="false"
-                        >
-                            Popover (Clic)
-                        </button>
-
-                        <div
-                            id="popover-1"
-                            class="popover-container popover--right"
-                            role="tooltip"
-                        >
-                            <div class="popover__arrow"></div>
+                        <div id="popover-action" class="popover popover--right" role="tooltip" aria-hidden="true">
                             <div class="popover__content">
-                                <h5 class="popover__title">Ayuda Rápida</h5>
-                                <p>
-                                    Esta información es contextual al botón. Se
-                                    cierra al hacer clic fuera.
-                                </p>
-                                <button
-                                    class="close-btn"
-                                    data-toggle-target="popover-1"
-                                >
-                                    Cerrar
-                                </button>
+                                <p class="popover__title">Ajustes Rápidos</p>
+                                <p class="popover__text">Guarda o elimina el elemento antes de continuar.</p>
+                                <div class="popover__actions">
+                                    <button class="btn btn--primary btn--sm">Guardar</button>
+                                    <button class="btn btn--secondary btn--sm">Eliminar</button>
+                                </div>
                             </div>
+                            <div class="popover__arrow"></div>
                         </div>
 
-                        <button
-                            id="popover-btn-2"
-                            class="btn btn--secondary"
-                            data-toggle-target="popover-2"
-                            aria-expanded="false"
-                        >
-                            Tooltip (Clic)
-                        </button>
+                        <span class="text-with-tooltip" data-popover-target="#tooltip-info" data-popover-trigger="hover" aria-describedby="tooltip-info">Pase el mouse por aquí</span>
 
-                        <div
-                            id="popover-2"
-                            class="popover-container popover--top"
-                            role="tooltip"
-                        >
+                        <div id="tooltip-info" class="popover popover--top popover--small" role="tooltip" aria-hidden="true">
+                            <div class="popover__content">Este es un mensaje de ayuda contextual.</div>
                             <div class="popover__arrow"></div>
-                            <div class="popover__content">Configuración</div>
-                            <button
-                                class="close-btn"
-                                data-toggle-target="popover-2"
-                            >
-                                Cerrar
-                            </button>
                         </div>
                     </div>
                 </section>
@@ -125,17 +68,22 @@
                     <h3>Código Fuente</h3>
                     <h4>HTML</h4>
                     <pre><code class="language-html html-snippet">...</code></pre>
-
                     <h4>CSS</h4>
                     <pre><code class="language-css css-snippet">...</code></pre>
+                    <h4>JavaScript</h4>
+                    <pre><code class="language-javascript js-snippet">...</code></pre>
                 </section>
             </main>
         </div>
 
-        <footer id="main-footer"></footer>
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+
         <script src="/JS/prism.js"></script>
-        <script src="/JS/main.js"></script>
+        <script defer src="/JS/_theme.js"></script>
         <script src="/JS/docs.js"></script>
         <script src="/JS/sidebar.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
