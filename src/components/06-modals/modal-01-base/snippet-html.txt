@@ -1,27 +1,29 @@
-<div id="ID_DEL_MODAL" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    
-    <div class="modal__backdrop" aria-hidden="true"></div>
-    
-    <div class="modal__content" role="document">
-        
+<button class="btn btn--primary" data-modal-target="#mi-modal-base">
+    Abrir Mi Modal
+</button>
+
+<div id="mi-modal-base" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-base" aria-hidden="true">
+
+    <div class="modal__overlay" data-modal-close></div>
+
+    <div class="modal__dialog">
+
         <div class="modal__header">
-            <h3 id="modal-title" class="modal__title">Título de la Ventana Modal</h3>
-            <button class="modal__close" aria-label="Cerrar modal">
+            <h4 id="modal-title-base" class="modal__title">Título del Diálogo</h4>
+            <button class="modal__close-btn" aria-label="Cerrar modal" data-modal-close>
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        
+
         <div class="modal__body">
-            <p>Este es el cuerpo del modal. Contiene la información principal o un formulario.</p>
-            <p>Es importante que el modal tenga un enfoque (focus) al abrirse para mejorar la accesibilidad.</p>
+            <p>
+                Este es el cuerpo del modal. Aquí va su contenido principal, formularios o mensajes de confirmación.
+            </p>
         </div>
-        
+
         <div class="modal__footer">
-            <button class="btn btn--secondary modal__close-btn">Cancelar</button>
-            <button class="btn btn--primary">Aceptar</button>
+            <button class="btn btn--secondary" data-modal-close>Cerrar</button>
+            <button class="btn btn--primary">Acción Principal</button>
         </div>
-        
     </div>
 </div>
-
-<button id="open-ID_DEL_MODAL" class="btn btn--primary">Abrir Modal</button>

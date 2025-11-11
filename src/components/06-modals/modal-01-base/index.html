@@ -3,101 +3,65 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Modal 01: Base</title>
+        <title>Modal 01: Modal Base</title>
 
         <link rel="stylesheet" href="/CSS/main.css" />
         <link rel="stylesheet" href="/CSS/prism.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <header id="main-header">
             <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
             </h1>
 
-            <button
-                id="sidebar-toggle"
-                aria-expanded="false"
-                aria-controls="docs-sidebar"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-            <nav>
-                <a href="/src/components/06-modals/index.html"
-                    >Volver a Modales</a
-                >
-            </nav>
+                <nav>
+                    <a href="/src/components/06-modals/index.html">Volver a Modales</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
         </header>
 
         <div class="docs-container">
             <main class="docs-content">
-                <h2>Modal 01: Base (Ventana Central)</h2>
-                <p class="description">
-                    Ventana emergente que captura la atención del usuario,
-                    superponiéndose al contenido principal con un fondo
-                    semi-transparente.
-                </p>
+                <h2>Modal 01: Modal Base</h2>
+                <p class="description">Implementación de un diálogo modal que se superpone al contenido principal. Utiliza la capa de JS (`script.js`) para manejar el estado abierto/cerrado y las interacciones de cierre (Escape, clic en fondo, botón).</p>
 
-                <section
-                    class="preview-area"
-                    style="
-                        padding: 2rem;
-                        background-color: var(--color-bg-base);
-                    "
-                >
-                    <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+                <section class="preview-area">
+                    <h3>Vista Previa</h3>
 
-                    <button
-                        class="btn btn--primary btn--lg"
-                        data-toggle-target="my-base-modal"
-                        aria-expanded="false"
-                    >
-                        Abrir Modal de Ejemplo
-                    </button>
+                    <button class="btn btn--primary" data-modal-target="#modal-base-example">Abrir Modal Base</button>
 
-                    <div
-                        id="my-base-modal"
-                        class="modal-container"
-                        role="dialog"
-                        aria-modal="true"
-                        aria-labelledby="modal-title"
-                    >
-                        <div class="modal__backdrop" aria-hidden="true"></div>
+                    <div id="modal-base-example" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-1" aria-hidden="true">
+                        <div class="modal__overlay" data-modal-close></div>
 
-                        <div class="modal-content" role="document">
+                        <div class="modal__dialog">
                             <div class="modal__header">
-                                <h3 id="modal-title" class="modal__title">
-                                    Confirmación de Acción
-                                </h3>
-                                <button
-                                    class="close-btn"
-                                    data-toggle-target="my-base-modal"
-                                    aria-label="Cerrar modal"
-                                >
+                                <h4 id="modal-title-1" class="modal__title">Confirmación Requerida</h4>
+                                <button class="modal__close-btn" aria-label="Cerrar modal" data-modal-close>
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
-                            <div class="modal__body"></div>
+
+                            <div class="modal__body">
+                                <p>Este es un diálogo modal básico. La capa de JavaScript se encarga de la funcionalidad de abrir/cerrar, incluyendo el cierre al presionar la tecla **Escape** o hacer clic en el fondo (overlay).</p>
+                                <p>Asegúrese de que el foco se mueva al modal cuando se abre para accesibilidad (WAI-ARIA).</p>
+                            </div>
+
                             <div class="modal__footer">
-                                <button
-                                    class="btn btn--secondary close-btn"
-                                    data-toggle-target="my-base-modal"
-                                >
-                                    Cancelar
-                                </button>
-                                <button class="btn btn--primary">
-                                    Confirmar
-                                </button>
+                                <button class="btn btn--secondary" data-modal-close>Cancelar</button>
+                                <button class="btn btn--primary">Aceptar</button>
                             </div>
                         </div>
                     </div>
@@ -109,14 +73,20 @@
                     <pre><code class="language-html html-snippet">...</code></pre>
                     <h4>CSS</h4>
                     <pre><code class="language-css css-snippet">...</code></pre>
+                    <h4>JavaScript</h4>
+                    <pre><code class="language-javascript js-snippet">...</code></pre>
                 </section>
             </main>
         </div>
 
-        <footer id="main-footer"></footer>
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+
         <script src="/JS/prism.js"></script>
-        <script src="/JS/main.js"></script>
+        <script defer src="/JS/_theme.js"></script>
         <script src="/JS/docs.js"></script>
         <script src="/JS/sidebar.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
