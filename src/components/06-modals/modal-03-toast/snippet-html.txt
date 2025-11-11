@@ -1,0 +1,17 @@
+<div id="toast-wrapper" class="toast-wrapper">
+    </div>
+
+<div class="toast toast--[STATE]" role="alert" aria-live="polite">
+    <div class="toast__icon">
+        <i class="fas fa-exclamation-triangle"></i>
+    </div>
+
+    <div class="toast__body">
+        <h5 class="toast__title">Título del Mensaje</h5>
+        <p class="toast__message">Este es el contenido breve de la notificación.</p>
+    </div>
+
+    <button class="toast__close" aria-label="Cerrar notificación" data-toast-close>
+        <i class="fas fa-times"></i>
+    </button>
+</div>
