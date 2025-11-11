@@ -1,0 +1,93 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO PURO: ALERT-04 (Icon-Only) */
+/* Contiene TODA la estructura, colores, y estilos específicos. */
+/* ==================================================== */
+
+/* === 1. INICIO: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+.preview-area {
+    /* Variables de Estilo Locales */
+    --radius-base: 0.25rem;
+    --padding-base: 0.75rem 1rem; /* Ligeramente menos padding que la base */
+    --gap-base: 1rem;
+    --icon-margin-end: 0.75rem;
+
+    /* Variables de Color (Necesarias para las variantes de la Alerta) */
+    --color-primary: #007bff;
+    --color-success: #28a745;
+    --color-info: #17a2b8;
+    --color-warning: #ffc107; /* Color de advertencia */
+    --color-danger: #dc3545;
+    --color-text-inverse: #ffffff;
+    --color-text-base: #212529;
+    --color-border: #adb5bd;
+    --color-bg-base: #f8f9fa;
+
+    /* Variable para el ícono destacado */
+    --icon-size-large: 1.5rem;
+    color: var(--color-text-base);
+}
+
+/* Micro-Reset para el snippet */
+.alert-container,
+.alert,
+.alert * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.alert-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-base);
+}
+/* === FIN: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+
+/* ===========================================
+// 2. CLASE BASE DE ALERTA (.alert)
+// =========================================== */
+.alert {
+    /* Estructura Pura y Layout Integrado */
+    display: flex;
+    align-items: center;
+    padding: var(--padding-base);
+
+    border-radius: var(--radius-base);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    line-height: 1.5;
+    border: 1px solid transparent;
+}
+
+/* 3. VARIANTES DE COLOR (Sustituye utilidades) */
+.alert--success {
+    background-color: var(--color-success);
+    color: var(--color-text-inverse);
+}
+.alert--warning {
+    /* Las alertas de advertencia suelen usar texto oscuro sobre fondo claro */
+    background-color: var(--color-warning);
+    color: var(--color-text-base);
+}
+
+/* 4. Estilos para los íconos (ajuste fino) */
+.alert i {
+    font-size: 1.25rem;
+    margin-right: var(--icon-margin-end);
+    flex-shrink: 0;
+}
+
+/* ===========================================
+// 5. ESTILO ESPECÍFICO DE SOLO ÍCONO (.alert--icon-only)
+// =========================================== */
+.alert--icon-only i {
+    /* Aumenta el tamaño del ícono para destacarlo */
+    font-size: var(--icon-size-large);
+}
+
+.alert--icon-only p {
+    /* Estilo sutil para el texto */
+    font-size: 0.95rem;
+    line-height: 1.3;
+    /* En alertas como Warning, forzamos el color del texto */
+    color: inherit;
+}

@@ -1,0 +1,20 @@
+<div class="alert alert--success alert--icon-only" role="alert">
+    <i class="fas fa-check-circle"></i>
+    <p>
+        La configuración se ha guardado correctamente.
+    </p>
+</div>
+
+<div class="alert alert--warning alert--icon-only" role="alert">
+    <i class="fas fa-exclamation-circle"></i>
+    <p>
+        Verifique los datos antes de continuar.
+    </p>
+</div>
+
+<div class="alert alert--danger alert--icon-only" role="alert">
+    <i class="fas fa-exclamation-triangle"></i>
+    <p>
+        Error de validación: Contacte a soporte.
+    </p>
+</div>

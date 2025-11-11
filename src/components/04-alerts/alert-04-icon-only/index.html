@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Alerta 04: Solo Ícono (Icon-Only)</title>
+
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="/CSS/prism.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
+
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <nav>
+                    <a href="/src/components/04-alerts/index.html">Volver a Alertas</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
+        <div class="docs-container">
+            <main class="docs-content">
+                <h2>Alerta 04: Solo Ícono (Icon-Only)</h2>
+                <p class="description">Una variación minimalista de la alerta base que destaca el ícono contextual, utilizando tipografía más sutil para el mensaje.</p>
+
+                <section class="preview-area" style="padding: 2rem; background-color: var(--color-bg-base)">
+                    <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+
+                    <div class="alert-container">
+                        <div class="alert alert--success alert--icon-only" role="alert">
+                            <i class="fas fa-check-circle"></i>
+                            <p class="m-0">La configuración se ha guardado.</p>
+                        </div>
+
+                        <div class="alert alert--warning alert--icon-only" role="alert">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p class="m-0">Verifique los datos antes de continuar.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="code-snippets">
+                    <h3>Código Fuente</h3>
+                    <h4>HTML</h4>
+                    <pre><code class="language-html html-snippet">...</code></pre>
+                    <h4>CSS</h4>
+                    <pre><code class="language-css css-snippet">...</code></pre>
+                </section>
+            </main>
+        </div>
+
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+        <script src="/JS/prism.js"></script>
+        <script defer src="/JS/_theme.js"></script>
+        <script src="/JS/docs.js"></script>
+        <script src="/JS/sidebar.js"></script>
+    </body>
+</html>
