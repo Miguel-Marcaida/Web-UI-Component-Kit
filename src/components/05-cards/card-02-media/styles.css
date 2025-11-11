@@ -1,48 +1,160 @@
-/*
- * ===========================================
- * 05-CARDS: CARD-02-MEDIA (CON IMAGEN)
- * ===========================================
+/**
+ * Tarjeta 02: Con Media
+ * Módulo autónomo puro que extiende .card para incluir contenido multimedia superior.
  */
 
-/* 1. Importar estilos base
- * Reutilizamos los estilos del card-01-base para el layout general, header, body y footer.
- */
-@import url("../card-01-base/styles.css");
+/* ==================================================== */
+/* 0. AUTONOMÍA CSS (Variables Locales y Estilos Base) */
+/* ==================================================== */
 
-/* 2. CONTENEDOR DE MEDIA */
+/* Definimos todas las variables de espaciado, color y tipografía usadas,
+   aplicadas al selector del componente, para que NO se fuguen al :root. */
+.card,
+.card--media {
+    /* Variables de Espaciado (Valores Fijos) */
+    --spacing-sm: 0.5rem; /* Para gap en footer */
+    --spacing-md: 1rem; /* Para padding en body/footer */
+    --spacing-lg: 1.5rem; /* Para el gap en el grid de documentación y margen de h3 */
+
+    /* Variables de Color ESENCIALES */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-text-base: #212529;
+    --color-bg-card: #ffffff;
+    --color-text-inverse: #ffffff; /* Para el texto sobre colores primarios/secundarios */
+
+    /* Variables de Tipografía */
+    --font-weight-medium: 500;
+}
+
+/* Base de la tarjeta para aplicar variables locales */
+.card {
+    background-color: var(--color-bg-card, #ffffff);
+    color: var(--color-text-base, #212529);
+}
+
+/* ========================================= */
+/* 1. LAYOUT DEL ELEMENTO MEDIA (.card__media) */
+/* ========================================= */
+
 .card__media {
-  /* Mantiene la media en la parte superior, sin padding. */
-  width: 100%;
-  /* Asegura que el contenido (imagen) llene el contenedor y recorte los bordes */
-  overflow: hidden;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    overflow: hidden;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
 }
 
-/* 3. ESTILO DE LA IMAGEN DENTRO DE LA MEDIA */
-.card__media img {
-  /* La imagen debe llenar completamente el ancho del contenedor */
-  width: 100%;
-  /* Mantiene la proporción de la imagen y asegura que cubra el área */
-  height: auto;
-  display: block; /* Elimina cualquier espacio adicional debajo de la imagen */
-
-  /* Efecto de transición: mejora la experiencia al hacer hover en la tarjeta */
-  transition: transform 0.3s ease;
+.card__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-/* 4. EFECTO HOVER EN LA TARJETA COMPLETA
- * Cuando se hace hover en la tarjeta, aplicamos una ligera ampliación a la imagen 
- * para dar un efecto visual atractivo.
- */
-.card--media:hover .card__media img {
-  transform: scale(1.05); /* Zoom sutil de 5% */
+/* ========================================= */
+/* 2. AJUSTES DE CUERPO Y PIE (Usando Variables Locales) */
+/* ========================================= */
+
+.card__body {
+    padding: var(--spacing-md);
+    padding-bottom: 0;
 }
 
-/* 5. AJUSTE: Si la tarjeta tiene media, no debe tener borde superior en el body
- * El body no debe tener borde superior si el footer o header están ausentes.
- * En este caso, la imagen actúa como borde.
- */
-.card--media .card__body {
-  padding-top: 1.25rem; /* Asegura el padding normal */
-  /* Anula el borde superior que se podría heredar de card-01-base si se usara el header */
-  border-top: none;
+.card__body .card__title {
+    margin-top: 0;
+}
+
+.card__footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+}
+
+/* ========================================= */
+/* 3. UTILIDADES INCLUIDAS (Para el Snippet Autónomo) */
+/* ========================================= */
+
+/* Enlace de Texto (.text-link) */
+.text-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+/* Botón Base (.btn) */
+.btn {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Botón Tamaño Pequeño (.btn--sm) */
+.btn--sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+/* Botón Primario (.btn--primary) */
+.btn--primary {
+    color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Botón Secundario (.btn--secondary) */
+.btn--secondary {
+    color: var(--color-text-inverse); /* Aseguramos texto blanco sobre secundario */
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.btn--secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+}
+
+/* ========================================= */
+/* 4. ESTILOS DE DOCUMENTACIÓN (PREVIEW) */
+/* ========================================= */
+
+.preview-area {
+    padding: 2rem;
+    /* Esta variable SÍ puede tener un fallback global, ya que es SOLO para el entorno de documentación */
+    background-color: var(--color-bg-base, #f8f9fa);
+}
+
+.preview-area h3 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
 }

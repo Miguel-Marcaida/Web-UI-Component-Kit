@@ -1,24 +1,38 @@
 <div class="card card--media">
     <div class="card__media">
-        <img src="URL_DE_TU_IMAGEN.jpg" alt="Descripción de la imagen" loading="lazy">
+        <img
+            src="https://www.img2go.com/es/cambiar-tamano-de-imagen"
+            alt="Descripción del paisaje"
+            class="card__img"
+        />
     </div>
     <div class="card__body">
-        <h4 class="card__title">Título del Contenido Multimedia</h4>
-        <p>Utiliza esta estructura para artículos de blog, listados de productos o perfiles de usuario que requieran una imagen destacada.</p>
-    </div>
-    <div class="card__footer">
-        <button class="btn btn--primary btn--sm">Ver</button>
-        <button class="btn btn--secondary btn--sm">Compartir</button>
+        <h4 class="card__title">Título del Artículo Destacado</h4>
+        <p>
+            Esta es una breve descripción del contenido. La imagen capta la atención. Ideal para artículos de blog.
+        </p>
+        <a href="#" class="text-link">Leer Más</a>
     </div>
 </div>
 
 <div class="card card--media">
     <div class="card__media">
-        <img src="URL_DE_TU_IMAGEN_2.jpg" alt="Otra imagen de ejemplo" loading="lazy">
+        <img
+            src="https://www.img2go.com/es/cambiar-tamano-de-imagen"
+            alt="Descripción del producto"
+            class="card__img"
+        />
     </div>
     <div class="card__body">
-        <h4 class="card__title">Galería de Imágenes</h4>
-        <p>Esta variante es ideal para galerías de fotos o colecciones donde la acción principal es implícita (clic en la tarjeta).</p>
-        <a href="#" class="text-link">Ver en alta resolución</a>
+        <h4 class="card__title">Nuevo Producto/Servicio</h4>
+        <p>
+            La combinación de imagen y acciones en el pie de página es perfecta para listados de comercio electrónico.
+        </p>
+    </div>
+    <div class="card__footer">
+        <button class="btn btn--primary btn--sm">Comprar</button>
+        <button class="btn btn--secondary btn--sm">
+            <i class="fas fa-heart"></i>
+        </button>
     </div>
 </div>
