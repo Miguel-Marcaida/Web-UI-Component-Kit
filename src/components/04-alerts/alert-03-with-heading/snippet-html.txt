@@ -1,0 +1,15 @@
+<div class="alert alert--success" role="alert">
+    <i class="fas fa-check-circle"></i>
+    <div>
+        <h4 class="alert__heading">¡Operación Exitosa!</h4>
+        <p>Los cambios se han guardado en el servidor sin errores.</p>
+    </div>
+</div>
+
+<div class="alert alert--danger" role="alert">
+    <i class="fas fa-exclamation-triangle"></i>
+    <div>
+        <h4 class="alert__heading">Error Crítico Detectado</h4>
+        <p>El proceso no pudo completarse. Revise la conexión de red e inténtelo de nuevo.</p>
+    </div>
+</div>

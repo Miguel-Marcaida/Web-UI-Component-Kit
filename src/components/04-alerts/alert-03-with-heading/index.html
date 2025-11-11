@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Alerta 02: Con Cierre (Dismissible)</title>
+        <title>Alerta 03: Con Encabezado (Heading)</title>
 
         <link rel="stylesheet" href="/CSS/main.css" />
         <link rel="stylesheet" href="/CSS/prism.css" />
@@ -33,33 +33,27 @@
         </header>
         <div class="docs-container">
             <main class="docs-content">
-                <h2>Alerta 02: Con Cierre (Dismissible)</h2>
-                <p class="description">
-                    Alerta contextual que incluye un botón de cierre. La funcionalidad de cierre es
-                    <b>autónoma</b>
-                    y se implementa mediante el archivo
-                    <code>script.js</code>
-                    local.
-                </p>
+                <h2>Alerta 03: Con Encabezado (Heading)</h2>
+                <p class="description">Alerta contextual con un encabezado o título destacado para jerarquizar el mensaje. Esta alerta es estática y hereda los estilos base.</p>
 
                 <section class="preview-area" style="padding: 2rem; background-color: var(--color-bg-base)">
                     <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
 
                     <div class="alert-container">
-                        <div class="alert alert--success alert--dismissible" role="alert">
+                        <div class="alert alert--success" role="alert">
                             <i class="fas fa-check-circle"></i>
-                            <p>¡Éxito! Esta alerta puede ser cerrada por el usuario.</p>
-                            <button class="alert__close" aria-label="Cerrar alerta">
-                                <i class="fas fa-times"></i>
-                            </button>
+                            <div>
+                                <h4 class="alert__heading">¡Operación Exitosa!</h4>
+                                <p class="m-0">Los cambios se han guardado en el servidor sin errores.</p>
+                            </div>
                         </div>
 
-                        <div class="alert alert--info alert--dismissible" role="alert">
-                            <i class="fas fa-info-circle"></i>
-                            <p>Información. Presiona la 'X' para remover este mensaje.</p>
-                            <button class="alert__close" aria-label="Cerrar alerta">
-                                <i class="fas fa-times"></i>
-                            </button>
+                        <div class="alert alert--danger" role="alert">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <h4 class="alert__heading">Error Crítico Detectado</h4>
+                                <p class="m-0">El proceso no pudo completarse. Revise la conexión de red e inténtelo de nuevo.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -70,8 +64,6 @@
                     <pre><code class="language-html html-snippet">...</code></pre>
                     <h4>CSS</h4>
                     <pre><code class="language-css css-snippet">...</code></pre>
-                    <h4>JavaScript</h4>
-                    <pre><code class="language-js js-snippet">...</code></pre>
                 </section>
             </main>
         </div>
@@ -83,6 +75,5 @@
         <script defer src="/JS/_theme.js"></script>
         <script src="/JS/docs.js"></script>
         <script src="/JS/sidebar.js"></script>
-        <script src="script.js"></script>
     </body>
 </html>
