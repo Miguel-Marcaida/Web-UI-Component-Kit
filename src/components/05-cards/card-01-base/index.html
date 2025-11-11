@@ -1,124 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tarjeta 01: Base</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tarjeta 01: Base</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link rel="stylesheet" href="/CSS/prism.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="/CSS/prism.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header id="main-header">
-      <h1>
-        <a href="/index.html" class="text-decoration-none text-inverse"
-          >Web UI Kit</a
-        >
-      </h1>
-
-      <button
-        id="sidebar-toggle"
-        aria-expanded="false"
-        aria-controls="docs-sidebar"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <nav>
-        <a href="/src/components/05-cards/index.html">Volver a Tarjetas</a>
-      </nav>
-    </header>
-
-    <div class="docs-container">
-      <aside id="docs-sidebar" class="docs-sidebar">
-        </aside>
-      <main class="docs-content">
-        <h2>Tarjeta 01: Base</h2>
-        <p class="description m-b-4">
-          Contenedor minimalista diseñado para agrupar información relacionada
-          de manera clara, utilizando divisiones para encabezado, cuerpo y pie
-          de página/acciones.
-        </p>
-
-        <section class="preview-area p-4" style="background-color: var(--color-bg-light)">
-          <h3 class="m-b-3">Vista Previa</h3>
-
-          <div class="card-examples-grid d-grid grid-responsive-auto g-4">
-            
-            <article class="card">
-              <div class="card__header p-x-4 p-y-3">
-                <h4 class="card__title">Título de la Tarjeta</h4>
-              </div>
-              <div class="card__body p-4">
-                <p>
-                  Este es el cuerpo principal de la tarjeta. El padding es
-                  gestionado por la clase <code>p-4</code> de utilidades.
-                </p>
-              </div>
-              <div class="card__footer p-x-4 p-y-3">
-                <button class="btn btn--primary btn--sm">
-                  Acción Principal
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
                 </button>
-              </div>
-            </article>
 
-            <article class="card">
-              <div class="card__body p-4">
-                <p class="m-b-3">
-                  Esta tarjeta omite el encabezado y se enfoca directamente en
-                  el contenido. El espaciado inferior del párrafo 
-                  (<code>m-b-3</code>) se controla con una utilidad.
-                </p>
-                <a href="#" class="text-link">Leer más</a>
-              </div>
-            </article>
+                <nav>
+                    <a href="/src/components/05-cards/index.html">Volver a Tarjetas</a>
+                </nav>
 
-            <article class="card">
-              <div class="card__media">
-                <img
-                  src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36"
-                  alt="Imagen de ejemplo para la tarjeta"
-                  class="card__img"
-                  style="max-height: 200px;"
-                />
-              </div>
-              <div class="card__body p-4">
-                <h4 class="card__title m-b-2">Producto Destacado</h4>
-                <p>
-                  Esta tarjeta demuestra cómo la clase <code>.card__img</code>
-                  asegura que la imagen se ajuste correctamente al ancho y respete
-                  los bordes redondeados.
-                </p>
-              </div>
-              <div class="card__footer p-3">
-                <button class="btn btn--primary btn--sm">Comprar</button>
-                <a href="#" class="text-link m-s-auto">Más detalles</a>
-              </div>
-            </article>
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
 
-          </div>
-        </section>
+        <div class="docs-container">
+            <main class="docs-content">
+                <h2>Tarjeta 01: Base</h2>
+                <p class="description card-description-margin">Contenedor minimalista diseñado para agrupar información relacionada de manera clara, utilizando divisiones para encabezado, cuerpo y pie de página/acciones.</p>
 
-        <section class="code-snippets m-t-4">
-          <h3>Código Fuente</h3>
-          <h4>HTML</h4>
-          <pre><code class="language-html html-snippet">...</code></pre>
-          <h4>CSS</h4>
-          <pre><code class="language-css css-snippet">...</code></pre>
-        </section>
-      </main>
-    </div>
+                <section class="preview-area card-preview-padding" style="background-color: var(--color-bg-light)">
+                    <h3 class="card-title-margin">Vista Previa</h3>
 
-    <footer id="main-footer"></footer>
-    <script src="/JS/prism.js"></script>
-    <script src="/JS/main.js"></script>
-    <script src="/JS/docs.js"></script>
-    <script src="/JS/sidebar.js"></script>
-  </body>
+                    <div class="card-examples-grid">
+                        <article class="card">
+                            <div class="card__header">
+                                <h4 class="card__title">Título de la Tarjeta</h4>
+                            </div>
+                            <div class="card__body">
+                                <p>
+                                    Este es el cuerpo principal de la tarjeta. El padding y el margen son gestionados por el
+                                    <code>styles.css</code>
+                                    local.
+                                </p>
+                            </div>
+                            <div class="card__footer">
+                                <button class="card__action-btn">Acción Principal</button>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card__body">
+                                <p class="card__body-text-margin">Esta tarjeta omite el encabezado y se enfoca directamente en el contenido. El espaciado inferior del párrafo se controla con reglas específicas.</p>
+                                <a href="#" class="card__link">Leer más</a>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card__media">
+                                <img src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36" alt="Imagen de ejemplo para la tarjeta" class="card__img" style="max-height: 200px" />
+                            </div>
+                            <div class="card__body">
+                                <h4 class="card__title card__body-title-margin">Producto Destacado</h4>
+                                <p>
+                                    Esta tarjeta demuestra cómo la clase
+                                    <code>.card__img</code>
+                                    asegura que la imagen se ajuste correctamente.
+                                </p>
+                            </div>
+                            <div class="card__footer card__footer-with-link">
+                                <button class="card__action-btn">Comprar</button>
+                                <a href="#" class="card__link">Más detalles</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="code-snippets card-code-margin">
+                    <h3>Código Fuente</h3>
+                    <h4>HTML</h4>
+                    <pre><code class="language-html html-snippet">...</code></pre>
+                    <h4>CSS</h4>
+                    <pre><code class="language-css css-snippet">...</code></pre>
+                </section>
+            </main>
+        </div>
+
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+        <script src="/JS/prism.js"></script>
+        <script defer src="/JS/_theme.js"></script>
+        <script src="/JS/docs.js"></script>
+        <script src="/JS/sidebar.js"></script>
+    </body>
 </html>

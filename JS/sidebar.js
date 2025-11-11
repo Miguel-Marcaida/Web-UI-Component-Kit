@@ -99,15 +99,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "02. Alertas con Cierre",
                     path: "/src/components/04-alerts/alert-02-dismissible/index.html",
                 },
+                {
+                    name: "03. Alertas con Encabezado",
+                    path: "/src/components/04-alerts/alert-03-with-heading/index.html",
+                },
+                {
+                    name: "04. Alertas Solo Ícono",
+                    path: "/src/components/04-alerts/alert-04-icon-only/index.html",
+                },
             ],
         },
         "05-cards": {
             title: "Módulo 05: Tarjetas",
             components: [
+                // <-- ¡ACTUALIZADO! -->
                 {
                     name: "01. Tarjeta Base",
                     path: "/src/components/05-cards/card-01-base/index.html",
                 },
+                // <-- FIN ACTUALIZADO! -->
                 {
                     name: "02. Tarjeta con Media",
                     path: "/src/components/05-cards/card-02-media/index.html",

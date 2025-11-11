@@ -1,19 +1,24 @@
-<div class="card card--base">
+<article class="card">
     <div class="card__header">
         <h4 class="card__title">Título de la Tarjeta</h4>
     </div>
     <div class="card__body">
-        <p>Este es el cuerpo principal de la tarjeta. Es ideal para listas de contenido, pequeños formularios o datos resumidos. Aquí puede ir cualquier tipo de contenido HTML.</p>
+        <p>
+            Contenido principal de la tarjeta. Puede incluir texto, listas o
+            cualquier otro elemento HTML.
+        </p>
     </div>
     <div class="card__footer">
-        <button class="btn btn--primary btn--sm">Acción Principal</button>
-        <button class="btn btn--secondary btn--sm">Acción Secundaria</button>
+        <button class="card__action-btn">Acción Principal</button>
     </div>
-</div>
+</article>
 
-<div class="card card--base">
+<article class="card">
     <div class="card__body">
-        <p>Esta tarjeta omite tanto el encabezado como el pie de página, enfocándose solo en la presentación de datos o información rápida.</p>
-        <a href="#" class="text-link">Ver detalles</a>
+        <p class="card__body-text-margin">
+            Esta tarjeta omite el encabezado y el pie de página. El espaciado
+            inferior es controlado por la clase auxiliar interna.
+        </p>
+        <a href="#" class="card__link">Leer más</a>
     </div>
-</div>
+</article>
