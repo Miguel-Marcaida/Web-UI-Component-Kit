@@ -1,0 +1,45 @@
+<div class="card card--profile">
+    <div class="card__media">
+        <img
+            src="https://cl.pinterest.com/bellvic91/avatar/"
+            alt="Avatar de perfil de usuario"
+            class="card__avatar"
+        />
+    </div>
+    <div class="card__body">
+        <h4 class="card__title">Nombre del Usuario</h4>
+        <p class="card__role">Rol o Posición</p>
+        <p class="card__description">
+            Una breve descripción sobre las habilidades o la experiencia del usuario.
+        </p>
+    </div>
+    <div class="card__footer">
+        <button class="btn btn--primary btn--sm">Ver Perfil</button>
+    </div>
+</div>
+
+<div class="card card--profile">
+    <div class="card__media">
+        <img
+            src="https://cl.pinterest.com/bellvic91/avatar/"
+            alt="Avatar de perfil de usuario"
+            class="card__avatar"
+        />
+    </div>
+    <div class="card__body">
+        <h4 class="card__title">Nombre del Manager</h4>
+        <p class="card__role">Project Manager</p>
+        <div class="card__stats">
+            <span class="card__stat-item">
+                <strong>15</strong> Proyectos
+            </span>
+            <span class="card__stat-item">
+                <strong>400</strong> Conexiones
+            </span>
+        </div>
+    </div>
+    <div class="card__footer">
+        <button class="btn btn--secondary btn--sm">Seguir</button>
+        <button class="btn btn--primary btn--sm">Mensaje</button>
+    </div>
+</div>

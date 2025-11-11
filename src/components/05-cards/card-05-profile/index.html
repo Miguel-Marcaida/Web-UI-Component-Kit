@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tarjeta 05: Tarjeta de Perfil</title>
+
+        <link rel="stylesheet" href="/CSS/main.css" />
+        <link rel="stylesheet" href="/CSS/prism.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
+
+            <div class="nav-wrapper">
+                <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <nav>
+                    <a href="/src/components/05-cards/index.html">Volver a Tarjetas</a>
+                </nav>
+
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="docs-container">
+            <main class="docs-content">
+                <h2>Tarjeta 05: Tarjeta de Perfil/Avatar</h2>
+                <p class="description">Una tarjeta compacta, centrada en el usuario, que presenta una imagen circular de perfil, nombre, y un conjunto de acciones o estadísticas. Ideal para directorios o listados de miembros de equipo.</p>
+
+                <section class="preview-area">
+                    <h3>Vista Previa</h3>
+
+                    <div class="card-examples-grid">
+                        <div class="card card--profile">
+                            <div class="card__media">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="Avatar de perfil de usuario" class="card__avatar" />
+                            </div>
+                            <div class="card__body">
+                                <h4 class="card__title">Juan Pérez</h4>
+                                <p class="card__role">Senior Web Developer</p>
+                                <p class="card__description">Más de 20 años de experiencia en desarrollo web y arquitectura front-end.</p>
+                            </div>
+                            <div class="card__footer">
+                                <button class="btn btn--primary btn--sm">Ver Perfil</button>
+                            </div>
+                        </div>
+
+                        <div class="card card--profile">
+                            <div class="card__media">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Avatar de perfil de usuario" class="card__avatar" />
+                            </div>
+                            <div class="card__body">
+                                <h4 class="card__title">Andrea Gómez</h4>
+                                <p class="card__role">Project Manager</p>
+                                <div class="card__stats">
+                                    <span class="card__stat-item">
+                                        <strong>12</strong>
+                                        Proyectos
+                                    </span>
+                                    <span class="card__stat-item">
+                                        <strong>345</strong>
+                                        Seguidores
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card__footer">
+                                <button class="btn btn--secondary btn--sm">Seguir</button>
+                                <button class="btn btn--primary btn--sm">Mensaje</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="code-snippets">
+                    <h3>Código Fuente</h3>
+                    <h4>HTML</h4>
+                    <pre><code class="language-html html-snippet">...</code></pre>
+                    <h4>CSS</h4>
+                    <pre><code class="language-css css-snippet">...</code></pre>
+                </section>
+            </main>
+        </div>
+
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+
+        <script src="/JS/prism.js"></script>
+        <script defer src="/JS/_theme.js"></script>
+        <script src="/JS/docs.js"></script>
+        <script src="/JS/sidebar.js"></script>
+    </body>
+</html>
