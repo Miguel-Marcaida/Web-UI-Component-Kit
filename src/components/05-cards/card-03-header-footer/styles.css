@@ -1,0 +1,164 @@
+/**
+ * Tarjeta 03: Con Header y Footer
+ * Módulo autónomo que añade estilos específicos a las secciones card__header y card__footer.
+ */
+
+/* ==================================================== */
+/* 0. AUTONOMÍA CSS (Variables Locales y Estilos Base) */
+/* ==================================================== */
+
+/* Definimos variables locales para el snippet y la estructura de la tarjeta. */
+.card,
+.card--hf {
+    /* Variables de Espaciado (Valores Fijos) */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+
+    /* Variables de Color ESENCIALES */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-text-base: #212529;
+    --color-text-muted: #6c757d; /* Color para metadatos */
+    --color-text-inverse: #ffffff;
+    --color-bg-card: #ffffff;
+    --color-border-base: #dee2e6;
+
+    /* Variables de Tipografía */
+    --font-weight-medium: 500;
+}
+
+/* Base de la tarjeta (asumiendo que viene de card-01-base) */
+.card {
+    background-color: var(--color-bg-card, #ffffff);
+    color: var(--color-text-base, #212529);
+    /* Define el borde que usarán header y footer */
+    border: 1px solid var(--color-primary);
+}
+
+/* ========================================= */
+/* 1. LAYOUT DEL HEADER Y FOOTER */
+/* ========================================= */
+
+.card__header {
+    /* Padding fijo para la cabecera */
+    padding: var(--spacing-md);
+    /* Borde inferior para separar visualmente el cuerpo */
+    border-bottom: 1px solid var(--color-border-base);
+}
+
+.card__footer {
+    /* Padding fijo para el pie */
+    padding: var(--spacing-md);
+    /* Borde superior para separar visualmente el cuerpo */
+    border-top: 1px solid var(--color-border-base);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* 1.1 Estilos internos del Header */
+.card__header .card__title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Estilo para metadatos dentro del header */
+.card__meta {
+    margin-top: var(--spacing-sm);
+    margin-bottom: 0;
+    font-size: 0.875rem; /* Texto pequeño */
+    color: var(--color-text-muted);
+}
+
+/* 1.2 Estilos internos del Body */
+.card__body {
+    /* Asegura que el cuerpo tenga el padding correcto y espacio */
+    padding: var(--spacing-md);
+}
+
+/* ========================================= */
+/* 2. UTILIDADES INCLUIDAS (Para el Snippet Autónomo) */
+/* ========================================= */
+
+/* Enlace de Texto (.text-link) */
+.text-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    display: inline-block;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+/* Botón Base (.btn) */
+.btn {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    line-height: 1.5;
+    transition: all 0.15s ease-in-out;
+}
+
+/* Botón Tamaño Pequeño (.btn--sm) */
+.btn--sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+/* Botón Primario (.btn--primary) */
+.btn--primary {
+    color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Botón Secundario (.btn--secondary) */
+.btn--secondary {
+    color: var(--color-text-inverse);
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.btn--secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+}
+
+/* ========================================= */
+/* 3. ESTILOS DE DOCUMENTACIÓN (PREVIEW) */
+/* ========================================= */
+
+.preview-area {
+    padding: 2rem;
+    /* Usa variable global con fallback, solo para el entorno de documentación */
+    background-color: var(--color-bg-base, #f8f9fa);
+}
+
+.preview-area h3 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.5rem;
+}

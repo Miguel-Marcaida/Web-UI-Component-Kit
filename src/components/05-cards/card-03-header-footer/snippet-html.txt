@@ -1,0 +1,31 @@
+<div class="card card--hf">
+    <div class="card__header">
+        <h4 class="card__title">Cabecera de Tarjeta</h4>
+    </div>
+    <div class="card__body">
+        <p>
+            Este es el cuerpo principal de la tarjeta.
+            El header y footer ayudan a delimitar visualmente el contenido.
+        </p>
+    </div>
+    <div class="card__footer">
+        <a href="#" class="text-link">Ver detalles</a>
+    </div>
+</div>
+
+<div class="card card--hf">
+    <div class="card__header">
+        <h4 class="card__title">Resumen de Cuenta</h4>
+        <p class="card__meta">Última actualización: [FECHA]</p>
+    </div>
+    <div class="card__body">
+        <p>
+            El uso de la clase **.card__meta** en el header permite añadir información
+            secundaria de manera estructurada.
+        </p>
+    </div>
+    <div class="card__footer">
+        <button class="btn btn--primary btn--sm">Acción Primaria</button>
+        <button class="btn btn--secondary btn--sm">Acción Secundaria</button>
+    </div>
+</div>
