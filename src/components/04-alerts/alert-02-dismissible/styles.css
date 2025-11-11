@@ -1,69 +1,126 @@
-/*
- * ===========================================
- * 04-ALERTS: ALERT-02-DISMISSIBLE (CON CIERRE)
- * ===========================================
- */
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO PURO: ALERT-02 (Alertas con Cierre)  */
+/* Contiene TODA la estructura, colores, y lógica CSS de visibilidad. */
+/* ==================================================== */
 
-/* 1. Importar estilos base
- * Los estilos de color y tipografía base se importan del componente anterior
- */
-@import url("../alert-01-base/styles.css");
+/* === 1. INICIO: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+.preview-area {
+    /* Variables de Estilo Locales */
+    --radius-base: 0.25rem;
+    --padding-base: 1rem;
+    --gap-base: 1.5rem;
+    --icon-margin-end: 1rem;
 
-/* 2. ESTILO PARA ALERTAS CON CIERRE (.alert--dismissible)
- * - Cambia el layout a 'relative' para posicionar el botón.
- * - Agrega padding a la derecha para dejar espacio al botón 'X'.
- */
+    /* Variables de Color (Necesarias para las variantes de la Alerta) */
+    --color-primary: #007bff;
+    --color-success: #28a745;
+    --color-info: #17a2b8; /* Asumiendo este color para info */
+    --color-danger: #dc3545;
+    --color-secondary: #6c757d;
+    --color-text-inverse: #ffffff;
+    --color-text-base: #212529;
+    --color-border: #adb5bd;
+    --color-bg-base: #f8f9fa; /* Necesario para el estilo del preview-area */
+    color: var(--color-text-base);
+}
+
+/* Micro-Reset para el snippet */
+.alert-container,
+.alert,
+.alert * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.alert-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-base);
+}
+/* === FIN: AUTONOMÍA CSS (Micro-Reset y Variables) === */
+
+/* ===========================================
+// 2. CLASE BASE DE ALERTA (.alert) - REPETIDA DE ALERT-01 PARA AUTONOMÍA
+// =========================================== */
+.alert {
+    /* Estructura Pura y Layout Integrado */
+    display: flex;
+    align-items: center;
+    padding: var(--padding-base);
+
+    border-radius: var(--radius-base);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    line-height: 1.5;
+    border: 1px solid transparent; /* Por defecto */
+
+    /* ESTADO INICIAL (OPACIDAD CERO) */
+    opacity: 0; /* Por defecto se oculta */
+    transition: opacity 0.3s ease-out;
+}
+
+/* 3. VARIANTES DE COLOR (Sustituye utilidades) - REPETIDA DE ALERT-01 PARA AUTONOMÍA */
+.alert--success {
+    background-color: var(--color-success);
+    color: var(--color-text-inverse);
+}
+.alert--info {
+    background-color: var(--color-info);
+    color: var(--color-text-inverse);
+}
+
+/* 4. Estilos para los íconos (ajuste fino) - REPETIDA DE ALERT-01 PARA AUTONOMÍA */
+.alert i {
+    font-size: 1.25rem;
+    margin-right: var(--icon-margin-end);
+    flex-shrink: 0;
+}
+
+/* ===========================================
+// 5. ESPECÍFICO DE ALERTA CON CIERRE (.alert--dismissible)
+// =========================================== */
 .alert--dismissible {
     position: relative;
-    /* Ajuste de padding a la derecha para que el texto no choque con el botón */
+    /* Ajuste de padding a la derecha para dejar espacio al botón */
     padding-right: 3.5rem;
 }
 
-/* 3. ESTILO DEL BOTÓN DE CIERRE (Selector genérico para todo el UI Kit)
- * - Posiciona el botón en la esquina superior derecha.
- * - Quita el fondo y el borde del botón.
- */
-.close-btn {
-    /* CAMBIO: Ahora es .close-btn */
+/* ===========================================
+// 6. ESTILO DEL BOTÓN DE CIERRE (.alert__close)
+// =========================================== */
+.alert__close {
     /* Posicionamiento */
     position: absolute;
-    top: 50%; /* Centra verticalmente */
-    right: 1.25rem; /* Margen desde la derecha */
-    transform: translateY(-50%); /* Ajuste fino de centrado */
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    margin-left: auto; /* Asegura que no haya problemas de margen */
 
     /* Diseño */
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    line-height: 1; /* Asegura que el icono no tenga espacio extra */
+    line-height: 1;
     opacity: 0.8;
     transition: opacity 0.2s ease-in-out;
+    color: inherit; /* Hereda el color del texto de la alerta (blanco) */
 }
 
-/* Color del icono de cierre
- * Hereda el color del texto contextual (ej: verde oscuro en éxito)
- */
-.close-btn i {
-    /* CAMBIO: Ahora es .close-btn */
-    font-size: 1.25rem;
-    color: inherit;
-    margin: 0; /* Quita el margen que tiene la regla del icono principal */
-}
-
-/* Efecto al pasar el ratón (Hover) */
-.close-btn:hover, /* CAMBIO: Ahora es .close-btn */
-.close-btn:focus {
+.alert__close:hover,
+.alert__close:focus {
     opacity: 1;
-    outline: none; /* Mejorar el foco si es necesario */
+    outline: none;
 }
 
-/* ESTADO POR DEFECTO (Visibilidad) */
-.alert {
-    opacity: 0; /* Por defecto se oculta */
-    transition: opacity 0.3s ease-out;
+.alert__close i {
+    font-size: 1.25rem;
+    margin: 0; /* Anula el margen del icono principal */
 }
 
+/* ===========================================
+// 7. ESTADO ACTIVO/VISIBLE (Visibilidad)
+// =========================================== */
 /* ESTADO ACTIVO/VISIBLE (El estado que queremos ver al cargar la página) */
 .alert.is-active {
     opacity: 1; /* Muestra el elemento */
