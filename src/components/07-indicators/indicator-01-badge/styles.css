@@ -1,76 +1,92 @@
 /*
- * ===========================================
- * 07-INDICATORS: INDICATOR-01-BADGE (ETIQUETAS)
- * ===========================================
+ * Indicador 01: Badge (Etiquetas de Estado)
+ * Módulo autónomo. Variables locales para centralizar solo colores en el snippet de demo.
  */
 
-/* 1. CLASE BASE DE BADGE */
+/* ==================================================== */
+/* 1. WRAPPER DE DEMOSTRACIÓN Y DECLARACIÓN DE VARIABLES */
+/* ==================================================== */
+
+.badge-example-container {
+  /* Declaración de Variables de Color Locales (Raíz del Snippet) */
+  --badge-color-primary: #0d6efd;
+  --badge-color-secondary: #6c757d;
+  --badge-color-success: #198754;
+  --badge-color-info: #0dcaf0;
+  --badge-color-warning: #ffc107;
+  --badge-color-danger: #dc3545;
+  --badge-color-light: #f8f9fa;
+  --badge-color-dark: #212529;
+  --badge-color-text-light: #ffffff;
+
+  /* Estilos de la Demo */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ========================================= */
+/* 2. ESTRUCTURA BASE DEL BADGE */
+/* ========================================= */
+
 .badge {
-  /* Diseño Base */
   display: inline-block;
-  padding: 0.45em 0.8em; /* Incrementado para hacerlo más visible */
-  font-size: 0.85rem;
-  /* padding: 0.35em 0.65em;
-  font-size: 0.75rem; Pequeño y discreto */
-  font-weight: 700;
+  padding: 0.25em 0.6em;
+  font-size: 0.75rem;
+  font-weight: 600;
   line-height: 1;
+  color: var(--badge-color-text-light); /* Usa la variable local */
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
-  border-radius: var(--border-radius-sm, 0.25rem);
-
-  /* Evita que el texto interno se seleccione si se usa en un botón */
-  user-select: none;
+  vertical-align: baseline;
+  border-radius: 0.375rem;
 }
 
-/* 2. VARIANTE PILL (Totalmente redondeado) */
-.badge--pill {
-  border-radius: 50rem; /* Valor grande para asegurar la forma de píldora */
-}
+/* ========================================= */
+/* 3. VARIANTES DE COLOR */
+/* ========================================= */
 
-/* 3. ESTILOS CONTEXTUALES (Colores autosuficientes) */
-/* Definimos colores de ejemplo aquí. Idealmente, estos usarían variables globales. */
-
-/* PRIMARIO (Azul) */
 .badge--primary {
-  color: white;
-  background-color: var(--color-primary-base, #007bff);
+  background-color: var(--badge-color-primary);
 }
 
-/* SECUNDARIO (Gris) */
 .badge--secondary {
-  color: var(--color-text-dark, #333);
-  background-color: var(--color-secondary-base, #6c757d22);
-  border: 1px solid var(--color-secondary-base, #6c757d66);
+  background-color: var(--badge-color-secondary);
 }
 
-/* ÉXITO (Verde) */
 .badge--success {
-  color: white;
-  background-color: var(--color-success-base, #28a745);
+  background-color: var(--badge-color-success);
 }
 
-/* INFORMACIÓN (Azul Claro) */
 .badge--info {
-  color: white;
-  background-color: var(--color-info-base, #17a2b8);
+  background-color: var(--badge-color-info);
+  color: var(--badge-color-dark); /* Texto oscuro para fondo claro */
 }
 
-/* ADVERTENCIA (Amarillo/Naranja) */
 .badge--warning {
-  color: var(--color-text-dark, #333);
-  background-color: var(--color-warning-base, #ffc107);
+  background-color: var(--badge-color-warning);
+  color: var(--badge-color-dark); /* Texto oscuro para fondo claro */
 }
 
-/* PELIGRO/ERROR (Rojo) */
 .badge--danger {
-  color: white;
-  background-color: var(--color-danger-base, #dc3545);
+  background-color: var(--badge-color-danger);
 }
 
-/* CLARO (Gris muy claro) */
 .badge--light {
-  color: var(--color-text-dark, #333);
-  background-color: var(--color-bg-base, #f8f9fa);
-  border: 1px solid var(--color-border-subtle, #dee2e6);
+  background-color: var(--badge-color-light);
+  color: var(--badge-color-dark);
+}
+
+/* ========================================= */
+/* 4. MODIFICADORES */
+/* ========================================= */
+
+.badge--pill {
+  padding-right: 0.8em;
+  padding-left: 0.8em;
+  border-radius: 10rem;
+}
+
+.badge--spacing {
+  margin-left: 0.5rem;
 }
