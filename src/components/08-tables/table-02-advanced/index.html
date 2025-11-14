@@ -12,18 +12,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
 
-    <link
-      rel="stylesheet"
-      href="/src/components/08-tables/table-01-base/styles.css"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header id="main-header">
       <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
+        <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
       </h1>
 
       <button
@@ -37,22 +31,30 @@
       <nav>
         <a href="/src/components/08-tables/index.html">Volver a Tablas</a>
       </nav>
+
+      <button id="theme-toggle" aria-label="Cambiar modo de color">
+        <i
+          class="fas fa-sun theme-icon"
+          data-mode="light"
+          style="display: none"
+        ></i
+        ><i class="fas fa-moon theme-icon" data-mode="dark"></i>
+      </button>
     </header>
 
     <div class="docs-container">
       <main class="docs-content">
         <h2>Tabla 02: Avanzada (Estilo Zebra)</h2>
         <p class="description">
-          Esta tabla incorpora el estilo *Zebra* (filas alternas) para mejorar
-          la lectura y la diferenciación de datos, junto con un efecto *hover*
-          para resaltar la fila activa.
+          Esta tabla incorpora el estilo <code>.table--striped</code> (filas
+          alternas) para mejorar la lectura y la diferenciación de datos, junto
+          con el efecto <code>.table--hover</code>
+          para resaltar la fila activa. El código HTML de la tabla permanece
+          limpio.
         </p>
 
-        <section
-          class="preview-area"
-          style="padding: 2rem; background-color: var(--color-bg-base)"
-        >
-          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+        <section class="preview-area">
+          <h3>Vista Previa</h3>
 
           <div class="table-container">
             <table class="table table--striped table--hover">
@@ -70,29 +72,36 @@
                   <td>María López</td>
                   <td>Administrador</td>
                   <td>Hace 5 minutos</td>
-                  <td><span class="badge badge--success">Alta</span></td>
-                  <td><i class="fas fa-eye text-link"></i></td>
+                  <td>Alta</td>
+                  <td>Ver</td>
                 </tr>
                 <tr>
                   <td>Juan Pérez</td>
                   <td>Editor</td>
                   <td>Hace 1 día</td>
-                  <td><span class="badge badge--info">Media</span></td>
-                  <td><i class="fas fa-eye text-link"></i></td>
+                  <td>Media</td>
+                  <td>Ver</td>
                 </tr>
                 <tr>
                   <td>Carlos Ruiz</td>
                   <td>Reportero</td>
                   <td>Inactivo</td>
-                  <td><span class="badge badge--light">Baja</span></td>
-                  <td><i class="fas fa-eye text-link"></i></td>
+                  <td>Baja</td>
+                  <td>Ver</td>
                 </tr>
                 <tr>
                   <td>Ana Gómez</td>
                   <td>Lector</td>
                   <td>Hace 2 horas</td>
-                  <td><span class="badge badge--warning">Media</span></td>
-                  <td><i class="fas fa-eye text-link"></i></td>
+                  <td>Media</td>
+                  <td>Ver</td>
+                </tr>
+                <tr>
+                  <td>Pedro Núñez</td>
+                  <td>Administrador</td>
+                  <td>Ahora mismo</td>
+                  <td>Alta</td>
+                  <td>Ver</td>
                 </tr>
               </tbody>
             </table>
@@ -105,14 +114,22 @@
           <pre><code class="language-html html-snippet">...</code></pre>
           <h4>CSS</h4>
           <pre><code class="language-css css-snippet">...</code></pre>
+          <h4>JavaScript</h4>
+          <pre><code class="language-js js-snippet">...</code></pre>
         </section>
       </main>
     </div>
 
-    <footer id="main-footer"></footer>
+    <footer id="main-footer">
+      <p>
+        © 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS
+        & JS). Arquitectura modular y autónoma.
+      </p>
+    </footer>
+
     <script src="/JS/prism.js"></script>
-    <script src="/JS/main.js"></script>
     <script src="/JS/docs.js"></script>
     <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
   </body>
 </html>

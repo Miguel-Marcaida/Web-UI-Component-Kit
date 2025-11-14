@@ -1,28 +1,119 @@
-/*
- * ===========================================
- * 08-TABLES: TABLE-02-ADVANCED (ZEBRA Y HOVER)
- * ===========================================
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Tabla 02 - Avanzada (Zebra / Striped)
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos base del componente (.table) y
+ * sus modificadores. Paleta AZUL FUERTE Y CLARAMENTE VISIBLE.
+ * ----------------------------------------------------------------------------
  */
 
-/* 1. ESTILO ZEBRA (table--striped) */
-/* Usamos #DCDCDC, un gris claro pero visible que no es blanco puro. */
-.table--striped tbody tr:nth-child(odd) {
-  background-color: #dcdcdc;
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta en el Contenedor Raíz)
+ * ----------------------------------------------------------------------------
+ */
+.table-container {
+    /* Paleta de Colores y Tipografía (Fija y Autónoma) */
+    --table-text-color: #333333;           /* Texto oscuro */
+    --table-bg-color: #FFFFFF;             /* Fondo de celdas (Blanco puro - filas pares) */
+    --table-header-footer-bg: #E9ECEF;     /* Fondo de encabezado y pie (Gris azulado claro) */
+    --table-border-color: #DEE2E6;         /* Borde principal (Gris medio sutil) */
+    --table-border-heavy: #ADB5BD;         /* Borde más grueso (Gris oscuro) */
+
+    /* Variables Específicas para Modificadores (AZUL FUERTE Y CLARO) */
+    /* El color striped es ahora el color del hover anterior */
+    --table-striped-bg: #C6D8F8;           /* Fondo de las franjas (Azul fuerte, visible) */
+    /* El nuevo hover es más oscuro que el striped */
+    --table-hover-bg: #A8C6F8;             /* Fondo al pasar el mouse (Azul muy saturado, más fuerte) */
+    
+    /* Espaciado */
+    --table-padding-y: 0.75rem;
+    --table-padding-x: 0.75rem;
+
+    /* Contenedor de Demostración y Responsividad */
+    margin-bottom: 2rem;
+    padding: 0; 
+    width: 100%;
+    overflow-x: auto; 
 }
 
-/* 2. EFECTO HOVER (table--hover) */
-/* Usamos un color Info/Cyan claro que resalta bien sobre el fondo Zebra y el blanco. */
-.table--hover tbody tr:hover {
-  background-color: #d1ecf1;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo Base de la Tabla (.table)
+ * ----------------------------------------------------------------------------
+ */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--table-text-color); 
+    border-collapse: collapse;
 }
 
-/* 3. Estilos de cabecera y contenido (Mantenidos) */
-.table--striped thead {
-  border-bottom: 2px solid var(--color-border-base, #ccc);
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de Celdas (th y td)
+ * ----------------------------------------------------------------------------
+ */
+.table th,
+.table td {
+    padding: var(--table-padding-y) var(--table-padding-x);
+    border-bottom: 1px solid var(--table-border-color);
+    background-color: var(--table-bg-color); /* Fondo base blanco */
+    vertical-align: top;
+    text-align: left;
 }
 
-.table--striped td {
-  vertical-align: middle;
+.table th {
+    font-weight: 700; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estilo de Encabezado (thead) y Pie (tfoot)
+ * ----------------------------------------------------------------------------
+ */
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--table-border-heavy); 
+    background-color: var(--table-header-footer-bg); 
+}
+
+.table tfoot td {
+    border-top: 2px solid var(--table-border-heavy);
+    background-color: var(--table-header-footer-bg); 
+    color: var(--table-text-color); 
+    font-weight: 700; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estilo Modificador: Estilo Zebra (.table--striped)
+ * ----------------------------------------------------------------------------
+ */
+.table.table--striped tbody tr:nth-of-type(odd) td {
+    /* Aplica el azul fuerte para las franjas impares */
+    background-color: var(--table-striped-bg);
+}
+
+/* Se mantiene el fondo de la fila par como el color base (Blanco) */
+.table.table--striped tbody tr:nth-of-type(even) td {
+    background-color: var(--table-bg-color); 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 6. Estilo Modificador: Efecto Hover (.table--hover)
+ * ----------------------------------------------------------------------------
+ */
+.table.table--hover tbody tr:hover td {
+    background-color: var(--table-hover-bg); 
+    cursor: pointer;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 7. Alineación de Columnas (Pura CSS)
+ * ----------------------------------------------------------------------------
+ */
+.table thead th:nth-last-child(1),
+.table thead th:nth-last-child(2),
+.table thead th:nth-last-child(3),
+.table tbody td:nth-last-child(1),
+.table tbody td:nth-last-child(2),
+.table tbody td:nth-last-child(3),
+.table tfoot td:nth-last-child(1),
+.table tfoot td:nth-last-child(2),
+.table tfoot td:nth-child(1) { 
+    text-align: right;
 }

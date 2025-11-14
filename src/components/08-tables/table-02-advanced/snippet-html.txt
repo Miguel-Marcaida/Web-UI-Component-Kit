@@ -1,44 +1,49 @@
 <div class="table-container">
     <table class="table table--striped table--hover">
-        
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Cargo</th>
-                <th>Salario</th>
-                <th>Acción</th>
+                <th>Usuario</th>
+                <th>Rol</th>
+                <th>Último Acceso</th>
+                <th>Actividad</th>
+                <th>Detalle</th>
             </tr>
         </thead>
-        
         <tbody>
             <tr>
-                <td>#101</td>
-                <td>Andrea Vega</td>
-                <td>Gerente de Proyecto</td>
-                <td>$85,000</td>
-                <td><button class="btn btn--sm btn--info">Editar</button></td>
+                <td>María López</td>
+                <td>Administrador</td>
+                <td>Hace 5 minutos</td>
+                <td>Alta</td>
+                <td>Ver</td>
             </tr>
             <tr>
-                <td>#102</td>
-                <td>Roberto Díaz</td>
-                <td>Diseñador UI/UX</td>
-                <td>$60,000</td>
-                <td><button class="btn btn--sm btn--info">Editar</button></td>
+                <td>Juan Pérez</td>
+                <td>Editor</td>
+                <td>Hace 1 día</td>
+                <td>Media</td>
+                <td>Ver</td>
             </tr>
             <tr>
-                <td>#103</td>
-                <td>Luisa Martínez</td>
-                <td>Desarrollador Backend</td>
-                <td>$78,000</td>
-                <td><button class="btn btn--sm btn--info">Editar</button></td>
+                <td>Carlos Ruiz</td>
+                <td>Reportero</td>
+                <td>Inactivo</td>
+                <td>Baja</td>
+                <td>Ver</td>
             </tr>
             <tr>
-                <td>#104</td>
-                <td>Felipe Soto</td>
-                <td>Analista de Datos</td>
-                <td>$65,000</td>
-                <td><button class="btn btn--sm btn--info">Editar</button></td>
+                <td>Ana Gómez</td>
+                <td>Lector</td>
+                <td>Hace 2 horas</td>
+                <td>Media</td>
+                <td>Ver</td>
+            </tr>
+            <tr>
+                <td>Pedro Núñez</td>
+                <td>Administrador</td>
+                <td>Ahora mismo</td>
+                <td>Alta</td>
+                <td>Ver</td>
             </tr>
         </tbody>
     </table>
