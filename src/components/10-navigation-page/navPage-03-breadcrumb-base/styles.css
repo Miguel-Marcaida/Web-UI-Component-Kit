@@ -1,0 +1,77 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Migas de Pan 03 - Base (Breadcrumb)
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta)
+ * ----------------------------------------------------------------------------
+ */
+.breadcrumb-container {
+    /* Paleta de Colores Base */
+    --breadcrumb-text-color: #007bff;
+    --breadcrumb-active-color: #6c757d; /* Color para el elemento actual */
+    --breadcrumb-separator-color: #6c757d;
+    --breadcrumb-font-size: 1rem;
+    --breadcrumb-spacing: 0.5rem; /* Espacio entre elementos y el separador */
+
+    /* Contenedor de Demostración */
+    margin: 2rem 0;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo de la Lista y Elementos
+ * ----------------------------------------------------------------------------
+ */
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que se envuelva en pantallas pequeñas */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Elimina los puntos o números de la lista ordenada */
+}
+
+.breadcrumb-item {
+    font-size: var(--breadcrumb-font-size);
+    /* Asegura que los ítems estén alineados */
+    display: flex; 
+    align-items: center;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo del Separador (CLAVE)
+ * ----------------------------------------------------------------------------
+ */
+/* Añade el separador a todos los ítems, excepto al primero */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/"; /* Se puede cambiar por un chevron ">" o cualquier símbolo */
+    display: inline-block;
+    padding-right: var(--breadcrumb-spacing);
+    padding-left: var(--breadcrumb-spacing);
+    color: var(--breadcrumb-separator-color);
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estilo de los Enlaces y Estado Activo
+ * ----------------------------------------------------------------------------
+ */
+.breadcrumb-item a {
+    color: var(--breadcrumb-text-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3; /* Un azul un poco más oscuro */
+    text-decoration: underline;
+}
+
+/* El elemento activo (la página actual) */
+.breadcrumb-item.is-active {
+    color: var(--breadcrumb-active-color);
+    /* El texto de la página actual no debe ser un enlace */
+    text-decoration: none;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Migas de Pan 03: Base</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+
+        <button
+            id="sidebar-toggle"
+            aria-expanded="false"
+            aria-controls="docs-sidebar"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <a href="/src/components/10-navigation-page/index.html">Volver a Navegación de Página</a>
+        </nav>
+
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i
+                class="fas fa-sun theme-icon"
+                data-mode="light"
+                style="display: none"
+            ></i><i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
+    </header>
+
+    <div class="docs-container">
+        <main class="docs-content">
+            <h2>Migas de Pan 03: Base (Breadcrumb)</h2>
+            <p class="description">
+                Elemento de navegación que indica la ubicación de la página actual en la jerarquía del sitio web. Es crucial para la accesibilidad (ARIA).
+            </p>
+
+            <section class="preview-area">
+                <h3>Vista Previa</h3>
+
+                <nav class="breadcrumb-container" aria-label="breadcrumb">
+                    <ol class="breadcrumb-list">
+                        <li class="breadcrumb-item">
+                            <a href="#">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Categoría Principal</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Subsección</a>
+                        </li>
+                        <li class="breadcrumb-item is-active" aria-current="page">
+                            Página Actual
+                        </li>
+                    </ol>
+                </nav>
+                </section>
+
+            <section class="code-snippets">
+                <h3>Código Fuente</h3>
+                <h4>HTML</h4>
+                <pre><code class="language-html html-snippet">...</code></pre>
+                <h4>CSS</h4>
+                <pre><code class="language-css css-snippet">...</code></pre>
+            </section>
+        </main>
+    </div>
+
+    <footer id="main-footer">
+        <p>
+            © 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS
+            & JS). Arquitectura modular y autónoma.
+        </p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+    
+</body>
+</html>
