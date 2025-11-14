@@ -1,0 +1,46 @@
+<div class="tab-container" id="tabComponentBase">
+    <div class="tab-list" role="tablist">
+        <button
+            class="tab-item is-active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-1"
+            id="tab-1"
+        >
+            Dashboard
+        </button>
+        <button
+            class="tab-item"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-2"
+            id="tab-2"
+        >
+            Configuración
+        </button>
+    </div>
+
+    <div class="tab-content">
+        <div
+            class="tab-panel is-active"
+            id="panel-1"
+            role="tabpanel"
+            aria-labelledby="tab-1"
+            tabindex="0"
+        >
+            <h3>Panel Principal</h3>
+            <p>Contenido principal de la aplicación. Visible por defecto.</p>
+        </div>
+        <div
+            class="tab-panel"
+            id="panel-2"
+            role="tabpanel"
+            aria-labelledby="tab-2"
+            hidden
+            tabindex="0"
+        >
+            <h3>Ajustes Generales</h3>
+            <p>Aquí se gestionan las preferencias del usuario. Oculto inicialmente.</p>
+        </div>
+    </div>
+</div>
