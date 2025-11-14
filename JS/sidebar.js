@@ -220,6 +220,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "03. Pestañas Verticales", 
                     path: "/src/components/09-tabs/tab-03-vertical/index.html",
                 },
+                {
+                    name: "04. Pestañas con Icono", // ¡NUEVO Y ÚLTIMO COMPONENTE!
+                    path: "/src/components/09-tabs/tab-04-with-icon/index.html",
+                },
             ],
         },
         "10-navigation-page": {
