@@ -1,0 +1,113 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Pestañas 04 - Con Icono (Icon Tabs)
+ * AUTONOMÍA ABSOLUTA: Modifica los estilos Base para integrar iconos.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta)
+ * ----------------------------------------------------------------------------
+ */
+.tab-container {
+    /* Paleta de Colores Base */
+    --tab-border-color: #dee2e6;
+    --tab-active-color: #007bff;
+    --tab-text-color: #495057;
+    --tab-active-text-color: #000;
+    
+    /* Espaciado y Fuente */
+    --tab-padding-y: 0.5rem;
+    --tab-padding-x: 1rem;
+    --tab-font-weight: 500;
+    
+    /* Contenedor de Demostración */
+    margin: 2rem auto;
+    max-width: 900px;
+    border: 1px solid var(--tab-border-color);
+    border-radius: 0.25rem;
+    padding: 0;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo de la Lista de Pestañas (.tab-list)
+ * ----------------------------------------------------------------------------
+ */
+.tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--tab-border-color);
+    background-color: #f8f9fa;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de Pestaña Individual (.tab-item)
+ * CLAVE: Usamos Flexbox para alinear el icono y el texto.
+ * ----------------------------------------------------------------------------
+ */
+.tab-item {
+    /* Habilitar Flexbox para alineación interna */
+    display: inline-flex;
+    align-items: center; /* Centrar verticalmente icono y texto */
+
+    /* Estilos base (copiados del componente base) */
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left; 
+    padding: var(--tab-padding-y) var(--tab-padding-x);
+    font-size: 1rem;
+    font-weight: var(--tab-font-weight);
+    color: var(--tab-text-color);
+    margin-bottom: -3px; /* Compensación para borde activo */
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+}
+
+/* Estilo del Icono */
+.tab-item i.fas, .tab-item i.far {
+    margin-right: 0.5rem; /* Separación entre el icono y el texto */
+    font-size: 1.1rem; /* Icono ligeramente más grande */
+}
+
+/* Hover y Focus */
+.tab-item:hover:not(.is-active) {
+    border-color: var(--tab-border-color) var(--tab-border-color) var(--tab-border-color);
+    background-color: #e9ecef;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estado Activo de la Pestaña (.is-active)
+ * ----------------------------------------------------------------------------
+ */
+.tab-item.is-active {
+    color: var(--tab-active-color); /* Usar el color primario para destacar */
+    background-color: #fff;
+    font-weight: 700;
+    
+    /* Borde inferior fuerte (copiado de la corrección del Componente 01) */
+    border-color: var(--tab-border-color) var(--tab-border-color) #fff; 
+    border-bottom: 3px solid var(--tab-active-color);
+}
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estilo del Contenido del Panel (.tab-panel)
+ * ----------------------------------------------------------------------------
+ */
+.tab-content {
+    padding: 1.5rem;
+}
+
+.tab-panel {
+    padding: 0;
+    border-top: none; 
+}

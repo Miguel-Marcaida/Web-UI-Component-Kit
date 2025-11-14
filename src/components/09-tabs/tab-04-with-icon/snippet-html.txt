@@ -1,0 +1,66 @@
+<div class="tab-container" id="tabComponentIcon">
+    <div class="tab-list" role="tablist">
+        <button
+            class="tab-item is-active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-1"
+            id="tab-1"
+        >
+            <i class="fas fa-chart-line"></i> Dashboard
+        </button>
+        <button
+            class="tab-item"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-2"
+            id="tab-2"
+        >
+            <i class="fas fa-users"></i> Usuarios
+        </button>
+        <button
+            class="tab-item"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-3"
+            id="tab-3"
+        >
+            <i class="fas fa-bell"></i> Alertas
+        </button>
+    </div>
+
+    <div class="tab-content">
+        <div
+            class="tab-panel is-active"
+            id="panel-1"
+            role="tabpanel"
+            aria-labelledby="tab-1"
+            tabindex="0"
+        >
+            <h4>Vista de Alto Nivel</h4>
+            <p>Contenido del Panel 1. La integración de iconos mejora la identificación de la sección.</p>
+        </div>
+        <div
+            class="tab-panel"
+            id="panel-2"
+            role="tabpanel"
+            aria-labelledby="tab-2"
+            hidden
+            tabindex="0"
+        >
+            <h4>Gestión de Cuentas</h4>
+            <p>Contenido del Panel 2.</p>
+        </div>
+        <div
+            class="tab-panel"
+            id="panel-3"
+            role="tabpanel"
+            aria-labelledby="tab-3"
+            hidden
+            tabindex="0"
+        >
+            <h4>Log de Notificaciones</h4>
+            <p>Contenido del Panel 3.</p>
+        </div>
+    </div>
+</div>
