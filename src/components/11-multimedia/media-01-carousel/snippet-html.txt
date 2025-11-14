@@ -1,34 +1,31 @@
-<div id="miCarrusel" class="carousel">
+<div class="carousel-container" data-carousel>
     
-    <div class="carousel-inner">
-        
-        <div class="carousel-item active" data-index="0">
-            <img src="URL_IMAGEN_1.jpg" alt="Imagen 1" class="d-block w-100">
-            <div class="carousel-caption">
-                <h5>Título del Slide 1</h5>
-                <p>Breve descripción del contenido.</p>
-            </div>
+    <div class="carousel-track" data-track>
+        <div class="carousel-slide is-active" data-slide="1">
+            <img src="https://images.unsplash.com/photo-1611416457332-946853cc75d6" alt="Diapositiva 1: Ciudad de Noche" class="carousel-image">
+            <div class="slide-caption">Diapositiva 1. Primera Imagen.</div>
         </div>
-        
-        <div class="carousel-item" data-index="1">
-            <img src="URL_IMAGEN_2.jpg" alt="Imagen 2" class="d-block w-100">
+        <div class="carousel-slide" data-slide="2">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4" alt="Diapositiva 2: Montañas" class="carousel-image">
+            <div class="slide-caption">Diapositiva 2. Segunda Imagen.</div>
         </div>
-        
-        <div class="carousel-item" data-index="2">
-            <img src="URL_IMAGEN_3.jpg" alt="Imagen 3" class="d-block w-100">
+        <div class="carousel-slide" data-slide="3">
+            <img src="https://images.unsplash.com/photo-1617374128851-c84e37dc9f37" alt="Diapositiva 3: Paisaje Desértico" class="carousel-image">
+            <div class="slide-caption">Diapositiva 3. Tercera Imagen.</div>
         </div>
     </div>
-    
-    <button class="carousel-control prev" aria-label="Anterior">
+
+    <button class="carousel-control prev" data-control="prev" aria-label="Diapositiva Anterior">
         <i class="fas fa-chevron-left"></i>
     </button>
-    <button class="carousel-control next" aria-label="Siguiente">
+    <button class="carousel-control next" data-control="next" aria-label="Diapositiva Siguiente">
         <i class="fas fa-chevron-right"></i>
     </button>
 
     <div class="carousel-indicators">
-        <button class="dot active" data-slide-to="0" aria-label="Ir a Slide 1"></button>
-        <button class="dot" data-slide-to="1" aria-label="Ir a Slide 2"></button>
-        <button class="dot" data-slide-to="2" aria-label="Ir a Slide 3"></button>
+        <button class="indicator-dot is-active" data-indicator="1" aria-label="Ver Diapositiva 1"></button>
+        <button class="indicator-dot" data-indicator="2" aria-label="Ver Diapositiva 2"></button>
+        <button class="indicator-dot" data-indicator="3" aria-label="Ver Diapositiva 3"></button>
     </div>
+
 </div>

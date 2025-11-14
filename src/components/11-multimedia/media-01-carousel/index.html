@@ -1,201 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Carrusel</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimedia 01: Carrusel Base</title>
 
-        <link rel="stylesheet" href="/CSS/main.css" />
-        <link rel="stylesheet" href="/CSS/prism.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <header id="main-header">
-            <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
-            </h1>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
 
-            <button
-                id="sidebar-toggle"
-                aria-expanded="false"
-                aria-controls="docs-sidebar"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
+        <button
+            id="sidebar-toggle"
+            aria-expanded="false"
+            aria-controls="docs-sidebar"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
 
-            <nav>
-                <a href="/src/components/11-multimedia/index.html"
-                    >Volver a Multimedia</a
-                >
-            </nav>
-        </header>
+        <nav>
+            <a href="/src/components/11-multimedia/index.html">Volver a Multimedia</a>
+        </nav>
 
-        <div class="docs-container">
-            <main class="docs-content">
-                <h2>Carrusel (Carousel / Slider)</h2>
-                <p class="description">
-                    Un componente de diapositivas cíclico para recorrer
-                    elementos, como imágenes o tarjetas, en secuencia.
-                    **Refactorizado para usar el sistema de inicialización
-                    automática (_autoinit.js).**
-                </p>
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i
+                class="fas fa-sun theme-icon"
+                data-mode="light"
+                style="display: none"
+            ></i><i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
+    </header>
 
-                <section
-                    class="preview-area"
-                    style="
-                        padding: 2rem;
-                        background-color: var(--color-bg-base);
-                    "
-                >
-                    <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+    <div class="docs-container">
+        <main class="docs-content">
+            <h2>Multimedia 01: Carrusel Base (Slider)</h2>
+            <p class="description">
+                Un componente para mostrar una serie de imágenes o contenido en formato de diapositivas, con controles de navegación (Anterior/Siguiente) y puntos indicadores.
+            </p>
 
-                    <!-- CAMBIO 1: El ID y la clase principal 'carousel' activan el JS -->
-                    <div id="demoCarousel" class="carousel">
-                        <!-- CAMBIO 2: Cambiado de .carousel-inner a .carousel-slides -->
-                        <div class="carousel-slides">
-                            <!-- CAMBIO 3: Cambiado de .carousel-item a .carousel-slide -->
-                            <div class="carousel-slide active" data-index="0">
-                                <div
-                                    class="slide-content"
-                                    style="
-                                        background-color: #f0f0f0;
-                                        padding: 3rem;
-                                        text-align: center;
-                                    "
-                                >
-                                    <h3>Slide 1: ¡Bienvenido!</h3>
-                                    <p>
-                                        Este es el primer elemento del carrusel.
-                                        Usa JavaScript para las transiciones.
-                                    </p>
-                                </div>
-                            </div>
+            <section class="preview-area">
+                <h3>Vista Previa</h3>
 
-                            <!-- CAMBIO 3: Cambiado de .carousel-item a .carousel-slide -->
-                            <div class="carousel-slide" data-index="1">
-                                <div
-                                    class="slide-content"
-                                    style="
-                                        background-color: #d1ecf1;
-                                        padding: 3rem;
-                                        text-align: center;
-                                    "
-                                >
-                                    <h3>Slide 2: La Tecnología</h3>
-                                    <p>
-                                        El carrusel es 100% responsivo y
-                                        cíclico.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- CAMBIO 3: Cambiado de .carousel-item a .carousel-slide -->
-                            <div class="carousel-slide" data-index="2">
-                                <div
-                                    class="slide-content"
-                                    style="
-                                        background-color: #fff3cd;
-                                        padding: 3rem;
-                                        text-align: center;
-                                    "
-                                >
-                                    <h3>Slide 3: Último Elemento</h3>
-                                    <p>
-                                        Haz clic en los indicadores o flechas
-                                        para navegar.
-                                    </p>
-                                </div>
-                            </div>
+                <div class="carousel-container" data-carousel>
+                    
+                    <div class="carousel-track" data-track>
+                        <div class="carousel-slide is-active" data-slide="1">
+                            <img src="https://images.unsplash.com/photo-1611416457332-946853cc75d6" alt="Diapositiva 1: Ciudad de Noche" class="carousel-image">
+                            <div class="slide-caption">Diapositiva 1. Primera Imagen.</div>
                         </div>
-                        <!-- Fin .carousel-slides -->
-
-                        <!-- CAMBIO 4: Añadido data-slide para la delegación de eventos en JS -->
-                        <button
-                            class="carousel-control prev"
-                            data-slide="prev"
-                            aria-label="Anterior"
-                        >
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button
-                            class="carousel-control next"
-                            data-slide="next"
-                            aria-label="Siguiente"
-                        >
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-
-                        <div class="carousel-indicators">
-                            <button
-                                class="dot active"
-                                data-slide-to="0"
-                                aria-label="Ir a Slide 1"
-                            ></button>
-                            <button
-                                class="dot"
-                                data-slide-to="1"
-                                aria-label="Ir a Slide 2"
-                            ></button>
-                            <button
-                                class="dot"
-                                data-slide-to="2"
-                                aria-label="Ir a Slide 3"
-                            ></button>
+                        <div class="carousel-slide" data-slide="2">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4" alt="Diapositiva 2: Montañas" class="carousel-image">
+                            <div class="slide-caption">Diapositiva 2. Segunda Imagen.</div>
+                        </div>
+                        <div class="carousel-slide" data-slide="3">
+                            <img src="https://images.unsplash.com/photo-1617374128851-c84e37dc9f37" alt="Diapositiva 3: Paisaje Desértico" class="carousel-image">
+                            <div class="slide-caption">Diapositiva 3. Tercera Imagen.</div>
                         </div>
                     </div>
-                    <!-- Fin .carousel -->
+
+                    <button class="carousel-control prev" data-control="prev" aria-label="Diapositiva Anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-control next" data-control="next" aria-label="Diapositiva Siguiente">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="carousel-indicators">
+                        <button class="indicator-dot is-active" data-indicator="1" aria-label="Ver Diapositiva 1"></button>
+                        <button class="indicator-dot" data-indicator="2" aria-label="Ver Diapositiva 2"></button>
+                        <button class="indicator-dot" data-indicator="3" aria-label="Ver Diapositiva 3"></button>
+                    </div>
+
+                </div>
                 </section>
 
-                <section class="code-snippets">
-                    <h3>Código Fuente</h3>
-                    <h4>HTML</h4>
-                    <pre><code class="language-html html-snippet">...</code></pre>
-                    <h4>CSS</h4>
-                    <pre><code class="language-css css-snippet">...</code></pre>
-                    <h4>JavaScript</h4>
-                    <pre><code class="language-javascript js-snippet">...</code></pre>
-                </section>
-            </main>
-        </div>
+            <section class="code-snippets">
+                <h3>Código Fuente</h3>
+                <h4>HTML</h4>
+                <pre><code class="language-html html-snippet">...</code></pre>
+                <h4>CSS</h4>
+                <pre><code class="language-css css-snippet">...</code></pre>
+                <h4>JavaScript</h4>
+                <pre><code class="language-js js-snippet">...</code></pre>
+            </section>
+        </main>
+    </div>
 
-        <!-- Contenedores de Pie de Página -->
-        <footer id="main-footer"></footer>
+    <footer id="main-footer">
+        <p>
+            © 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS
+            & JS). Arquitectura modular y autónoma.
+        </p>
+    </footer>
 
-        <!-- ---------------------------------------------------- -->
-        <!-- SECUENCIA CRÍTICA DE CARGA DE MÓDULOS DE LA LIBRERÍA -->
-        <!-- ---------------------------------------------------- -->
-
-        <!-- 1. CORE: Estructura base y getModule -->
-        <script src="/JS/modules/_core.js"></script>
-
-        <!-- 2. DEPENDENCIAS: Eventos (Necesario por el carrusel) -->
-        <script src="/JS/modules/_events.js"></script>
-
-        <!-- 3. COMPONENTES: Carrusel -->
-        <script src="/JS/modules/carousel.js"></script>
-
-        <!-- 4. INICIALIZADOR: AutoInit (Busca el data-component) -->
-        <script src="/JS/modules/_autoinit.js"></script>
-
-        <!-- ---------------------------------------------------- -->
-        <!-- 5. ARRANQUE Y UTILIDADES GLOBALES -->
-        <!-- ---------------------------------------------------- -->
-
-        <!-- MAIN: Inicia todo el sistema -->
-        <script src="/JS/main.js"></script>
-
-        <!-- Otras utilidades de tu proyecto -->
-        <script src="/JS/prism.js"></script>
-        <script src="/JS/docs.js"></script>
-        <script src="/JS/sidebar.js"></script>
-    </body>
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>

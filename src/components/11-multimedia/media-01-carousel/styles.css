@@ -1,71 +1,156 @@
-/* ----------------------------------------------------------------
- * Estilos para el Componente Carrusel (11-multimedia/media-01-carousel)
- * Refactorizado para usar la lógica de translateX en carousel.js
- * ---------------------------------------------------------------- */
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Multimedia 01 - Carrusel Base
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos, animación y estructura.
+ * ----------------------------------------------------------------------------
+ */
 
-/* Contenedor principal del Carrusel */
-.carousel {
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta)
+ * ----------------------------------------------------------------------------
+ */
+.carousel-container {
+    /* Dimensiones Base */
+    --carousel-width: 100%;
+    --carousel-height: 400px;
+    
+    /* Colores */
+    --control-bg-color: rgba(0, 0, 0, 0.5);
+    --control-hover-bg: rgba(0, 0, 0, 0.8);
+    --indicator-active-color: #007bff;
+    --indicator-inactive-color: #ccc;
+    --caption-bg-color: rgba(0, 0, 0, 0.7);
+    --caption-text-color: #fff;
+
+    /* Configuración de Animación (TRANSICIÓN CLAVE) */
+    --transition-duration: 0.5s;
+
+    /* Contenedor de Demostración */
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo del Contenedor Principal (Marco)
+ * ----------------------------------------------------------------------------
+ */
+.carousel-container {
     position: relative;
-    overflow: hidden; /* CRUCIAL: Oculta los slides que no están visibles */
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* CRÍTICO: Oculta las diapositivas fuera del marco */
+    width: var(--carousel-width);
+    height: var(--carousel-height);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* El contenedor que se mueve horizontalmente (pista de slides) */
-.carousel-slides {
-    display: flex; /* Coloca todos los slides en una fila */
-    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento */
-}
 
-/* Cada slide ocupa el 100% del ancho del contenedor */
-.carousel-slide {
-    flex-shrink: 0; /* Evita que el slide se encoja */
-    width: 100%;
-}
-
-.slide-content {
-    min-height: 250px;
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de la Pista y las Diapositivas (Track & Slides)
+ * ----------------------------------------------------------------------------
+ */
+.carousel-track {
+    /* CRÍTICO: El track debe contener todas las diapositivas horizontalmente */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    font-size: 1.1rem;
+    position: absolute; /* Permite que el JS mueva esta pista */
+    top: 0;
+    left: 0;
+    /* width: 100%; <- Esta propiedad se ajusta dinámicamente o por el flex, pero la transform es clave. */
+    height: 100%;
+    
+    /* Transición suave para el desplazamiento (animación del carrusel) */
+    transition: transform var(--transition-duration) ease-in-out;
 }
 
-/* Controles de Navegación (Flechas) */
+.carousel-slide {
+    flex-shrink: 0; /* Asegura que la diapositiva no se encoja */
+    width: 100%; /* Cada diapositiva ocupa el 100% del contenedor */
+    height: 100%;
+    position: relative; /* Para posicionar la imagen y la leyenda */
+    text-align: center;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla y cubriendo el espacio */
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--caption-bg-color);
+    color: var(--caption-text-color);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estilo de los Controles (Anterior/Siguiente)
+ * ----------------------------------------------------------------------------
+ */
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 1rem 0.75rem;
-    cursor: pointer;
     z-index: 10;
-    opacity: 0.8;
-    transition: opacity 0.2s, background 0.2s;
-    font-size: 1.2rem;
+    
+    /* Estilo del botón */
+    background: var(--control-bg-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 0.5rem;
+    font-size: 1.5rem;
+    transition: background-color 0.2s;
+    line-height: 1;
+}
+
+.carousel-control.prev {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.carousel-control.next {
+    right: 0;
+    border-radius: 4px 0 0 4px;
 }
 
 .carousel-control:hover {
-    opacity: 1;
-    background: var(--color-primary-base);
+    background: var(--control-hover-bg);
 }
 
-.prev {
-    left: 0;
-    border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estilo de los Indicadores (Puntos)
+ * ----------------------------------------------------------------------------
+ */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px; /* Espacio entre los puntos */
 }
 
-.next {
-    right: 0;
-    border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--indicator-inactive-color);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
-/* Estilos de Demostración y Contenedor */
-.carousel-demo-area {
-    max-width: 900px;
-    margin: 40px auto;
+.indicator-dot.is-active {
+    background-color: var(--indicator-active-color);
+    transform: scale(1.2);
 }
