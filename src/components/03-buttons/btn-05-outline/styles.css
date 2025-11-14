@@ -1,0 +1,146 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Botón 05 - Contorno (.btn--outline)
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos base del componente (.btn) y
+ * sus modificadores, para garantizar la funcionalidad sin dependencia externa.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta en el Contenedor Raíz)
+ * ----------------------------------------------------------------------------
+ */
+.button-container {
+    /* Paleta de Colores Base (Fija y Autónoma) */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-info: #17a2b8;
+    --color-light: #f8f9fa;
+    --color-dark: #343a40;
+
+    /* General Styling */
+    --btn-text-color: #ffffff;
+    --btn-border-radius: 0.25rem;
+    --btn-padding-y: 0.5rem;
+    --btn-padding-x: 1rem;
+    --btn-font-weight: 400;
+
+    /* Contenedor de Demostración */
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px dashed #ccc; 
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo Base del Botón (.btn)
+ * ----------------------------------------------------------------------------
+ */
+.btn {
+    display: inline-block;
+    font-weight: var(--btn-font-weight);
+    color: var(--btn-text-color);
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent; /* Necesario para outline */
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: var(--btn-border-radius);
+    transition: color 0.15s ease-in-out, 
+                background-color 0.15s ease-in-out, 
+                border-color 0.15s ease-in-out, 
+                box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+/* Estado Focus/Disabled */
+.btn:focus,
+.btn:hover {
+    text-decoration: none;
+}
+.btn:disabled {
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilos Contextuales BASE (Se usan como colores de fondo para botones sólidos)
+ * * Nota: Esta sección es necesaria para que la sección 4 (Outline) tenga los colores de texto y hover.
+ * ----------------------------------------------------------------------------
+ */
+.btn--primary { background-color: var(--color-primary); border-color: var(--color-primary); }
+.btn--secondary { background-color: var(--color-secondary); border-color: var(--color-secondary); }
+.btn--success { background-color: var(--color-success); border-color: var(--color-success); }
+.btn--danger { background-color: var(--color-danger); border-color: var(--color-danger); }
+.btn--warning { background-color: var(--color-warning); border-color: var(--color-warning); color: var(--color-dark); } /* Texto oscuro para warning */
+.btn--info { background-color: var(--color-info); border-color: var(--color-info); }
+
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estilos Modificadores: Contorno (.btn--outline)
+ * * La magia del outline: color de texto = color contextual, fondo = transparente.
+ * ----------------------------------------------------------------------------
+ */
+
+.btn--outline {
+    background-color: transparent; /* Fondo transparente para todos los outline */
+    color: var(--color-primary); /* Color de texto por defecto (primary) */
+}
+
+/* Outline: Colores Iniciales */
+.btn--outline.btn--primary { color: var(--color-primary); border-color: var(--color-primary); }
+.btn--outline.btn--secondary { color: var(--color-secondary); border-color: var(--color-secondary); }
+.btn--outline.btn--success { color: var(--color-success); border-color: var(--color-success); }
+.btn--outline.btn--danger { color: var(--color-danger); border-color: var(--color-danger); }
+.btn--outline.btn--warning { color: var(--color-dark); border-color: var(--color-warning); } /* Texto oscuro */
+.btn--outline.btn--info { color: var(--color-info); border-color: var(--color-info); }
+
+/* Outline: Estado HOVER/FOCUS (Invertir colores: el fondo toma el color contextual) */
+.btn--outline.btn--primary:hover, .btn--outline.btn--primary:focus {
+    color: var(--btn-text-color);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn--outline.btn--secondary:hover, .btn--outline.btn--secondary:focus {
+    color: var(--btn-text-color);
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.btn--outline.btn--success:hover, .btn--outline.btn--success:focus {
+    color: var(--btn-text-color);
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+}
+
+.btn--outline.btn--danger:hover, .btn--outline.btn--danger:focus {
+    color: var(--btn-text-color);
+    background-color: var(--color-danger);
+    border-color: var(--color-danger);
+}
+
+.btn--outline.btn--warning:hover, .btn--outline.btn--warning:focus {
+    color: var(--color-dark); /* El warning mantiene el texto oscuro por contraste */
+    background-color: var(--color-warning);
+    border-color: var(--color-warning);
+}
+
+.btn--outline.btn--info:hover, .btn--outline.btn--info:focus {
+    color: var(--btn-text-color);
+    background-color: var(--color-info);
+    border-color: var(--color-info);
+}
+
+/* * ----------------------------------------------------------------------------
+ * 5. Otros modificadores (Tamaños, etc.)
+ * ----------------------------------------------------------------------------
+ */
+/* No definidos en este componente específico */
