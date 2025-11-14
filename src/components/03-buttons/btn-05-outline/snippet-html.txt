@@ -1,5 +1,16 @@
-// * ----------------------------------------------------------------------------
-// * COMPONENTE: Botón 05 - Contorno (.btn--outline)
-// * AUTONOMÍA ESTRICTA: No requiere lógica JavaScript.
-// * Este archivo es un placeholder para asegurar la estructura de Componente Autónomo.
-// * ----------------------------------------------------------------------------
+<div class="button-container">
+            <button class="btn btn--outline btn--primary">
+              Primary Outline
+            </button>
+            <button class="btn btn--outline btn--secondary">
+              Secondary Outline
+            </button>
+            <button class="btn btn--outline btn--success">
+              Success Outline
+            </button>
+            <button class="btn btn--outline btn--danger">Danger Outline</button>
+            <button class="btn btn--outline btn--warning">
+              Warning Outline
+            </button>
+            <button class="btn btn--outline btn--info">Info Outline</button>
+</div>

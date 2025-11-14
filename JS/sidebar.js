@@ -90,6 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "05. Botón Contorno (Outline)",
                     path: "/src/components/03-buttons/btn-05-outline/index.html",
                 },
+
+                {
+                    name: "06. Botón Tamaños", // ¡NUEVO COMPONENTE!
+                    path: "/src/components/03-buttons/btn-06-size/index.html",
+                },
             ],
         },
 
