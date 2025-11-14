@@ -1,59 +1,89 @@
-/*
- * ===========================================
- * 08-TABLES: TABLE-01-BASE (TABLA SIMPLE)
- * ===========================================
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Tabla 01 - Base
+ * AUTONOMÍA ABSOLUTA: Uso de Variables CSS Encapsuladas para Estándar Profesional.
+ * ----------------------------------------------------------------------------
  */
 
-/* 1. CONTENEDOR DE TABLA (Para scroll horizontal en móviles) */
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta en el Contenedor Raíz)
+ * ----------------------------------------------------------------------------
+ */
 .table-container {
-  width: 100%;
-  overflow-x: auto; /* Permite scroll horizontal si la tabla es demasiado ancha */
-  margin-bottom: 1.5rem;
+    /* Paleta de Colores y Tipografía (Fija y Autónoma) */
+    --table-text-color: #333333;           /* Texto oscuro */
+    --table-bg-color: #FFFFFF;             /* Fondo de celdas (Blanco) */
+    --table-header-footer-bg: #EEEEEE;     /* Fondo de encabezado y pie (Gris muy claro) */
+    --table-border-color: #CCCCCC;         /* Borde principal (Gris medio) */
+    --table-border-heavy: #999999;         /* Borde más grueso (Gris más oscuro) */
+
+    /* Espaciado */
+    --table-padding-y: 0.75rem;
+    --table-padding-x: 0.75rem;
+
+    /* Contenedor de Demostración y Responsividad */
+    margin-bottom: 2rem;
+    padding: 0; 
+    width: 100%;
+    overflow-x: auto; 
 }
 
-/* 2. CLASE BASE DE LA TABLA */
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo Base de la Tabla (.table)
+ * ----------------------------------------------------------------------------
+ */
 .table {
-  width: 100%;
-  border-collapse: collapse; /* Asegura que no haya doble borde */
-  /* El diseño se basa en bordes internos en celdas, no en la tabla completa */
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--table-text-color); 
+    border-collapse: collapse;
 }
 
-/* 3. ESTILOS DE CABECERA (thead) */
-.table thead {
-  background-color: var(--color-bg-base, #f8f9fa); /* Fondo ligeramente gris */
-  border-bottom: 2px solid var(--color-border-subtle, #dee2e6); /* Separador inferior */
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de Celdas (th y td)
+ * ----------------------------------------------------------------------------
+ */
+.table th,
+.table td {
+    padding: var(--table-padding-y) var(--table-padding-x);
+    border-bottom: 1px solid var(--table-border-color);
+    background-color: var(--table-bg-color); 
+    vertical-align: top;
+    text-align: left;
 }
 
 .table th {
-  padding: 0.75rem; /* Espaciado dentro de la celda de cabecera */
-  text-align: left;
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  color: var(--color-text-light, #555);
-  border-bottom: inherit; /* Hereda el borde del thead */
+    font-weight: 700; 
 }
 
-/* 4. ESTILOS DE CUERPO Y PIE (tbody, tfoot) */
-.table td {
-  padding: 0.75rem; /* Espaciado dentro de las celdas de datos */
-  vertical-align: top;
-  font-size: var(--font-size-base, 1rem);
-  color: var(--color-text-dark, #333);
-
-  /* Borde inferior para separar filas */
-  border-bottom: 1px solid var(--color-border-subtle, #eee);
+/* * ----------------------------------------------------------------------------
+ * 4. Estilo de Encabezado (thead) y Pie (tfoot)
+ * ----------------------------------------------------------------------------
+ */
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--table-border-heavy); 
+    background-color: var(--table-header-footer-bg); 
 }
 
-/* Eliminar el borde inferior de la última fila del cuerpo */
-.table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Estilo del pie de página (tfoot) */
 .table tfoot td {
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
-  font-size: var(--font-size-sm, 0.875rem);
-  color: var(--color-text-light, #777);
-  border-top: 2px solid var(--color-border-subtle, #dee2e6); /* Borde superior para separar del cuerpo */
+    border-top: 2px solid var(--table-border-heavy);
+    background-color: var(--table-header-footer-bg); 
+    color: var(--table-text-color); 
+    font-weight: 700; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 5. Alineación de Columnas (Pura CSS)
+ * ----------------------------------------------------------------------------
+ */
+.table thead th:nth-last-child(1),
+.table thead th:nth-last-child(2),
+.table thead th:nth-last-child(3),
+.table tbody td:nth-last-child(1),
+.table tbody td:nth-last-child(2),
+.table tbody td:nth-last-child(3),
+.table tfoot td:nth-last-child(1),
+.table tfoot td:nth-last-child(2),
+.table tfoot td:nth-child(1) { 
+    text-align: right;
 }

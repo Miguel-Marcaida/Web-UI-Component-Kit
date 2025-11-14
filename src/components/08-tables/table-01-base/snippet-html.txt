@@ -1,44 +1,47 @@
 <div class="table-container">
-    
     <table class="table">
-        
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Estado</th>
-                <th>Precio</th>
+                <th>#ID</th>
+                <th>Nombre de Producto</th>
+                <th>Categoría</th>
+                <th>Precio Unitario</th>
+                <th>Unidades</th>
+                <th>Total</th>
             </tr>
         </thead>
-        
         <tbody>
             <tr>
-                <td>#1001</td>
-                <td>Licencia Pro</td>
-                <td>1</td>
-                <td><span class="badge badge--success">Activo</span></td>
-                <td>$99.00</td>
+                <td>1001</td>
+                <td>Tablet Pro X12</td>
+                <td>Electrónica</td>
+                <td>$899.00</td>
+                <td>2</td>
+                <td>$1,798.00</td>
             </tr>
             <tr>
-                <td>#1002</td>
-                <td>Soporte Premium</td>
-                <td>12 meses</td>
-                <td><span class="badge badge--info">Pendiente</span></td>
+                <td>1002</td>
+                <td>Funda Piel Premium</td>
+                <td>Accesorios</td>
+                <td>$45.50</td>
+                <td>5</td>
+                <td>$227.50</td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>Teclado Ergonómico</td>
+                <td>Periféricos</td>
+                <td>$120.00</td>
+                <td>1</td>
                 <td>$120.00</td>
             </tr>
-            <tr>
-                <td>#1003</td>
-                <td>Desarrollo Custom</td>
-                <td>N/A</td>
-                <td><span class="badge badge--danger">Cancelado</span></td>
-                <td>$3,500.00</td>
-            </tr>
         </tbody>
-
         <tfoot>
             <tr>
-                <td colspan="5">Totales y resúmenes al final de la tabla.</td>
+                <td colspan="5">Total de la Orden:</td>
+                <td>
+                    $2,145.50
+                </td>
             </tr>
         </tfoot>
     </table>
