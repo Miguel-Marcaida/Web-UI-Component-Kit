@@ -95,6 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "06. Botón Tamaños", // ¡NUEVO COMPONENTE!
                     path: "/src/components/03-buttons/btn-06-size/index.html",
                 },
+
+                {
+                    name: "07. Botón Ancho Completo", // ¡NUEVO COMPONENTE!
+                    path: "/src/components/03-buttons/btn-07-block/index.html",
+                },
+
+
             ],
         },
 
