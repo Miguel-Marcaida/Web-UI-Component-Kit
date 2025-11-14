@@ -1,0 +1,121 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Paginación 01 - Base
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos para el layout y los estados.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta)
+ * ----------------------------------------------------------------------------
+ */
+.pagination-container {
+    /* Paleta de Colores Base */
+    --pagination-border-color: #dee2e6;
+    --pagination-text-color: #007bff;
+    --pagination-bg-color: #fff;
+    --pagination-hover-bg: #e9ecef;
+    --pagination-active-bg: #007bff;
+    --pagination-active-text: #fff;
+    --pagination-disabled-color: #6c757d;
+    
+    /* Espaciado y Fuente */
+    --pagination-padding-y: 0.375rem;
+    --pagination-padding-x: 0.75rem;
+    --pagination-font-size: 1rem;
+    --pagination-border-radius: 0.25rem;
+
+    /* Contenedor de Demostración */
+    margin: 2rem auto;
+    display: flex; /* Centra la paginación si el padre es ancho */
+    justify-content: center;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo de la Lista y Elementos
+ * ----------------------------------------------------------------------------
+ */
+.pagination-list {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: var(--pagination-border-radius);
+    margin: 0;
+}
+
+.pagination-item:first-child .pagination-link {
+    border-top-left-radius: var(--pagination-border-radius);
+    border-bottom-left-radius: var(--pagination-border-radius);
+}
+
+.pagination-item:last-child .pagination-link {
+    border-top-right-radius: var(--pagination-border-radius);
+    border-bottom-right-radius: var(--pagination-border-radius);
+}
+
+/* Elipsis */
+.pagination-ellipsis span {
+    display: block;
+    padding: var(--pagination-padding-y) var(--pagination-padding-x);
+    color: var(--pagination-disabled-color);
+    font-size: var(--pagination-font-size);
+}
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo del Enlace de Paginación (.pagination-link)
+ * ----------------------------------------------------------------------------
+ */
+.pagination-link {
+    display: block;
+    padding: var(--pagination-padding-y) var(--pagination-padding-x);
+    font-size: var(--pagination-font-size);
+    color: var(--pagination-text-color);
+    text-decoration: none;
+    background-color: var(--pagination-bg-color);
+    border: 1px solid var(--pagination-border-color);
+    
+    /* El truco del borde: el margen negativo hace que los bordes colapsen */
+    margin-left: -1px; 
+    transition: all 0.2s;
+}
+
+/* Iconos de flecha dentro de los enlaces */
+.pagination-link .fas {
+    margin: 0 0.25rem;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estados: Hover y Activo
+ * ----------------------------------------------------------------------------
+ */
+.pagination-link:hover {
+    color: var(--pagination-text-color);
+    background-color: var(--pagination-hover-bg);
+    border-color: var(--pagination-border-color);
+    text-decoration: none;
+}
+
+.pagination-link.is-active {
+    z-index: 1; /* Para que el borde activo se superponga */
+    color: var(--pagination-active-text);
+    background-color: var(--pagination-active-bg);
+    border-color: var(--pagination-active-bg);
+}
+
+.pagination-link.is-active:hover {
+    /* El estado activo no cambia al hacer hover */
+    background-color: var(--pagination-active-bg);
+    border-color: var(--pagination-active-bg);
+}
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estado Deshabilitado (.is-disabled)
+ * ----------------------------------------------------------------------------
+ */
+.pagination-link.is-disabled {
+    color: var(--pagination-disabled-color);
+    pointer-events: none; /* Deshabilita el clic */
+    background-color: var(--pagination-bg-color);
+    border-color: var(--pagination-border-color);
+    opacity: 0.6;
+}
