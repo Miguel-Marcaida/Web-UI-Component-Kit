@@ -1,0 +1,22 @@
+<nav class="breadcrumb-container breadcrumb-icon" aria-label="breadcrumb">
+    <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+            <a href="#">
+                <i class="fas fa-home"></i> Inicio
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="#">
+                <i class="fas fa-folder"></i> Documentos
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="#">
+                <i class="fas fa-file-alt"></i> Contratos
+            </a>
+        </li>
+        <li class="breadcrumb-item is-active" aria-current="page">
+            <i class="fas fa-lock"></i> Contrato Secreto
+        </li>
+    </ol>
+</nav>
