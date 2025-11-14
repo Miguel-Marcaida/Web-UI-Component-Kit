@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pestañas 01: Base (Tabs)</title>
+    <title>Pestañas 02: De Botón (Button Tabs)</title>
 
     <link rel="stylesheet" href="/CSS/main.css" />
     <link rel="stylesheet" href="/CSS/prism.css" />
@@ -44,20 +44,23 @@
 
     <div class="docs-container">
       <main class="docs-content">
-        <h2>Pestañas 01: Base (Tabs)</h2>
+        <h2>Pestañas 02: De Botón (Button Tabs)</h2>
         <p class="description">
-          Estructura fundamental del componente de pestañas con estilos
-          minimalistas y funcionalidad esencial de cambio de contenido.
+          Variante de pestañas donde los encabezados lucen como botones sólidos
+          o en grupo. Ideal para barras de herramientas o filtros.
         </p>
 
         <section class="preview-area">
           <h3>Vista Previa</h3>
 
-          <div class="tab-container" id="tabComponentBase">
+          <div
+            class="tab-container tab-container--button"
+            id="tabComponentButton"
+          >
             <div
-              class="tab-list"
+              class="tab-list tab-list--button"
               role="tablist"
-              aria-label="Contenido del Módulo"
+              aria-label="Opciones de Filtro"
             >
               <button
                 class="tab-item is-active"
@@ -66,7 +69,7 @@
                 aria-controls="panel-1"
                 id="tab-1"
               >
-                Pestaña 1 (Activa)
+                Filtro A
               </button>
               <button
                 class="tab-item"
@@ -75,7 +78,7 @@
                 aria-controls="panel-2"
                 id="tab-2"
               >
-                Pestaña 2
+                Filtro B
               </button>
               <button
                 class="tab-item"
@@ -84,7 +87,7 @@
                 aria-controls="panel-3"
                 id="tab-3"
               >
-                Pestaña 3
+                Filtro C
               </button>
             </div>
 
@@ -96,10 +99,7 @@
                 aria-labelledby="tab-1"
                 tabindex="0"
               >
-                <p>
-                  Contenido del Panel 1. Este panel se muestra por defecto con
-                  la clase <code>.is-active</code>.
-                </p>
+                <p>Contenido del Panel 1. Resultados para el Filtro A.</p>
               </div>
               <div
                 class="tab-panel"
@@ -108,10 +108,7 @@
                 aria-labelledby="tab-2"
                 hidden
               >
-                <p>
-                  Contenido del Panel 2. Este panel está oculto inicialmente
-                  usando el atributo <code>hidden</code>.
-                </p>
+                <p>Contenido del Panel 2. Resultados para el Filtro B.</p>
               </div>
               <div
                 class="tab-panel"
@@ -120,10 +117,7 @@
                 aria-labelledby="tab-3"
                 hidden
               >
-                <p>
-                  Contenido del Panel 3. Aquí puede ir información sobre
-                  configuración, etc.
-                </p>
+                <p>Contenido del Panel 3. Resultados para el Filtro C.</p>
               </div>
             </div>
           </div>

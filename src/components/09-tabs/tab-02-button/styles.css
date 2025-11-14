@@ -1,0 +1,111 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Pestañas 02 - De Botón (Button Tabs)
+ * AUTONOMÍA ABSOLUTA: Modifica el estilo Base para simular un grupo de botones.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta)
+ * ----------------------------------------------------------------------------
+ */
+.tab-container {
+    /* Paleta de Colores Base */
+    --tab-border-color: #dee2e6;
+    --tab-active-color: #007bff; /* Color primario para el activo */
+    --tab-text-color: #495057; /* Texto inactivo */
+    --tab-active-text-color: #ffffff; /* Texto activo blanco */
+    
+    /* Espaciado y Fuente */
+    --tab-padding-y: 0.5rem;
+    --tab-padding-x: 1rem;
+    --tab-font-weight: 500;
+    --tab-border-radius: 0.25rem; /* Radio de borde para el contenedor */
+    
+    /* Contenedor de Demostración */
+    margin: 2rem auto;
+    max-width: 800px;
+    border: 1px solid var(--tab-border-color);
+    border-radius: var(--tab-border-radius);
+    padding: 0; /* Quitamos el padding del contenedor principal */
+}
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo de la Lista de Pestañas (.tab-list--button)
+ * ----------------------------------------------------------------------------
+ */
+.tab-list--button {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.25rem; /* Pequeño relleno para separar los botones del borde */
+    margin: 0;
+    list-style: none;
+    
+    /* Elimina el borde inferior del estilo base de línea */
+    border-bottom: none;
+    background-color: #f8f9fa; 
+    
+    /* Aseguramos los bordes redondeados solo en la parte superior */
+    border-top-left-radius: var(--tab-border-radius);
+    border-top-right-radius: var(--tab-border-radius);
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de Pestaña Individual (.tab-item)
+ * ----------------------------------------------------------------------------
+ */
+.tab-list--button .tab-item {
+    /* Reseteo y Estilo de botón/enlace */
+    background-color: #e9ecef; /* Fondo claro para inactivos */
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    
+    /* Apariencia */
+    padding: var(--tab-padding-y) var(--tab-padding-x);
+    font-size: 1rem;
+    font-weight: var(--tab-font-weight);
+    color: var(--tab-text-color);
+    border-radius: 0.2rem; /* Bordes redondeados individuales */
+    margin-right: 0.25rem; /* Separación entre botones */
+    
+    /* Eliminamos cualquier margen/borde que interfiera con el diseño de botón */
+    margin-bottom: 0; 
+    transition: all 0.15s ease-in-out;
+}
+
+/* Hover y Focus */
+.tab-list--button .tab-item:hover:not(.is-active) {
+    background-color: #ced4da; /* Un poco más oscuro en hover */
+    color: #212529;
+    border-color: transparent;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estado Activo de la Pestaña (.is-active)
+ * ----------------------------------------------------------------------------
+ */
+.tab-list--button .tab-item.is-active {
+    color: var(--tab-active-text-color);
+    background-color: var(--tab-active-color); /* Fondo azul sólido */
+    border-color: var(--tab-active-color); 
+    
+    /* Eliminamos la corrección de borde inferior del estilo base */
+    border-bottom: 1px solid var(--tab-active-color);
+    margin-bottom: 0;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estilo del Contenido del Panel (.tab-panel)
+ * ----------------------------------------------------------------------------
+ */
+.tab-container .tab-content {
+    /* El contenido ahora está dentro del borde principal del contenedor */
+    padding: 1.5rem;
+}
+
+.tab-container .tab-panel {
+    padding: 0; /* Quitamos el relleno interno del panel, ya lo tiene el content */
+    border-top: none; 
+}

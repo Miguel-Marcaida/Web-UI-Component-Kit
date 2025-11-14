@@ -1,0 +1,63 @@
+<div class="tab-container tab-container--button" id="tabComponentButton">
+    <div class="tab-list tab-list--button" role="tablist">
+        <button
+            class="tab-item is-active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-1"
+            id="tab-1"
+        >
+            Detalles
+        </button>
+        <button
+            class="tab-item"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-2"
+            id="tab-2"
+        >
+            Historial
+        </button>
+        <button
+            class="tab-item"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-3"
+            id="tab-3"
+        >
+            Estadísticas
+        </button>
+    </div>
+
+    <div class="tab-content">
+        <div
+            class="tab-panel is-active"
+            id="panel-1"
+            role="tabpanel"
+            aria-labelledby="tab-1"
+            tabindex="0"
+        >
+            <p>Contenido del Panel 1 (Detalles). La navegación es manejada por JavaScript.</p>
+        </div>
+        <div
+            class="tab-panel"
+            id="panel-2"
+            role="tabpanel"
+            aria-labelledby="tab-2"
+            hidden
+            tabindex="0"
+        >
+            <p>Contenido del Panel 2 (Historial). Oculto inicialmente.</p>
+        </div>
+        <div
+            class="tab-panel"
+            id="panel-3"
+            role="tabpanel"
+            aria-labelledby="tab-3"
+            hidden
+            tabindex="0"
+        >
+            <p>Contenido del Panel 3 (Estadísticas).</p>
+        </div>
+    </div>
+</div>
