@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
             components: [
                 {
                     name: "01. Pestañas Básicas",
-                    path: "/src/components/09-tabs/tabs-01-basic/index.html",
+                    path: "/src/components/09-tabs/tab-01-base/index.html",
                 },
                 {
                     name: "02. Pestañas Estilo Píldora",
