@@ -85,6 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "04. Botones Flotantes (FAB)",
                     path: "/src/components/03-buttons/btn-04-fab/index.html",
                 },
+
+                {
+                    name: "05. Botón Contorno (Outline)",
+                    path: "/src/components/03-buttons/btn-05-outline/index.html",
+                },
             ],
         },
 
@@ -176,6 +181,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                     name: "02. Tabla Avanzada (Zebra)",
                     path: "/src/components/08-tables/table-02-advanced/index.html",
+                },
+
+                {
+                    name: "03. Tabla Bordes Verticales",
+                    path: "/src/components/08-tables/table-03-bordered/index.html",
+                },
+                {
+                    name: "04. Tabla Contextual",
+                    path: "/src/components/08-tables/table-04-contextual/index.html",
                 },
             ],
         },
