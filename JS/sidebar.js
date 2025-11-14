@@ -213,8 +213,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     path: "/src/components/09-tabs/tab-01-base/index.html",
                 },
                 {
-                    name: "02. Pestañas de Botón", // ¡NUEVO COMPONENTE!
+                    name: "02. Pestañas de Botón", 
                     path: "/src/components/09-tabs/tab-02-button/index.html",
+                },
+                {
+                    name: "03. Pestañas Verticales", 
+                    path: "/src/components/09-tabs/tab-03-vertical/index.html",
                 },
             ],
         },
