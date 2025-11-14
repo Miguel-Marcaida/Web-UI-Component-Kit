@@ -230,13 +230,21 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Módulo 10: Navegación de Página",
             components: [
                 {
-                    name: "01. Paginación",
-                    path: "/src/components/10-navigation-page/navPage-01-pagination/index.html",
-                },
-                {
-                    name: "02. Migas de Pan (Breadcrumb)",
-                    path: "/src/components/10-navigation-page/navPage-02-breadcrumb/index.html",
-                },
+                    name: "01. Paginación Base",
+                    path: "/src/components/10-navigation-page/navPage-01-pagination-base/index.html",
+                },
+                {
+                    name: "02. Paginación Compacta",
+                    path: "/src/components/10-navigation-page/navPage-02-pagination-compact/index.html",
+                },
+                {
+                    name: "03. Migas de Pan Base",
+                    path: "/src/components/10-navigation-page/navPage-03-breadcrumb-base/index.html",
+                },
+                {
+                    name: "04. Migas de Pan con Iconos",
+                    path: "/src/components/10-navigation-page/navPage-04-breadcrumb-icon/index.html",
+                },
             ],
         },
         "11-multimedia": {
