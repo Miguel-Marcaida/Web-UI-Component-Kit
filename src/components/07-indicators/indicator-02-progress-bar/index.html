@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Indicador 02: Barra de Progreso</title>
@@ -13,113 +13,123 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+</head>
+<body>
     <header id="main-header">
-      <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
-      </h1>
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
 
-      <button
-        id="sidebar-toggle"
-        aria-expanded="false"
-        aria-controls="docs-sidebar"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <nav>
-        <a href="/src/components/07-indicators/index.html"
-          >Volver a Indicadores</a
+        <button
+            id="sidebar-toggle"
+            aria-expanded="false"
+            aria-controls="docs-sidebar"
         >
-      </nav>
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <a href="/src/components/07-indicators/index.html"
+                >Volver a Indicadores</a
+            >
+        </nav>
+
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i
+                class="fas fa-sun theme-icon"
+                data-mode="light"
+                style="display: none"
+            ></i><i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
     </header>
 
     <div class="docs-container">
-      <main class="docs-content">
-        <h2>Indicador 02: Barra de Progreso</h2>
-        <p class="description">
-          Componente visual para representar el progreso de una tarea, con
-          variantes de color para reflejar estado y la posibilidad de mostrar
-          texto.
-        </p>
+        <main class="docs-content">
+            <h2>Indicador 02: Barra de Progreso</h2>
+            <p class="description">
+                Componente visual para representar el progreso de una tarea, con
+                variantes de color para reflejar estado y la posibilidad de mostrar
+                texto.
+            </p>
 
-        <section
-          class="preview-area"
-          style="padding: 2rem; background-color: var(--color-bg-base)"
-        >
-          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+            <section class="preview-area">
+                <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
 
-          <div style="display: flex; flex-direction: column; gap: 1.5rem">
-            <div
-              class="progress"
-              role="progressbar"
-              aria-valuenow="50"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            >
-              <div class="progress-bar" style="width: 50%"></div>
-            </div>
+                <div class="progress-example-container"> 
+                    <div
+                        class="progress"
+                        role="progressbar"
+                        aria-valuenow="50"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    >
+                        <div class="progress-bar" style="width: 50%"></div>
+                    </div>
 
-            <div
-              class="progress"
-              role="progressbar"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            >
-              <div
-                class="progress-bar progress-bar--success"
-                style="width: 100%"
-              >
-                100% Completo
-              </div>
-            </div>
+                    <div
+                        class="progress"
+                        role="progressbar"
+                        aria-valuenow="100"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    >
+                        <div
+                            class="progress-bar progress-bar--success"
+                            style="width: 100%"
+                        >
+                            100% Completo
+                        </div>
+                    </div>
 
-            <div
-              class="progress"
-              role="progressbar"
-              aria-valuenow="75"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            >
-              <div
-                class="progress-bar progress-bar--warning"
-                style="width: 75%"
-              ></div>
-            </div>
+                    <div
+                        class="progress"
+                        role="progressbar"
+                        aria-valuenow="75"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    >
+                        <div
+                            class="progress-bar progress-bar--warning"
+                            style="width: 75%"
+                        ></div>
+                    </div>
 
-            <div
-              class="progress progress--sm"
-              role="progressbar"
-              aria-valuenow="25"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            >
-              <div
-                class="progress-bar progress-bar--danger"
-                style="width: 25%"
-              ></div>
-            </div>
-          </div>
-        </section>
+                    <div
+                        class="progress progress--sm"
+                        role="progressbar"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    >
+                        <div
+                            class="progress-bar progress-bar--danger"
+                            style="width: 25%"
+                        ></div>
+                    </div>
+                </div>
+            </section>
 
-        <section class="code-snippets">
-          <h3>Código Fuente</h3>
-          <h4>HTML</h4>
-          <pre><code class="language-html html-snippet">...</code></pre>
-          <h4>CSS</h4>
-          <pre><code class="language-css css-snippet">...</code></pre>
-        </section>
-      </main>
+            <section class="code-snippets">
+                <h3>Código Fuente</h3>
+                <h4>HTML</h4>
+                <pre><code class="language-html html-snippet">...</code></pre>
+                <h4>CSS</h4>
+                <pre><code class="language-css css-snippet">...</code></pre>
+                <h4>JavaScript</h4>
+                <pre><code class="language-js js-snippet">...</code></pre>
+            </section>
+        </main>
     </div>
 
-    <footer id="main-footer"></footer>
+    <footer id="main-footer">
+        <p>
+            © 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.
+        </p>
+    </footer>
+
     <script src="/JS/prism.js"></script>
-    <script src="/JS/main.js"></script>
     <script src="/JS/docs.js"></script>
     <script src="/JS/sidebar.js"></script>
-  </body>
+    <script defer src="/JS/_theme.js"></script>
+</body>
 </html>

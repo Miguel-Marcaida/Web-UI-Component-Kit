@@ -1,73 +1,96 @@
-/*
- * ===========================================
- * 07-INDICATORS: INDICATOR-02-PROGRESS-BAR
- * ===========================================
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Indicador 02 - Barra de Progreso
+ * AUTONOMÍA ESTRICTA: Este archivo solo define estilos para .progress y sus variantes.
+ * ----------------------------------------------------------------------------
  */
 
-/* * 1. CLASE BASE DEL CONTENEDOR DE PROGRESO */
+/* * ----------------------------------------------------------------------------
+ * 1. Definición de Variables Locales (Encapsuladas)
+ * Se usan valores estáticos como fallback para garantizar la autonomía.
+ * ----------------------------------------------------------------------------
+ */
+.progress-example-container {
+  /* Variables de Dimensiones y Fondo */
+  --progress-bg: #e9ecef;          /* Gris claro de fondo */
+  --progress-height: 1.25rem;
+  --progress-radius: 0.25rem;      /* Radio moderado */
+  
+  /* Colores base estáticos (Garantía de autonomía si no hay tema) */
+  --bar-default-color: #007bff;    /* Azul primario */
+  --bar-success-color: #28a745;    /* Verde */
+  --bar-warning-color: #ffc107;    /* Amarillo/Naranja */
+  --bar-danger-color: #dc3545;     /* Rojo */
+  
+  /* Variables de Texto e Interfaz */
+  --text-on-dark: #ffffff;
+  --text-dark: #212529;
+
+  /* Estilos de Contenedor de Demostración */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa; /* Fondo ligero para la demostración */
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo Base del Contenedor (.progress)
+ * ----------------------------------------------------------------------------
+ */
 .progress {
-  /* Layout */
+  /* Contenedor principal de la barra (el fondo) */
   display: flex;
-  height: 1rem; /* Altura predeterminada (Mediana) */
-  overflow: hidden; /* Oculta cualquier desbordamiento de la barra interna */
-
-  /* Diseño */
-  background-color: var(--color-bg-base, #e9ecef);
-  border-radius: var(--border-radius-sm, 0.25rem);
-  box-shadow: var(--shadow-inner-sm, inset 0 1px 2px rgba(0, 0, 0, 0.1));
+  height: var(--progress-height);
+  overflow: hidden; 
+  background-color: var(--progress-bg);
+  border-radius: var(--progress-radius);
+  margin-bottom: 0.5rem; 
 }
 
-/* * 2. BARRA INTERNA (El llenado) */
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de la Barra Interna (.progress-bar)
+ * ----------------------------------------------------------------------------
+ */
 .progress-bar {
-  /* Layout */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center; 
+  color: var(--text-on-dark); 
+  text-align: center;
+  white-space: nowrap; 
+  
+  /* Color por defecto (primary) */
+  background-color: var(--bar-default-color);
 
-  /* Diseño Base */
-  color: white; /* Color de texto por defecto */
-  background-color: var(
-    --color-primary-base,
-    #007bff
-  ); /* Color principal por defecto */
-
-  /* Transición: Para que el cambio de porcentaje se vea suave */
+  /* Transición para efectos de cambio de progreso */
   transition: width 0.6s ease;
-
-  /* Asegura que el texto no se envuelva */
-  white-space: nowrap;
 }
 
-/* 3. TAMAÑO PEQUEÑO */
+/* * ----------------------------------------------------------------------------
+ * 4. Modificadores de Tamaño y Estilo
+ * ----------------------------------------------------------------------------
+ */
+
+/* Tamaño Pequeño */
 .progress--sm {
-  height: 0.5rem;
-}
-.progress--sm .progress-bar {
-  font-size: 0.65rem; /* Texto más pequeño para barras pequeñas */
+  --progress-height: 0.75rem; /* Altura reducida */
 }
 
-/* 4. ESTILOS CONTEXTUALES (COLORES DE LA BARRA) */
-
-/* Primario (Ya definido arriba) */
-/* .progress-bar {} */
-
-/* Éxito (Verde) */
+/* Variante de Éxito */
 .progress-bar--success {
-  background-color: var(--color-success-base, #28a745);
+  background-color: var(--bar-success-color);
 }
 
-/* Información (Azul Claro) */
-.progress-bar--info {
-  background-color: var(--color-info-base, #17a2b8);
-}
-
-/* Advertencia (Amarillo/Naranja) */
+/* Variante de Advertencia */
 .progress-bar--warning {
-  background-color: var(--color-warning-base, #ffc107);
-  color: var(--color-text-dark, #333); /* Texto oscuro para fondo claro */
+  background-color: var(--bar-warning-color);
+  color: var(--text-dark); /* Texto oscuro para mayor contraste */
 }
 
-/* Peligro/Error (Rojo) */
+/* Variante de Peligro/Error */
 .progress-bar--danger {
-  background-color: var(--color-danger-base, #dc3545);
+  background-color: var(--bar-danger-color);
 }

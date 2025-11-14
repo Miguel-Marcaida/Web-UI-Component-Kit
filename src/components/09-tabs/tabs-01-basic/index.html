@@ -1,149 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pestañas 01: Básicas</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indicador 02: Barra de Progreso</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link rel="stylesheet" href="/CSS/prism.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header id="main-header">
-      <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
-      </h1>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+      </h1>
 
-      <button
-        id="sidebar-toggle"
-        aria-expanded="false"
-        aria-controls="docs-sidebar"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
 
-      <nav>
-        <a href="/src/components/09-tabs/index.html">Volver a Pestañas</a>
-      </nav>
-    </header>
+      <nav>
+        <a href="/src/components/07-indicators/index.html"
+          >Volver a Indicadores</a
+        >
+      </nav>
 
-    <div class="docs-container">
-      <main class="docs-content">
-        <h2>Pestañas 01: Básicas (Navegación con Subrayado)</h2>
-        <p class="description">
-          Un conjunto de pestañas simple y limpio. Se basa en una lista
-          horizontal con un indicador de subrayado para la opción activa.
-          Requiere un poco de JavaScript para su funcionamiento.
-        </p>
+      <button id="theme-toggle" aria-label="Cambiar modo de color">
+        <i
+          class="fas fa-sun theme-icon"
+          data-mode="light"
+          style="display: none"
+        ></i
+        ><i class="fas fa-moon theme-icon" data-mode="dark"></i>
+      </button>
+    </header>
 
-        <section
-          class="preview-area"
-          style="padding: 2rem; background-color: var(--color-bg-base)"
-        >
-          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Indicador 02: Barra de Progreso</h2>
+        <p class="description">
+          Componente visual para representar el progreso de una tarea, con
+          variantes de color para reflejar estado y la posibilidad de mostrar
+          texto.
+        </p>
 
-          <div class="tabs-container">
-            <ul class="nav nav--tabs" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link active"
-                  id="tab-1-btn"
-                  data-target="tab-1-pane"
-                  type="button"
-                  role="tab"
-                  aria-selected="true"
-                >
-                  Descripción
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link"
-                  id="tab-2-btn"
-                  data-target="tab-2-pane"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                >
-                  Especificaciones
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link"
-                  id="tab-3-btn"
-                  data-target="tab-3-pane"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                >
-                  Comentarios
-                </button>
-              </li>
-            </ul>
+        <section class="preview-area">
+          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
 
-            <div class="tab-content">
-              <div
-                class="tab-pane active"
-                id="tab-1-pane"
-                role="tabpanel"
-                tabindex="0"
-              >
-                <p>
-                  Esta es la descripción detallada del producto. Contenido de la
-                  primera pestaña.
-                </p>
-              </div>
-              <div
-                class="tab-pane"
-                id="tab-2-pane"
-                role="tabpanel"
-                tabindex="0"
-              >
-                <p>
-                  Tabla con especificaciones técnicas: Peso (2kg), Dimensiones
-                  (10x15cm), Material (Aluminio).
-                </p>
-              </div>
-              <div
-                class="tab-pane"
-                id="tab-3-pane"
-                role="tabpanel"
-                tabindex="0"
-              >
-                <p>
-                  ¡Aún no hay comentarios! Sé el primero en dejar tu opinión.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+                    <div class="progress-example-container">
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="progress-bar" style="width: 50%"></div>
+            </div>
 
-        <section class="code-snippets">
-          <h3>Código Fuente</h3>
-          <h4>HTML</h4>
-          <pre><code class="language-html html-snippet">...</code></pre>
-          <h4>CSS</h4>
-          <pre><code class="language-css css-snippet">...</code></pre>
-          <h4>JavaScript</h4>
-          <pre><code class="language-javascript js-snippet">...</code></pre>
-        </section>
-      </main>
-    </div>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar progress-bar--success"
+                style="width: 100%"
+              >
+                100% Completo
+              </div>
+            </div>
 
-    <footer id="main-footer"></footer>
-    <script src="/JS/prism.js"></script>
-    <script src="/JS/main.js"></script>
-    <script src="/JS/docs.js"></script>
-    <script src="/JS/sidebar.js"></script>
-    <script src="script.js"></script>
-  </body>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar progress-bar--warning"
+                style="width: 75%"
+              ></div>
+            </div>
+
+            <div
+              class="progress progress--sm"
+              role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar progress-bar--danger"
+                style="width: 25%"
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer">
+      <p>
+        © 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS
+        & JS). Arquitectura modular y autónoma.
+      </p>
+    </footer>
+
+        <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+  </body>
 </html>
