@@ -1,0 +1,125 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Pestañas 03 - Verticales (Vertical Tabs)
+ * AUTONOMÍA ABSOLUTA: Modifica el layout Base para simular una navegación lateral.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta)
+ * ----------------------------------------------------------------------------
+ */
+.tab-container {
+    /* Paleta de Colores Base */
+    --tab-border-color: #dee2e6;
+    --tab-active-color: #007bff; /* Color primario para el activo */
+    --tab-text-color: #495057; /* Texto inactivo */
+    --tab-active-text-color: #000; /* Texto activo oscuro */
+    --tab-background-sidebar: #f8f9fa; /* Fondo para el área de pestañas */
+    
+    /* Espaciado y Fuente */
+    --tab-padding-y: 0.75rem;
+    --tab-padding-x: 1.25rem;
+    --tab-font-weight: 500;
+    --tab-border-radius: 0.25rem; 
+    
+    /* Contenedor de Demostración */
+    margin: 2rem auto;
+    max-width: 900px;
+    border: 1px solid var(--tab-border-color);
+    border-radius: var(--tab-border-radius);
+    padding: 0;
+    
+    /* Aseguramos una altura mínima para la demostración vertical */
+    min-height: 250px;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo de Layout Vertical (Modificador Principal)
+ * ----------------------------------------------------------------------------
+ */
+.tab-container--vertical {
+    display: flex; /* La clave: Pestañas y contenido se alinean horizontalmente */
+    flex-wrap: nowrap;
+}
+
+/* 2a. Estilo de la Lista de Pestañas (.tab-list--vertical) */
+.tab-list--vertical {
+    display: flex;
+    flex-direction: column; /* La clave: Las pestañas se apilan verticalmente */
+    flex-shrink: 0; /* Evita que el sidebar se encoja */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    width: 200px; /* Ancho fijo para el sidebar de pestañas */
+    
+    /* Bordes y fondo */
+    border-bottom: none; /* Elimina el borde horizontal */
+    border-right: 1px solid var(--tab-border-color); /* Borde divisor vertical */
+    background-color: var(--tab-background-sidebar); 
+    
+    border-top-left-radius: var(--tab-border-radius);
+    border-bottom-left-radius: var(--tab-border-radius);
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de Pestaña Individual (.tab-item)
+ * ----------------------------------------------------------------------------
+ */
+.tab-list--vertical .tab-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+    /* Siempre alinea el texto a la izquierda en una navegación lateral */
+    text-align: left; 
+    
+    padding: var(--tab-padding-y) var(--tab-padding-x);
+    font-size: 1rem;
+    font-weight: var(--tab-font-weight);
+    color: var(--tab-text-color);
+    
+    /* Eliminamos el margin-bottom que se usaba para la línea horizontal */
+    margin-bottom: 0; 
+    transition: all 0.15s ease-in-out;
+}
+
+/* Hover y Focus */
+.tab-list--vertical .tab-item:hover:not(.is-active) {
+    background-color: #e9ecef;
+    color: #000;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estado Activo de la Pestaña (.is-active)
+ * ----------------------------------------------------------------------------
+ */
+.tab-list--vertical .tab-item.is-active {
+    color: var(--tab-active-text-color);
+    background-color: #fff;
+    font-weight: 700; /* Hacemos el texto más grueso para destacar */
+    
+    /* La clave: Borde de color a la izquierda de la pestaña activa (o a la derecha) */
+    border-left: 3px solid var(--tab-active-color); 
+    
+    /* Margen negativo para que la pestaña activa se monte sobre la línea divisoria vertical */
+    margin-right: -1px; 
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estilo del Contenido del Panel (.tab-content y .tab-panel)
+ * ----------------------------------------------------------------------------
+ */
+.tab-content--vertical {
+    /* El contenido ocupa el resto del espacio */
+    flex-grow: 1; 
+    padding: 1.5rem;
+}
+
+.tab-content--vertical .tab-panel {
+    padding: 0;
+    border-top: none;
+}
