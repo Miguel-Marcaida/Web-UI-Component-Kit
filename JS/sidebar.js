@@ -209,12 +209,12 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Módulo 09: Pestañas",
             components: [
                 {
-                    name: "01. Pestañas Básicas",
+                    name: "01. Pestañas Base",
                     path: "/src/components/09-tabs/tab-01-base/index.html",
                 },
                 {
-                    name: "02. Pestañas Estilo Píldora",
-                    path: "/src/components/09-tabs/tabs-02-pills/index.html",
+                    name: "02. Pestañas de Botón", // ¡NUEVO COMPONENTE!
+                    path: "/src/components/09-tabs/tab-02-button/index.html",
                 },
             ],
         },
