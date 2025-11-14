@@ -1,0 +1,50 @@
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Orden</th>
+                <th>Estado</th>
+                <th>Cliente</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row-success">
+                <td>0098</td>
+                <td>Completada</td>
+                <td>Martínez, A.</td>
+                <td>$120.00</td>
+                <td>2025-11-14</td>
+            </tr>
+            <tr class="row-warning">
+                <td>0099</td>
+                <td>Pendiente de Pago</td>
+                <td>Gómez, J.</td>
+                <td>$45.50</td>
+                <td>2025-11-13</td>
+            </tr>
+            <tr class="row-danger">
+                <td>0100</td>
+                <td>Cancelada</td>
+                <td>Pérez, M.</td>
+                <td>$88.00</td>
+                <td>2025-11-13</td>
+            </tr>
+            <tr class="row-info">
+                <td>0101</td>
+                <td>En Proceso</td>
+                <td>López, C.</td>
+                <td>$250.00</td>
+                <td>2025-11-12</td>
+            </tr>
+            <tr>
+                <td>0102</td>
+                <td>Enviada</td>
+                <td>Díaz, R.</td>
+                <td>$15.00</td>
+                <td>2025-11-11</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

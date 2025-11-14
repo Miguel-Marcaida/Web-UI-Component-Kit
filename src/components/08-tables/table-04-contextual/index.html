@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla 04: Colores Contextuales</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/08-tables/index.html">Volver a Tablas</a>
+      </nav>
+
+      <button id="theme-toggle" aria-label="Cambiar modo de color">
+        <i
+          class="fas fa-sun theme-icon"
+          data-mode="light"
+          style="display: none"
+        ></i
+        ><i class="fas fa-moon theme-icon" data-mode="dark"></i>
+      </button>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>
+          Tabla 04: Colores Contextuales (`.row-success`, `.row-warning`, etc.)
+        </h2>
+        <p class="description">
+          Permite aplicar colores a filas o celdas enteras para indicar un
+          estado o contexto específico (éxito, peligro, información). Las clases
+          se aplican a la fila <code>&lt;tr&gt;</code>.
+        </p>
+
+        <section class="preview-area">
+          <h3>Vista Previa</h3>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID Orden</th>
+                  <th>Estado</th>
+                  <th>Cliente</th>
+                  <th>Monto</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row-success">
+                  <td>0098</td>
+                  <td>Completada</td>
+                  <td>Martínez, A.</td>
+                  <td>$120.00</td>
+                  <td>2025-11-14</td>
+                </tr>
+                <tr class="row-warning">
+                  <td>0099</td>
+                  <td>Pendiente de Pago</td>
+                  <td>Gómez, J.</td>
+                  <td>$45.50</td>
+                  <td>2025-11-13</td>
+                </tr>
+                <tr class="row-danger">
+                  <td>0100</td>
+                  <td>Cancelada</td>
+                  <td>Pérez, M.</td>
+                  <td>$88.00</td>
+                  <td>2025-11-13</td>
+                </tr>
+                <tr class="row-info">
+                  <td>0101</td>
+                  <td>En Proceso</td>
+                  <td>López, C.</td>
+                  <td>$250.00</td>
+                  <td>2025-11-12</td>
+                </tr>
+                <tr>
+                  <td>0102</td>
+                  <td>Enviada</td>
+                  <td>Díaz, R.</td>
+                  <td>$15.00</td>
+                  <td>2025-11-11</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer">
+      <p>
+        © 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS
+        & JS). Arquitectura modular y autónoma.
+      </p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+  </body>
+</html>

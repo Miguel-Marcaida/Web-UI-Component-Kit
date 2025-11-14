@@ -1,0 +1,122 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Tabla 04 - Colores Contextuales (Estado de Fila)
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos base del componente (.table) y
+ * sus modificadores. PALETA DE COLORES CONTEXTUALES FUERTES.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta en el Contenedor Raíz)
+ * ----------------------------------------------------------------------------
+ */
+.table-container {
+    /* Paleta de Colores Base (Fija y Autónoma) */
+    --table-text-color: #333333;           /* Texto oscuro */
+    --table-bg-color: #FFFFFF;             /* Fondo de celdas (Blanco puro) */
+    --table-header-footer-bg: #E9ECEF;     /* Fondo de encabezado y pie (Gris claro) */
+    --table-border-color: #DEE2E6;         /* Borde horizontal principal (Gris sutil) */
+    --table-border-heavy: #ADB5BD;         /* Borde más grueso (Gris oscuro) */
+    
+    /* Variables de Colores Contextuales FUERTES (Autónomas) */
+    --color-success-bg: #C3E6CB;           /* Fondo de éxito (Verde visible) */
+    --color-warning-bg: #FFEEAC;           /* Fondo de advertencia (Amarillo visible) */
+    --color-danger-bg: #F5C6CB;            /* Fondo de peligro/error (Rojo visible) */
+    --color-info-bg: #B8DAFF;              /* Fondo de información (Azul visible) */
+    
+    /* Espaciado */
+    --table-padding-y: 0.75rem;
+    --table-padding-x: 0.75rem;
+
+    /* Contenedor de Demostración y Responsividad */
+    margin-bottom: 2rem;
+    padding: 0; 
+    width: 100%;
+    overflow-x: auto; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo Base de la Tabla (.table)
+ * ----------------------------------------------------------------------------
+ */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--table-text-color); 
+    border-collapse: collapse;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de Celdas (th y td)
+ * ----------------------------------------------------------------------------
+ */
+.table th,
+.table td {
+    padding: var(--table-padding-y) var(--table-padding-x);
+    border-bottom: 1px solid var(--table-border-color);
+    background-color: var(--table-bg-color); 
+    vertical-align: top;
+    text-align: left;
+}
+
+.table th {
+    font-weight: 700; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estilo de Encabezado (thead) y Pie (tfoot)
+ * ----------------------------------------------------------------------------
+ */
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--table-border-heavy); 
+    background-color: var(--table-header-footer-bg); 
+}
+
+.table tfoot td {
+    border-top: 2px solid var(--table-border-heavy);
+    background-color: var(--table-header-footer-bg); 
+    color: var(--table-text-color); 
+    font-weight: 700; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estilo Modificador: Colores Contextuales (se aplican al <tr>)
+ * ----------------------------------------------------------------------------
+ */
+
+.table tbody tr.row-success td {
+    background-color: var(--color-success-bg);
+}
+
+.table tbody tr.row-warning td {
+    background-color: var(--color-warning-bg);
+}
+
+.table tbody tr.row-danger td {
+    background-color: var(--color-danger-bg);
+}
+
+.table tbody tr.row-info td {
+    background-color: var(--color-info-bg);
+}
+
+/* Asegurar que las celdas contextuales usen el color de texto base */
+.table tbody tr[class^="row-"] td {
+    color: var(--table-text-color);
+}
+
+/* * ----------------------------------------------------------------------------
+ * 6. Alineación de Columnas (Pura CSS)
+ * ----------------------------------------------------------------------------
+ */
+.table thead th:nth-last-child(1),
+.table thead th:nth-last-child(2),
+.table thead th:nth-last-child(3),
+.table tbody td:nth-last-child(1),
+.table tbody td:nth-last-child(2),
+.table tbody td:nth-last-child(3),
+.table tfoot td:nth-last-child(1),
+.table tfoot td:nth-last-child(2),
+.table tfoot td:nth-child(1) { 
+    text-align: right;
+}
