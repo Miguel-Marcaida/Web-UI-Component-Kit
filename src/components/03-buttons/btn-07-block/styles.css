@@ -1,0 +1,86 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Botón 07 - Ancho Completo (.btn--block)
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos base (.btn) y modificadores
+ * de tamaño y display necesarios.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta en el Contenedor Raíz)
+ * ----------------------------------------------------------------------------
+ */
+.button-container {
+    /* Paleta de Colores Base (Fija y Autónoma) */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    
+    /* General Styling */
+    --btn-text-color: #ffffff;
+    --btn-border-radius: 0.25rem;
+    --btn-font-weight: 400;
+
+    /* Tamaño DEFAULT (Base) */
+    --btn-padding-y: 0.5rem;
+    --btn-padding-x: 1rem;
+    --btn-font-size: 1rem;
+
+    /* Contenedor de Demostración */
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px dashed #ccc; 
+    /* El contenedor es intencionalmente más estrecho para demostrar el 'block' */
+    max-width: 400px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo Base del Botón (.btn)
+ * ----------------------------------------------------------------------------
+ */
+.btn {
+    /* Por defecto, los botones son inline-block */
+    display: inline-block; 
+    font-weight: var(--btn-font-weight);
+    color: var(--btn-text-color);
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent; 
+    
+    /* Aplicar variables de tamaño DEFAULT */
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    font-size: var(--btn-font-size);
+    line-height: 1.5;
+    border-radius: var(--btn-border-radius);
+    
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+/* Estado Focus/Disabled (simplificado) */
+.btn:hover {
+    filter: brightness(1.1);
+}
+.btn:disabled {
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilos Contextuales (Necesarios para colorear los botones)
+ * ----------------------------------------------------------------------------
+ */
+.btn--primary { background-color: var(--color-primary); border-color: var(--color-primary); }
+.btn--secondary { background-color: var(--color-secondary); border-color: var(--color-secondary); }
+
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estilo Modificador: Botón Ancho Completo (.btn--block)
+ * ----------------------------------------------------------------------------
+ */
+.btn--block {
+    display: block; /* La clave para ocupar todo el ancho */
+    width: 100%;    /* Asegura que ocupe todo el espacio del padre */
+}

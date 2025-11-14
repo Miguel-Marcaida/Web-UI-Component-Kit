@@ -1,0 +1,5 @@
+<div class="button-container">
+    <button class="btn btn--primary btn--block">Botón de Acción Principal</button>
+    
+    <button class="btn btn--secondary" style="margin-top: 1rem;">Botón normal</button>
+</div>
