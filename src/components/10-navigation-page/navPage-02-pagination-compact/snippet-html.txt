@@ -1,0 +1,44 @@
+<nav class="pagination-container pagination-compact" aria-label="Navegación de Páginas Compacta">
+    <ul class="pagination-list">
+        <li class="pagination-item">
+            <a 
+                href="#" 
+                class="pagination-link" 
+                aria-label="Anterior"
+                aria-disabled="false"
+            >
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        </li>
+        
+        <li class="pagination-item">
+            <a 
+                href="#" 
+                class="pagination-link is-active" 
+                aria-current="page"
+            >
+                1
+            </a>
+        </li>
+        <li class="pagination-item">
+            <a href="#" class="pagination-link">
+                2
+            </a>
+        </li>
+        <li class="pagination-item">
+            <a href="#" class="pagination-link">
+                3
+            </a>
+        </li>
+
+        <li class="pagination-item">
+            <a 
+                href="#" 
+                class="pagination-link" 
+                aria-label="Siguiente"
+            >
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+    </ul>
+</nav>

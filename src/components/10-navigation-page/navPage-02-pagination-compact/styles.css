@@ -1,0 +1,136 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Paginación 02 - Compacta (Dots/Carousel Style)
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta)
+ * ----------------------------------------------------------------------------
+ */
+.pagination-container {
+    /* Paleta de Colores Base */
+    --pagination-border-color: #dee2e6;
+    --pagination-text-color: #007bff;
+    --pagination-bg-color: #c5c5c5;
+    --pagination-hover-bg: #e9ecef;
+    --pagination-active-bg: #007bff;
+    --pagination-active-text: #fff;
+    --pagination-disabled-color: #6c757d;
+    
+    /* Variables Específicas Compactas */
+    --compact-size: 2rem; /* Alto y Ancho para los ítems */
+    --compact-font-size: 0.875rem;
+    --compact-border-radius: 50%; /* Puntos */
+
+    /* Contenedor de Demostración */
+    margin: 2rem auto;
+    display: flex; 
+    justify-content: center;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo de la Lista y Elementos
+ * ----------------------------------------------------------------------------
+ */
+.pagination-list {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo General del Enlace de Paginación (.pagination-link)
+ * ----------------------------------------------------------------------------
+ */
+.pagination-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Dimensiones fijas para el diseño compacto */
+    width: var(--compact-size);
+    height: var(--compact-size);
+    line-height: var(--compact-size); /* Asegura centrado vertical si no hay flex */
+    
+    font-size: var(--compact-font-size);
+    color: var(--pagination-text-color);
+    text-decoration: none;
+    background-color: var(--pagination-bg-color);
+    border: 1px solid var(--pagination-border-color);
+    
+    /* El truco del borde: el margen negativo hace que los bordes colapsen */
+    margin-left: -1px; 
+    transition: all 0.2s;
+    
+    /* Aplicar borde redondo general si queremos diseño de píldora */
+    border-radius: 0;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estilos Específicos para la MODIFICACIÓN COMPACTA
+ * CLAVE: Aplica estilos a los ítems numéricos para parecer "puntos"
+ * ----------------------------------------------------------------------------
+ */
+.pagination-compact .pagination-link {
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 0; /* Oculta el número. Se usa ARIA para accesibilidad. */
+    border-radius: var(--compact-border-radius); /* Forma circular */
+    border: 1px solid var(--pagination-border-color);
+    margin: 0 0.25rem; /* Separación entre puntos */
+}
+
+/* Re-mostrar iconos de Anterior/Siguiente */
+.pagination-compact .pagination-link i.fas {
+    font-size: 1rem;
+    color: var(--pagination-text-color);
+}
+/* Revertir margin-left para que los ítems compactos no se superpongan */
+.pagination-compact .pagination-item {
+    margin: 0;
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estados: Hover y Activo (Compacta)
+ * ----------------------------------------------------------------------------
+ */
+.pagination-compact .pagination-link:hover {
+    background-color: var(--pagination-hover-bg);
+    border-color: var(--pagination-active-bg);
+}
+
+.pagination-compact .pagination-link.is-active {
+    color: var(--pagination-active-text);
+    background-color: var(--pagination-active-bg);
+    border-color: var(--pagination-active-bg);
+    z-index: 1; 
+}
+
+/* El enlace activo de la paginación compacta no tiene texto, así que el color de texto no importa, 
+   pero se aplica a los iconos de Anterior/Siguiente si estuvieran activos. */
+.pagination-compact .pagination-link.is-active i.fas {
+    color: var(--pagination-active-text);
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 6. Estado Deshabilitado (.is-disabled)
+ * ----------------------------------------------------------------------------
+ */
+.pagination-link.is-disabled {
+    color: var(--pagination-disabled-color);
+    pointer-events: none; 
+    background-color: var(--pagination-bg-color);
+    border-color: var(--pagination-border-color);
+    opacity: 0.6;
+}
+
+/* El ítem deshabilitado compacto debe mantener el mismo color de borde que el normal */
+.pagination-compact .pagination-link.is-disabled {
+    border-color: var(--pagination-border-color);
+}
