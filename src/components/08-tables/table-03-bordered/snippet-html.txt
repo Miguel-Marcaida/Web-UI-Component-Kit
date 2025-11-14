@@ -1,0 +1,42 @@
+<div class="table-container">
+    <table class="table table--bordered">
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4001</td>
+                <td>Monitor Curvo 27"</td>
+                <td>1</td>
+                <td>$350.00</td>
+                <td>$350.00</td>
+            </tr>
+            <tr>
+                <td>4002</td>
+                <td>Webcam HD Pro</td>
+                <td>2</td>
+                <td>$55.00</td>
+                <td>$110.00</td>
+            </tr>
+            <tr>
+                <td>4003</td>
+                <td>Licencia Software</td>
+                <td>1</td>
+                <td>$199.99</td>
+                <td>$199.99</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Subtotal:</td>
+                <td>$659.99</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

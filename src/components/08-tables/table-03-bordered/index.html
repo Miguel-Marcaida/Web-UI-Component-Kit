@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla 03: Bordes Verticales</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>
+        <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+      </h1>
+
+      <button
+        id="sidebar-toggle"
+        aria-expanded="false"
+        aria-controls="docs-sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav>
+        <a href="/src/components/08-tables/index.html">Volver a Tablas</a>
+      </nav>
+
+      <button id="theme-toggle" aria-label="Cambiar modo de color">
+        <i
+          class="fas fa-sun theme-icon"
+          data-mode="light"
+          style="display: none"
+        ></i
+        ><i class="fas fa-moon theme-icon" data-mode="dark"></i>
+      </button>
+    </header>
+
+    <div class="docs-container">
+      <main class="docs-content">
+        <h2>Tabla 03: Bordes Verticales (`.table--bordered`)</h2>
+        <p class="description">
+          Esta tabla incorpora la clase <code>.table--bordered</code> para
+          mostrar bordes alrededor de todas las celdas, creando una cuadrícula
+          completa. El borde del componente es ligero y sutil.
+        </p>
+
+        <section class="preview-area">
+          <h3>Vista Previa</h3>
+
+          <div class="table-container">
+            <table class="table table--bordered">
+              <thead>
+                <tr>
+                  <th>Item ID</th>
+                  <th>Descripción</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>4001</td>
+                  <td>Monitor Curvo 27"</td>
+                  <td>1</td>
+                  <td>$350.00</td>
+                  <td>$350.00</td>
+                </tr>
+                <tr>
+                  <td>4002</td>
+                  <td>Webcam HD Pro</td>
+                  <td>2</td>
+                  <td>$55.00</td>
+                  <td>$110.00</td>
+                </tr>
+                <tr>
+                  <td>4003</td>
+                  <td>Licencia Software</td>
+                  <td>1</td>
+                  <td>$199.99</td>
+                  <td>$199.99</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">Subtotal:</td>
+                  <td>$659.99</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+        <section class="code-snippets">
+          <h3>Código Fuente</h3>
+          <h4>HTML</h4>
+          <pre><code class="language-html html-snippet">...</code></pre>
+          <h4>CSS</h4>
+          <pre><code class="language-css css-snippet">...</code></pre>
+        </section>
+      </main>
+    </div>
+
+    <footer id="main-footer">
+      <p>
+        © 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS
+        & JS). Arquitectura modular y autónoma.
+      </p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+  </body>
+</html>

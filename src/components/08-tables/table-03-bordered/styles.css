@@ -1,0 +1,125 @@
+/* * ----------------------------------------------------------------------------
+ * COMPONENTE: Tabla 03 - Bordes Verticales (.table--bordered)
+ * AUTONOMÍA ABSOLUTA: Incluye TODOS los estilos base del componente (.table) y
+ * sus modificadores. PALETA DE BORDES REFORZADA.
+ * ----------------------------------------------------------------------------
+ */
+
+/* * ----------------------------------------------------------------------------
+ * 1. Declaración de Variables Locales (Encapsulación Estricta en el Contenedor Raíz)
+ * ----------------------------------------------------------------------------
+ */
+.table-container {
+    /* Paleta de Colores y Tipografía (Fija y Autónoma) */
+    --table-text-color: #333333;           /* Texto oscuro */
+    --table-bg-color: #FFFFFF;             /* Fondo de celdas (Blanco puro) */
+    --table-header-footer-bg: #E9ECEF;     /* Fondo de encabezado y pie (Gris claro) */
+    
+    /* BORDES REFORZADOS */
+    --table-border-color: #AAB8C2;         /* Borde horizontal principal (Gris medio visible) */
+    --table-border-heavy: #8898AA;         /* Borde más grueso (Gris oscuro para thead/tfoot) */
+    
+    /* Variable Específica para Modificador */
+    --table-bordered-color: #AAB8C2;       /* Color de los bordes verticales (Visible) */
+
+    /* Espaciado */
+    --table-padding-y: 0.75rem;
+    --table-padding-x: 0.75rem;
+
+    /* Contenedor de Demostración y Responsividad */
+    margin-bottom: 2rem;
+    padding: 0; 
+    width: 100%;
+    overflow-x: auto; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 2. Estilo Base de la Tabla (.table)
+ * ----------------------------------------------------------------------------
+ */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--table-text-color); 
+    border-collapse: collapse;
+}
+
+/* * ----------------------------------------------------------------------------
+ * 3. Estilo de Celdas (th y td)
+ * ----------------------------------------------------------------------------
+ */
+.table th,
+.table td {
+    padding: var(--table-padding-y) var(--table-padding-x);
+    border-bottom: 1px solid var(--table-border-color);
+    background-color: var(--table-bg-color); 
+    vertical-align: top;
+    text-align: left;
+}
+
+.table th {
+    font-weight: 700; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 4. Estilo de Encabezado (thead) y Pie (tfoot)
+ * ----------------------------------------------------------------------------
+ */
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--table-border-heavy); 
+    background-color: var(--table-header-footer-bg); 
+}
+
+.table tfoot td {
+    border-top: 2px solid var(--table-border-heavy);
+    background-color: var(--table-header-footer-bg); 
+    color: var(--table-text-color); 
+    font-weight: 700; 
+}
+
+/* * ----------------------------------------------------------------------------
+ * 5. Estilo Modificador: Bordes Verticales (.table--bordered)
+ * ----------------------------------------------------------------------------
+ */
+
+.table.table--bordered {
+    /* Aplica un borde exterior general más oscuro */
+    border-collapse: collapse;
+    border: 1px solid var(--table-bordered-color);
+}
+
+.table.table--bordered th,
+.table.table--bordered td {
+    /* Añade bordes a los 4 lados de cada celda */
+    border: 1px solid var(--table-bordered-color);
+}
+
+.table.table--bordered thead th {
+    /* Ajuste de grosor en encabezado */
+    border-bottom-width: 2px;
+    border-color: var(--table-bordered-color);
+}
+
+/* Ajuste de grosor en pie */
+.table.table--bordered tfoot td {
+    border-top-width: 2px;
+    border-color: var(--table-bordered-color);
+}
+
+
+/* * ----------------------------------------------------------------------------
+ * 6. Alineación de Columnas (Pura CSS)
+ * ----------------------------------------------------------------------------
+ */
+.table thead th:nth-last-child(1),
+.table thead th:nth-last-child(2),
+.table thead th:nth-last-child(3),
+.table tbody td:nth-last-child(1),
+.table tbody td:nth-last-child(2),
+.table tbody td:nth-last-child(3),
+.table tfoot td:nth-last-child(1),
+.table tfoot td:nth-last-child(2),
+.table tfoot td:nth-child(1) { 
+    text-align: right;
+}
