@@ -3,61 +3,55 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Módulo 14: Widgets Avanzados</title>
+        <title>Módulo 14: Widgets Avanzados (Autónomos)</title>
         <link rel="stylesheet" href="/CSS/main.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     </head>
     <body>
-        <!-- INICIO: HEADER CORREGIDO (Toggle de Tema + Navegación) -->
         <header id="main-header">
             <h1>
-                <!-- CORRECCIÓN: Eliminado 'color: white' del style -->
                 <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
             </h1>
 
             <div class="nav-wrapper">
                 <nav>
-                    <!-- ENLACE DE NAVEGACIÓN ORIGINAL MANTENIDO -->
                     <a href="/index.html">Volver al Inicio</a>
                 </nav>
 
-                <!-- INTEGRACIÓN: Botón de Toggle de Tema -->
                 <button id="theme-toggle" aria-label="Cambiar modo de color">
                     <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
                     <i class="fas fa-moon theme-icon" data-mode="dark"></i>
                 </button>
             </div>
         </header>
-        <!-- FIN: HEADER CORREGIDO -->
-
         <main id="main-content">
             <section class="hero-section">
                 <h2>Módulo 14: Widgets Avanzados</h2>
-                <p>Componentes interactivos complejos que requieren manipulación avanzada del DOM con JavaScript.        </p>
+                <p>Componentes interactivos complejos que han sido **re-arquitecturados** para garantizar la **Autonomía Estricta**. Cada widget incluye su propio CSS y JavaScript local, sin depender de archivos centrales del Kit.</p>
             </section>
+            
             <div class="grid-container">
-                <a href="widget-01-accordion/index.html" class="category-card">
-                    <h4>01. Acordeón (Accordion)</h4>
-                    <p>Muestra y oculta secciones de contenido de manera vertical, manteniendo solo una abierta.</p>
+                <a href="widget-01-toggle/index.html" class="category-card">
+                    <h4>01. Toggle (Colapsable/Acordeón)</h4>
+                    <p>Mecanismo base para mostrar/ocultar contenido, con modo configurable de colapsable simple o acordeón.</p>
                 </a>
-                <a href="widget-02-collapse/index.html" class="category-card">
-                    <h4>02. Colapsable (Collapse)</h4>
-                    <p>Permite abrir múltiples paneles de contenido a la vez.</p>
+                
+                <a href="widget-02-popup/index.html" class="category-card">
+                    <h4>02. Dropdown / Popover</h4>
+                    <p>Muestra contenido flotante que se cierra al hacer clic fuera (manejo de estado global con JS autónomo).</p>
                 </a>
-                <a href="widget-03-carousel/index.html" class="category-card">
-                    <h4>03. Carrusel (Carousel)</h4>
-                    <p>Muestra contenido deslizante con navegación, indicadores y auto-avance.</p>
+                
+                <a href="widget-03-tabs/index.html" class="category-card">
+                    <h4>03. Tabulador (Tabs)</h4>
+                    <p>Navegación por paneles de contenido con lógica de grupo gestionada por su propio script.</p>
                 </a>
             </div>
         </main>
 
-        <!-- CORRECCIÓN: Se añade el contenido estándar del footer -->
         <footer id="main-footer">
             <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
         </footer>
 
-        <!-- INICIO: CARGA DEL SCRIPT DE TEMA (Autónomo) -->
         <script defer src="/JS/_theme.js"></script>
-        <!-- Fin: CARGA DEL SCRIPT DE TEMA -->
-    </body>
+        </body>
 </html>

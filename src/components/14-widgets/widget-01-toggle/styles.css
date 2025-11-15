@@ -1,0 +1,88 @@
+/* *********************************************************************************
+ * 14.01: TOGGLE DE CONTENIDO - ESTILOS AUTÓNOMOS
+ * NOTA: Usa valores directos (ej: #ffffff, #ccc) para garantizar la Autonomía Estricta.
+ * *********************************************************************************/
+
+/* 1. Contenedor de Declaración para la Demo (Autónomo) */
+.toggle-example-container {
+    /* Estilos de caja contenedora para la demostración */
+    padding: 2rem;
+    background-color: #f8f9fa; 
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+}
+
+/* 2. Estilos del Componente TOGGLE */
+.toggle-group {
+    /* Estilo del contenedor principal del acordeón */
+    border: 1px solid #ced4da;
+    border-radius: 0.3rem;
+    overflow: hidden; 
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.toggle-item {
+    border-bottom: 1px solid #ced4da;
+}
+
+/* El último item no lleva borde inferior */
+.toggle-item:last-child {
+    border-bottom: none;
+}
+
+.toggle-header {
+    /* Estilos de Botón/Encabezado - Totalmente autónomos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: #e9ecef; /* Fondo claro directo */
+    color: #212529; /* Texto oscuro directo */
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.toggle-header:hover {
+    background-color: #dee2e6;
+}
+
+/* Estilos de Icono (Toggle) */
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Estado Activo: el header del item activo */
+.toggle-item.is-active .toggle-header {
+    background-color: #ffffff; /* Fondo blanco en activo */
+}
+
+/* Rotación del Icono cuando está abierto */
+.toggle-item.is-active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* 3. Estilos del Contenido Plegable */
+.toggle-content {
+    background-color: #ffffff;
+    /* Importante para la animación */
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; 
+    overflow: hidden;
+}
+
+/* Contenido interno (Padding) */
+.toggle-content p {
+    padding: 1rem 1.5rem;
+    margin: 0;
+    color: #495057; /* Texto de contenido */
+}
+
+/* Eliminar padding vertical cuando está cerrado (Max-height: 0) */
+.toggle-item:not(.is-active) .toggle-content {
+    padding-top: 0;
+    padding-bottom: 0;
+}

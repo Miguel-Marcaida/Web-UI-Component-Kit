@@ -1,0 +1,33 @@
+<div class="toggle-group" data-mode="accordion">
+                        
+    <div class="toggle-item is-active">
+        <button class="toggle-header" data-target="#content-a" aria-expanded="true">
+            <span>Título Plegable 1</span>
+            <i class="fas fa-chevron-down toggle-icon"></i> 
+        </button>
+        <div class="toggle-content" id="content-a">
+            <p>Contenido del primer panel. Aquí va su información detallada.</p>
+        </div>
+    </div>
+
+    <div class="toggle-item">
+        <button class="toggle-header" data-target="#content-b" aria-expanded="false">
+            <span>Título Plegable 2</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </button>
+        <div class="toggle-content" id="content-b">
+            <p>Contenido del segundo panel. Este contenido se abre y se cierra con la transición CSS.</p>
+        </div>
+    </div>
+
+    <div class="toggle-item">
+        <button class="toggle-header" data-target="#content-c" aria-expanded="false">
+            <span>Título Plegable 3</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </button>
+        <div class="toggle-content" id="content-c">
+            <p>Contenido del tercer panel. El JS asegura la funcionalidad del modo acordeón.</p>
+        </div>
+    </div>
+
+</div>
