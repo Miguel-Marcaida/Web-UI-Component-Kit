@@ -1,153 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Widgets 03: Carrusel (Carousel)</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14.03: Tabulador (Tabs)</title>
 
-        <link rel="stylesheet" href="/CSS/main.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
-        <link rel="stylesheet" href="/CSS/prism.css" />
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <header id="main-header">
-            <h1>
-                <a
-                    href="/index.html"
-                    style="text-decoration: none; color: white"
-                    >Web UI Kit</a
-                >
-            </h1>
-            <button
-                id="sidebar-toggle"
-                aria-expanded="false"
-                aria-controls="docs-sidebar"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <a href="../index.html">Volver a Widgets</a>
-            </nav>
-        </header>
+    <link rel="stylesheet" href="/CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
 
-        <div class="docs-container">
-            <main class="docs-content">
-                <h2>Widgets 03: Carrusel (Carousel)</h2>
-                <p class="description m-b-4">
-                    Un widget dinámico para mostrar una serie de imágenes o
-                    contenido de forma rotativa, con navegación, indicadores y
-                    **auto-avance**.
-                </p>
+    <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html">Volver a Widgets</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+            <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
+    </header>
 
-                <section
-                    class="preview-area p-4"
-                    style="background-color: var(--color-bg-light)"
-                >
-                    <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+    <div class="docs-container">
+        <main class="docs-content">
+            <h2>14.03: Tabulador (Tabs)</h2>
+            <p class="description">
+                Organiza contenido en paneles navegables mediante pestañas. Este componente maneja el estado activo de la pestaña y el contenido asociado mediante un JavaScript 100% autónomo.
+            </p>
 
-                    <div id="demoCarousel" class="carousel-wrapper">
-                        <div class="carousel-inner">
-                            <div
-                                class="carousel-item active"
-                                aria-current="true"
+            <section class="preview-area">
+                <h3>Vista Previa: Tabs de Navegación</h3>
+                
+                <div class="tabs-example-container">
+                    
+                    <div class="tabs-group">
+                        <div class="tabs-header" role="tablist">
+                            <button 
+                                class="tab-button is-active" 
+                                data-target="#tab-content-a" 
+                                role="tab" 
+                                aria-selected="true"
                             >
-                                <img
-                                    src="https://plus.unsplash.com/premium_photo-1683910767532-3a25b821f7ae"
-                                    alt="Imagen de Carrusel 1"
-                                    loading="lazy"
-                                />
-                                <div class="carousel-caption">
-                                    <h4>Slide Uno</h4>
-                                    <p>
-                                        El carrusel es cíclico y con
-                                        auto-avance.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" aria-current="false">
-                                <img
-                                    src="https://images.unsplash.com/photo-1720884413532-59289875c3e1"
-                                    alt="Imagen de Carrusel 2"
-                                    loading="lazy"
-                                />
-                                <div class="carousel-caption">
-                                    <h4>Slide Dos</h4>
-                                    <p>
-                                        Controla la navegación con flechas o
-                                        indicadores.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" aria-current="false">
-                                <img
-                                    src="https://plus.unsplash.com/premium_photo-1661963063875-7f131e02bf75"
-                                    alt="Imagen de Carrusel 3"
-                                    loading="lazy"
-                                />
-                                <div class="carousel-caption">
-                                    <h4>Slide Tres</h4>
-                                    <p>
-                                        La reproducción se pausa al interactuar.
-                                    </p>
-                                </div>
-                            </div>
+                                Perfil
+                            </button>
+                            <button 
+                                class="tab-button" 
+                                data-target="#tab-content-b" 
+                                role="tab" 
+                                aria-selected="false"
+                            >
+                                Configuraciones
+                            </button>
+                            <button 
+                                class="tab-button" 
+                                data-target="#tab-content-c" 
+                                role="tab" 
+                                aria-selected="false"
+                            >
+                                Historial
+                            </button>
                         </div>
 
-                        <button
-                            class="carousel-control prev"
-                            aria-label="Anterior"
-                        >
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button
-                            class="carousel-control next"
-                            aria-label="Siguiente"
-                        >
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-
-                        <div class="carousel-indicators">
-                            <button
-                                class="dot active"
-                                data-slide-to="0"
-                                aria-current="true"
-                                aria-label="Ir a diapositiva 1"
-                            ></button>
-                            <button
-                                class="dot"
-                                data-slide-to="1"
-                                aria-label="Ir a diapositiva 2"
-                            ></button>
-                            <button
-                                class="dot"
-                                data-slide-to="2"
-                                aria-label="Ir a diapositiva 3"
-                            ></button>
+                        <div class="tabs-content">
+                            <div class="tab-panel is-active" id="tab-content-a" role="tabpanel">
+                                <h4>Contenido de Perfil</h4>
+                                <p>Esta pestaña muestra información general del usuario y es la activa por defecto.</p>
+                            </div>
+                            <div class="tab-panel" id="tab-content-b" role="tabpanel">
+                                <h4>Contenido de Configuraciones</h4>
+                                <p>Aquí se pueden ajustar las preferencias de privacidad y notificaciones de la cuenta.</p>
+                            </div>
+                            <div class="tab-panel" id="tab-content-c" role="tabpanel">
+                                <h4>Contenido de Historial</h4>
+                                <p>Se muestran los últimos 10 movimientos realizados en la plataforma.</p>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+            
+            <section class="code-snippets">
+                <h3>Referencia de Nomenclatura y Código Fuente</h3>
+                <p>El componente es 100% autónomo y requiere el CSS y JavaScript locales para la interacción.</p>
+                
+                <h4>HTML (Estructura del Tabulador)</h4>
+                <pre><code class="language-html html-snippet"></code></pre>
+                
+                <h4>CSS (Estilos Completos del Tabulador)</h4>
+                <pre><code class="language-css css-snippet"></code></pre>
 
-                <section class="code-snippets">
-                    <h3>Código Fuente</h3>
-                    <h4>HTML</h4>
-                    <pre><code class="language-html html-snippet">...</code></pre>
-                    <h4>CSS</h4>
-                    <pre><code class="language-css css-snippet">...</code></pre>
-                    <h4>JavaScript</h4>
-                    <pre><code class="language-javascript js-snippet">...</code></pre>
-                </section>
-            </main>
-        </div>
+                <h4>JavaScript (Lógica de Interacción)</h4>
+                <pre><code class="language-javascript js-snippet"></code></pre>
+            </section>
+        </main>
+    </div>
 
-        <footer id="main-footer"></footer>
-        <script src="/JS/prism.js"></script>
-        <script src="/JS/main.js"></script>
-        <script src="/JS/docs.js"></script>
-        <script src="/JS/sidebar.js"></script>
-        <script src="script.js"></script>
-    </body>
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit.</p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+    
+    <script src="script.js"></script>
+</body>
 </html>

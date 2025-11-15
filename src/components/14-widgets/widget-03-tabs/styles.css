@@ -1,129 +1,76 @@
-/* ===========================================
-   CARRUSEL (CAROUSEL)
-   widget-03-carousel/styles.css
-=========================================== */
+/* *********************************************************************************
+ * 14.03: TABULADOR (TABS) - ESTILOS AUTÓNOMOS
+ * NOTA: Usa valores directos para garantizar la Autonomía Estricta.
+ * *********************************************************************************/
 
-.carousel-wrapper {
-    /* Establece el contexto para los elementos hijos posicionados absolutamente (controles e indicadores) */
-    position: relative;
-    overflow: hidden; /* Oculta los slides que están fuera de la vista */
-    width: 100%;
-    /* Altura fija para el ejemplo, pero puede ser responsive o basado en la imagen */
-    max-height: 400px;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
+/* 1. Contenedor de Declaración para la Demo (Autónomo) */
+.tabs-example-container {
+    padding: 2rem;
+    background-color: #f8f9fa; 
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
 }
 
-/* 1. Contenedor de las Diapositivas (Track/Inner) */
-.carousel-inner {
-    /* Desactiva el desplazamiento de la barra lateral, crucial para la animación en JS */
+/* 2. Estilos del Componente TABULADOR */
+
+.tabs-group {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* Estilos de la Cabecera (Barra de Pestañas) */
+.tabs-header {
     display: flex;
-    width: 100%;
-    height: 100%;
-    /* La transición se aplica al contenedor, no a los items individuales */
-    transition: transform 0.6s ease-in-out;
-}
-
-/* Item individual del Carrusel */
-.carousel-item {
-    /* Importante: asegura que cada item ocupe exactamente el ancho del wrapper */
-    flex: 0 0 100%;
-    width: 100%;
-    position: relative;
-    /* La altura se ajustará al carousel-wrapper */
-    height: 100%;
-}
-
-/* Imágenes dentro del Carrusel */
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
-}
-
-/* Caption (Texto sobre la imagen) */
-.carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem 1.5rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.carousel-caption h4 {
-    margin-top: 0;
-    margin-bottom: 0.25rem;
-    font-size: 1.5rem;
-}
-
-.carousel-caption p {
+    border-bottom: 2px solid #ced4da; /* Borde inferior de la barra de pestañas */
     margin-bottom: 0;
 }
 
-/* 2. Controles de Navegación (Flechas) */
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+/* Estilos del Botón/Pestaña Individual */
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #495057; /* Texto inactivo */
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    font-size: 1.5rem;
-    line-height: 1;
-    border-radius: 50%; /* Botones redondos */
-    transition: background-color 0.3s ease;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-bottom: 2px solid transparent; /* Borde para el efecto activo */
+    margin-bottom: -2px; /* Superponer el borde inferior de la cabecera */
+    transition: color 0.2s, border-bottom-color 0.2s;
 }
 
-.carousel-control:hover {
-    background: rgba(0, 0, 0, 0.7);
+.tab-button:hover:not(.is-active) {
+    color: #212529;
 }
 
-.carousel-control.prev {
-    left: 1rem;
+/* Estado Activo */
+.tab-button.is-active {
+    color: #007bff; /* Color primario directo */
+    border-bottom-color: #007bff; /* Línea activa */
+    font-weight: 600;
 }
 
-.carousel-control.next {
-    right: 1rem;
+/* 3. Estilos del Contenido del Panel */
+.tabs-content {
+    padding: 1rem 0;
+    color: #007bff;
 }
 
-/* 3. Indicadores de Posición (Puntos/Dots) */
-.carousel-indicators {
-    position: absolute;
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    display: flex;
-    gap: 0.5rem;
-    padding: 0;
-    margin: 0;
+.tab-panel {
+    /* Estado inicial: oculto por defecto */
+    display: none; 
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-top: none; /* Se une visualmente con la barra de pestañas */
+    border-radius: 0 0 0.3rem 0.3rem;
+    background-color: #ffffff;
 }
 
-.carousel-indicators .dot {
-    display: block;
-    width: 0.75rem;
-    height: 0.75rem;
-    padding: 0;
-    border: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.tab-panel h4 {
+    margin-top: 0;
+    color: #212529;
 }
 
-.carousel-indicators .dot.active,
-.carousel-indicators .dot:hover {
-    background-color: white;
-    transform: scale(1.1);
+/* Mostrar solo el panel activo */
+.tab-panel.is-active {
+    display: block; 
 }

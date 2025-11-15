@@ -1,42 +1,40 @@
-<div id="demoCarousel" class="carousel-wrapper">
-    <div class="carousel-inner">
-        
-        <div class="carousel-item active" aria-current="true">
-            <img src="/assets/img/img-slide-01.jpg" alt="Imagen de Carrusel 1" loading="lazy" />
-            <div class="carousel-caption">
-                <h4>Título del Slide 1</h4>
-                <p>Contenido principal destacado en el primer elemento.</p>
-            </div>
-        </div>
-
-        <div class="carousel-item" aria-current="false">
-            <img src="/assets/img/img-slide-02.jpg" alt="Imagen de Carrusel 2" loading="lazy" />
-            <div class="carousel-caption">
-                <h4>Título del Slide 2</h4>
-                <p>Aquí se muestra el segundo elemento con la lógica de transición.</p>
-            </div>
-        </div>
-
-        <div class="carousel-item" aria-current="false">
-            <img src="/assets/img/img-slide-03.jpg" alt="Imagen de Carrusel 3" loading="lazy" />
-            <div class="carousel-caption">
-                <h4>Título del Slide 3</h4>
-                <p>El auto-avance se detiene si el usuario navega manualmente.</p>
-            </div>
-        </div>
-
+<div class="tabs-group">
+    <div class="tabs-header" role="tablist">
+        <button 
+            class="tab-button is-active" 
+            data-target="#tab-panel-1" 
+            role="tab" 
+            aria-selected="true"
+        >
+            Información General
+        </button>
+        <button 
+            class="tab-button" 
+            data-target="#tab-panel-2" 
+            role="tab" 
+            aria-selected="false"
+        >
+            Especificaciones
+        </button>
+        <button 
+            class="tab-button" 
+            data-target="#tab-panel-3" 
+            role="tab" 
+            aria-selected="false"
+        >
+            Comentarios
+        </button>
     </div>
 
-    <button class="carousel-control prev" aria-label="Anterior">
-        <i class="fas fa-chevron-left"></i>
-    </button>
-    <button class="carousel-control next" aria-label="Siguiente">
-        <i class="fas fa-chevron-right"></i>
-    </button>
-
-    <div class="carousel-indicators">
-        <button class="dot active" data-slide-to="0" aria-current="true" aria-label="Ir a diapositiva 1"></button>
-        <button class="dot" data-slide-to="1" aria-label="Ir a diapositiva 2"></button>
-        <button class="dot" data-slide-to="2" aria-label="Ir a diapositiva 3"></button>
+    <div class="tabs-content">
+        <div class="tab-panel is-active" id="tab-panel-1" role="tabpanel">
+            <p>Este es el contenido de la primera pestaña. Se muestra por defecto y corresponde al botón marcado con la clase 'is-active'.</p>
+        </div>
+        <div class="tab-panel" id="tab-panel-2" role="tabpanel">
+            <p>Este es el contenido de la segunda pestaña. Solo se muestra cuando su botón asociado es clickeado.</p>
+        </div>
+        <div class="tab-panel" id="tab-panel-3" role="tabpanel">
+            <p>Este es el contenido de la tercera pestaña. La lógica de grupo (solo una visible) es gestionada por el script.js local.</p>
+        </div>
     </div>
 </div>
