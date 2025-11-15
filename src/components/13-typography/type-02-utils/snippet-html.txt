@@ -1,8 +1,0 @@
-<p class="text-start">Texto alineado al inicio (izquierda). (.text-start)</p>
-<p class="text-center">Texto centrado. (.text-center)</p>
-<p class="text-end">Texto alineado al final (derecha). (.text-end)</p>
-<p class="text-justify">Texto justificado. (.text-justify)</p>
-
-<p class="text-lowercase">TEXTO COMPLETO EN MINÚSCULAS. (.text-lowercase)</p>
-<p class="text-uppercase">Texto completo en mayúsculas. (.text-uppercase)</p>
-<p class="text-capitalize">primera letra de cada palabra en mayúscula. (.text-capitalize)</p>

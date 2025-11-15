@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 {
                     name: "02. Utilidades de Texto",
-                    path: "/src/components/13-typography/type-02-utils/index.html",
+                    path: "/src/components/13-typography/type-02-util/index.html",
                 },
             ],
         },

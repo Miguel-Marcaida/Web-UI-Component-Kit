@@ -1,0 +1,12 @@
+<p class="text-left">Texto Alineado a la Izquierda</p>
+<p class="text-center">Texto Centrado</p>
+<p class="text-right">Texto Alineado a la Derecha</p>
+<p class="text-justify">Texto Justificado (Útil para párrafos largos)</p>
+
+<p class="font-light">Texto con peso Ligero</p>
+<p class="font-bold">Texto con peso Negrita</p>
+<p class="text-italic">Texto en Cursiva</p>
+
+<p class="text-uppercase">texto en mayúsculas</p>
+<p class="text-lowercase">TEXTO EN MINÚSCULAS</p>
+<p class="text-capitalize">Texto con Mayúscula Inicial</p>

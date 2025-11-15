@@ -1,6 +1,9 @@
-
-<h1>H1: Título Principal</h1>
-<h2>H2: Sección de Contenido</h2>
-<h3>H3: Subsección</h3>
-<p class="text-lead">Este es un párrafo destacado (lead), usado para introducción.</p>
-<p>Este es un párrafo estándar. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h1>Heading 1 (Título Principal)</h1>
+<h2>Heading 2 (Sección Principal)</h2>
+<h3>Heading 3 (Subsección)</h3>
+<h4>Heading 4 (Detalle de Contenido)</h4>
+<p>
+    Este es un párrafo de texto normal. La fuente base del proyecto se aplica aquí, junto con el interlineado y el tamaño por defecto. 
+    Este párrafo incluye un <a href="#">enlace de ejemplo</a>.
+</p>
+<small>Este es un texto pequeño (small).</small>

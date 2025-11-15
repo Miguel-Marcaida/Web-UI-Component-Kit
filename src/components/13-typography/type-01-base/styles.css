@@ -1,19 +1,73 @@
-/*
- * Archivo: styles.css
- * Ubicación: /src/components/13-typography/type-01-base/
- * Descripción: Estilos de demostración para Tipografía Base, siguiendo el formato de módulos anteriores.
- */
+/* *********************************************************************************
+ * ESTILOS LOCALES: Tipografía Base (styles.css)
+ * NOTA: Estos estilos son los que definen la jerarquía tipográfica del Kit.
+ * *********************************************************************************/
 
-.heading-sample {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border: 1px dashed var(--color-secondary);
-    background-color: var(--color-bg-light); 
+/* 1. Contenedor de Declaración (para centralización de variables) */
+.typography-example-container {
+    /* Variables de ejemplo, se asume que las variables reales están en /CSS/main.css */
+    --color-primary-text: #1a1a1a;
+    --color-link: #007bff;
+    --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    background-color: #FFFFFF;
+    color: var(--color-primary-text);
 }
 
-.text-lead {
-    font-size: 1.25rem;
-    font-weight: 300;
+/* 2. Estilos de la Demo/Componente Base */
+.typography-example-container {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    font-family: var(--font-family-base);
+    color: var(--color-primary-text);
 }
 
-/* Nota: Los estilos H1-H6 deben estar en /CSS/main.css */
+/* Estilos de Headings */
+.typography-example-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+.typography-example-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+.typography-example-container h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+.typography-example-container h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+/* Estilos de Párrafo y Enlace */
+.typography-example-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.typography-example-container a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+.typography-example-container small {
+    font-size: 0.875em;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Nota: La separación vertical entre headings y párrafos será manejada por el main.css */

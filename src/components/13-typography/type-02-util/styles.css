@@ -1,0 +1,68 @@
+/* *********************************************************************************
+ * ESTILOS LOCALES: Tipografía Utilidades (styles.css)
+ * NOTA: ESTE ARCHIVO DEFINE LAS CLASES ATÓMICAS DE TIPOGRAFÍA.
+ * *********************************************************************************/
+
+/* 1. Contenedor de Declaración (para centralización de variables y autonomía) */
+.typography-util-container {
+   background-color: #ffffff; /* Fondo blanco forzado */
+    color: #1a1a1a;           /* Texto oscuro forzado */
+    padding: 2rem;
+    border: 1px solid #ccc;   /* Borde gris directo */
+    border-radius: 0.5rem;
+}
+
+/* 2. Definición de las Clases de Utilidad */
+
+/* ALINEACIÓN (TEXT-ALIGN) */
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+/* PESO DE FUENTE (FONT-WEIGHT) */
+.font-light {
+    font-weight: 300 !important;
+}
+
+.font-bold {
+    font-weight: 700 !important;
+}
+
+/* ESTILO DE FUENTE (FONT-STYLE) */
+.text-italic {
+    font-style: italic !important;
+}
+
+/* TRANSFORMACIÓN DE TEXTO (TEXT-TRANSFORM) */
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+/* Estilos de párrafos dentro del contenedor para espacio */
+.typography-util-container p {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    border: 1px dashed #999; 
+    background-color: #f7f7f7; 
+    color: #1a1a1a !important;
+}
