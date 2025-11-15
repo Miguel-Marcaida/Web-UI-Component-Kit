@@ -1,0 +1,7 @@
+<div id="status-message" aria-live="polite">
+    Mensaje de estado inicial...
+</div>
+
+<button id="update-status-btn" class="button button-primary">
+    Actualizar Estado
+</button>

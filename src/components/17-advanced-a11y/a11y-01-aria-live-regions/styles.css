@@ -1,0 +1,60 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: 17.01 (ARIA Live Regions)            */
+/* Estilos para Regiones Vivas (Visibles y Ocultas)      */
+/* ==================================================== */
+
+/* === 1. Contenedor de Declaración de Variables (Autonomía Estricta) === */
+.aria-live-example-container {
+    /* Variables locales para este componente */
+    --local-border-color: #ccc;
+    --local-bg-color: #fff;
+    --local-text-color: #333;
+    --local-primary-color: #007bff; /* Color para el botón de acción */
+    
+    padding: 2rem;
+    background-color: #f8f9fa; /* Se usa un color hardcoded o una variable de main.css para el fondo del wrapper de documentación */
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--local-text-color);
+}
+
+/* 2. Estilo para la Caja de Estado (contenedor del ARIA Live) */
+.live-status-box {
+    border: 1px solid var(--local-border-color);
+    padding: 1rem;
+    border-radius: 0.3rem;
+    background-color: var(--local-bg-color);
+    font-weight: bold;
+    color: var(--local-text-color);
+}
+
+/* 3. Estilo del Mensaje (la región viva en sí) */
+#status-message {
+    font-size: 1.1em;
+}
+
+/* 4. Patrón ARIA para Ocultar Visualmente Elementos */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* 5. Estilo del Botón de Demostración (usando variable local) */
+#update-status-btn {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    background-color: var(--local-primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulo 17: Accesibilidad Avanzada (A11Y)</title>
+    <link rel="stylesheet" href="../../../CSS/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/index.html">Volver al Inicio</a>
+            </nav>
+            <button id="theme-toggle" aria-label="Cambiar modo de color">
+                <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section">
+            <h2>Módulo 17: Accesibilidad Avanzada (A11Y)</h2>
+            <p>Patrones de marcado ARIA, gestión de foco y técnicas para lectores de pantalla, asegurando que todos los componentes sean utilizables por cualquier usuario.</p>
+        </section>
+
+        <section class="component-section">
+            <div class="grid-container">
+                
+                <a href="a11y-01-aria-live-regions/index.html" class="category-card">
+                    <h4>01. Regiones Vivas (ARIA Live)</h4>
+                    <p>Patrón para actualizar contenido de forma dinámica (ej: notificaciones) usando <code>aria-live</code> sin interrumpir el flujo del lector de pantalla.</p>
+                </a>
+
+                <a href="a11y-02-focus-management/index.html" class="category-card">
+                    <h4>02. Gestión de Foco (Tabindex)</h4>
+                    <p>Establece reglas canónicas para la gestión del foco del teclado y la creación de <code>tabindex</code> para widgets complejos.</p>
+                </a>
+
+                <a href="a11y-03-aria-state-prop/index.html" class="category-card">
+                    <h4>03. Estados y Propiedades ARIA</h4>
+                    <p>Guía de uso para propiedades como <code>aria-expanded</code>, <code>aria-disabled</code> y <code>aria-controls</code> en componentes interactivos.</p>
+                </a>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+    </footer>
+    <script defer src="/JS/_theme.js"></script>
+</body>
+</html>
