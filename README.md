@@ -1,4 +1,4 @@
-# 🧩 Web UI Component Kit (Vanilla)
+# 🧩 Web UI Component Kit
 
 **Estado:** 🚀 Fase 1 - HTML, CSS & JavaScript Puros
 
@@ -18,12 +18,11 @@ Su objetivo principal es servir como:
 
 ## 🏗️ Estructura del Contenido
 
-El kit se divide en dos secciones principales:
+El kit se divide en una única sección principal de documentación:
 
-| Directorio            | Contenido                                          | Énfasis                                        |
-| :-------------------- | :------------------------------------------------- | :--------------------------------------------- |
-| **`/src/components`** | Módulos UI aislados (Menús, Carruseles, Tarjetas). | Modularidad y reutilización del código.        |
-| **`/src/layouts`**    | Páginas completas (Landing Page, Portfolio, Blog). | Arquitectura del diseño y _layout_ responsivo. |
+| Directorio | Contenido | Énfasis |
+| :--- | :--- | :--- |
+| **`/src/components`** | Módulos UI aislados (Menús, Carruseles, Tarjetas) y Patrones de Layout (Módulo 15). | Modularidad, reutilización del código y Autonomía Estricta. |
 
 ---
 
