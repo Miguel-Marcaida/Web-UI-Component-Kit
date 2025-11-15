@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Módulo 16: Animaciones y Transiciones</title>
+        <link rel="stylesheet" href="../../../CSS/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    </head>
+    <body>
+        <header id="main-header">
+            <h1>
+                <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+            </h1>
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="/index.html">Volver al Inicio</a>
+                </nav>
+                <button id="theme-toggle" aria-label="Cambiar modo de color">
+                    <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                    <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section class="hero-section">
+                <h2>Módulo 16: Animaciones y Transiciones</h2>
+                <p>Patrones canónicos y utilidades CSS para gestionar el movimiento, la suavidad de las interacciones y la accesibilidad de las animaciones (`prefers-reduced-motion`).</p>
+            </section>
+
+            <section class="component-section">
+                <div class="grid-container">
+                    
+                    <a href="css-01-transition-base/index.html" class="category-card">
+                        <h4>01. Transición Canónica (Base)</h4>
+                        <p>Define variables CSS para <B>duraciones</B> y <B>curvas de movimiento</B>, y demuestra la aplicación de transiciones de bajo costo.</p>
+                    </a>
+
+                    <a href="css-02-keyframes/index.html" class="category-card">
+                        <h4>02. Keyframes y Clases</h4>
+                        <p>Catálogo de <B>animaciones CSS</B> (`@keyframes`) reutilizables (fade-in, spin, etc.) para copiar en componentes autónomos.</p>
+                    </a>
+
+                    <a href="css-03-motion-preference/index.html" class="category-card">
+                        <h4>03. Preferencia de Movimiento</h4>
+                        <p>Implementación de <B>`prefers-reduced-motion`</B> para garantizar la accesibilidad y reducir el movimiento excesivo.</p>
+                    </a>
+
+                </div>
+            </section>
+        </main>
+        
+        <footer id="main-footer">
+            <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+        </footer>
+        <script defer src="/JS/_theme.js"></script>
+    </body>
+</html>

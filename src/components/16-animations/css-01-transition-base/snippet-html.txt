@@ -1,0 +1,3 @@
+<div class="transition-base-example-container">
+    <div class="transition-box" tabindex="0">Caja con Transición CSS</div>
+</div>
