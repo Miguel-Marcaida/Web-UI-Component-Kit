@@ -1,0 +1,52 @@
+/*
+ * styles.css
+ * Subcomponente 21.02 Shadow DOM (Encapsulación CSS)
+ * Estilos del Light DOM (Solo contenedor y host).
+ */
+
+/* ================================================= */
+/* 1. Variables de la Demostración (Autonomía Estricta) */
+/* ================================================= */
+
+.shadow-dom-example-container {
+    /* Variables locales para el contenedor y el host */
+    --local-bg-color: #f8f8f8;
+    --local-border-color: #ddd;
+
+    padding: 20px;
+    border: 1px dashed var(--local-border-color);
+    background-color: var(--local-bg-color);
+    border-radius: 6px;
+    color: #444;
+}
+
+/* DARK MODE OVERRIDE */
+.shadow-dom-example-container[data-theme="dark"] {
+    --local-bg-color: #2b2b2b;
+    --local-border-color: #444;
+}
+
+/* ================================================= */
+/* 2. Estilo del Host Element (Custom Element) */
+/* ================================================= */
+
+/* Estilos aplicados al contenedor HOST: custom-shadow-element */
+custom-shadow-element {
+    display: block; 
+    padding: 15px;
+    /* Los estilos del host consumen las variables locales */
+    border: 1px solid var(--local-border-color); 
+    background-color: var(--local-bg-color);
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+/* ================================================= */
+/* 3. Prueba de Conflicto (Estilo que afecta al Light DOM) */
+/* ================================================= */
+
+/* Este estilo DEBE afectar al párrafo Light DOM pero NO al Shadow DOM */
+.shadow-dom-example-container p {
+    color: green; 
+    font-weight: bold;
+}

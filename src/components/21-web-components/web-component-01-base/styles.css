@@ -1,0 +1,80 @@
+/*
+ * styles.css
+ * Subcomponente 21.01 Custom Element Base (Light DOM)
+ * AUTONOMÍA ESTRICTA: Todas las variables están definidas localmente.
+ */
+
+/* ================================================= */
+/* Estilos del Contenedor de la Demostración */
+/* ================================================= */
+
+.wc-base-example-container {
+    /* DEFINICIÓN DE VARIABLES LOCALES (Autonomía Estricta) */
+    --local-color-border-subtle: #aaa;
+    --local-color-bg-subtle: #f8f8f8;
+    --local-color-border-default: #ddd;
+    --local-color-bg-default: #fff;
+    --local-color-brand-primary: #007bff;
+    --local-color-text-primary: #333;
+    --local-color-text-secondary: #666;
+    --local-color-text-disabled: #999;
+    --local-color-bg-contrast: #eee;
+
+    padding: 20px;
+    /* Consumiendo variables locales */
+    border: 1px dashed var(--local-color-border-subtle);
+    background-color: var(--local-color-bg-subtle);
+    border-radius: 6px;
+}
+
+/* DARK MODE OVERRIDE (Aplica variables oscuras al contenedor) */
+.wc-base-example-container[data-theme="dark"] {
+    --local-color-border-subtle: #555;
+    --local-color-bg-subtle: #2b2b2b;
+    --local-color-border-default: #444;
+    --local-color-bg-default: #333;
+    --local-color-text-primary: #f0f0f0;
+    --local-color-text-secondary: #ccc;
+    --local-color-text-disabled: #888;
+    --local-color-bg-contrast: #444;
+}
+
+/* ================================================= */
+/* Estilos del Custom Element (Aplicado al Light DOM) */
+/* ================================================= */
+
+/* Estilo aplicado directamente a la etiqueta del Custom Element */
+custom-base-element {
+    display: block; 
+    padding: 15px;
+    border: 1px solid var(--local-color-border-default);
+    background-color: var(--local-color-bg-default);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos de los elementos inyectados por el script.js */
+.wc-base-wrapper h3 {
+    margin: 0 0 5px 0;
+    color: var(--local-color-text-primary);
+}
+
+.wc-subtitle {
+    font-size: 0.9em;
+    color: var(--local-color-text-secondary);
+    margin-bottom: 10px;
+}
+
+.wc-content-slot {
+    padding: 10px;
+    border-left: 3px solid var(--local-color-brand-primary);
+    background-color: var(--local-color-bg-contrast);
+    margin: 10px 0;
+}
+
+small {
+    display: block;
+    font-size: 0.75em;
+    color: var(--local-color-text-disabled);
+    margin-top: 10px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulo 21: Web Components</title>
+    <link rel="stylesheet" href="../../../CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/index.html">Volver al Inicio</a>
+            </nav>
+            <button id="theme-toggle" aria-label="Cambiar modo de color">
+                <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section">
+            <h2>Módulo 21: Web Components</h2>
+            <p>Patrones de encapsulación utilizando tecnologías nativas del navegador: Custom Elements y Shadow DOM. Se prioriza la **Autonomía Estricta** a nivel de arquitectura.</p>
+        </section>
+
+        <section class="component-section">
+            <h3>Subcomponentes del Módulo</h3>
+            <div class="grid-container">
+                
+                <a href="web-component-01-base/index.html" class="category-card">
+                    <h4>01. Custom Element Base</h4>
+                    <p>Definición del Custom Element más simple con ciclo de vida y manejo de atributos.</p>
+                </a>
+
+                <a href="web-component-02-shadow-dom/index.html" class="category-card">
+                    <h4>02. Shadow DOM (Encapsulación CSS)</h4>
+                    <p>Componente utilizando Shadow DOM para el aislamiento total de estilos, ejemplificando la autonomía estricta.</p>
+                </a>
+                
+                <a href="web-component-03-slots/index.html" class="category-card">
+                    <h4>03. Slots (Composición)</h4>
+                    <p>Uso de la etiqueta <code>&lt;slot&gt;</code> para permitir la inyección de contenido externo y composición del componente.</p>
+                </a>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+    </footer>
+    <script defer src="/JS/_theme.js"></script>
+</body>
+</html>

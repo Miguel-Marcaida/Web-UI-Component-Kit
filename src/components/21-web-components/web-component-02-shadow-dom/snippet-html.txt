@@ -1,0 +1,6 @@
+<custom-shadow-element 
+    message="Contenido Encapsulado. (Color interno: Azul)">
+    
+    <p>Este párrafo es Light DOM y SÍ debería ser de color **verde** y **negrita**.</p>
+    
+</custom-shadow-element>

@@ -1,0 +1,8 @@
+<custom-base-element 
+    title="Mi Primer Custom Element"
+    subtitle="Este componente no usa Shadow DOM, sus estilos son globales.">
+    
+    <p>Este párrafo es el contenido que se inyecta en el **&lt;slot&gt;** del componente.</p>
+    <button>Acción Demo</button>
+    
+</custom-base-element>

@@ -411,7 +411,29 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         ],
         
-         }
+         },
+
+
+         "21-web-components": {
+        title: "Módulo 21: Web Components",
+        components: [
+            { 
+                name: "01. Custom Element Base", 
+                path: "/src/components/21-web-components/web-component-01-base/index.html" 
+            },
+            { 
+                name: "02. Shadow DOM", 
+                path: "/src/components/21-web-components/web-component-02-shadow-dom/index.html" 
+            },
+            { 
+                name: "03. Slots (Composición)", 
+                path: "/src/components/21-web-components/web-component-03-slots/index.html" 
+            }
+        ],
+        
+    }
+
+
 
 
 

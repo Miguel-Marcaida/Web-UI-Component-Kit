@@ -1,0 +1,74 @@
+/*
+ * styles.css
+ * Subcomponente 21.03 Slots (Composición)
+ * Estilos del Light DOM (Contenedor y contenido inyectado).
+ */
+
+/* ================================================= */
+/* 1. Variables y Estilos del Contenedor de la Demostración */
+/* ================================================= */
+
+.wc-slots-example-container {
+    /* Variables locales para el contenedor */
+    --local-bg-color: #f0f0f5;
+    --local-border-color: #d8d8e0;
+    --local-btn-primary-bg: #28a745; /* Verde para el CTA */
+    --local-btn-secondary-bg: #6c757d; /* Gris para el CTA secundario */
+    
+    padding: 20px;
+    border: 1px dashed var(--local-border-color);
+    background-color: var(--local-bg-color);
+    border-radius: 6px;
+}
+
+/* DARK MODE OVERRIDE */
+.wc-slots-example-container[data-theme="dark"] {
+    --local-bg-color: #1e1e1e;
+    --local-border-color: #444;
+    --local-btn-primary-bg: #44b75a;
+    --local-btn-secondary-bg: #999;
+}
+
+/* ================================================= */
+/* 2. Estilos del Contenido del Light DOM (Inyectado en Slots) */
+/* Estos estilos afectan directamente al HTML que el usuario pasa al componente */
+/* ================================================= */
+
+/* Estilo para el contenido del slot="header" */
+.slot-header-content {
+    font-size: 0.9em;
+    color: var(--color-text-secondary, #666);
+}
+.slot-header-content .fas {
+    margin-right: 5px;
+    color: var(--local-btn-primary-bg);
+}
+
+/* Estilos de botones (simulando una biblioteca externa) */
+.btn {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--local-btn-primary-bg);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: color-mix(in srgb, var(--local-btn-primary-bg) 90%, black);
+}
+
+.btn-secondary {
+    background-color: var(--local-btn-secondary-bg);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: color-mix(in srgb, var(--local-btn-secondary-bg) 90%, black);
+}
+.btn .fas {
+    margin-right: 5px;
+}
