@@ -1,20 +1,32 @@
-<div class="media">
+<div class="media-object-container">
     <div class="media-figure">
-        <img src="https://via.placeholder.com/64" alt="Avatar del usuario" class="media-img">
+        <img src="/assets/img/avatar-1.png" alt="Avatar del usuario" class="media-image">
     </div>
-    
     <div class="media-body">
-        <h5 class="mt-0">Nombre del Usuario</h5>
-        <p>Este es el comentario principal. El patrón Media Object es ideal para la estructuración flexible de contenido en listas y feeds. El cuerpo se expande para ocupar el espacio restante.</p>
-        
-        <div class="media mt-3">
-            <div class="media-figure">
-                <img src="https://via.placeholder.com/48" alt="Avatar del respondedor" class="media-img-sm">
-            </div>
-            <div class="media-body">
-                <h6 class="mt-0">Nombre del Respondedor</h6>
-                <p>Esta es una respuesta directa al comentario principal, mostrando cómo se pueden anidar las estructuras.</p>
-            </div>
-        </div>
-        </div>
+        <h4 class="media-heading">Título del Objeto Multimedia</h4>
+        <p>Este es el cuerpo principal del contenido. El cuerpo toma el espacio restante de forma flexible.</p>
+        <p class="meta">Publicado hace 3 horas.</p>
+    </div>
+</div>
+
+<div class="media-object-container is-reversed">
+    <div class="media-figure">
+        <img src="/assets/img/avatar-2.png" alt="Avatar del usuario 2" class="media-image">
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">Objeto Multimedia Invertido</h4>
+        <p>El orden se invierte usando <code>.is-reversed</code> (Flexbox: <code>flex-direction: row-reverse;</code>).</p>
+        <p class="meta">Comentario reciente.</p>
+    </div>
+</div>
+
+<div class="media-object-container is-centered">
+    <div class="media-figure">
+        <img src="/assets/img/avatar-3.png" alt="Avatar centrado" class="media-image">
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">Objeto Multimedia Centrado</h4>
+        <p>La figura se alinea al centro verticalmente, ideal para contenido de una o dos líneas.</p>
+        <p class="meta">Ítem de menú.</p>
+    </div>
 </div>
