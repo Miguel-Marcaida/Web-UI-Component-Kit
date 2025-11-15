@@ -324,6 +324,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
             ],
         },
+         "16-animations": {
+            title: "Módulo 16: Animaciones (CSS/JS)",
+            components: [
+                {
+                    name: "01. Transición Canónica (Base)",
+                    path: "/src/components/16-animations/css-01-transition-base/index.html",
+                },
+                {
+                    name:"02. Keyframes y Clases",
+                    path:"/src/components/16-animations/css-02-keyframes/index.html"
+                },
+                {
+                    name:"03. Preferencia de Movimiento",
+                    path:"/src/components/16-animations/css-03-motion-preference/index.html"
+                }
+                // Marcador de posición. Componentes se añadirán aquí.
+            ],
+        },
+        "17-advanced-a11y": {
+            title: "Módulo 17: Accesibilidad Avanzada (A11Y)",
+            components: [
+                {
+                    name: "01. Regiones Vivas (Live Regions)", 
+                    path: "/src/components/17-advanced-a11y/a11y-01-aria-live-regions/index.html",
+                },
+                {
+                    name: "02. Trampa de Foco (Focus Trap)",
+                    path: "/src/components/17-advanced-a11y/a11y-02-focus-management/index.html",
+                },
+                {
+                    name: "03. Estados y Propiedades ARIA",
+                    path: "/src/components/17-advanced-a11y/a11y-03-aria-state-prop/index.html",
+                },
+            ],
+        },
 
        
     };
