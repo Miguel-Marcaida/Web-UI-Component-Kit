@@ -1,0 +1,93 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: 17.03 (Estados y Propiedades ARIA)    */
+/* Estilos visuales basados en atributos ARIA             */
+/* ==================================================== */
+
+/* === 1. Contenedor de Declaración de Variables (Autonomía Estricta) === */
+.aria-state-example-container {
+    /* Variables locales para este componente */
+    --accordion-border-color: #dee2e6;
+    --accordion-bg-header: #f8f9fa;
+    --accordion-bg-content: #ffffff;
+    --primary-color: #007bff;
+    --disabled-color: #6c757d;
+    
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: #6c757d;
+}
+
+/* 2. Estilo del Acordeón */
+.accordion-item {
+    border: 1px solid var(--accordion-border-color);
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accordion-bg-header);
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+
+/* 3. Control Visual basado en el estado ARIA */
+/* Cuando aria-expanded es TRUE, el color de fondo cambia y el ícono rota */
+.accordion-header[aria-expanded="true"] {
+    background-color: #e9ecef;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-icon {
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+}
+
+.accordion-content {
+    padding: 0 1rem;
+    border-top: 1px solid var(--accordion-border-color);
+    background-color: var(--accordion-bg-content);
+    /* El contenido se oculta/muestra por JS, pero el rol hidden ayuda */
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+/* 4. Estilo para el Contenido Expandido */
+/* JS debe quitar el atributo hidden y ajustar el height. 
+   Aquí se añade el padding visible. */
+.accordion-content:not([hidden]) {
+    height: auto; 
+    padding: 1rem;
+}
+
+
+/* 5. Estilo del Botón Deshabilitado basado en ARIA */
+.disabled-demo-btn[aria-disabled="true"] {
+    pointer-events: none; /* Deshabilita la interacción del mouse */
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: var(--disabled-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-weight: bold;
+}
