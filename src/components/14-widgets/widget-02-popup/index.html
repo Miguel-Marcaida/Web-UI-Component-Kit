@@ -1,147 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Widgets 02: Colapsable</title>
+    <title>14.02: Dropdown / Popover</title>
 
-    <link rel="stylesheet" href="/CSS/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="/CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="/CSS/prism.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+
+    <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
     <header id="main-header">
-      <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
-      </h1>
-      <button
-        id="sidebar-toggle"
-        aria-expanded="false"
-        aria-controls="docs-sidebar"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav>
-        <a href="/src/components/14-widgets/index.html">Volver a Widgets</a>
-      </nav>
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html">Volver a Widgets</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+            <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
     </header>
 
     <div class="docs-container">
-      <main class="docs-content">
-        <h2>Widgets 02: Colapsable (Collapse)</h2>
-        <p class="description m-b-4">
-          Un componente simple que permite al usuario alternar la visibilidad de
-          una sección de contenido. A diferencia del acordeón,
-          **múltiples paneles pueden estar abiertos** a la vez.
-        </p>
+        <main class="docs-content">
+            <h2>14.02: Dropdown / Popover</h2>
+            <p class="description">
+                Componente flotante que se activa mediante un botón. Su funcionalidad clave es cerrarse automáticamente al hacer clic en cualquier lugar fuera del componente. Implementación con JavaScript autónomo.
+            </p>
 
-        <section
-          class="preview-area p-4"
-          style="background-color: var(--color-bg-light)"
-        >
-          <h3 style="margin-bottom: 1.5rem">Vista Previa</h3>
+           <section class="preview-area">
+                <h3>Vista Previa del Dropdown</h3>
+                
+                <div class="popup-example-container">
+                    
+                    <div class="dropdown-group">
+                        <button class="dropdown-toggle" data-target="#dropdownMenu" aria-expanded="false">
+                            Opciones de Perfil <i class="fas fa-caret-down"></i>
+                        </button>
+                        
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <a href="#" class="dropdown-item">Ver Perfil</a>
+                            <a href="#" class="dropdown-item">Configuración</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">Cerrar Sesión</a>
+                        </div>
+                    </div>
 
-          <div class="collapse-group" id="collapseDemo">
-            <div class="collapse-item">
-              <h2 class="collapse-header" id="demoHeadingOne">
-                <button
-                  class="collapse-button"
-                  type="button"
-                  data-collapse-target="#demoCollapseOne"
-                  aria-expanded="true"
-                  aria-controls="demoCollapseOne"
-                >
-                  <span>Opción 1: Controles de Privacidad</span>
-                  <i class="fas fa-chevron-down collapse-icon"></i>
-                </button>
-              </h2>
-              <div
-                id="demoCollapseOne"
-                class="collapse-content is-expanded"
-                aria-labelledby="demoHeadingOne"
-              >
-                <div class="collapse-body">
-                  Puedes personalizar el nivel de acceso a tus datos personales.
-                  Recuerda guardar los cambios antes de salir.
+                    <div class="popover-group" > 
+                        <button class="popover-toggle" data-target="#popoverContent" aria-expanded="false">
+                            Mostrar Popover
+                        </button>
+
+                        <div class="popover-content" id="popoverContent">
+                            <h4>Notificación</h4>
+                            <p>Este es un popover que contiene texto más largo y no solo enlaces.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="collapse-item">
-              <h2 class="collapse-header" id="demoHeadingTwo">
-                <button
-                  class="collapse-button collapsed"
-                  type="button"
-                  data-collapse-target="#demoCollapseTwo"
-                  aria-expanded="false"
-                  aria-controls="demoCollapseTwo"
-                >
-                  <span>Opción 2: Notificaciones</span>
-                  <i class="fas fa-chevron-down collapse-icon"></i>
-                </button>
-              </h2>
-              <div
-                id="demoCollapseTwo"
-                class="collapse-content"
-                aria-labelledby="demoHeadingTwo"
-              >
-                <div class="collapse-body">
-                  Activa o desactiva las notificaciones por correo electrónico y
-                  móvil.
-                </div>
-              </div>
-            </div>
+            </section>
             
-             <div class="collapse-item">
-              <h2 class="collapse-header" id="demoHeadingThree">
-                <button
-                  class="collapse-button collapsed"
-                  type="button"
-                  data-collapse-target="#demoCollapseThree"
-                  aria-expanded="false"
-                  aria-controls="demoCollapseThree"
-                >
-                  <span>Opción 3: Opciones Avanzadas</span>
-                  <i class="fas fa-chevron-down collapse-icon"></i>
-                </button>
-              </h2>
-              <div
-                id="demoCollapseThree"
-                class="collapse-content"
-                aria-labelledby="demoHeadingThree"
-              >
-                <div class="collapse-body">
-                  Estas opciones son para usuarios expertos. Úsalas con
-                  precaución.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+            <section class="code-snippets">
+                <h3>Referencia de Nomenclatura y Código Fuente</h3>
+                <p>El componente es 100% autónomo y requiere el CSS y JavaScript locales para la interacción de apertura/cierre.</p>
+                
+                <h4>HTML (Estructura del Popup)</h4>
+                <pre><code class="language-html html-snippet"></code></pre>
+                
+                <h4>CSS (Estilos Completos del Popup)</h4>
+                <pre><code class="language-css css-snippet"></code></pre>
 
-        <section class="code-snippets">
-          <h3>Código Fuente</h3>
-          <h4>HTML</h4>
-          <pre><code class="language-html html-snippet">...</code></pre>
-          <h4>CSS</h4>
-          <pre><code class="language-css css-snippet">...</code></pre>
-          <h4>JavaScript</h4>
-          <pre><code class="language-javascript js-snippet">...</code></pre>
-        </section>
-      </main>
+                <h4>JavaScript (Lógica de Interacción)</h4>
+                <pre><code class="language-javascript js-snippet"></code></pre>
+            </section>
+        </main>
     </div>
 
-    <footer id="main-footer"></footer>
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit.</p>
+    </footer>
+
     <script src="/JS/prism.js"></script>
-    <script src="/JS/main.js"></script>
     <script src="/JS/docs.js"></script>
     <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+    
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

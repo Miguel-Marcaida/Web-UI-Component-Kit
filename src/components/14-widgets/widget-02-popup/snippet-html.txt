@@ -1,73 +1,25 @@
-<div class="collapse-group" id="collapseDemo">
-  <div class="collapse-item">
-    <h2 class="collapse-header" id="demoHeadingOne">
-      <button
-        class="collapse-button"
-        type="button"
-        data-collapse-target="#demoCollapseOne"
-        aria-expanded="true"
-        aria-controls="demoCollapseOne"
-      >
-        <span>Opción 1: Controles de Privacidad</span>
-        <i class="fas fa-chevron-down collapse-icon"></i>
-      </button>
-    </h2>
-    <div
-      id="demoCollapseOne"
-      class="collapse-content is-expanded"
-      aria-labelledby="demoHeadingOne"
-    >
-      <div class="collapse-body">
-        Puedes personalizar el nivel de acceso a tus datos personales.
-      </div>
+<div class="dropdown-group">
+    <button class="dropdown-toggle" data-target="#dropdownMenuExample" aria-expanded="false">
+        Opciones de Usuario <i class="fas fa-caret-down"></i>
+    </button>
+    
+    <div class="dropdown-menu" id="dropdownMenuExample">
+        <a href="#" class="dropdown-item">Ver Panel</a>
+        <a href="#" class="dropdown-item">Ajustes de Cuenta</a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">Cerrar Sesión</a>
     </div>
-  </div>
+</div>
 
-  <div class="collapse-item">
-    <h2 class="collapse-header" id="demoHeadingTwo">
-      <button
-        class="collapse-button collapsed"
-        type="button"
-        data-collapse-target="#demoCollapseTwo"
-        aria-expanded="false"
-        aria-controls="demoCollapseTwo"
-      >
-        <span>Opción 2: Notificaciones</span>
-        <i class="fas fa-chevron-down collapse-icon"></i>
-      </button>
-    </h2>
-    <div
-      id="demoCollapseTwo"
-      class="collapse-content"
-      aria-labelledby="demoHeadingTwo"
-    >
-      <div class="collapse-body">
-        Activa o desactiva las notificaciones por correo electrónico y móvil.
-      </div>
+<p style="margin-top: 5rem; text-align: center;">--- O ---</p>
+
+<div class="popover-group">
+    <button class="popover-toggle" data-target="#popoverContentExample" aria-expanded="false">
+        Mostrar Información Adicional
+    </button>
+
+    <div class="popover-content" id="popoverContentExample">
+        <h4 style="margin-top: 0;">Detalles del Popover</h4>
+        <p>Este contenido flotante es ideal para mostrar mensajes de ayuda, notificaciones breves o información contextual sin recargar la página.</p>
     </div>
-  </div>
-  
-  <div class="collapse-item">
-    <h2 class="collapse-header" id="demoHeadingThree">
-      <button
-        class="collapse-button collapsed"
-        type="button"
-        data-collapse-target="#demoCollapseThree"
-        aria-expanded="false"
-        aria-controls="demoCollapseThree"
-      >
-        <span>Opción 3: Opciones Avanzadas</span>
-        <i class="fas fa-chevron-down collapse-icon"></i>
-      </button>
-    </h2>
-    <div
-      id="demoCollapseThree"
-      class="collapse-content"
-      aria-labelledby="demoHeadingThree"
-    >
-      <div class="collapse-body">
-        Estas opciones son para usuarios expertos.
-      </div>
-    </div>
-  </div>
 </div>

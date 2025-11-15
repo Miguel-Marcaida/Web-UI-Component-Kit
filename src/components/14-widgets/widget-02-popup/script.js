@@ -1,106 +1,66 @@
-/*
- * Archivo: script.js
- * Ubicación: /src/components/14-widgets/widget-02-collapse/
- * Descripción: Funcionalidad de Colapsable (múltiples paneles abiertos a la vez).
- */
+/* *********************************************************************************
+ * 14.02: DROPDOWN / POPOVER - JAVASCRIPT AUTÓNOMO
+ * NOTA: Este script gestiona el estado de apertura/cierre y el cierre automático al
+ * hacer clic fuera, sin depender de main.js ni de librerías.
+ * *********************************************************************************/
 
-function collapseLogic() {
-  // Función central para abrir o cerrar un panel con transición suave
-  function togglePanel(button, collapse) {
-    // Verifica si el panel está actualmente abierto
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleccionar todos los botones que inician un dropdown o popover
+    const popupToggles = document.querySelectorAll('.dropdown-toggle, .popover-toggle');
 
-    if (isExpanded) {
-      // ==================
-      // CIERRA el panel
-      // ==================
+    // Función para cerrar un popup específico
+    const closePopup = (toggle, content) => {
+        content.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded', 'false');
+    };
 
-      // 1. Establece la altura explícita (desde scrollHeight)
-      collapse.style.height = collapse.scrollHeight + "px";
+    // Función para abrir un popup específico
+    const openPopup = (toggle, content) => {
+        content.classList.add('is-active');
+        toggle.setAttribute('aria-expanded', 'true');
+    };
 
-      // 2. Fuerza un reflow (Crucial para el cierre)
-      void collapse.offsetWidth;
+    // 1. Añadir el evento click a cada botón (Toggle)
+    popupToggles.forEach(toggle => {
+        toggle.addEventListener('click', (event) => {
+            // Evitar que el clic se propague al documento inmediatamente
+            event.stopPropagation(); 
+            
+            const contentId = toggle.getAttribute('data-target');
+            const content = document.querySelector(contentId);
 
-      // 3. Establece la altura final a 0 para iniciar la animación CSS
-      collapse.style.height = "0px";
+            // Cerrar todos los popups abiertos, excepto el actual si ya está activo
+            popupToggles.forEach(otherToggle => {
+                const otherContentId = otherToggle.getAttribute('data-target');
+                const otherContent = document.querySelector(otherContentId);
 
-      // 4. Actualiza atributos ARIA
-      button.setAttribute("aria-expanded", "false");
-      button.classList.add("collapsed");
-    } else {
-      // ==================
-      // ABRE el panel
-      // ==================
+                if (otherContent.classList.contains('is-active') && otherContent !== content) {
+                    closePopup(otherToggle, otherContent);
+                }
+            });
 
-      // 1. Establece la altura a scrollHeight
-      collapse.style.height = collapse.scrollHeight + "px";
-
-      // 2. Espera 1000ms antes de añadir el listener transitionend
-      // Esto asegura que la transición inicie antes de que se adjunte el listener.
-      setTimeout(() => {
-        collapse.addEventListener(
-          "transitionend",
-          function removeHeightStyle() {
-            // Solo elimina el height si todavía está abierto
-            if (button.getAttribute("aria-expanded") === "true") {
-              collapse.style.height = null;
+            // Abrir o cerrar el popup actual
+            if (content.classList.contains('is-active')) {
+                closePopup(toggle, content);
+            } else {
+                openPopup(toggle, content);
             }
-            collapse.removeEventListener("transitionend", removeHeightStyle);
-          },
-          { once: true }
-        );
-      }, 1000); // <-- VALOR AJUSTADO (1s)
-
-      // 3. Actualiza atributos ARIA
-      button.setAttribute("aria-expanded", "true");
-      button.classList.remove("collapsed");
-    }
-  }
-
-  // Inicializa todos los botones de colapsable (Manejo del CLIC)
-  const collapseButtons = document.querySelectorAll(".collapse-button");
-
-  collapseButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetId = button.getAttribute("data-collapse-target");
-      const targetCollapse = document.querySelector(targetId);
-
-      // Alterna el panel actual (NO hay lógica para cerrar otros paneles)
-      togglePanel(button, targetCollapse);
+        });
     });
-  });
 
-  // ===================================
-  // MANEJO DEL ESTADO INICIAL
-  // ===================================
-  document
-    .querySelectorAll(".collapse-content.is-expanded")
-    .forEach((collapse) => {
-      const button =
-        collapse.previousElementSibling.querySelector(".collapse-button");
+    // 2. Evento de cierre global (Cerrar si se hace clic fuera de cualquier popup)
+    document.addEventListener('click', (event) => {
+        // Buscar el popup activo
+        const activeContent = document.querySelector('.dropdown-menu.is-active, .popover-content.is-active');
 
-      // 1. Deshabilitar temporalmente la transición para asegurar que la altura se aplique
-      collapse.style.transition = "none";
-
-      // 2. Establecer la altura correcta (scroll-height) de inmediato
-      collapse.style.height = collapse.scrollHeight + "px";
-
-      // 3. Forzar el reflow
-      void collapse.offsetWidth;
-
-      // 4. Limpiar la clase de estado inicial
-      collapse.classList.remove("is-expanded");
-
-      // 5. Restablecer la transición DESPUÉS de un pequeño retraso
-      setTimeout(() => {
-        collapse.style.transition = "";
-      }, 10);
-
-      // 6. Sincroniza ARIA y clases de botón
-      button.setAttribute("aria-expanded", "true");
-      button.classList.remove("collapsed");
+        if (activeContent) {
+            const toggle = document.querySelector(`[data-target="#${activeContent.id}"]`);
+            const parentGroup = activeContent.closest('.dropdown-group, .popover-group');
+            
+            // Si el clic no fue dentro del grupo (botón o contenido), entonces cerrar
+            if (parentGroup && !parentGroup.contains(event.target)) {
+                closePopup(toggle, activeContent);
+            }
+        }
     });
-}
-
-// Ejecuta la lógica al cargar el DOM
-document.addEventListener("DOMContentLoaded", collapseLogic);
+});
