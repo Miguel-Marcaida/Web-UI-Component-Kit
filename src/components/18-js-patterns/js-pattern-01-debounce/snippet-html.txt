@@ -1,0 +1,10 @@
+<div class="debounce-example-container">
+    <input type="text" id="debounce-input" placeholder="Comience a escribir aquí...">
+    
+    <div class="live-status-box">
+        <p>Resultado de la simulación de búsqueda:</p>
+        <div id="search-output" class="result-box">
+            Esperando entrada...
+        </div>
+    </div>
+</div>

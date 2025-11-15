@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulo 18: Patrones de Interacción (JS)</title>
+    <link rel="stylesheet" href="../../../CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/index.html">Volver al Inicio</a>
+            </nav>
+            <button id="theme-toggle" aria-label="Cambiar modo de color">
+                <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section">
+            <h2>Módulo 18: Patrones de Interacción (JS)</h2>
+            <p>Funciones JavaScript puras y reutilizables para optimizar el rendimiento y la experiencia de interacción, como la gestión del flujo de eventos (Debounce, Throttle) y utilidades de DOM.</p>
+        </section>
+
+        <section class="component-section">
+            <div class="grid-container">
+                
+                <a href="js-pattern-01-debounce/index.html" class="category-card">
+                    <h4>01. Debounce (Retraso de Llamada)</h4>
+                    <p>Patrón para optimizar la ejecución de eventos repetitivos (ej: búsqueda en input) asegurando que la función se ejecute solo una vez tras un periodo de inactividad.</p>
+                </a>
+
+                <a href="js-pattern-02-throttle/index.html" class="category-card">
+                    <h4>02. Throttle (Limitador de Tasa)</h4>
+                    <p>Patrón que limita la ejecución de una función a una tasa máxima fija (ej: una vez cada 200ms), crucial para eventos de scroll o resize.</p>
+                </a>
+
+                <a href="js-pattern-03-dom-observer/index.html" class="category-card">
+                    <h4>03. Observadores (Intersection/Mutation)</h4>
+                    <p>Uso eficiente de las API de Observadores nativas para la carga diferida (Lazy Loading) y la detección de cambios en el DOM sin impacto en el rendimiento.</p>
+                </a>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+    </footer>
+    <script defer src="/JS/_theme.js"></script>
+</body>
+</html>

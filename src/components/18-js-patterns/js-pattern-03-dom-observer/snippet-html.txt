@@ -1,0 +1,17 @@
+<div class="observer-example-container">
+    <div style="height: 120vh; background: #eee; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: #555;">
+        Espacio de relleno (Scroll para ver la imagen) ⬇️
+    </div>
+    
+    <img data-src="https://picsum.photos/800/400" 
+         src="https://via.placeholder.com/800x400/333333/FFFFFF?text=Cargando..." 
+         alt="Imagen de ejemplo para Lazy Loading" 
+         id="lazy-image" 
+         class="lazy-load-target" 
+         width="800" 
+         height="400">
+
+    <p id="observer-status" class="status-message">
+        Estado: La imagen aún no es visible.
+    </p>
+</div>

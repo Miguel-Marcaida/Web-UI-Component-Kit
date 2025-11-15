@@ -1,0 +1,63 @@
+/*
+ * styles.css
+ * Subcomponente 18.01 Debounce
+ * AUTONOMÍA ESTRICTA: Se han eliminado las referencias a variables CSS globales no definidas.
+ */
+
+/* ================================================= */
+/* Variables y Estilos del Contenedor Raíz */
+/* ================================================= */
+
+.debounce-example-container {
+    /* Variables Locales (si se desean modificar fácilmente) */
+    --debounce-color-primary: #007bff; /* Color para el foco */
+    --debounce-color-border: #ccc;     /* Borde por defecto */
+    --debounce-color-bg-soft: #f8f9fa; /* Fondo suave para la caja de resultado */
+    --debounce-color-shadow: rgba(0, 123, 255, 0.25); /* Sombra para el foco */
+
+    /* Estilos estructurales */
+    padding: 20px;
+    border: 1px solid var(--debounce-color-border);
+    border-radius: 8px; /* Valor hardcodeado, similar a var(--border-radius-medium) */
+    margin: 20px 0;
+    background-color: #fff; /* Fondo blanco hardcodeado */
+    color: #333;
+}
+
+/* ================================================= */
+/* Estilos del Input y Caja de Resultado */
+/* ================================================= */
+
+.debounce-example-container input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--debounce-color-border);
+    border-radius: 4px; /* Valor hardcodeado */
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.debounce-example-container input[type="text"]:focus {
+    border-color: var(--debounce-color-primary);
+    outline: none;
+    /* Usando la variable local para la sombra */
+    box-shadow: 0 0 0 2px var(--debounce-color-shadow); 
+}
+
+.debounce-example-container .live-status-box {
+    padding: 10px 0;
+}
+
+.debounce-example-container .result-box {
+    min-height: 50px;
+    padding: 15px;
+    background-color: var(--debounce-color-bg-soft);
+    border: 1px dashed var(--debounce-color-border);
+    border-radius: 4px; /* Valor hardcodeado */
+    font-family: monospace;
+    color: #333;
+    display: flex;
+    align-items: center;
+}

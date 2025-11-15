@@ -360,6 +360,24 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
         },
 
+        "18-js-patterns": {
+            title: "Módulo 18: Patrones de JavaScript",
+            components: [
+                {
+                    name: "01. Debounce (Retraso de Llamada)",
+                    path: "/src/components/18-js-patterns/js-pattern-01-debounce/index.html",
+                },
+                {
+                    name: "02. Throttle (Limitador de Tasa)",
+                    path: "/src/components/18-js-patterns/js-pattern-02-throttle/index.html",
+                },
+                {
+                    name: "03. Observadores DOM (Intersection/Mutation)",
+                    path: "/src/components/18-js-patterns/js-pattern-03-dom-observer/index.html",
+                },
+            ],
+        },
+
        
     };
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.03: Patrón Observadores DOM</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" /> 
+
+    <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html">Volver a Patrones JS</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+            <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
+    </header>
+
+    <div class="docs-container">
+        <main class="docs-content">
+            <h2>18.03: Observadores del DOM (Intersection Observer)</h2>
+            <p class="description">
+                Demuestra el uso del **Intersection Observer API** para detectar de manera eficiente cuándo un elemento entra en el viewport del navegador, optimizando la carga de recursos (*lazy loading*) o el seguimiento de elementos visibles.
+            </p>
+
+            <section class="preview-area">
+                <h3>Vista Previa: Carga Diferida (Lazy Loading)</h3>
+                
+                <div class="pattern-example-container observer-example-container">
+                    <p class="description">
+                        Desplácese hacia abajo. La imagen de marcador de posición se reemplazará por la imagen real solo cuando entre en el viewport.
+                    </p>
+                    
+                    <div class="padding-spacer">
+                        Desplácese ⬇️
+                    </div>
+
+                    <img data-src="https://picsum.photos/800/400" 
+                         src="https://plus.unsplash.com/premium_photo-1661889099855-b44dc39e88c9?text=Cargando..." 
+                         alt="Imagen de ejemplo para Lazy Loading" 
+                         id="lazy-image" 
+                         class="lazy-load-target" 
+                         width="800" 
+                         height="400">
+
+                    <p id="observer-status" class="status-message">
+                        Estado: La imagen aún no es visible.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="code-snippets">
+                <h3>Referencia de Nomenclatura y Código Fuente</h3>
+                <p>El código JS contiene la lógica del Intersection Observer para reemplazar el atributo `data-src` por `src`.</p>
+                
+                <h4>HTML (Estructura Base del Ejemplo)</h4>
+                <pre><code class="language-html html-snippet"></code></pre>
+                
+                <h4>CSS (Estilos Autónomos del Contenedor)</h4>
+                <pre><code class="language-css css-snippet"></code></pre>
+
+                <h4>JavaScript (Lógica del Observer)</h4>
+                <pre><code class="language-js js-snippet"></code></pre>
+
+            </section>
+        </main>
+    </div>
+
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit.</p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>

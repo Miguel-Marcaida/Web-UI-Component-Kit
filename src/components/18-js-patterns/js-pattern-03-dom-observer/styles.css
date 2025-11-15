@@ -1,0 +1,75 @@
+/*
+ * styles.css
+ * Subcomponente 18.03 Observadores del DOM
+ * AUTONOMÍA ESTRICTA: Estilos encapsulados para la demostración.
+ */
+
+/* ================================================= */
+/* Variables y Estilos del Contenedor Raíz */
+/* ================================================= */
+
+.observer-example-container {
+    /* Variables Locales */
+    --observer-border-color: #e0e0e0;
+    --observer-status-loaded-color: #28a745; /* Verde para cargado */
+    --observer-status-pending-color: #ffc107; /* Amarillo para pendiente */
+
+    /* Estilos estructurales */
+    padding: 20px;
+    border: 1px solid var(--observer-border-color);
+    border-radius: 8px;
+    margin: 20px 0;
+    background-color: #fcfcfc;
+    overflow: hidden; /* Necesario para que el scroll funcione */
+    color: #333;
+}
+
+/* Espaciador para forzar el scroll y que el elemento quede fuera del viewport inicialmente */
+.padding-spacer {
+    height: 120vh; /* Altura que obliga al scroll */
+    background-color: #eee;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ================================================= */
+/* Estilos del Target y Status */
+/* ================================================= */
+
+.lazy-load-target {
+    /* Altura y ancho fijos para que el layout no salte al cargar */
+    display: block;
+    width: 100%;
+    height: auto; /* Mantenemos el aspecto ratio de 800x400 */
+    min-height: 200px; /* Altura mínima para el placeholder */
+    background-color: #333;
+    transition: opacity 0.5s ease;
+}
+
+/* La imagen de placeholder inicial es opaca, la real aparecerá */
+img[data-src]:not([src]) {
+    /* Muestra el placeholder de color hasta que se cargue la imagen real */
+    opacity: 1; 
+}
+
+.status-message {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #333;
+    border: 1px solid var(--observer-status-pending-color);
+    background-color: #fff3cd; /* Color de fondo amarillo claro */
+}
+
+/* Clase que se añade con JavaScript al cargar */
+.status-message.loaded {
+    color: #fff;
+    border-color: var(--observer-status-loaded-color);
+    background-color: var(--observer-status-loaded-color);
+}
