@@ -1,0 +1,9 @@
+<div class="stack stack-md">
+    <div class="demo-item">Título de Sección</div>
+    <div class="demo-item">Párrafo de texto y descripción</div>
+    <div class="demo-item">
+        </div>
+</div>
+
+<div class="stack stack-lg">
+    </div>

@@ -1,0 +1,15 @@
+<div class="media-object">
+    <div class="media-figure">
+         <img src="https://via.placeholder.com/80x80" alt="Figura" class="demo-image">
+    </div>
+    <div class="media-body">
+        <h4>Título</h4>
+        <p>Contenido flexible del cuerpo.</p>
+    </div>
+</div>
+
+<div class="center-parent">
+    <div class="center-content">
+        Contenido Centrado
+    </div>
+</div>

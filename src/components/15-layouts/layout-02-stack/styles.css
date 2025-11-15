@@ -1,0 +1,61 @@
+/**
+ * Layout 15.02: Stack y Composiciones Verticales
+ * Autonomía Estricta: Define sus propios valores de espaciado sin usar variables globales.
+ */
+
+/* 1. CLASE BASE: Stack */
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    /* La propiedad gap es la clave para manejar el espaciado vertical
+       sin depender de márgenes (margin) que pueden ser complejos de anular. */
+}
+
+/* 2. MODIFICADORES DE ESPACIADO (GAP) */
+/* Los tamaños deben ser valores fijos para mantener la autonomía estricta */
+
+/* Espaciado Pequeño (Small) */
+.stack-sm {
+    gap: 0.5rem; /* ~8px */
+}
+
+/* Espaciado Medio (Medium) */
+.stack-md {
+    gap: 1rem; /* ~16px */
+}
+
+/* Espaciado Grande (Large) */
+.stack-lg {
+    gap: 1.5rem; /* ~24px */
+}
+
+/* 3. ESTILOS DE DEMOSTRACIÓN */
+
+.layout-example-container {
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f7f7f7;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.demo-item {
+    padding: 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.demo-button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem; /* Usamos un margen fijo para esta demo */
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}

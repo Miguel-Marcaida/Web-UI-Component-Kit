@@ -1,0 +1,84 @@
+/**
+ * Layout 15.04: Objeto Media y Centrado
+ * Autonomía Estricta: No usa variables CSS globales.
+ */
+
+/* ====================================
+ * 1. OBJETO MEDIA (.media-object)
+ * ==================================== */
+
+.media-object {
+    display: flex;
+    align-items: flex-start; /* Alinea los ítems en la parte superior por defecto */
+    gap: 1rem; /* Espaciado fijo entre figura y cuerpo */
+}
+
+/* Figura (Parte fija) */
+.media-figure {
+    /* No se aplica width para que la figura tome el tamaño intrínseco de su contenido (ej: la imagen) */
+    flex-shrink: 0; 
+}
+
+/* Cuerpo (Parte flexible) */
+.media-body {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    min-width: 0; /* Asegura que el contenido flexible no desborde en Flexbox */
+}
+
+/* Estilos de demo para la imagen */
+.demo-image {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+.media-title {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+}
+
+.media-text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* ====================================
+ * 2. UTILIDAD CENTRADO (.center-parent)
+ * ==================================== */
+
+.center-parent {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;    /* Centrado vertical */
+    height: 100%; /* El padre debe tener una altura definida */
+}
+
+/* Estilos de demo para el contenedor Centrado */
+.center-parent-demo {
+    height: 250px; /* Altura para demostrar el centrado vertical */
+    overflow: hidden;
+}
+
+.center-content {
+    padding: 2rem;
+    max-width: 80%;
+    text-align: center;
+    border: 1px dashed #007bff;
+    background-color: #e6f0ff;
+    border-radius: 0.5rem;
+    color: #555;
+}
+
+/* 3. ESTILOS BASE DE DEMOSTRACIÓN */
+
+.layout-example-container {
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f7f7f7;
+    margin-bottom: 2rem;
+}

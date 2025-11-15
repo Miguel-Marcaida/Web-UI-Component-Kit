@@ -1,0 +1,71 @@
+/**
+ * Layout 15.03: Inline y Composiciones Horizontales
+ * Autonomía Estricta: Define sus propios valores de espaciado sin usar variables globales.
+ */
+
+/* 1. CLASE BASE: Inline Group */
+
+.inline-group {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+    align-items: center;
+    /* La clave es usar 'gap' para manejar el espaciado entre los ítems horizontal y verticalmente */
+}
+
+/* 2. MODIFICADORES DE ESPACIADO (GAP) */
+/* Los tamaños son valores fijos para mantener la autonomía estricta */
+
+/* Espaciado Pequeño (Small) */
+.inline-sm {
+    gap: 0.5rem; /* ~8px */
+}
+
+/* Espaciado Medio (Medium) */
+.inline-md {
+    gap: 1rem; /* ~16px */
+}
+
+/* Espaciado Grande (Large) */
+.inline-lg {
+    gap: 1.5rem; /* ~24px */
+}
+
+/* 3. ESTILOS DE DEMOSTRACIÓN */
+
+.layout-example-container {
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f7f7f7;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Tags de ejemplo */
+.demo-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    background-color: #e0f7fa; /* Color de fondo fijo */
+    color: #00796b; /* Color de texto fijo */
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Botones de ejemplo */
+.demo-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #c0c0c0;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.demo-button-primary {
+    border-color: #007bff;
+    background-color: #007bff;
+    color: white;
+}

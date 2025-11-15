@@ -307,20 +307,20 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Módulo 15: Layouts",
             components: [
                 {
-                    name: "01. Flexbox y Grid Helpers",
-                    path: "/src/components/15-layouts/layout-01-flex-grid/index.html",
+                    name: "01. Display y Utilidades (Flex/Grid)",
+                    path: "/src/components/15-layouts/layout-01-display/index.html",
                 },
                 {
-                    name: "02. Stack y Box Models",
-                    path: "/src/components/15-layouts/layout-02-stack-box/index.html",
+                    name: "02. Stack y Composiciones Verticales",
+                    path: "/src/components/15-layouts/layout-02-stack/index.html",
                 },
                 {
-                    name: "03. Objeto Media (Media Object)",
-                    path: "/src/components/15-layouts/layout-03-media-object/index.html",
+                    name: "03. Inline y Composiciones Horizontales",
+                    path: "/src/components/15-layouts/layout-03-inline/index.html",
                 },
                 {
-                    name: "04. Centrado (Center Utility)",
-                    path: "/src/components/15-layouts/layout-04-center/index.html",
+                    name: "04. Objeto Media y Centrado",
+                    path: "/src/components/15-layouts/layout-04-media-center/index.html",
                 },
             ],
         },

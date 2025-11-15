@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.01: Display y Utilidades (Flex/Grid)</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" />
+
+    <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html">Volver a Layouts</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+            <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
+    </header>
+
+    <div class="docs-container">
+        <main class="docs-content">
+            <h2>15.01: Display y Utilidades (Flex & Grid)</h2>
+            <p class="description">
+                Clases de utilidad CSS para controlar la disposición de elementos (Flexbox, Grid) y su alineación. Estas clases son **autónomas** y no dependen del sistema de variables principal, utilizando valores fijos para el espaciado.
+            </p>
+
+            <section class="preview-area">
+                <h3>Vista Previa: Demostración Flexbox</h3>
+                
+                <div class="layout-example-container">
+                    
+                    <div class="d-flex justify-center gap-md">
+                        <div class="demo-box">Caja 1</div>
+                        <div class="demo-box">Caja 2</div>
+                        <div class="demo-box">Caja 3</div>
+                    </div>
+
+                    <h4 style="margin-top: 2rem;">Demostración Grid (3 Columnas)</h4>
+                    <div class="d-grid grid-cols-3 gap-md">
+                        <div class="demo-box">Item A</div>
+                        <div class="demo-box">Item B</div>
+                        <div class="demo-box">Item C</div>
+                        <div class="demo-box">Item D</div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <section class="code-snippets">
+                <h3>Referencia de Nomenclatura y Código Fuente</h3>
+                <p>El componente es 100% CSS y no requiere JavaScript.</p>
+                
+                <h4>HTML (Estructura de Utilidad)</h4>
+                <pre><code class="language-html html-snippet"></code></pre>
+                
+                <h4>CSS (Estilos Completos de Utilidades)</h4>
+                <pre><code class="language-css css-snippet"></code></pre>
+
+            </section>
+        </main>
+    </div>
+
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit.</p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+</body>
+</html>

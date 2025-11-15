@@ -1,0 +1,10 @@
+<div class="inline-group inline-sm">
+    <span class="demo-tag">#CSS</span>
+    <span class="demo-tag">#Autónomo</span>
+    <span class="demo-tag">#Layout</span>
+</div>
+
+<div class="inline-group inline-md">
+    <button class="demo-button">Cancelar</button>
+    <button class="demo-button demo-button-primary">Guardar Cambios</button>
+</div>

@@ -1,0 +1,85 @@
+/**
+ * Layout 15.01: Display y Utilidades (Flex/Grid)
+ * Autonomía Estricta: No usa variables CSS globales para su funcionalidad.
+ */
+
+/* 1. CLASES DE DISPLAY */
+
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+/* 2. CLASES DE ALINEACIÓN (Flexbox) */
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+/* 3. CLASES DE GAP (Espaciado interno de Flex/Grid) */
+
+.gap-sm {
+    gap: 0.5rem; /* ~8px */
+}
+
+.gap-md {
+    gap: 1rem; /* ~16px */
+}
+
+.gap-lg {
+    gap: 1.5rem; /* ~24px */
+}
+
+/* 4. CLASES DE GRID */
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* 5. ESTILOS DE DEMOSTRACIÓN (Contenedor y Cajas) */
+
+.layout-example-container {
+    padding: 1.5rem;
+    border: 1px solid #ccc; /* Valor fijo, no depende de variables */
+    border-radius: 0.5rem;
+    background-color: #f7f7f7; /* Valor fijo */
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.demo-box {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    background-color: #e0e0e0; /* Gris claro */
+    border: 1px solid #c0c0c0;
+    border-radius: 0.25rem;
+}
+
+/* Estilo para los elementos del Grid (para que se estiren) */
+.d-grid > .demo-box {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
