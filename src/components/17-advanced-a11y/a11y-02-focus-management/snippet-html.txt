@@ -1,0 +1,20 @@
+<div id="focus-panel" 
+     class="focus-panel" 
+     role="dialog" 
+     aria-modal="true" 
+     aria-labelledby="panel-title" 
+     tabindex="-1">
+    
+    <h4 id="panel-title">Título del Panel/Modal</h4>
+    <p>Contenido que requiere la trampa de foco.</p>
+
+    <button class="panel-btn">Acción Principal</button>
+    <a href="#link" class="panel-link">Enlace de Ayuda</a>
+    <input type="text" class="panel-input" placeholder="Dato requerido">
+    
+    <button id="close-panel-btn" class="button button-secondary">Cerrar Panel</button>
+</div>
+
+<button id="open-panel-btn" class="button button-primary">
+    Abrir Panel
+</button>

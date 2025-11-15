@@ -1,0 +1,74 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: 17.02 (Focus Management)             */
+/* Estilos para el Panel de Demostración (Focus Trap)     */
+/* ==================================================== */
+
+/* === 1. Contenedor de Declaración de Variables (Autonomía Estricta) === */
+.focus-management-example-container {
+    /* Variables locales para este componente */
+    --panel-bg-color: #f0f8ff;
+    --panel-border-color: #007bff;
+    --panel-shadow: rgba(0, 0, 0, 0.2);
+    --panel-width: 350px;
+    
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    min-height: 350px;
+    position: relative; /* Para posicionar el panel */
+    color: #333;
+}
+
+/* 2. Estilo Base del Panel */
+.focus-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: var(--panel-width);
+    padding: 1.5rem;
+    background-color: var(--panel-bg-color);
+    border: 2px solid var(--panel-border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px var(--panel-shadow);
+    z-index: 1000;
+    
+    /* Por defecto, el panel está oculto. JS lo mostrará. */
+    display: none; 
+    
+    /* Propiedad clave para la accesibilidad: */
+    outline: none; /* Asegura que el panel no muestre un borde de foco doble cuando JS lo enfoca */
+
+    /* Estilos internos para que los elementos enfocables sean claros */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+/* 3. Clase para mostrar el panel (toggleado por JS) */
+.focus-panel.is-active {
+    display: flex; /* Mostrar el panel */
+}
+
+/* 4. Estilos de los elementos enfocables internos */
+.panel-btn, .panel-link, .panel-input {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: var(--local-text-color, #333);
+}
+
+.panel-btn:focus, 
+.panel-link:focus, 
+.panel-input:focus,
+#open-panel-btn:focus,
+#close-panel-btn:focus {
+    /* Destacado de foco claro para accesibilidad */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+    outline: none;
+}

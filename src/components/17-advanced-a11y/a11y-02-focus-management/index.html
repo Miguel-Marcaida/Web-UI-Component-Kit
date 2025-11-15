@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.02: Gestión de Foco</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" /> 
+
+    <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html">Volver a A11Y Avanzada</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+            <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
+    </header>
+
+    <div class="docs-container">
+        <main class="docs-content">
+            <h2>17.02: Gestión de Foco (Focus Management)</h2>
+            <p class="description">
+                Este patrón demuestra cómo gestionar el foco del teclado para crear una <B>trampa de foco (Focus Trap)</B> utilizando JavaScript y el uso correcto de <code>tabindex="0"</code> y <code>tabindex="-1"</code>. Es esencial para modales y *sidebars*.
+            </p>
+
+            <section class="preview-area">
+                <h3>Vista Previa: Trampa de Foco en Panel</h3>
+                
+                <div class="focus-management-example-container">
+                    <p class="description">Active el panel y luego intente usar la tecla `Tab`. El foco debe quedar atrapado dentro del panel.</p>
+                    
+                    <button id="open-panel-btn" class="button button-primary">
+                        Abrir Panel con Trampa de Foco
+                    </button>
+                    
+                    <div id="focus-panel" class="focus-panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" tabindex="-1">
+                        <h4 id="panel-title">Panel de Interacción</h4>
+                        <p>Foco atrapado: Los elementos fuera de este panel no deben ser accesibles por la tecla Tab.</p>
+
+                        <button class="panel-btn">Acción 1</button>
+                        <a href="#link" class="panel-link">Enlace Interno</a>
+                        <input type="text" class="panel-input" placeholder="Campo de Texto">
+                        <button id="close-panel-btn" class="button button-secondary">Cerrar Panel</button>
+                    </div>
+
+                </div>
+            </section>
+            
+            <section class="code-snippets">
+                <h3>Referencia de Nomenclatura y Código Fuente</h3>
+                <p>El código JS define la trampa de foco y maneja la apertura/cierre, mientras que el HTML define los elementos enfocables.</p>
+                
+                <h4>HTML (Estructura de la Trampa de Foco)</h4>
+                <pre><code class="language-html html-snippet"></code></pre>
+                
+                <h4>CSS (Estilos Visuales)</h4>
+                <pre><code class="language-css css-snippet"></code></pre>
+
+                <h4>JavaScript (Lógica de la Trampa de Foco)</h4>
+                <pre><code class="language-js js-snippet"></code></pre>
+
+            </section>
+        </main>
+    </div>
+
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit.</p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>
