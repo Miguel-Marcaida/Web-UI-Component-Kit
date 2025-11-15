@@ -1,0 +1,71 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: 16.02 (Keyframes y Clases)           */
+/* Definiciones @keyframes y Clases Utilitarias           */
+/* ==================================================== */
+
+/* === Micro-Reset (Contenedor de Demostración) === */
+.keyframes-example-container {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 250px; /* Asegura espacio para la animación */
+    color: #007bff;
+}
+
+.example-box {
+    width: 200px;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--color-primary, #007bff);
+    color: white;
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------------- */
+/* 1. DEFINICIONES CANÓNICAS DE KEYFRAMES               */
+/* ---------------------------------------------------- */
+
+/* @Keyframe para la aparición suave (Fade In) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* @Keyframe para la rotación continua (Spin) */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. CLASES UTILITIES (Para copiar en cualquier CSS)   */
+/* ---------------------------------------------------- */
+
+/* Aplicación de Fade In */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    /* Opacidad inicial a 0 para ver la animación */
+    opacity: 0; 
+}
+
+/* Aplicación de Spin (para loaders o iconos) */
+.animate-spin {
+    animation: spin 1.2s linear infinite;
+    display: inline-block; /* Necesario para que el transform funcione correctamente en iconos/spans */
+}

@@ -1,0 +1,3 @@
+<div class="example-box animate-fade-in">Contenido que aparece</div>
+
+<i class="fas fa-sync-alt animate-spin" style="font-size: 2rem;"></i>
