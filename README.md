@@ -34,3 +34,5 @@ El kit se divide en una única sección principal de documentación:
     ```
 2.  **Copiar:** Navega a la carpeta del componente deseado (`/src/components/...`).
 3.  **Integrar:** Copia y pega los archivos `index.html`, `styles.css` y `script.js` en tu proyecto.
+
+## autor: Miguel A. Marcaida Marquez
