@@ -1,14 +1,86 @@
-/*
- * ===========================================
- * 12-UTILITIES: UTIL-01-SPACING (ESTILOS DE DEMO)
- * ===========================================
+/* * ----------------------------------------------------------------------------
+ * UTILIDAD 01: Espaciado (Spacing) - LOCAL STYLES
+ * Este CSS hace que la página de documentación sea autónoma.
+ * Contiene la escala de variables y las reglas de utilidad (.m-N, .p-N).
+ * ----------------------------------------------------------------------------
  */
 
-.example-box {
-  border: 2px dashed var(--color-primary-base, #007bff);
-  background-color: var(--color-bg-subtle, #f0f0f0);
-  text-align: center;
-  color: var(--color-text-dark, #333);
+/* 1. Definición de la Escala de Espaciado (Encapsulación Estricta de Variables) */
+/* NOTA: Las variables están en :root para ser reutilizadas en todas las utilidades. */
+:root {
+    --space-0: 0;
+    --space-1: 0.25rem;  /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 1rem;     /* 16px (Base) */
+    --space-4: 1.5rem;   /* 24px */
+    --space-5: 3rem;     /* 48px */
 }
 
-/* Nota: Las clases m-t-4 y p-3 serán definidas en /CSS/main.css */
+/* 2. Estilos de soporte para la documentación (Clase .box) */
+.spacing-example-container {
+    padding: 1rem;
+    background-color: var(--color-background-secondary); 
+    border-radius: 6px;
+    /* Para demostrar el margen, usamos flex para alinear */
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.box {
+    /* El .box tiene un margen y relleno base que será anulado por las utilidades */
+    padding: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    border: 1px dashed var(--color-accent);
+    min-width: 150px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: monospace;
+    line-height: 1.2;
+    /* El display:inline-block hace que el margen se vea más claro */
+    display: inline-block; 
+}
+
+/* 3. Utilidades de Margen (Margin) */
+
+/* General (m-N) */
+.m-0 { margin: var(--space-0) !important; }
+.m-1 { margin: var(--space-1) !important; }
+.m-2 { margin: var(--space-2) !important; }
+.m-3 { margin: var(--space-3) !important; }
+.m-4 { margin: var(--space-4) !important; }
+.m-5 { margin: var(--space-5) !important; }
+
+/* Eje Y (my-N) - Top y Bottom */
+.my-0 { margin-top: var(--space-0) !important; margin-bottom: var(--space-0) !important; }
+.my-1 { margin-top: var(--space-1) !important; margin-bottom: var(--space-1) !important; }
+.my-3 { margin-top: var(--space-3) !important; margin-bottom: var(--space-3) !important; }
+
+/* Eje X (mx-N) - Left y Right */
+.mx-0 { margin-left: var(--space-0) !important; margin-right: var(--space-0) !important; }
+.mx-1 { margin-left: var(--space-1) !important; margin-right: var(--space-1) !important; }
+.mx-3 { margin-left: var(--space-3) !important; margin-right: var(--space-3) !important; }
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+/* Top (mt-N) */
+.mt-3 { margin-top: var(--space-3) !important; }
+.mt-4 { margin-top: var(--space-4) !important; }
+
+/* Bottom (mb-N) */
+.mb-3 { margin-bottom: var(--space-3) !important; }
+.mb-5 { margin-bottom: var(--space-5) !important; }
+
+
+/* 4. Utilidades de Relleno (Padding) */
+
+/* General (p-N) */
+.p-0 { padding: var(--space-0) !important; }
+.p-1 { padding: var(--space-1) !important; }
+.p-2 { padding: var(--space-2) !important; }
+.p-3 { padding: var(--space-3) !important; }
+
+/* Eje X (px-N) - Left y Right */
+.px-4 { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+
+/* Eje Y (py-N) - Top y Bottom */
+.py-2 { padding-top: var(--space-2) !important; padding-bottom: var(--space-2) !important; }

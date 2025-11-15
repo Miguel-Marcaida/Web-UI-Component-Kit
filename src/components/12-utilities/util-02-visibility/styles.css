@@ -1,11 +1,71 @@
-/*
- * ===========================================
- * 12-UTILITIES: UTIL-02-VISIBILITY (ESTILOS DE DEMO)
- * ===========================================
+/* * ----------------------------------------------------------------------------
+ * UTILIDAD 02: Visibilidad (Visibility) - LOCAL STYLES
+ * Este CSS contiene las reglas de utilidad (.d-none, .sr-only) y los estilos de soporte 
+ * para hacer que la página de documentación sea autónoma.
+ * ----------------------------------------------------------------------------
  */
 
-.example-box {
-  border: 1px solid var(--color-border-subtle, #ccc);
-  padding: 1rem;
-  background-color: var(--color-bg-subtle, #f8f9fa);
+/* 1. Estilos de soporte para la documentación (Clases .box y botones de ejemplo) */
+
+.visibility-example-container,
+.sr-only-example-container {
+    padding: 1rem;
+    background-color: var(--color-background-secondary); 
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 80px;
+}
+
+.box {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    border: 1px solid var(--color-accent);
+    min-width: 150px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.action-button {
+    /* Estilo básico para el botón que usa sr-only */
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: background-color 0.2s;
+}
+
+.action-button:hover {
+    background-color: var(--color-accent);
+}
+
+/* 2. Definición de las Utilidades de Visibilidad */
+
+/* Clase .d-none (Display None) */
+.d-none {
+    /* Oculta completamente el elemento y lo saca del flujo (no ocupa espacio) */
+    display: none !important; 
+}
+
+/* Clase .sr-only (Screen Reader Only) */
+.sr-only {
+    /* Oculta VISUALMENTE, pero mantiene el elemento en el DOM para lectores de pantalla */
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }

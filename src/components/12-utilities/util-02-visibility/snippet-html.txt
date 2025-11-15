@@ -1,0 +1,26 @@
+/* *********************************************************************************
+ * UTILIDAD 02: VISIBILIDAD
+ * NOTA CRÍTICA DE USO:
+ * * Estas clases son utilidades atómicas que modifican la visualización o accesibilidad.
+ * DEPENDENCIA: Si copia un HTML que usa estas clases, debe tener enlazado el archivo 
+ * de utilidades CSS en su HTML principal.
+ * *********************************************************************************/
+
+/* =ASESORÍA DE ACCESIBILIDAD (A11Y)=
+ * Use .d-none cuando el contenido deba desaparecer completamente del DOM (ej., en pestañas inactivas).
+ * Use .sr-only cuando el contenido solo deba ser accesible para lectores de pantalla 
+ * (ej., para describir un icono sin texto visible).
+ * =================================*/
+
+/* CLASES DE VISIBILIDAD Y DISPLAY */
+/* --------------------------------- */
+
+.d-none { 
+    /* display: none !important; */
+    /* El elemento y su contenido no se muestran y no afectan el layout. */
+}
+
+.sr-only {
+    /* Oculta VISUALMENTE, pero mantiene el elemento disponible para lectores de pantalla. */
+    /* position: absolute !important; width: 1px !important; height: 1px !important; ... */
+}

@@ -3,25 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Utilidades de Espaciado</title>
+    <title>Utilidad 01: Espaciado (Spacing)</title>
 
     <link rel="stylesheet" href="/CSS/main.css" />
-    <link rel="stylesheet" href="/CSS/prism.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="/CSS/prism.css" />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header id="main-header">
       <h1>
-        <a href="/index.html" style="text-decoration: none; color: white"
-          >Web UI Kit</a
-        >
+        <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
       </h1>
-
       <button
         id="sidebar-toggle"
         aria-expanded="false"
@@ -29,120 +26,67 @@
       >
         <i class="fas fa-bars"></i>
       </button>
-
       <nav>
-        <a href="/src/components/12-utilities/index.html"
-          >Volver a Utilidades</a
-        >
+        <a href="../index.html">Volver a Utilidades</a>
       </nav>
+      <button id="theme-toggle" aria-label="Cambiar modo de color">
+        <i
+          class="fas fa-sun theme-icon"
+          data-mode="light"
+          style="display: none"
+        ></i>
+        <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+      </button>
     </header>
 
     <div class="docs-container">
       <main class="docs-content">
-        <h2>Utilidades de Espaciado (Margin y Padding)</h2>
+        <h2>Utilidad 01: Espaciado (Márgenes y Rellenos)</h2>
         <p class="description">
-          Clases de utilidad para modificar rápidamente los márgenes (`margin`)
-          y los paddings (`padding`) de los elementos. El sistema se basa en una
-          escala predefinida y es **responsivo**.
+          Clases de utilidad atómicas para controlar el espaciado (margins
+          <code>m</code> y paddings <code>p</code>) de forma consistente usando
+          una escala de diseño.
         </p>
 
-        <h3>1. Nomenclatura del Sistema</h3>
+        <h3>Escala de Espaciado</h3>
         <p>
-          Las clases siguen el formato <code>propiedad-lado-tamaño</code>,
-          donde:
-        </p>
-        <ul>
-          <li>
-            **Propiedad:** <code>m</code> para <code>margin</code> y
-            <code>p</code> para <code>padding</code>.
-          </li>
-          <li>
-            **Lado:**
-            <ul>
-              <li><code>t</code>: top (arriba)</li>
-              <li><code>b</code>: bottom (abajo)</li>
-              <li><code>s</code>: start (izquierda - para LTR)</li>
-              <li><code>e</code>: end (derecha - para LTR)</li>
-              <li><code>x</code>: left y right (eje horizontal)</li>
-              <li><code>y</code>: top y bottom (eje vertical)</li>
-              <li>(vacío): todos los lados</li>
-            </ul>
-          </li>
-          <li>
-            **Tamaño:** Un número del 0 al 5 basado en el sistema de escala.
-          </li>
-        </ul>
-
-        <h3 class="m-t-4">2. Escala de Espaciado</h3>
-        <p>
-          La escala de tamaño utiliza variables CSS, asumiendo un tamaño de
-          espaciado base de **1rem** (generalmente 16px).
+          Las utilidades utilizan una escala del 0 al 5 (e.g.,
+          <code>3</code> equivale a <code>1rem</code>).
         </p>
 
-        <table class="table" style="width: 50%">
-          <thead>
-            <tr>
-              <th>Clase de Tamaño</th>
-              <th>Valor CSS (Ejemplo)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>0</code></td>
-              <td><code>0</code></td>
-            </tr>
-            <tr>
-              <td><code>1</code></td>
-              <td><code>0.25rem</code></td>
-            </tr>
-            <tr>
-              <td><code>2</code></td>
-              <td><code>0.5rem</code></td>
-            </tr>
-            <tr>
-              <td><code>3</code></td>
-              <td><code>1rem</code></td>
-            </tr>
-            <tr>
-              <td><code>4</code></td>
-              <td><code>1.5rem</code></td>
-            </tr>
-            <tr>
-              <td><code>5</code></td>
-              <td><code>3rem</code></td>
-            </tr>
-            <tr>
-              <td><code>auto</code></td>
-              <td><code>auto</code> (Solo para márgenes)</td>
-            </tr>
-          </tbody>
-        </table>
+        <section class="preview-area">
+          <h3>Vista Previa y Clases de Uso</h3>
+          <h4>Ejemplo: Margen y Relleno</h4>
+          <div class="spacing-example-container">
+            <div class="box m-0 mb-3">.m-0 (Sin Margen)</div>
+            <div class="box mt-3 mb-3">.mt-3 (Margen Superior: 1rem)</div>
+            <div class="box p-1">.p-1 (Relleno General: 0.25rem)</div>
+            <div class="box px-4 py-2">
+              .px-4 (Eje X: 1.5rem) y .py-2 (Eje Y: 0.5rem)
+            </div>
+          </div>
+        </section>
 
-        <h3 class="m-t-4">3. Ejemplo de Uso</h3>
-        <p>
-          El siguiente ejemplo muestra un elemento con **margen superior de
-          tamaño 4** y **padding de tamaño 3** en todos los lados.
-        </p>
-
-        <div class="example-box m-t-4 p-3">
-          Esta caja tiene <code>m-t-4</code> y <code>p-3</code>.
-        </div>
-
-        <h3 class="m-t-4">4. Código de Utilidades CSS (Para /CSS/main.css)</h3>
-        <p>
-          Las clases deben ser añadidas al archivo global
-          **<code>/CSS/main.css</code>** para que estén disponibles en todo el
-          proyecto.
-        </p>
-
-        <pre><code class="language-css css-snippet" data-snippet="snippet-css.txt">...</code></pre>
+       <section class="code-snippets">
+                <h3>Referencia de Nomenclatura y Código Fuente</h3>
+                <p>El siguiente código es la fuente de verdad (la escala de diseño y sintaxis de las utilidades), cargada desde el archivo de referencia oficial.</p>
+                
+                <h4>Fuente de Nomenclatura (Niveles de Espaciado)</h4>
+                <pre><code class="language-html html-snippet"></code></pre>
+                
+                <h4>CSS (Estilos de la Demostración Local)</h4>
+                <pre><code class="language-css css-snippet"></code></pre>
+            </section>
       </main>
     </div>
 
-    <footer id="main-footer"></footer>
+    <footer id="main-footer">
+      <p>© 2025 Web UI Component Kit.</p>
+    </footer>
+
     <script src="/JS/prism.js"></script>
-    <script src="/JS/main.js"></script>
     <script src="/JS/docs.js"></script>
     <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
   </body>
 </html>
