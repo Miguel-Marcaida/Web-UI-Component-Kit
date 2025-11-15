@@ -289,19 +289,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "14-widgets": {
             title: "Módulo 14: Widgets Avanzados",
             components: [
-                {
-                    name: "01. Acordeón (Accordion)",
-                    path: "/src/components/14-widgets/widget-01-accordion/index.html",
-                },
-                {
-                    name: "02. Colapsable (Collapse)",
-                    path: "/src/components/14-widgets/widget-02-collapse/index.html",
-                },
-                {
-                    // <-- ¡NUEVO COMPONENTE: CARRUSEL!
-                    name: "03. Carrusel (Carousel)",
-                    path: "/src/components/14-widgets/widget-03-carousel/index.html",
-                },
+                    {
+                        name: "01. Acordeón (Accordion)",
+                        path: "/src/components/14-widgets/widget-01-toggle/index.html",
+                    },
+                    {
+                        name: "02. Dropdown / Popover",
+                        path: "/src/components/14-widgets/widget-02-popup/index.html",
+                    },
+                    {
+                        name: "03. Tabulador (Tabs)",
+                        path: "/src/components/14-widgets/widget-03-tabs/index.html", 
+                    },
             ],
         },
         "15-layouts": {
