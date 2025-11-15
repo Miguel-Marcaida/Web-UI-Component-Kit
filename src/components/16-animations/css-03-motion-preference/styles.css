@@ -1,0 +1,80 @@
+/* ==================================================== */
+/* MÓDULO AUTÓNOMO: 16.03 (Preferencia de Movimiento)    */
+/* Patrón de Uso: @media (prefers-reduced-motion: reduce) */
+/* ==================================================== */
+
+/* === Micro-Reset (Contenedor de Demostración) === */
+.motion-preference-example-container {
+    --box-color: #d63384; /* Color de la caja de ejemplo */
+    
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    min-height: 150px;
+    color: black;
+}
+
+.animated-box {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    
+    background-color: var(--box-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+}
+
+/* ---------------------------------------------------- */
+/* 1. KEYFRAME DE MOVIMIENTO (La animación que queremos reducir) */
+/* ---------------------------------------------------- */
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(calc(100% + 50px)); /* Se mueve fuera del ancho de la caja + un margen */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. APLICACIÓN DE ANIMACIÓN POR DEFECTO               */
+/* ---------------------------------------------------- */
+
+.animated-box {
+    /* Animación continua por defecto */
+    animation: slide 3s infinite alternate ease-in-out;
+}
+
+
+/* ---------------------------------------------------- */
+/* 3. PATRÓN DE ACCESIBILIDAD: REDUCIR MOVIMIENTO       */
+/* ---------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    /* Detiene toda la animación compleja */
+    .animated-box {
+        animation: none;
+        /* Opcional: Establecer un estado estático visible */
+        transform: translateX(0); 
+    }
+
+    /* Patrón canónico para deshabilitar TODAS las transiciones */
+    *,
+    ::before,
+    ::after {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
