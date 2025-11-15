@@ -1,0 +1,15 @@
+<div class="empty-state-example-container">
+    
+    <div class="empty-state-card">
+        <i class="fas fa-tasks icon-empty"></i>
+        
+        <h4>¡Tu lista de tareas está vacía!</h4>
+        
+        <p>Parece que aún no has creado ninguna tarea. Empieza a organizar tu día añadiendo tu primera actividad.</p>
+        
+        <button class="btn btn-cta">
+            <i class="fas fa-plus"></i> Crear Nueva Tarea
+        </button>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="loader-example-container">
+    
+    <h4>1. Spinner Clásico con Borde</h4>
+    <div class="loader-spinner" 
+         role="status" 
+         aria-live="polite" 
+         aria-label="Cargando contenido. Por favor, espere.">
+        <span class="sr-only">Cargando...</span>
+    </div>
+
+    <h4 style="margin-top: 30px;">2. Animación de Puntos (Dot Flashing)</h4>
+    <div class="loader-dots" 
+         role="status" 
+         aria-live="polite" 
+         aria-label="Conectando al servidor.">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

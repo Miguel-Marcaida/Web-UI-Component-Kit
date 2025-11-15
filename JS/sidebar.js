@@ -390,8 +390,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 path: "/src/components/19-themes/theme-02-branding/index.html" 
             }
         ],
+
+       
+         },
+
+         "20-feedback-states": {
+        title: "Módulo 20: Feedback y Estados",
+        components: [
+            { 
+                name: "01. Loader Animado (Spinner)", 
+                path: "/src/components/20-feedback-states/feedback-01-loader/index.html" 
+            },
+            { 
+                name: "02. Skeleton Screen", 
+                path: "/src/components/20-feedback-states/feedback-02-skeleton/index.html" 
+            },
+            { 
+                name: "03. Empty State", 
+                path: "/src/components/20-feedback-states/feedback-03-empty-state/index.html" 
+            }
+        ],
         
-    }
+         }
 
 
 

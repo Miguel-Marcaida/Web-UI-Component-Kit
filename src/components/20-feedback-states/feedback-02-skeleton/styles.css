@@ -1,0 +1,170 @@
+/*
+ * styles.css
+ * Subcomponente 20.02 Skeleton Screen
+ * AUTONOMÍA ESTRICTA: Se definen las variables de tema internamente.
+ */
+
+/* ================================================= */
+/* Variables y Contenedor Base (LIGHT MODE DEFAULTS) */
+/* ================================================= */
+
+.skeleton-example-container {
+    /* Variables de color para LIGHT MODE (Alto Contraste) */
+    --skeleton-bg: #d0d0d0;     /* Base gris más visible */
+    --skeleton-shine: #f5f5f5;  /* Brillo claro y notorio */
+    --skeleton-border: #a0a0a0; 
+    --card-width: 400px; 
+
+    padding: 20px;
+    border: 1px dashed var(--skeleton-border);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Fondo claro explícito */
+    color: #000;
+}
+
+/* ================================================= */
+/* DARK MODE OVERRIDE (Aplicado por JS global o local) */
+/* ================================================= */
+
+.skeleton-example-container.theme-dark,
+.skeleton-example-container[data-theme="dark"] {
+    /* Variables de color para DARK MODE */
+    --skeleton-bg: #3c3c3c;     /* Fondo oscuro */
+    --skeleton-shine: #555555;  /* Brillo claro sobre oscuro */
+    --skeleton-border: #444444; 
+    
+    background-color: #2b2b2b; /* Fondo oscuro explícito */
+    color: #f0f0f0;
+}
+
+
+/* ================================================= */
+/* 1. ANIMACIÓN DE CARGA (SHIMMER EFFECT) */
+/* ================================================= */
+
+/* Keyframes para mover el gradiente y simular el 'brillo' de carga */
+@keyframes skeleton-loading {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Aplicación del fondo animado a todos los elementos del skeleton */
+.skeleton-card * {
+    background-color: var(--skeleton-bg);
+    
+    /* Aplicar el gradiente animado para el efecto 'shimmer' */
+    background-image: linear-gradient(
+        to right,
+        var(--skeleton-bg) 0%,
+        var(--skeleton-shine) 20%, 
+        var(--skeleton-bg) 40%,
+        var(--skeleton-bg) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 200% 100%; 
+    animation: skeleton-loading 1.5s infinite linear;
+}
+
+
+/* ================================================= */
+/* 2. ESTRUCTURA Y ESTILOS DE ELEMENTOS (CONSUMEN VARIABLES) */
+/* ================================================= */
+
+.skeleton-card, .content-card {
+    width: var(--card-width);
+    border: 1px solid var(--skeleton-border);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.content-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.skeleton-header, .content-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.skeleton-avatar, .content-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.content-avatar {
+    background-color: #ddd; 
+}
+
+.skeleton-title-group {
+    flex-grow: 1;
+}
+
+.skeleton-line {
+    height: 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.title-line {
+    width: 70%;
+}
+
+.subtitle-line {
+    width: 40%;
+    height: 8px;
+}
+
+.full-line {
+    width: 100%;
+}
+
+.short-line {
+    width: 60%;
+}
+
+.skeleton-body {
+    margin-bottom: 20px;
+}
+
+.skeleton-button {
+    width: 120px;
+    height: 35px;
+    border-radius: 4px;
+}
+
+/* ================================================= */
+/* Estilos del Contenido Real */
+/* ================================================= */
+
+.content-title-group h4 {
+    margin: 0 0 4px 0;
+}
+.content-title-group p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #666;
+}
+.content-body p {
+    line-height: 1.6;
+}
+.content-footer button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

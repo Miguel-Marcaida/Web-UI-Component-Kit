@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.02: Skeleton Screen</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" /> 
+
+    <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html">Volver a Feedback y Estados</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+            <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
+    </header>
+
+    <div class="docs-container">
+        <main class="docs-content">
+            <h2>20.02: Skeleton Screen</h2>
+            <p class="description">
+                Patrón para simular la estructura y el *layout* de la interfaz mientras se espera la carga de datos. Reduce la **carga cognitiva** y mejora la percepción de velocidad de la aplicación.
+            </p>
+
+            <section class="preview-area">
+                <h3>Vista Previa: Tarjeta de Contenido</h3>
+                
+                <div class="skeleton-example-container">
+                    
+                    <div class="skeleton-card" id="skeleton-card">
+                        <div class="skeleton-header">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-title-group">
+                                <div class="skeleton-line title-line"></div>
+                                <div class="skeleton-line subtitle-line"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton-body">
+                            <div class="skeleton-line full-line"></div>
+                            <div class="skeleton-line short-line"></div>
+                            <div class="skeleton-line full-line"></div>
+                        </div>
+                        <div class="skeleton-footer">
+                            <div class="skeleton-button"></div>
+                        </div>
+                    </div>
+
+                    <div class="content-card hidden" id="content-card">
+                        <div class="content-header">
+                            <div class="content-avatar"></div>
+                            <div class="content-title-group">
+                                <h4>Título del Contenido Cargado</h4>
+                                <p>Publicado por Juan Pérez</p>
+                            </div>
+                        </div>
+                        <div class="content-body">
+                            <p>Este es el contenido real que se muestra una vez que la carga de datos ha finalizado correctamente. La experiencia visual es fluida.</p>
+                        </div>
+                        <div class="content-footer">
+                            <button class="btn btn-primary">Ver Detalles</button>
+                        </div>
+                    </div>
+
+                    <button id="toggle-state" class="btn btn-secondary" style="margin-top: 20px;">
+                        Simular Carga Finalizada
+                    </button>
+                    
+                </div>
+            </section>
+            
+            <section class="code-snippets">
+                <h3>Referencia de Nomenclatura y Código Fuente</h3>
+                
+                <h4>HTML (Estructura del Skeleton y Contenido)</h4>
+                <pre><code class="language-html html-snippet"></code></pre>
+                
+                <h4>CSS (Estilos del Skeleton y Animaciones)</h4>
+                <pre><code class="language-css css-snippet"></code></pre>
+
+                <h4>JavaScript (Gestión de Estado y Visibilidad)</h4>
+                <pre><code class="language-js js-snippet"></code></pre>
+
+            </section>
+        </main>
+    </div>
+
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit.</p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>

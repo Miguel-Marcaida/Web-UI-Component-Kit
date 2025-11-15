@@ -1,0 +1,42 @@
+<div class="skeleton-example-container">
+    
+    <div class="skeleton-card" id="skeleton-card">
+        <div class="skeleton-header">
+            <div class="skeleton-avatar"></div>
+            <div class="skeleton-title-group">
+                <div class="skeleton-line title-line"></div>
+                <div class="skeleton-line subtitle-line"></div>
+            </div>
+        </div>
+        <div class="skeleton-body">
+            <div class="skeleton-line full-line"></div>
+            <div class="skeleton-line short-line"></div>
+            <div class="skeleton-line full-line"></div>
+        </div>
+        <div class="skeleton-footer">
+            <div class="skeleton-button"></div>
+        </div>
+    </div>
+
+    <div class="content-card hidden" id="content-card">
+        <div class="content-header">
+            <div class="content-avatar"></div>
+            <div class="content-title-group">
+                <h4>Título del Contenido Cargado</h4>
+                <p>Publicado por [Nombre de Autor]</p>
+            </div>
+        </div>
+        <div class="content-body">
+            <p>Este es el contenido real que se muestra una vez que la carga de datos ha finalizado correctamente. 
+            La experiencia visual es fluida.</p>
+        </div>
+        <div class="content-footer">
+            <button class="btn btn-primary">Ver Detalles</button>
+        </div>
+    </div>
+
+    <button id="toggle-state" class="btn btn-secondary" style="margin-top: 20px;">
+        Simular Carga Finalizada
+    </button>
+    
+</div>

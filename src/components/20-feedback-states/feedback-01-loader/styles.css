@@ -1,0 +1,111 @@
+/*
+ * styles.css
+ * Subcomponente 20.01 Loader Animado (Spinner)
+ * AUTONOMÍA ESTRICTA: Animaciones y estilos encapsulados.
+ */
+
+/* ================================================= */
+/* Variables y Contenedor Base */
+/* ================================================= */
+
+.loader-example-container {
+    /* Variables Base de Color (Definidas LOCALMENTE) */
+    --local-brand-color: #007bff; 
+    --local-border-color: #ccc;
+
+    /* Variables del Loader que consumen las locales */
+    --loader-color: var(--local-brand-color);
+    --loader-size-lg: 50px;
+    --loader-size-md: 20px;
+    --loader-duration: 0.8s;
+
+    padding: 20px;
+    /* Usamos la variable local para el borde */
+    border: 1px dashed var(--local-border-color); 
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* Esconder texto para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+/* ================================================= */
+/* 1. ANIMACIÓN DEL SPINNER CLÁSICO */
+/* ================================================= */
+
+/* Keyframes para la rotación */
+@keyframes spin-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-spinner {
+    display: inline-block;
+    width: var(--loader-size-lg);
+    height: var(--loader-size-lg);
+    /* El borde semitransparente usa un color fijo o variable local */
+    border: 4px solid rgba(0, 0, 0, 0.1); 
+    border-radius: 50%;
+    
+    border-top-color: var(--loader-color); 
+    
+    animation: spin-rotate var(--loader-duration) linear infinite;
+}
+
+
+/* ================================================= */
+/* 2. ANIMACIÓN DE PUNTOS (DOT FLASHING) */
+/* ================================================= */
+
+/* Keyframes para el efecto de parpadeo */
+@keyframes dots-flash {
+    0%, 80%, 100% { 
+        opacity: 0.2; 
+        transform: scale(1);
+    }
+    40% { 
+        opacity: 1; 
+        transform: scale(1.1);
+    }
+}
+
+.loader-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre puntos */
+    height: var(--loader-size-lg); 
+}
+
+.loader-dots span {
+    display: block;
+    width: var(--loader-size-md);
+    height: var(--loader-size-md);
+    background-color: var(--loader-color);
+    border-radius: 50%;
+    animation: dots-flash 1.4s infinite ease-in-out both; 
+}
+
+/* Aplicar retraso para la animación secuencial */
+.loader-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loader-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.loader-dots span:nth-child(3) {
+    animation-delay: 0s;
+}

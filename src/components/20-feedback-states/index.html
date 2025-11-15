@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulo 20: Feedback y Estados</title>
+    <link rel="stylesheet" href="../../../CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/index.html">Volver al Inicio</a>
+            </nav>
+            <button id="theme-toggle" aria-label="Cambiar modo de color">
+                <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section">
+            <h2>Módulo 20: Feedback y Estados</h2>
+            <p>Componentes visuales y patrones de interacción diseñados para ofrecer información clara al usuario sobre el **estado actual de la aplicación**, incluyendo carga, espera y ausencia de contenido.</p>
+        </section>
+
+        <section class="component-section">
+            <h3>Subcomponentes del Módulo</h3>
+            <div class="grid-container">
+                
+                <a href="feedback-01-loader/index.html" class="category-card">
+                    <h4>01. Loader Animado (Spinner)</h4>
+                    <p>Implementación de indicadores de carga accesibles (ARIA) y animados con CSS puro para una transición fluida.</p>
+                </a>
+
+                <a href="feedback-02-skeleton/index.html" class="category-card">
+                    <h4>02. Skeleton Screen</h4>
+                    <p>Patrón para simular la estructura de la interfaz durante la carga, mejorando la percepción de velocidad.</p>
+                </a>
+                
+                <a href="feedback-03-empty-state/index.html" class="category-card">
+                    <h4>03. Empty State (Estado Vacío)</h4>
+                    <p>Diseño de interfaces para cuando no hay contenido que mostrar, incluyendo ilustraciones y llamados a la acción.</p>
+                </a>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+    </footer>
+    <script defer src="/JS/_theme.js"></script>
+</body>
+</html>
