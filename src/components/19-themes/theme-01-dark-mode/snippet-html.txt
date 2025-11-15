@@ -1,0 +1,17 @@
+<div class="dark-mode-example-container">
+                    
+    <h4>Contenido de Ejemplo con Paleta Oscura/Clara</h4>
+    <p>Haga clic en el botón de alternancia local para cambiar y guardar su preferencia de tema solo dentro de este contenedor.</p>
+
+    <button id="local-theme-toggle" class="btn btn-primary" aria-label="Alternar tema de ejemplo">
+        <i class="fas fa-toggle-on"></i> <span class="theme-status">Modo Actual: Claro</span>
+    </button>
+    
+    <div class="content-box">
+        <p class="text-primary">Este texto usa la variable **--theme-text-secondary**.</p>
+        <p class="text-secondary">El color de fondo y el texto de este recuadro cambian por las variables **--theme-bg-component** y **--theme-text-color**.</p>
+        <hr class="divider">
+        <p class="text-muted">Un texto sutil o de ayuda.</p>
+    </div>
+
+</div>

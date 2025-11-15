@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulo 19: Temas y Esquemas de Color</title>
+
+    <link rel="stylesheet" href="../../../CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/index.html">Volver al Inicio</a>
+            </nav>
+            <button id="theme-toggle" aria-label="Cambiar modo de color">
+                <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+                <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section">
+            <h2>Módulo 19: Temas y Esquemas de Color</h2>
+            <p>Este módulo aborda la gestión de esquemas de color, la implementación robusta del <b>Modo Oscuro</b>, y la personalización de marca utilizando Variables CSS y las consultas de medios (`@media`) nativas del navegador.</p>
+        </section>
+
+        <section class="component-section">
+            <h3>Subcomponentes del Módulo</h3>
+            <div class="grid-container">
+                
+                <a href="theme-01-dark-mode/index.html" class="category-card">
+                    <h4>01. Modo Oscuro (Persistencia)</h4>
+                    <p>Implementación del tema oscuro basado en la preferencia del usuario y con almacenamiento local (localStorage).</p>
+                </a>
+
+                <a href="theme-02-branding/index.html" class="category-card">
+                    <h4>02. Personalización (Color de Marca)</h4>
+                    <p>Uso de variables CSS para permitir a los usuarios definir un color primario de acento y marca.</p>
+                </a>
+                
+            </div>
+        </section>
+    </main>
+    
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit. Desarrollado con Front-end Puro (HTML, CSS & JS). Arquitectura modular y autónoma.</p>
+    </footer>
+    <script defer src="/JS/_theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.01: Modo Oscuro (Dark Mode)</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/prism.css" /> 
+
+    <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
+    <header id="main-header">
+        <h1>
+            <a href="/index.html" style="text-decoration: none">Web UI Kit</a>
+        </h1>
+        <button id="sidebar-toggle" aria-expanded="false" aria-controls="docs-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html">Volver a Temas</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <i class="fas fa-sun theme-icon" data-mode="light" style="display: none"></i>
+            <i class="fas fa-moon theme-icon" data-mode="dark"></i>
+        </button>
+    </header>
+
+    <div class="docs-container">
+        <main class="docs-content">
+            <h2>19.01: Modo Oscuro (Dark Mode)</h2>
+            <p class="description">
+                Demuestra el sistema canónico para implementar el tema oscuro, respetando la preferencia del sistema operativo (`prefers-color-scheme`) y permitiendo al usuario sobrescribir y **guardar su elección** mediante un *toggle* (persistente vía localStorage).
+            </p>
+
+            <section class="preview-area">
+                <h3>Vista Previa: Demostración de Tema</h3>
+                
+                <div class="theme-example-container dark-mode-example-container">
+                    
+                    <h4>Contenido de Ejemplo con Paleta Oscura/Clara</h4>
+                    <p>Haga clic en el botón de alternancia local para cambiar y guardar su preferencia de tema solo dentro de este contenedor.</p>
+
+                    <button id="local-theme-toggle" class="btn btn-primary" aria-label="Alternar tema de ejemplo">
+                        <i class="fas fa-toggle-on"></i> <span class="theme-status">Modo Actual: Claro</span>
+                    </button>
+                    
+                    <div class="content-box">
+                        <p class="text-primary">Este texto usa la variable **--color-primary**.</p>
+                        <p class="text-secondary">El color de fondo y el texto de este recuadro cambian por las variables **--bg-component** y **--text-color**.</p>
+                        <hr class="divider">
+                        <p class="text-muted">Un texto sutil o de ayuda.</p>
+                    </div>
+
+                </div>
+            </section>
+            
+            <section class="code-snippets">
+                <h3>Referencia de Nomenclatura y Código Fuente</h3>
+                <p>La lógica clave está en el `styles.css`, que define dos juegos de variables (claro/oscuro), y en el `script.js`, que maneja la detección del sistema y el almacenamiento.</p>
+                
+                <h4>HTML (Estructura Base del Ejemplo)</h4>
+                <pre><code class="language-html html-snippet"></code></pre>
+                
+                <h4>CSS (Variables de Tema y Estilos de Contenedor)</h4>
+                <pre><code class="language-css css-snippet"></code></pre>
+
+                <h4>JavaScript (Lógica de Persistencia y Toggle)</h4>
+                <pre><code class="language-js js-snippet"></code></pre>
+
+            </section>
+        </main>
+    </div>
+
+    <footer id="main-footer">
+        <p>© 2025 Web UI Component Kit.</p>
+    </footer>
+
+    <script src="/JS/prism.js"></script>
+    <script src="/JS/docs.js"></script>
+    <script src="/JS/sidebar.js"></script>
+    <script defer src="/JS/_theme.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>

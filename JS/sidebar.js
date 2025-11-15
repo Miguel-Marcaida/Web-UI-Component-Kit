@@ -378,6 +378,23 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
         },
 
+        "19-themes": {
+        title: "Módulo 19: Temas y Esquemas de Color",
+        components: [
+            { 
+                name: "01. Modo Oscuro", 
+                path: "/src/components/19-themes/theme-01-dark-mode/index.html" 
+            },
+            { 
+                name: "02. Personalización", 
+                path: "/src/components/19-themes/theme-02-branding/index.html" 
+            }
+        ],
+        
+    }
+
+
+
        
     };
 

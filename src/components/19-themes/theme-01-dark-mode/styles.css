@@ -1,0 +1,103 @@
+/*
+ * styles.css
+ * Subcomponente 19.01 Modo Oscuro (Dark Mode)
+ * AUTONOMÍA ESTRICTA: Variables de tema encapsuladas.
+ */
+
+/* ================================================= */
+/* Definición de la Paleta de Colores (Light Mode Default) */
+/* ================================================= */
+.dark-mode-example-container {
+    /* Variables de la Paleta CLARA (Defecto) */
+    --theme-bg-color: #ffffff;
+    --theme-text-color: #333333;
+    --theme-text-secondary: #007bff; /* Azul primario */
+    --theme-bg-component: #f8f9fa; /* Fondo gris claro para caja de contenido */
+    --theme-border-color: #dee2e6;
+    --theme-text-muted: #6c757d;
+
+    /* Estilos del Contenedor de la Demo */
+    padding: 25px;
+    border-radius: 8px;
+    margin: 20px 0;
+    
+    /* Aplicar las variables al contenedor */
+    background-color: var(--theme-bg-color);
+    color: var(--theme-text-color);
+    border: 1px solid var(--theme-border-color);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* ================================================= */
+/* Paleta de Colores (Dark Mode mediante Media Query) */
+/* ================================================= */
+
+/* Aplicamos el tema oscuro si el sistema operativo lo prefiere */
+@media (prefers-color-scheme: dark) {
+    .dark-mode-example-container {
+        /* Sobrescribir variables de tema para modo oscuro si no hay preferencia en el DOM */
+        --theme-bg-color: #212529;
+        --theme-text-color: #f8f9fa;
+        --theme-text-secondary: #17a2b8; /* Cyan para el acento en oscuro */
+        --theme-bg-component: #343a40;
+        --theme-border-color: #495057;
+        --theme-text-muted: #adb5bd;
+    }
+}
+
+/* ================================================= */
+/* Sobrescritura forzada (Clase añadida por JS) */
+/* ================================================= */
+
+/* Si JS añade la clase .theme-dark, sobrescribe la preferencia del sistema */
+.dark-mode-example-container.theme-dark {
+    --theme-bg-color: #212529;
+    --theme-text-color: #f8f9fa;
+    --theme-text-secondary: #17a2b8;
+    --theme-bg-component: #343a40;
+    --theme-border-color: #495057;
+    --theme-text-muted: #adb5bd;
+}
+
+/* Si JS añade la clase .theme-light, sobrescribe la preferencia del sistema */
+.dark-mode-example-container.theme-light {
+    --theme-bg-color: #ffffff;
+    --theme-text-color: #333333;
+    --theme-text-secondary: #007bff;
+    --theme-bg-component: #f8f9fa;
+    --theme-border-color: #dee2e6;
+    --theme-text-muted: #6c757d;
+}
+
+/* ================================================= */
+/* Estilos del Contenido de Ejemplo */
+/* ================================================= */
+.content-box {
+    padding: 15px;
+    border-radius: 4px;
+    background-color: var(--theme-bg-component);
+    border: 1px solid var(--theme-border-color);
+    margin-top: 15px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.text-primary {
+    color: var(--theme-text-secondary);
+}
+
+.text-secondary {
+    color: var(--theme-text-color); /* Usar color principal para diferenciar del muted */
+}
+
+.text-muted {
+    color: var(--theme-text-muted);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--theme-border-color);
+    margin: 10px 0;
+}
